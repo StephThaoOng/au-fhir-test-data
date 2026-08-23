@@ -113,7 +113,7 @@ sequenceDiagram
 | 2 | Retrieve Prescription and Dispensing History | GP PMS | Shared Medicines History | *TBD — dispense record for Sertraline?* |
 | 3 | Pre-populate GP CCMP Questionnaire | SMART GPCCMP App | GP PMS | *Various* |
 | 4 | Submit GP CCMP Questionnaire Response | SMART GPCCMP App | GP PMS | _TBD — QuestionnaireResponse ?_|
-| 5 | Retrieve Provider Details | GP PMS | Provider Directory | [PractitionerRole-obstetrician-chen-emily.json](PractitionerRole-obstetrician-chen-emily.json) |
+| 5 | Retrieve Provider Details | GP PMS | Provider Directory | [PractitionerRole-obgyn-chen-emily.json](PractitionerRole-obgyn-chen-emily.json) |
 | 6 | Submit eReferral | GP PMS | eReferral Server | [ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json](ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json) |
 | 7 | Pre-populate eReferral | SMART eReferral App | GP PMS | *Various* |
 | 8 | Submit eReferral | SMART eReferral App | eReferral Server | [ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json](ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json) |
@@ -194,7 +194,7 @@ sequenceDiagram
 | 6 | Retrieve Diagnostic Report (Histopathology result) | Specialist PMS | eReporting Server | [DiagnosticReport-histopathology-thompson-alex-20251020.json](DiagnosticReport-histopathology-thompson-alex-20251020.json) |
 | 7 | Pre-populate Patient Summary | SMART PS App | Specialist PMS | *Various* |
 | 8 | Submit Patient Summary | SMART PS App | SHL Sharing Server | [Bundle-aups-specialist-thompson-alex-20251101.json](Bundle-aups-specialist-thompson-alex-20251101.json) |
-| 9 | Retrieve Provider Details | Specialist PMS | Provider Directory | [PractitionerRole-obstetrician-wilson-mark.json](PractitionerRole-obstetrician-wilson-mark.json) |
+| 9 | Retrieve Provider Details | Specialist PMS | Provider Directory | [PractitionerRole-obgyn-wilson-mark.json](PractitionerRole-obgyn-wilson-mark.json) |
 | 10 | Submit eReferral | Specialist PMS | eReferral Server | [ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json](ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json) |
 | 11 | Retrieve eReferral | Hospital EMR | eReferral Server | [ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json](ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json) |
 | 12 | Pre-populate eReferral | SMART eReferral App | Specialist PMS | *Various* |
@@ -237,7 +237,7 @@ sequenceDiagram
 | 2 | Pre-populate Medicines eCDS | SMART Medicines eCDS App | Hospital EMR | *Various* |
 | 3 | Submit Discharge Summary | Hospital EMR | Shared EHR/HIE | [DocumentReference-dischargesummary-thompson-alex-20251101.json](DocumentReference-dischargesummary-thompson-alex-20251101.json) |
 | 4 | Book GP Appointment | Consumer App | GP PMS | [Appointment-followupgp-thompson-alex-20251108.json](Appointment-followupgp-thompson-alex-20251108.json) |
-| 5 | Search Allied Health Provider | Consumer App | Provider Directory | [PractitionerRole-physiotherapist-evans-sarah.json](PractitionerRole-physiotherapist-evans-sarah.json)<br/>[PractitionerRole-counsellor-patel-rachel.json](PractitionerRole-counsellor-patel-rachel.json) |
+| 5 | Search Allied Health Provider | Consumer App | Provider Directory | [PractitionerRole-physiotherapist-evans-sarah.json](PractitionerRole-physiotherapist-evans-sarah.json)<br/>[PractitionerRole-mentalhealthcounsellor-patel-rachel.json](PractitionerRole-mentalhealthcounsellor-patel-rachel.json) |
 | 6 | Book Allied Health Appointment | Consumer App | Allied Health PMS | [Appointment-followupphysio-thompson-alex-20251110.json](Appointment-followupphysio-thompson-alex-20251110.json)<br/>[Appointment-followupcounselling-thompson-alex-20251115.json](Appointment-followupcounselling-thompson-alex-20251115.json) |
 | 7 | Retrieve Discharge Summary | Consumer App | Shared EHR/HIE | [DocumentReference-dischargesummary-thompson-alex-20251101.json](DocumentReference-dischargesummary-thompson-alex-20251101.json) |
 

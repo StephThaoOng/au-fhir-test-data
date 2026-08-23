@@ -29,17 +29,6 @@
       "text": "Phlebotomist"
     }
   ],
-  "specialty": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "1303756001",
-          "display": "Phlebology"
-        }
-      ]
-    }
-  ],
   "location": [
     {
       "reference": "Location/bathurst-pathology"

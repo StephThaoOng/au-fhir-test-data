@@ -96,7 +96,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Bathurst Pathology | ✅ Generated | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
 | HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratory-bathurst-pathology.json](HealthcareService-pathologylaboratory-bathurst-pathology.json) |
 | Practitioner | Sally Johnson | ✅ Generated | [Practitioner-johnson-sally.json](Practitioner-johnson-sally.json) |
-| PractitionerRole | Sally Johnson – Phlebotomist, Bathurst Pathology | ✅ Generated | [PractitionerRole-medicaltechnician-johnson-sally.json](PractitionerRole-medicaltechnician-johnson-sally.json) |
+| PractitionerRole | Sally Johnson – Phlebotomist, Bathurst Pathology | ✅ Generated | [PractitionerRole-phlebotomist-johnson-sally.json](PractitionerRole-phlebotomist-johnson-sally.json) |
 
 ## 2. General Practice
 
@@ -148,7 +148,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Practitioner | Dr. Jane Smith | ✅ Generated | [Practitioner-smith-jane.json](Practitioner-smith-jane.json) |
 | PractitionerRole | Dr. Jane Smith – GP, Bathurst Medical Centre | ✅ Generated | [PractitionerRole-generalpractitioner-smith-jane.json](PractitionerRole-generalpractitioner-smith-jane.json) |
 | Practitioner | Dr. Emily Chen | ✅ Generated | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
-| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obstetrician-chen-emily.json](PractitionerRole-obstetrician-chen-emily.json) |
+| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obgyn-chen-emily.json](PractitionerRole-obgyn-chen-emily.json) |
 
 ## 3. Specialist (Gynaecological Oncologist – Private Practice)
 
@@ -206,7 +206,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Ashfield Private Hospital | ✅ Generated | [Location-ashfield-private-hospital.json](Location-ashfield-private-hospital.json) |
 | HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacute-ashfield-private-hospital.json](HealthcareService-privateacute-ashfield-private-hospital.json) |
 | Practitioner | Dr. Emily Chen | ✅ Generated | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
-| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obstetrician-chen-emily.json](PractitionerRole-obstetrician-chen-emily.json) |
+| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obgyn-chen-emily.json](PractitionerRole-obgyn-chen-emily.json) |
 
 ## 4. Private Hospital (Theatre / Inpatient)
 
@@ -255,7 +255,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Ashfield Private Hospital | ✅ Generated | [Location-ashfield-private-hospital.json](Location-ashfield-private-hospital.json) |
 | HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacute-ashfield-private-hospital.json](HealthcareService-privateacute-ashfield-private-hospital.json) |
 | Practitioner | Dr. Mark Wilson | ✅ Generated | [Practitioner-wilson-mark.json](Practitioner-wilson-mark.json) |
-| PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ Generated | [PractitionerRole-obstetrician-wilson-mark.json](PractitionerRole-obstetrician-wilson-mark.json) |
+| PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ Generated | [PractitionerRole-obgyn-wilson-mark.json](PractitionerRole-obgyn-wilson-mark.json) |
 
 ## 5. Pharmacy
 
@@ -300,7 +300,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Bathurst Community Pharmacy | ✅ Generated | [Location-bathurst-community-pharmacy.json](Location-bathurst-community-pharmacy.json) |
 | HealthcareService | Bathurst Community Pharmacy | ✅ Generated | [HealthcareService-communitypharmacy-bathurst-community-pharmacy.json](HealthcareService-communitypharmacy-bathurst-community-pharmacy.json) |
 | Practitioner | Sarah Lee | ✅ Generated | [Practitioner-lee-sarah.json](Practitioner-lee-sarah.json) |
-| PractitionerRole | Sarah Lee – Pharmacist, Bathurst Community Pharmacy | ✅ Generated | [PractitionerRole-retailpharmacist-lee-sarah.json](PractitionerRole-retailpharmacist-lee-sarah.json) |
+| PractitionerRole | Sarah Lee – Pharmacist, Bathurst Community Pharmacy | ✅ Generated | [PractitionerRole-pharmacist-lee-sarah.json](PractitionerRole-pharmacist-lee-sarah.json) |
 
 ## 6. Allied Health (Physiotherapy & Counselling)
 
@@ -358,7 +358,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Bathurst Psychology | ✅ Generated | [Location-bathurst-psychology.json](Location-bathurst-psychology.json) |
 | HealthcareService | Bathurst Psychology | ✅ Generated | [HealthcareService-clinicalpsychology-bathurst-psychology.json](HealthcareService-clinicalpsychology-bathurst-psychology.json) |
 | Practitioner | Dr. Rachel Patel | ✅ Generated | [Practitioner-patel-rachel.json](Practitioner-patel-rachel.json) |
-| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | [PractitionerRole-counsellor-patel-rachel.json](PractitionerRole-counsellor-patel-rachel.json) |
+| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | [PractitionerRole-mentalhealthcounsellor-patel-rachel.json](PractitionerRole-mentalhealthcounsellor-patel-rachel.json) |
 
 ## 7. Population Health / Analytics
 
