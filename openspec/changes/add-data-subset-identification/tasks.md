@@ -11,7 +11,10 @@
 - [x] 1.3 Seed the Curated subsets: Smart Health Checks (`ballantyne-kelvin-hans`) and the
       five Sparked AU PS consumer journeys, using resolved resource ids — `banks-jeramy-ezra`,
       `johnson-joyce`, `burrows-ginger`, `morris-charlotte`, `nielsen-eleanore`,
-      `simpson-tristan` — not display names. Record AU Encounter Records journeys as pending.
+      `simpson-tristan` — not display names. (AU Encounter Records was seeded as pending, then
+      recorded from the care team diagram: 13 members across 1 journey, including the two
+      named teams with no CareTeam resource, each carrying its stated journey role alongside
+      the specialty its PractitionerRole declares.)
       Mark the CDG journeys `reserved: false` per D9, and add a `downstream_use` field
       (Curated: manual entry, `attester` and `confirmed_on`) for recording the IG project and
       technical use cases a journey entity has been carried into.

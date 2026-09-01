@@ -129,7 +129,7 @@ RESOURCE_TYPE_ORDER = [
 
 
 PLURALS = {"entity": "entities", "grouping": "groupings",
-           "candidate": "candidates"}
+           "candidate": "candidates", "journey": "journeys"}
 
 
 def plural(n: int, word: str) -> str:
@@ -150,7 +150,7 @@ def _resource_type_sort_key(rtype: str) -> tuple[int, str]:
 # it the page renders 418 entities as one undifferentiated list and the seven
 # scenarios it exists to record are invisible.
 GROUP_FIELD = {
-    "sparked-cdg-journeys": "journey",
+    "sparked-cdg-journeys": "programme",
     "connected-care-journeys": "story",
     "community-contributions": "organisation",
     "scenario-groups": "scenario",
@@ -158,11 +158,27 @@ GROUP_FIELD = {
     "families": "family_label",
 }
 
-# A second grouping level, inside GROUP_FIELD's. Geography is the only subset
-# that needs one: a grouping is the unit it proposes, but a reader looks for a
-# place first, so state is the outer level and the grouping the inner.
+# A second grouping level, inside GROUP_FIELD's.
+#   geography — a grouping is the unit it proposes, but a reader looks for a
+#     place first, so state is outer and the grouping inner.
+#   sparked — the journeys belong to two distinct programmes (AU PS and AU
+#     Encounter Records). Flattened to journey alone, that distinction is
+#     invisible and the AU Encounter Records journey is indistinguishable
+#     from the five AU PS ones.
 SUBGROUP_FIELD = {
     "geography-groups": "grouping_label",
+    "sparked-cdg-journeys": "journey",
+}
+
+# What the inner level is called in an outer group's count phrase.
+SUBGROUP_NOUN = {
+    "geography-groups": "grouping",
+    "sparked-cdg-journeys": "journey",
+}
+
+PROGRAMME_LABELS = {
+    "au-ps": "AU Patient Summary",
+    "au-encounter-records": "AU Encounter Records",
 }
 
 STORY_LABELS = {"alex": "Alex's Story", "yuri": "Yuri's Story (provisional)"}
@@ -245,6 +261,7 @@ def flatten_sparked(members: dict, index: dict) -> tuple[list[dict], list[str]]:
                             rid, resource_type="Unresolved", path=None,
                             why=entry.get("note", "named in the journey; "
                                           "no matching resource").strip(),
+                            programme=group_key,
                             journey=journey_slug,
                             journey_role=entry.get("journey_role"),
                             alignment="unresolved",
@@ -260,7 +277,8 @@ def flatten_sparked(members: dict, index: dict) -> tuple[list[dict], list[str]]:
                     why = f"{entry['journey_role']} in journey {journey_slug!r}"
                 flat.append(lib.member(
                     rid, resource_type=resolved["resource_type"],
-                    path=resolved["path"], why=why, journey=journey_slug,
+                    path=resolved["path"], why=why,
+                    programme=group_key, journey=journey_slug,
                     journey_role=entry.get("journey_role"),
                     declared_specialty=entry.get("declared_specialty"),
                     alignment=entry.get("alignment"),
@@ -437,7 +455,8 @@ def render_entity_list(members: list[dict], group_field: str | None,
                        res_index: dict, current_slug: str,
                        group_labels: dict | None = None,
                        subgroup_field: str | None = None,
-                       group_notes: dict | None = None) -> str:
+                       group_notes: dict | None = None,
+                       subgroup_noun: str = "grouping") -> str:
     """Render a subset's entities, optionally grouped and sub-grouped.
 
     Where a subset is grouped, every group is a collapsible section whatever
@@ -523,7 +542,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
                         for m in entries})
         n = len(by_sub)
         return ("\n".join(out),
-                f"{plural(n, 'grouping')}, {plural(distinct, 'entity')}")
+                f"{plural(n, subgroup_noun)}, {plural(distinct, 'entity')}")
 
     if group_field:
         by_group: dict[str, list[dict]] = defaultdict(list)
@@ -676,6 +695,7 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     # choice and live here; scenario titles are facts recovered from the seed
     # ref and live in the facts file (D12).
     group_labels = (STORY_LABELS if group_field == "story"
+                    else PROGRAMME_LABELS if group_field == "programme"
                     else subset.get("scenario_titles") or {})
     subgroup_field = SUBGROUP_FIELD.get(slug)
     # The suburb list is what a reader checks a proposed grouping against —
@@ -706,7 +726,8 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     lines.append(f"### Members ({distinct})\n")
     lines.append(render_entity_list(members, group_field, res_index, slug,
                                     group_labels, subgroup_field,
-                                    group_notes))
+                                    group_notes,
+                                    SUBGROUP_NOUN.get(slug, "grouping")))
 
     if candidate:
         flagged = (candidate.get("evidence") or {}).get(

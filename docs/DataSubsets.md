@@ -31,7 +31,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-01 15:55 UTC from test data at commit `188c3702a6170f6ebec1853bc5e25e44ea3b74bc`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-01 21:17 UTC from test data at commit `5a468aa3312afb9a1396268cb1b81c570f90045a`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -424,7 +424,11 @@ _Classification: Curated._
 
 ### Members (19)
 
+<details><summary><strong>AU Encounter Records</strong> (1 journey, 13 entities)</summary>
+
+<blockquote>
 <details><summary><strong>chemotherapy-acute-admission-to-hith</strong> (13 entities)</summary>
+
 
 **Patient** (1)
 
@@ -449,40 +453,59 @@ _Classification: Curated._
 - `medical-oncology-team` — _(no resource)_ — **Medical Oncology Team** — *no matching resource in the data set*
 
 </details>
+</blockquote>
 
+</details>
+
+<details><summary><strong>AU Patient Summary</strong> (5 journeys, 6 entities)</summary>
+
+<blockquote>
 <details><summary><strong>emergency-hospital-attendance</strong> (1 entity)</summary>
+
 
 **Patient** (1)
 
 - `morris-charlotte` — `au-fhir-test-data-set/au-core/Patient-morris-charlotte.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved)*
 
 </details>
+</blockquote>
 
+<blockquote>
 <details><summary><strong>hospital-to-aged-care-interstate-transfer</strong> (1 entity)</summary>
+
 
 **Patient** (1)
 
 - `nielsen-eleanore` — `au-fhir-test-data-set/au-core/Patient-nielsen-eleanore.json`
 
 </details>
+</blockquote>
 
+<blockquote>
 <details><summary><strong>interstate-gp-visit</strong> (1 entity)</summary>
+
 
 **Patient** (1)
 
 - `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved)*
 
 </details>
+</blockquote>
 
+<blockquote>
 <details><summary><strong>pre-operative-surgical</strong> (1 entity)</summary>
+
 
 **Patient** (1)
 
 - `simpson-tristan` — `au-fhir-test-data-set/au-core/Patient-simpson-tristan.json`
 
 </details>
+</blockquote>
 
+<blockquote>
 <details><summary><strong>referral-to-specialist-and-allied-health</strong> (2 entities)</summary>
+
 
 **Patient** (1)
 
@@ -491,6 +514,9 @@ _Classification: Curated._
 **Practitioner** (1)
 
 - `burrows-ginger` — `au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved)*
+
+</details>
+</blockquote>
 
 </details>
 

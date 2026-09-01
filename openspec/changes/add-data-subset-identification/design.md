@@ -370,7 +370,7 @@ stricter fact.
 | Inferno default patients | Declared | `inferno_suite_generator` default patient id list, read at current revision (D11) |
 | AU PS test patients | Declared | AU PS Test Data Coverage page (Confluence) |
 | Smart Health Checks | Curated | `subsets.yaml` |
-| Sparked CDG journeys | Curated | `subsets.yaml`; reusable, not reserved (D9); AU Encounter Records journeys pending |
+| Sparked CDG journeys | Curated | `subsets.yaml`; reusable, not reserved (D9); grouped by programme — AU Patient Summary (5 journeys) and AU Encounter Records (1, care team only) |
 | Connected Care — Alex's Story | Declared | Alex's Story data set document, `connected-care` branch |
 | Connected Care — Yuri's Story | Declared | **Pending** — provisional remainder until supplied |
 | Community contributions | Derived + Curated | Commit author/committer domain, plus confirmed overrides |
