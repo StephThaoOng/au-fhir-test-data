@@ -417,12 +417,18 @@ def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
               and s not in SUPPRESSED_OVERLAP_TARGETS]
     if not others:
         return None
-    parts = []
-    for s, r in sorted(set(others)):
-        label = ("maybe reserved — TBD" if s in RESERVATION_TBD_TARGETS
-                 else "reserved" if r else "free to build on")
-        parts.append(f"[{s}](#{s}) ({label})")
-    return "also in: " + ", ".join(parts)
+    labelled = [
+        (s, "maybe reserved — TBD" if s in RESERVATION_TBD_TARGETS
+            else "reserved" if r else "free to build on")
+        for s, r in sorted(set(others))
+    ]
+    # What governs an entity is the tightest constraint across its
+    # memberships (D21) — once any membership is reserved or TBD, a
+    # free-to-build-on membership elsewhere adds noise, not information, so
+    # it's dropped. Only shown when it's the sole signal available.
+    stricter = [(s, l) for s, l in labelled if l != "free to build on"]
+    shown = stricter or labelled
+    return "also in: " + ", ".join(f"[{s}](#{s}) ({l})" for s, l in shown)
 
 
 # --- Rendering ----------------------------------------------------------

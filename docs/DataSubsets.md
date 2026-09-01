@@ -31,7 +31,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-01 15:48 UTC from test data at commit `94248d263875c246a924f1cf99e2f9a9ad1812f7`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-01 15:55 UTC from test data at commit `188c3702a6170f6ebec1853bc5e25e44ea3b74bc`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -89,7 +89,7 @@ _Classification: Derived._
 
 **Patient** (5)
 
-- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [families](#families) (free to build on), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
+- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 - `bennelong-anne` — `au-fhir-test-data-set/au-core/Patient-bennelong-anne.json`
 - `howe-deangelo` — `au-fhir-test-data-set/au-core/Patient-howe-deangelo.json` — *also in: [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 - `irvine-ronny-lawrence` — `au-fhir-test-data-set/au-core/Patient-irvine-ronny-lawrence.json` — *also in: [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
@@ -182,8 +182,8 @@ _Classification: Derived._
 
 **Patient** (5)
 
-- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [families](#families) (free to build on), [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
-- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [families](#families) (free to build on), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
+- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
+- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 - `johnson-joyce` — `au-fhir-test-data-set/au-core/Patient-johnson-joyce.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
 - `martin-shawn` — `au-fhir-test-data-set/au-core/Patient-martin-shawn.json`
 - `morris-charlotte` — `au-fhir-test-data-set/au-core/Patient-morris-charlotte.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
@@ -312,8 +312,8 @@ _Classification: Declared._
 
 **Patient** (7)
 
-- `baby-banks-john` — `au-fhir-test-data-set/au-core/Patient-baby-banks-john.json` — *also in: [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [families](#families) (free to build on)*
-- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [families](#families) (free to build on)*
+- `baby-banks-john` — `au-fhir-test-data-set/au-core/Patient-baby-banks-john.json` — *also in: [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD)*
+- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD)*
 - `baratz-toni` — `au-fhir-test-data-set/au-core/Patient-baratz-toni.json` — *also in: [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD)*
 - `hayes-arianne` — `au-fhir-test-data-set/au-core/Patient-hayes-arianne.json` — *also in: [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD)*
 - `howe-deangelo` — `au-fhir-test-data-set/au-core/Patient-howe-deangelo.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD)*
@@ -352,8 +352,8 @@ _Classification: Declared._
 
 **Patient** (6)
 
-- `baby-banks-john` — `au-fhir-test-data-set/au-core/Patient-baby-banks-john.json` — *also in: [families](#families) (free to build on), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
-- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [families](#families) (free to build on), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
+- `baby-banks-john` — `au-fhir-test-data-set/au-core/Patient-baby-banks-john.json` — *also in: [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
+- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 - `baratz-toni` — `au-fhir-test-data-set/au-core/Patient-baratz-toni.json` — *also in: [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 - `hayes-arianne` — `au-fhir-test-data-set/au-core/Patient-hayes-arianne.json` — *also in: [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 - `howe-deangelo` — `au-fhir-test-data-set/au-core/Patient-howe-deangelo.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
@@ -470,7 +470,7 @@ _Classification: Curated._
 
 **Patient** (1)
 
-- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [families](#families) (free to build on)*
+- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved)*
 
 </details>
 
@@ -1487,9 +1487,9 @@ _Bonython, Calwell, Chisholm, Conder, Curtin, Erindale Centre, Garran, Gilmore, 
 - `dietrich-kimbra-althea` — `au-fhir-test-data-set/au-core/Patient-dietrich-kimbra-althea.json` — *also in: [families](#families) (free to build on)*
 - `dietrich-phillipa-grace` — `au-fhir-test-data-set/au-core/Patient-dietrich-phillipa-grace.json` — *also in: [families](#families) (free to build on)*
 - `downie-grant` — `au-fhir-test-data-set/au-core/Patient-downie-grant.json`
-- `hennessy-billy` — `au-fhir-test-data-set/au-core/Patient-hennessy-billy.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `hennessy-jenny` — `au-fhir-test-data-set/au-core/Patient-hennessy-jenny.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `hennessy-kacey` — `au-fhir-test-data-set/au-core/Patient-hennessy-kacey.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `hennessy-billy` — `au-fhir-test-data-set/au-core/Patient-hennessy-billy.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `hennessy-jenny` — `au-fhir-test-data-set/au-core/Patient-hennessy-jenny.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `hennessy-kacey` — `au-fhir-test-data-set/au-core/Patient-hennessy-kacey.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
 - `hulme-brant` — `au-fhir-test-data-set/au-core/Patient-hulme-brant.json`
 - `ridgewell-troy` — `au-fhir-test-data-set/au-core/Patient-ridgewell-troy.json`
 - `scott-elijah-ken` — `au-fhir-test-data-set/au-erequesting/Patient-scott-elijah-ken.json` — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples) (reserved)*
@@ -1948,9 +1948,9 @@ _Hatfield, Leeton, Minjary, Wermatong._
 **Patient** (4)
 
 - `banks-jamila-angie` — `au-fhir-test-data-set/au-core/Patient-banks-jamila-angie.json` — *also in: [families](#families) (free to build on)*
-- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [families](#families) (free to build on), [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
+- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
 - `banks-jonas-cary` — `au-fhir-test-data-set/au-core/Patient-banks-jonas-cary.json` — *also in: [families](#families) (free to build on)*
-- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [families](#families) (free to build on), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
+- `banks-mia-leanne` — `au-fhir-test-data-set/au-core/Patient-banks-mia-leanne.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved), [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [au-ps-test-patients](#au-ps-test-patients) (maybe reserved — TBD), [inferno-default-patients](#inferno-default-patients) (maybe reserved — TBD)*
 
 **PractitionerRole** (2)
 
@@ -2078,10 +2078,10 @@ _Berowra, Blacktown, Canley Heights, Cremorne, Frenchs Forest East, Kensington, 
 **Patient** (6)
 
 - `keaton-jayme` — `au-fhir-test-data-set/au-core/Patient-keaton-jayme.json`
-- `lowe-alessandra` — `au-fhir-test-data-set/au-core/Patient-lowe-alessandra.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `lowe-alix` — `au-fhir-test-data-set/au-core/Patient-lowe-alix.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `lowe-cedric` — `au-fhir-test-data-set/au-core/Patient-lowe-cedric.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `lowe-valerie` — `au-fhir-test-data-set/au-core/Patient-lowe-valerie.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-alessandra` — `au-fhir-test-data-set/au-core/Patient-lowe-alessandra.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-alix` — `au-fhir-test-data-set/au-core/Patient-lowe-alix.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-cedric` — `au-fhir-test-data-set/au-core/Patient-lowe-cedric.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-valerie` — `au-fhir-test-data-set/au-core/Patient-lowe-valerie.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
 - `wang-li` — `au-fhir-test-data-set/au-core/Patient-wang-li.json` — *also in: [au-core-ig-examples](#au-core-ig-examples) (reserved)*
 
 **PractitionerRole** (38)
@@ -3657,7 +3657,7 @@ _Bunbury, Wellington Forest._
 **Patient** (4)
 
 - `ballantyne-flavia-indira` — `au-fhir-test-data-set/au-core/Patient-ballantyne-flavia-indira.json` — *also in: [families](#families) (free to build on)*
-- `ballantyne-kelvin-hans` — `au-fhir-test-data-set/au-core/Patient-ballantyne-kelvin-hans.json` — *also in: [families](#families) (free to build on), [smart-health-checks](#smart-health-checks) (maybe reserved — TBD)*
+- `ballantyne-kelvin-hans` — `au-fhir-test-data-set/au-core/Patient-ballantyne-kelvin-hans.json` — *also in: [smart-health-checks](#smart-health-checks) (maybe reserved — TBD)*
 - `ballantyne-sandy-choy` — `au-fhir-test-data-set/au-core/Patient-ballantyne-sandy-choy.json` — *also in: [families](#families) (free to build on)*
 - `ballantyne-terry-bob` — `au-fhir-test-data-set/au-core/Patient-ballantyne-terry-bob.json` — *also in: [families](#families) (free to build on)*
 
@@ -4214,11 +4214,11 @@ _Classification: Derived._
 - `baldry-terence-emile` — `au-fhir-test-data-set/au-core/Patient-baldry-terence-emile.json`
 - `baldwin-dinah` — `au-fhir-test-data-set/au-core/Patient-baldwin-dinah.json`
 - `ballantyne-flavia-indira` — `au-fhir-test-data-set/au-core/Patient-ballantyne-flavia-indira.json` — *also in: [families](#families) (free to build on)*
-- `ballantyne-kelvin-hans` — `au-fhir-test-data-set/au-core/Patient-ballantyne-kelvin-hans.json` — *also in: [families](#families) (free to build on), [smart-health-checks](#smart-health-checks) (maybe reserved — TBD)*
+- `ballantyne-kelvin-hans` — `au-fhir-test-data-set/au-core/Patient-ballantyne-kelvin-hans.json` — *also in: [smart-health-checks](#smart-health-checks) (maybe reserved — TBD)*
 - `ballantyne-sandy-choy` — `au-fhir-test-data-set/au-core/Patient-ballantyne-sandy-choy.json` — *also in: [families](#families) (free to build on)*
 - `ballantyne-terry-bob` — `au-fhir-test-data-set/au-core/Patient-ballantyne-terry-bob.json` — *also in: [families](#families) (free to build on)*
 - `banks-jamila-angie` — `au-fhir-test-data-set/au-core/Patient-banks-jamila-angie.json` — *also in: [families](#families) (free to build on)*
-- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [families](#families) (free to build on), [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
+- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
 - `banks-jonas-cary` — `au-fhir-test-data-set/au-core/Patient-banks-jonas-cary.json` — *also in: [families](#families) (free to build on)*
 - `bassett-imogene-betsy` — `au-fhir-test-data-set/au-core/Patient-bassett-imogene-betsy.json`
 - `black-kerry-dougal` — `au-fhir-test-data-set/au-core/Patient-black-kerry-dougal.json`
@@ -4239,9 +4239,9 @@ _Classification: Derived._
 - `foreman-caterina` — `au-fhir-test-data-set/au-core/Patient-foreman-caterina.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
 - `frost-rhett-kent` — `au-fhir-test-data-set/au-core/Patient-frost-rhett-kent.json`
 - `hampton-jenice` — `au-fhir-test-data-set/au-core/Patient-hampton-jenice.json`
-- `hennessy-billy` — `au-fhir-test-data-set/au-core/Patient-hennessy-billy.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `hennessy-jenny` — `au-fhir-test-data-set/au-core/Patient-hennessy-jenny.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `hennessy-kacey` — `au-fhir-test-data-set/au-core/Patient-hennessy-kacey.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `hennessy-billy` — `au-fhir-test-data-set/au-core/Patient-hennessy-billy.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `hennessy-jenny` — `au-fhir-test-data-set/au-core/Patient-hennessy-jenny.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `hennessy-kacey` — `au-fhir-test-data-set/au-core/Patient-hennessy-kacey.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
 - `hoskins-marisa` — `au-fhir-test-data-set/au-core/Patient-hoskins-marisa.json`
 - `hoskins-sergio-lionel` — `au-fhir-test-data-set/au-core/Patient-hoskins-sergio-lionel.json`
 - `hulme-brant` — `au-fhir-test-data-set/au-core/Patient-hulme-brant.json`
@@ -4258,10 +4258,10 @@ _Classification: Derived._
 - `johnson-joyce` — `au-fhir-test-data-set/au-core/Patient-johnson-joyce.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples) (reserved), [sparked-cdg-journeys](#sparked-cdg-journeys) (maybe reserved — TBD)*
 - `keaton-jayme` — `au-fhir-test-data-set/au-core/Patient-keaton-jayme.json`
 - `little-rose-gretal` — `au-fhir-test-data-set/au-core/Patient-little-rose-gretal.json`
-- `lowe-alessandra` — `au-fhir-test-data-set/au-core/Patient-lowe-alessandra.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `lowe-alix` — `au-fhir-test-data-set/au-core/Patient-lowe-alix.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `lowe-cedric` — `au-fhir-test-data-set/au-core/Patient-lowe-cedric.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
-- `lowe-valerie` — `au-fhir-test-data-set/au-core/Patient-lowe-valerie.json` — *also in: [families](#families) (free to build on), [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-alessandra` — `au-fhir-test-data-set/au-core/Patient-lowe-alessandra.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-alix` — `au-fhir-test-data-set/au-core/Patient-lowe-alix.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-cedric` — `au-fhir-test-data-set/au-core/Patient-lowe-cedric.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
+- `lowe-valerie` — `au-fhir-test-data-set/au-core/Patient-lowe-valerie.json` — *also in: [scenario-groups](#scenario-groups) (maybe reserved — TBD)*
 - `lynch-alyce-shauna` — `au-fhir-test-data-set/au-core/Patient-lynch-alyce-shauna.json`
 - `mackay-elliott` — `au-fhir-test-data-set/au-core/Patient-mackay-elliott.json` — *also in: [families](#families) (free to build on)*
 - `mackay-heather` — `au-fhir-test-data-set/au-core/Patient-mackay-heather.json` — *also in: [families](#families) (free to build on)*

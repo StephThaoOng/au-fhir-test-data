@@ -347,6 +347,19 @@ with no exceptions, and every appearance to date has been free-to-build-on
 noise rather than a reservation signal, so naming them added nothing a reader
 needed to see.
 
+### D21. An overlap note shows the tightest constraint, not every membership
+
+Where an entity's overlap note would list both a stricter label (reserved, or
+TBD per D20) and `free to build on` for different subsets, the free-to-build-on
+entries are omitted. What governs whether an entity is safe to extend is the
+tightest constraint across all its memberships — a reservation or an
+unconfirmed TBD elsewhere is what matters, and a free-to-build-on membership
+alongside it reads as reassurance the entity does not actually have.
+
+Free-to-build-on is shown only when it is the *only* signal an entity's
+overlaps carry — there, it remains real information, not noise beside a
+stricter fact.
+
 ## Sources of truth
 
 | Subset | Type | Source of truth |
