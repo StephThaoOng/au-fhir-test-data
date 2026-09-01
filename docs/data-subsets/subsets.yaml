@@ -1,0 +1,1207 @@
+# Facts file for the data-subset-identification capability
+# (openspec/specs/data-subset-identification/spec.md, once archived).
+#
+# This file is the authoritative home for Declared and Curated facts, and for
+# confirmed Derived+Curated decisions. It is NOT the home for Derived facts —
+# those are recomputed fresh on every regeneration by scripts/data-subsets/*.py
+# and never persisted here.
+#
+# Schema per subset entry (openspec/changes/add-data-subset-identification/tasks.md 1.1):
+#   slug          stable kebab-case identifier, never renamed once published
+#   title         display name
+#   type          derived | declared | curated | derived+curated
+#   owner         organisation or role accountable for the subset
+#   reserved      bool — does new or altered content in this entity's network of linked
+#                 resources risk conflicting with the subset's purpose?
+#                 Read-only use is ALWAYS unconstrained; `reserved` governs write intent
+#                 only (design.md D10).
+#   governance    one-line rationale for the `reserved` value
+#   provenance    who authored/submitted the entities (data provenance, not generation provenance)
+#   intended_use  what the subset is for
+#   relationships list of other subset slugs this subset relates to
+#   members       hand-seeded facts (declared/curated) or confirmed candidates
+#                 (derived+curated); empty for pure derived subsets, which are
+#                 recomputed on every run and never stored here
+#
+# SCOPE CONSTRAINT — administrative entities only
+#
+# Identifying data subsets is constrained to administrative resource types:
+#   Patient, RelatedPerson, Practitioner, PractitionerRole, Organization,
+#   HealthcareService, Location, Endpoint
+#
+# These are the scarce ones: their key identifiers and some core attributes are
+# allocated by Services Australia, and correspond to entities provisioned in the
+# HI Vendor Test Environment. The instances here map those records into FHIR and
+# may include some data enrichment, but generally need to stay aligned with the
+# corresponding entities in that environment — so an administrative entity
+# cannot simply be created or modified on demand within this project. They are
+# therefore the entities that may carry governance considerations, which is what
+# this wiki exists to identify and document.
+#
+# Clinical resources carry far less shared governance with external parties and
+# can be authored more freely, so tracking their subset membership is low value.
+# Where it is needed, clinical content is retrievable from the administrative
+# entity by FHIR mechanisms.
+#
+# ONE EXEMPTION: missing-suppressed-data (see its governance field).
+#
+# Declared entries additionally carry: source, source_revision
+#   source_revision is an OUTPUT, not a hand-set input (design.md D11): Declared sources are
+#   read at their current state on each generation, and the generation writes back the
+#   revision it read so a later drift report can name what changed.
+# Curated entries additionally carry: attester, confirmed_on (per member, or per subset)
+
+schema_version: 1
+
+subsets:
+
+  # --- Declared -------------------------------------------------------------
+
+  - slug: inferno-default-patients
+    title: Inferno AU Core test suite default patients
+    type: declared
+    owner: inferno_suite_generator maintainers
+    reserved: true
+    purpose: >
+      Identifies the patients the AU Core Inferno test kit uses as its default
+      patient set.
+    governance: >
+      The set is relied on to exercise every Must Support element in
+      combination. Adding to or modifying these patients or their linked
+      resources must preserve that coverage, and should be coordinated with
+      the test kit maintainers.
+    provenance: >
+      Stated by the Inferno test kit itself rather than decided here. The set
+      is intended to give full Must Support coverage, but that is an intent
+      rather than a guarantee — nothing verifies that it achieves full
+      coverage or that it is the smallest set that does.
+    relationships_note: >
+      Six of the seven members are also {au-ps-test-patients}, so a change
+      affecting one set very likely affects the other. A few are also {au-
+      core-ig-examples}.
+    identification: >
+      Declared, then drift-checked. The patient id list is read from the
+      inferno_suite_generator repository at its current revision on every
+      regeneration and compared against the list recorded here; any difference
+      is reported rather than silently overwritten.
+    source: inferno_suite_generator, lib/inferno_suite_generator/utils/helpers.rb,
+      method default_patient_ids_string (lines 217-219 at time of transcription)
+    source_revision: latest — tracks the current revision; written back by each
+      generation run with the revision actually read (design.md D11)
+    members:
+      - baratz-toni
+      - irvine-ronny-lawrence
+      - italia-sofia
+      - howe-deangelo
+      - hayes-arianne
+      - baby-banks-john
+      - banks-mia-leanne
+
+  - slug: au-ps-test-patients
+    title: AU Patient Summary test patients
+    type: declared
+    owner: HL7 AU Test Data project
+    reserved: true
+    purpose: >
+      Identifies the primary test patients for AU Patient Summary testing —
+      those for which the $summary operation can be invoked.
+    governance: >
+      Relied on for $summary operation testing. Adding to or modifying these
+      patients or their linked resources must preserve that coverage.
+    provenance: >
+      Declared by the AU PS Test Data Coverage page maintained by the project,
+      rather than derived from the data set.
+    relationships_note: >
+      Six of the seven members are also {inferno-default-patients}, so a
+      change affecting one set very likely affects the other.
+    identification: >
+      Declared. The patient list is transcribed from the AU PS Test Data
+      Coverage page and recorded here; the page is re-read on each
+      regeneration so that divergence can be reported.
+    source: https://confluence.hl7.org/spaces/HAFWG/pages/404097954/AU+PS+Test+Data+Coverage
+    source_revision: latest — tracks the current page state; written back by each
+      generation run with the revision or last-modified date read (design.md D11)
+    members:
+      - baby-banks-john
+      - banks-mia-leanne
+      - baratz-toni
+      - hayes-arianne
+      - howe-deangelo
+      - irvine-ronny-lawrence
+
+  - slug: connected-care-journeys
+    title: Connected Care consumer journeys
+    type: declared
+    owner: DoHAC
+    reserved: true
+    purpose: >
+      Identifies the entities belonging to the Connected Care consumer
+      journeys — Alex's Story and Yuri's Story.
+    governance: >
+      Each journey tells one patient's story end-to-end. Adding to or
+      modifying a member entity or its linked resources risks conflicting with that
+      story's clinical timeline, so coordination with DoHAC is required.
+    provenance: >
+      Alex's Story membership is declared by a data set document held
+      alongside the instances. Yuri's Story has no source document yet, so its
+      membership is the provisional remainder of the directory not claimed by
+      Alex's Story.
+    relationships_note: >
+      Members are geographically clustered — Kalgoorlie WA and Bathurst NSW —
+      but do not appear in {geography-groups}, which currently indexes only
+      the default branch.
+    identification: >
+      Declared, and read from a branch. These entities are not on the default
+      branch, so the derivation reads the connected-care branch directly and
+      partitions it using the Alex's Story document.
+    source: >
+      Alex's Story — au-fhir-test-data-set/connected-care/Alex Story Data Set.md,
+      on the connected-care branch (not on master).
+      Yuri's Story — no source document yet; membership is the provisional
+      remainder of the connected-care directory not claimed by Alex's Story.
+    source_revision: connected-care branch (upstream/connected-care, origin/review/connected-care)
+    members:
+      alex-story:
+        status: declared
+        note: Membership extracted from the source document by scripts/data-subsets/connected_care.py (task 4.4); not hand-seeded.
+      yuri-story:
+        status: provisional
+        note: >
+          Remainder of au-fhir-test-data-set/connected-care/ not claimed by
+          Alex's Story. Published as provisional per spec scenario "The
+          provisional Yuri's Story attribution is marked as such" until a
+          source document exists.
+
+  # --- Curated ----------------------------------------------------------------
+
+  - slug: smart-health-checks
+    title: Smart Health Checks
+    type: curated
+    owner: HL7 AU Test Data project
+    reserved: true
+    purpose: >
+      Identifies the entities used for Smart Health Checks demonstrators and
+      testing.
+    governance: >
+      These entities are relied on for Smart Health Checks demonstrators and
+      testing. Adding to or modifying them or their linked resources risks
+      changing what those demonstrators show, so it should be coordinated with
+      the project team.
+    provenance: >
+      Derived from Services Australia data mapped to FHIR, in common with the
+      rest of the au-core data set. Smart Health Checks work may use these
+      entities; data generated by that work is not currently contributed back
+      into this repository.
+    relationships_note: >
+      Its single member also appears in {families}. It carries no clinical data
+      here, so it is also a {blank-slate-patients} member — but Smart Health
+      Checks data generated against it lives outside this repository, so it is
+      less free of prior content than that listing suggests.
+    identification: >
+      Curated. Membership is stated by a maintainer in the facts file and
+      changes only when a maintainer adds or removes an entity.
+    attester: Kirsty Maunder
+    confirmed_on: 2026-08-31
+    members:
+      - ballantyne-kelvin-hans
+
+  - slug: sparked-cdg-journeys
+    title: Sparked Clinical Design Group consumer journeys
+    type: curated
+    owner: Sparked
+    reserved: false
+    purpose: >
+      Identifies the entities used in Sparked Clinical Design Group consumer
+      journeys, grouped by named journey.
+    governance: >
+      Journey membership does not reserve an entity. An entity used in a
+      journey may also appear in the corresponding IG project use case and be
+      progressed into a technical use case, so these entities are free to
+      build on.
+    provenance: >
+      Declared by the Sparked Clinical Design Group. Members are recorded as
+      resolved resource ids rather than display names so membership is
+      unambiguous.
+    relationships_note: >
+      Several members also appear in {scenario-groups}, and some are {au-ps-
+      ig-examples}.
+    identification: >
+      Curated. Journey membership is stated by Sparked and recorded in the
+      facts file; the AU Encounter Records journey additionally records each
+      participant's stated journey role alongside the specialty declared by
+      their PractitionerRole, because the two often differ.
+    attester: Shelley Behen
+    confirmed_on: 2026-08-31
+    members:
+      au-ps:
+        interstate-gp-visit:
+          - id: banks-jeramy-ezra
+            downstream_use: []   # Curated, manual entry — see task 1.3 / spec scenario "Downstream use of a journey entity is visible"
+        referral-to-specialist-and-allied-health:
+          - id: johnson-joyce
+            downstream_use: []
+          - id: burrows-ginger
+            downstream_use: []
+        emergency-hospital-attendance:
+          - id: morris-charlotte
+            downstream_use: []
+        hospital-to-aged-care-interstate-transfer:
+          - id: nielsen-eleanore
+            downstream_use: []
+        pre-operative-surgical:
+          - id: simpson-tristan
+            downstream_use: []
+      au-encounter-records:
+        # Journey value may be a plain list of members (as under au-ps above)
+        # or this richer mapping with `members` plus journey-level metadata.
+        chemotherapy-acute-admission-to-hith:
+          title: Chemotherapy — acute admission to HITH and outpatient care
+          attester: Stephanie Ong
+          confirmed_on: 2026-08-31
+          source: >
+            AU Encounter Records consumer journey care team diagram
+            (case scenario + care team panel).
+          case_scenario: >
+            Kendall presented for chemotherapy but was acutely unwell,
+            requiring inpatient admission and multidisciplinary treatment
+            before transitioning to Hospital in the Home and ongoing
+            outpatient care.
+          narrative_status: >
+            CARE TEAM ONLY. The 11 named individuals resolve to existing test
+            data, but the clinical narrative this journey describes —
+            chemotherapy, the acute inpatient admission, the HITH transition
+            and outpatient follow-up — does not exist as test data yet. No
+            chemotherapy or admission Encounter references Kendall.
+          conflicts:
+            # Building this journey means ADDING to an entity already
+            # committed elsewhere — precisely the write-intent hazard this
+            # wiki exists to surface (see the Reservation status requirement).
+            - entity: Patient/sandilands-kendall
+              note: >
+                Already carries unrelated clinical content: an ambulatory GP
+                visit (Encounter/gpvisit, SNOMED 866149003 "Annual visit"), a
+                pathology ServiceRequest (path-scenario-1) with two
+                eRequesting Tasks, and two Coverage resources. None of it
+                belongs to this chemotherapy journey. New journey content will
+                join that existing graph.
+          # journey_role is AUTHORITATIVE — it is what the consumer journey
+          # states. declared_specialty records what the test data's
+          # PractitionerRole actually says. Where they differ, `alignment`
+          # names the gap rather than silently preferring either one.
+          members:
+            - id: sandilands-kendall
+              journey_role: Patient (age 45)
+              resource: Patient/sandilands-kendall
+              practitioner_role: null
+              declared_specialty: null
+              alignment: not_applicable
+              downstream_use: []
+            - id: milgate-leisa
+              journey_role: Day Therapy Unit Nurse
+              resource: Practitioner/milgate-leisa
+              practitioner_role: PractitionerRole/registerednurses-milgate-leisa
+              declared_specialty: Registered Nurses nec
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: parker-elijah
+              journey_role: Physiotherapist
+              resource: Practitioner/parker-elijah
+              practitioner_role: PractitionerRole/physiotherapist-parker-elijah
+              declared_specialty: Physiotherapist
+              alignment: aligned
+              downstream_use: []
+            - id: mills-hope
+              journey_role: Occupational Therapist (OT)
+              resource: Practitioner/mills-hope
+              practitioner_role: PractitionerRole/mills-hope
+              declared_specialty: Occupational Therapist
+              alignment: aligned
+              downstream_use: []
+            - id: mcnab-angelina
+              journey_role: Inpatient Dietitian
+              resource: Practitioner/mcnab-angelina
+              practitioner_role: PractitionerRole/mcnab-angelina
+              declared_specialty: Dietitian
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: levings-richard
+              journey_role: Outpatient Dietitian
+              resource: Practitioner/levings-richard
+              practitioner_role: PractitionerRole/levings-richard
+              declared_specialty: Dietitian
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: lowe-abe
+              journey_role: General Practitioner (GP)
+              resource: Practitioner/lowe-abe
+              practitioner_role: PractitionerRole/generalpractitioner-lowe-abe
+              declared_specialty: General Practitioner
+              alignment: aligned
+              downstream_use: []
+            - id: roberts-benjamin
+              journey_role: Specialist Cancer Nurse
+              resource: Practitioner/roberts-benjamin
+              practitioner_role: PractitionerRole/registerednurses-roberts-benjamin
+              declared_specialty: Registered Nurses nec
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: sheppard-mathew
+              journey_role: Medical Oncologist
+              resource: Practitioner/sheppard-mathew
+              practitioner_role: PractitionerRole/medicaloncologist-sheppard-mathew
+              declared_specialty: Medical Oncologist
+              alignment: aligned
+              downstream_use: []
+            - id: lapthorn-leisa
+              journey_role: Inpatient Psychologist
+              resource: Practitioner/lapthorn-leisa
+              practitioner_role: PractitionerRole/lapthorn-leisa
+              declared_specialty: Clinical Psychologist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: vaughan-blaine
+              journey_role: Private Psychologist
+              resource: Practitioner/vaughan-blaine
+              practitioner_role: PractitionerRole/vaughan-blaine
+              declared_specialty: Clinical Psychologist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: medical-oncology-team
+              journey_role: Medical Oncology Team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching resource: the data set contains zero CareTeam
+                resources, and no Organization or HealthcareService named
+                "Medical Oncology Team" (the nearest are
+                bayview-heights-oncology-clinic and bucketty-oncology-clinic).
+              downstream_use: []
+            - id: hith-team
+              journey_role: Hospital-In-The-Home (HITH) team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching resource: no CareTeam resources exist, and nothing
+                in the data set is named for Hospital-in-the-Home.
+              downstream_use: []
+
+  # --- Derived + Curated ------------------------------------------------------
+  # `members` holds only human-confirmed entries, written back by the
+  # confirmation loop (task 4.7). Unconfirmed candidates live in the scripts'
+  # scratch output, never here.
+
+  - slug: community-contributions
+    title: Community contributions
+    type: derived+curated
+    owner: HL7 AU Test Data project
+    reserved: false
+    purpose: >
+      Identifies which community organisation contributed which entities.
+    governance: >
+      Attribution records origin only. It places no constraint on adding to or
+      modifying the contributed entities or their linked resources.
+    provenance: >
+      Attributed from the commit that introduced each file, cross-checked
+      against a human-attested list. Attribution is best-effort: a contributor
+      using a personal email address, or a merge that did not preserve
+      original authorship, is not detected, so the list is not exhaustive.
+    relationships_note: >
+      No notable relationships to other subsets.
+    identification: >
+      Derived from commit authorship, then cross-checked. The commit that
+      introduced each file is matched against recognised organisation email
+      domains, and the result is compared with an independently human-attested
+      list so that a disagreement is reported rather than an entity silently
+      dropping out.
+      (see spec scenario "The limits of git-based attribution are stated").
+    derivation_inputs:
+      domains:
+        - domain: digitalhealth.gov.au
+          organisation: ADHA (Australian Digital Health Agency)
+    human_attested:
+      # Entities a human has independently stated belong to an organisation's
+      # contributions. NOT overrides: the commit-authorship scan currently
+      # finds all of these unaided, so the list functions as a CROSS-CHECK on
+      # the derivation rather than a correction to it.
+      #
+      # Its value is early warning. If one of these files is later re-added by
+      # a maintainer in a way that loses the original authorship, the scan
+      # stops finding it and contributions.py reports the disagreement instead
+      # of the entity silently dropping out of the subset.
+      #
+      # An entity the scan genuinely cannot attribute can also be listed here;
+      # contributions.py reports those separately as attested-only.
+      - organisation: ADHA (Australian Digital Health Agency)
+        attester: Stephanie Ong
+        confirmed_on: 2026-08-31
+        note: >
+          All 12 are Organization resources representing HSP-O (Health
+          Service Provider - Organisation) and HAE (Healthcare Australia
+          Entity) example entities. Introduced together in commit 5727b6b
+          ("Examples of HSP-O and HAE organisations") by
+          richard.townleyoneill@digitalhealth.gov.au.
+        members:
+          - Organization-benalla-health-network
+          - Organization-cremorne-care-and-support
+          - Organization-curtain-care-and-support
+          - Organization-goondiwindi-health-network
+          - Organization-hayborough-care-and-support
+          - Organization-leeton-health-network
+          - Organization-menzies-health-network
+          - Organization-oxenford-care-and-support
+          - Organization-reid-health-network
+          - Organization-sorell-health-network
+          - Organization-south-lake-care-and-support
+          - Organization-tarneit-health-network
+    members: []   # populated by write-back once the initial confirmation run completes (task 7.1)
+
+  - slug: missing-suppressed-data
+    title: Missing and suppressed data examples
+    type: derived+curated
+    owner: HL7 AU Test Data project
+    reserved: true
+    purpose: >
+      Identifies the instances demonstrating the correct representation of
+      missing or suppressed data.
+    governance: >
+      Instances are deliberately shaped to demonstrate a specific
+      representation of absent data. Adding to or modifying their linked
+      resources risks misrepresenting what they demonstrate.
+    provenance: >
+      Drawn from the repository's own missing and suppressed data
+      documentation, extended by a keyword scan whose hits are individually
+      confirmed against the resource's actual content. This is the one subset
+      not restricted to administrative entities, because the property it
+      demonstrates attaches to an Observation exactly as it does to a Patient.
+    relationships_note: >
+      Some members are also {blank-slate-patients}.
+    identification: >
+      Derived from the documented cases, then extended by curation. Resource
+      ids are scanned for keywords such as missing, suppressed and masked, and
+      each hit is put to a human, who checks the resource actually carries a
+      data-absent-reason mechanism rather than matching the keyword by
+      coincidence.
+    derivation_inputs:
+      documented_sources:
+        - docs/MissingAndSuppressedData_TestData.md
+        - https://confluence.hl7.org/spaces/HAFWG/pages/413041838/Missing+Suppressed+Data+examples
+      keyword_scan:
+        - missing
+        - suppressed
+        - masked
+        - not-performed
+        - cancelled
+        - unknown
+        - dataabsentreason
+        - notasked
+        - empty
+    members: []   # populated by write-back once the initial confirmation run completes (task 7.1)
+
+  - slug: scenario-groups
+    title: Scenario groupings
+    type: curated
+    owner: HL7 AU Test Data project
+    reserved: false
+    purpose: >
+      Groups entities by the consumer-journey scenario they were originally
+      built for.
+    governance: >
+      Grouping identifies plausible co-location as a starting point for new
+      consumer journeys or test scenarios. Members are free to build on and
+      are not reserved to their originating scenario.
+    provenance: >
+      Seeded once from a historical directory structure that no longer exists
+      on the default branch, then maintained by curation. The originating git
+      ref is recorded for traceability but is no longer consulted.
+    relationships_note: >
+      Members are extensively represented in {geography-groups}, reflecting
+      that each scenario was built around a specific locality. Several members
+      also appear in {sparked-cdg-journeys}.
+    identification: >
+      Curated, seeded once. The groupings were extracted a single time from
+      the au-core/consumer-journey directory structure at a pinned git ref;
+      from that point the facts file is authoritative and the seed is not re-
+      run.
+    seed_source: >
+      au-core/consumer-journey/ directory structure at git ref
+      e2c24ca1eceac3e165df4a5fab7744af1146676f (7 scenario folders, 418 files).
+      Per design.md D5, this ref is recorded for traceability only and is not
+      re-read after the one-time seed extraction (task 4.3); the facts file
+      becomes authoritative for maintenance thereafter.
+    # The scenario folder names at the seed ref, verbatim (typo and all).
+    # These were previously recorded only as YAML comments beside each key
+    # below, which left them unreachable by the renderer — so the page showed
+    # normalised slugs instead of the names the scenarios are actually known
+    # by. slugify() is lossy (case, "&", spaces, punctuation), so the folder
+    # name cannot be reconstructed from the slug and has to be recorded.
+    scenario_titles:
+      ccm-aged-care-scenario-future: CCM_Aged care scenario - Future
+      ccm-scenario-drafted: CCM scenario - Drafted
+      family-scenario-w-baby-2-month-old: Family scenario w baby (2 month old)
+      first-nations-scenario: FIrst nations scenario
+      paeds-scenario-5yo: Paeds scenario (5yo)
+      rural-and-remote-scenario: Rural & remote scenario
+      young-adult-adolescent-scenario-19-20-yo: Young adult_adolescent scenario (19-20 yo)
+    # Seeded once from the pinned ref in `seed_source` above
+    # (scripts/data-subsets/scenarios.py, task 4.3). From here on this
+    # file is authoritative and the ref is traceability only (D5).
+    # Members are "ResourceType/id": bare ids are ambiguous, since every
+    # scenario contains an id shared by more than one resource type.
+    members:
+      # CCM_Aged care scenario - Future  (49 entities)
+      ccm-aged-care-scenario-future:
+        - Organization/adelaide-public-hospital
+        - Organization/royal-park-medical-centre
+        - Organization/semaphore-aged-care
+        - Organization/woodville-cardiology
+        - Organization/woodville-dental
+        - Organization/woodville-dietitian-service
+        - Organization/woodville-medical-clinic
+        - Organization/woodville-ot-services
+        - Organization/woodville-pathology
+        - Organization/woodville-pharmacy
+        - Organization/woodville-podiatry
+        - Organization/woodville-radiology
+        - Patient/reece-karen
+        - Practitioner/baker-troy
+        - Practitioner/baynton-lolita
+        - Practitioner/bell-rudolf
+        - Practitioner/berry-lisa
+        - Practitioner/carey-joyce
+        - Practitioner/couch-joel
+        - Practitioner/cruickshank-marlyn
+        - Practitioner/fleming-skye
+        - Practitioner/freeman-anya
+        - Practitioner/harley-reynalda
+        - Practitioner/hoskins-earl
+        - Practitioner/huddlestone-velda
+        - Practitioner/hutton-cortez
+        - Practitioner/lawrence-drew
+        - Practitioner/manning-opal
+        - Practitioner/rowlands-donya
+        - Practitioner/tierney-gisela
+        - Practitioner/vaughan-sol
+        - PractitionerRole/baker-troy
+        - PractitionerRole/baynton-lolita
+        - PractitionerRole/bell-rudolf
+        - PractitionerRole/berry-lisa
+        - PractitionerRole/carey-joyce
+        - PractitionerRole/couch-joel
+        - PractitionerRole/cruickshank-marlyn
+        - PractitionerRole/fleming-skye
+        - PractitionerRole/freeman-anya
+        - PractitionerRole/harley-reynalda
+        - PractitionerRole/hoskins-earl
+        - PractitionerRole/huddlestone-velda
+        - PractitionerRole/hutton-cortez
+        - PractitionerRole/lawrence-drew
+        - PractitionerRole/manning-opal
+        - PractitionerRole/rowlands-donya
+        - PractitionerRole/tierney-gisela
+        - PractitionerRole/vaughan-sol
+      # CCM scenario - Drafted  (44 entities)
+      ccm-scenario-drafted:
+        - Organization/sunshine-cardiology
+        - Organization/sunshine-endocrinology
+        - Organization/sunshine-medical-centre
+        - Organization/sunshine-medical-clinic
+        - Organization/sunshine-nephrology
+        - Organization/sunshine-ophthalmology
+        - Organization/sunshine-optical
+        - Organization/sunshine-pathology
+        - Organization/sunshine-pharmacy
+        - Organization/sunshine-physiotherapy
+        - Organization/sunshine-radiology
+        - Patient/foreman-caterina
+        - Practitioner/bond-edmundo
+        - Practitioner/bowyer-norbert
+        - Practitioner/fuller-kendrick
+        - Practitioner/hallan-maggie
+        - Practitioner/hamel-opal
+        - Practitioner/kelly-arlene
+        - Practitioner/keyes-chau
+        - Practitioner/mcnaughton-opal
+        - Practitioner/mullins-bonita
+        - Practitioner/osland-deanne
+        - Practitioner/patterson-teri
+        - Practitioner/phillips-gerard
+        - Practitioner/quinn-jeramy
+        - Practitioner/schaefer-elden
+        - Practitioner/sharp-cherish
+        - Practitioner/vaughan-blaine
+        - PractitionerRole/bond-edmundo
+        - PractitionerRole/bowyer-norbert
+        - PractitionerRole/fuller-kendrick
+        - PractitionerRole/hallan-maggie
+        - PractitionerRole/hamel-opal
+        - PractitionerRole/kelly-arlene
+        - PractitionerRole/keyes-chau
+        - PractitionerRole/mcnaughton-opal
+        - PractitionerRole/mullins-bonita
+        - PractitionerRole/osland-deanne
+        - PractitionerRole/patterson-teri
+        - PractitionerRole/phillips-gerard
+        - PractitionerRole/quinn-jeramy
+        - PractitionerRole/schaefer-elden
+        - PractitionerRole/sharp-cherish
+        - PractitionerRole/vaughan-blaine
+      # Family scenario w baby (2 month old)  (98 entities)
+      family-scenario-w-baby-2-month-old:
+        - Organization/parramatta-community-health
+        - Organization/parramatta-dental
+        - Organization/parramatta-medical-clinic
+        - Organization/parramatta-midwifery
+        - Organization/parramatta-nutrition
+        - Organization/parramatta-public-hospital
+        - Organization/parramatta-specialist-clinic
+        - Organization/westmead-medical-clinic
+        - Organization/westmead-optical
+        - Organization/westmead-ot-services
+        - Organization/westmead-pathology
+        - Organization/westmead-pharmacy
+        - Organization/westmead-physiotherapy
+        - Organization/westmead-public-hospital
+        - Organization/westmead-radiology
+        - Organization/westmead-specialist-clinic
+        - Patient/lowe-alessandra
+        - Patient/lowe-alix
+        - Patient/lowe-cedric
+        - Patient/lowe-valerie
+        - Practitioner/berridge-beulah
+        - Practitioner/breadmore-phillip
+        - Practitioner/cox-sandra
+        - Practitioner/dawson-kent
+        - Practitioner/duncan-xenia
+        - Practitioner/ellison-abby
+        - Practitioner/ewing-jude
+        - Practitioner/fleming-kitty
+        - Practitioner/frank-gaylene
+        - Practitioner/fuller-christeen
+        - Practitioner/goodwin-rae
+        - Practitioner/hamilton-errol
+        - Practitioner/healey-tamiko
+        - Practitioner/howe-elden
+        - Practitioner/knowles-sunshine
+        - Practitioner/lapthorn-leisa
+        - Practitioner/little-jerrie
+        - Practitioner/macey-brant
+        - Practitioner/mcbean-nicollette
+        - Practitioner/mcintosh-angelica
+        - Practitioner/mcnab-angelina
+        - Practitioner/mills-hope
+        - Practitioner/nairn-vince
+        - Practitioner/neville-isaiah
+        - Practitioner/nutley-bradley
+        - Practitioner/ohalloran-sheryl
+        - Practitioner/osmond-michele
+        - Practitioner/perkins-amee
+        - Practitioner/redman-mariah
+        - Practitioner/roche-garfield
+        - Practitioner/seaby-penelope
+        - Practitioner/stephens-nellie
+        - Practitioner/tate-melvin
+        - PractitionerRole/berridge-beulah
+        - PractitionerRole/breadmore-phillip
+        - PractitionerRole/cox-sandra
+        - PractitionerRole/dawson-kent
+        - PractitionerRole/duncan-xenia
+        - PractitionerRole/ellison-abby
+        - PractitionerRole/ewing-jude
+        - PractitionerRole/fleming-kitty
+        - PractitionerRole/frank-gaylene
+        - PractitionerRole/fuller-christeen
+        - PractitionerRole/goodwin-rae
+        - PractitionerRole/hamilton-errol
+        - PractitionerRole/healey-tamiko
+        - PractitionerRole/howe-elden
+        - PractitionerRole/knowles-sunshine
+        - PractitionerRole/lapthorn-leisa
+        - PractitionerRole/little-jerrie
+        - PractitionerRole/macey-brant
+        - PractitionerRole/mcbean-nicollette
+        - PractitionerRole/mcintosh-angelica
+        - PractitionerRole/mcnab-angelina
+        - PractitionerRole/mills-hope
+        - PractitionerRole/nairn-vince
+        - PractitionerRole/neville-isaiah
+        - PractitionerRole/nutley-bradley
+        - PractitionerRole/ohalloran-sheryl
+        - PractitionerRole/osmond-michele
+        - PractitionerRole/perkins-amee
+        - PractitionerRole/redman-mariah
+        - PractitionerRole/roche-garfield
+        - PractitionerRole/seaby-penelope
+        - PractitionerRole/stephens-nellie
+        - PractitionerRole/tate-melvin
+        - RelatedPerson/lowe-alessandra-1
+        - RelatedPerson/lowe-alessandra-2
+        - RelatedPerson/lowe-alessandra-3
+        - RelatedPerson/lowe-alix-1
+        - RelatedPerson/lowe-alix-2
+        - RelatedPerson/lowe-alix-3
+        - RelatedPerson/lowe-cedric-1
+        - RelatedPerson/lowe-cedric-2
+        - RelatedPerson/lowe-cedric-3
+        - RelatedPerson/lowe-valerie-1
+        - RelatedPerson/lowe-valerie-2
+        - RelatedPerson/lowe-valerie-3
+      # FIrst nations scenario  (51 entities)
+      first-nations-scenario:
+        - Organization/broome-community-health
+        - Organization/broome-medical-clinic
+        - Organization/broome-nutrition
+        - Organization/broome-optometry
+        - Organization/broome-ot-services
+        - Organization/broome-physiology
+        - Organization/broome-physiotherapy
+        - Organization/broome-podiatry
+        - Organization/broome-psychology
+        - Organization/broome-specialist-clinic
+        - Patient/coombe-ross
+        - Practitioner/allardice-della
+        - Practitioner/baratz-layla
+        - Practitioner/bassett-elmer
+        - Practitioner/butler-cheryl
+        - Practitioner/clapham-laurie
+        - Practitioner/davies-keiko
+        - Practitioner/devine-frank
+        - Practitioner/gates-anton
+        - Practitioner/giles-veronique
+        - Practitioner/goldsmith-monique
+        - Practitioner/hackett-norman
+        - Practitioner/hodges-julia
+        - Practitioner/horn-wes
+        - Practitioner/ibbotson-destiny
+        - Practitioner/lowry-bennett
+        - Practitioner/moran-linoel
+        - Practitioner/patrick-thalia
+        - Practitioner/poulson-lisa
+        - Practitioner/simmons-ashton
+        - Practitioner/thorburn-juanita
+        - PractitionerRole/allardice-della
+        - PractitionerRole/baratz-layla
+        - PractitionerRole/bassett-elmer
+        - PractitionerRole/butler-cheryl
+        - PractitionerRole/clapham-laurie
+        - PractitionerRole/davies-keiko
+        - PractitionerRole/devine-frank
+        - PractitionerRole/gates-anton
+        - PractitionerRole/giles-veronique
+        - PractitionerRole/goldsmith-monique
+        - PractitionerRole/hackett-norman
+        - PractitionerRole/hodges-julia
+        - PractitionerRole/horn-wes
+        - PractitionerRole/ibbotson-destiny
+        - PractitionerRole/lowry-bennett
+        - PractitionerRole/moran-linoel
+        - PractitionerRole/patrick-thalia
+        - PractitionerRole/poulson-lisa
+        - PractitionerRole/simmons-ashton
+        - PractitionerRole/thorburn-juanita
+      # Paeds scenario (5yo)  (56 entities)
+      paeds-scenario-5yo:
+        - Organization/garran-cardiology-clinic
+        - Organization/garran-dental
+        - Organization/garran-medical-clinic
+        - Organization/garran-nephrology
+        - Organization/garran-nutrition
+        - Organization/garran-ophthalmology
+        - Organization/garran-optical
+        - Organization/garran-ot-services
+        - Organization/garran-pathology
+        - Organization/garran-pharmacy
+        - Organization/garran-physiotherapy
+        - Organization/garran-radiology
+        - Organization/manuka-medical-centre
+        - Patient/hennessy-billy
+        - Patient/hennessy-jenny
+        - Patient/hennessy-kacey
+        - Practitioner/allerton-skye
+        - Practitioner/bennett-tawnya
+        - Practitioner/colliss-jocelyn
+        - Practitioner/harris-stephan
+        - Practitioner/harrower-austin
+        - Practitioner/harwood-kathaleen
+        - Practitioner/henderson-elaine
+        - Practitioner/humphreys-christeen
+        - Practitioner/krug-chas
+        - Practitioner/levings-richard
+        - Practitioner/mackenzie-wilbur
+        - Practitioner/maxwell-israel
+        - Practitioner/murphy-kyla
+        - Practitioner/newling-mariella
+        - Practitioner/patrick-tricia
+        - Practitioner/sawtell-tomasa
+        - Practitioner/short-tandra
+        - PractitionerRole/allerton-skye
+        - PractitionerRole/bennett-tawnya
+        - PractitionerRole/colliss-jocelyn
+        - PractitionerRole/harris-stephan
+        - PractitionerRole/harrower-austin
+        - PractitionerRole/harwood-kathaleen
+        - PractitionerRole/henderson-elaine
+        - PractitionerRole/humphreys-christeen
+        - PractitionerRole/krug-chas
+        - PractitionerRole/levings-richard
+        - PractitionerRole/mackenzie-wilbur
+        - PractitionerRole/maxwell-israel
+        - PractitionerRole/murphy-kyla
+        - PractitionerRole/newling-mariella
+        - PractitionerRole/patrick-tricia
+        - PractitionerRole/sawtell-tomasa
+        - PractitionerRole/short-tandra
+        - RelatedPerson/hennessy-billy-1
+        - RelatedPerson/hennessy-billy-2
+        - RelatedPerson/hennessy-jenny-1
+        - RelatedPerson/hennessy-jenny-2
+        - RelatedPerson/hennessy-kacey-1
+        - RelatedPerson/hennessy-kacey-2
+      # Rural & remote scenario  (74 entities)
+      rural-and-remote-scenario:
+        - Organization/camooweal-community-health
+        - Organization/camooweal-pharmacy
+        - Organization/herston-pathology
+        - Organization/herston-public-hospital
+        - Organization/herston-radiology
+        - Organization/mt-isa-community-health
+        - Organization/mt-isa-dental
+        - Organization/mt-isa-medical-clinic
+        - Organization/mt-isa-ot-services
+        - Organization/mt-isa-pathology
+        - Organization/mt-isa-pharmacy
+        - Organization/mt-isa-physiotherapy
+        - Organization/mt-isa-psychology
+        - Organization/mt-isa-specialist-clinic
+        - Organization/townsville-medical-clinic
+        - Organization/townsville-public-hospital
+        - Organization/townsville-specialist-clinic
+        - Patient/mclennan-karl
+        - Practitioner/bailey-buck
+        - Practitioner/barrett-kirstie
+        - Practitioner/bowden-hiroko
+        - Practitioner/gaynor-jasper
+        - Practitioner/greenhill-edmond
+        - Practitioner/haywood-dot
+        - Practitioner/hipwood-fatimah
+        - Practitioner/hobden-mark
+        - Practitioner/hodge-irving
+        - Practitioner/irwin-corinna
+        - Practitioner/jeffery-herman
+        - Practitioner/jeffery-nicolas
+        - Practitioner/jeffery-sammy
+        - Practitioner/livingstone-yvonne
+        - Practitioner/lyons-shay
+        - Practitioner/mccormack-gertie
+        - Practitioner/mcintyre-hsiu
+        - Practitioner/mclean-brenda
+        - Practitioner/mills-kim
+        - Practitioner/murray-xenia
+        - Practitioner/oritz-philomena
+        - Practitioner/osborne-buster
+        - Practitioner/pearce-teresa
+        - Practitioner/potts-xuan
+        - Practitioner/pratt-colleen
+        - Practitioner/randall-anthony
+        - Practitioner/robbins-wilhelmina
+        - Practitioner/sherry-dean
+        - PractitionerRole/bailey-buck
+        - PractitionerRole/barrett-kirstie
+        - PractitionerRole/bowden-hiroko
+        - PractitionerRole/gaynor-jasper
+        - PractitionerRole/greenhill-edmond
+        - PractitionerRole/haywood-dot
+        - PractitionerRole/hipwood-fatimah
+        - PractitionerRole/hobden-mark
+        - PractitionerRole/hodge-irving
+        - PractitionerRole/irwin-corinna
+        - PractitionerRole/jeffery-herman
+        - PractitionerRole/jeffery-nicolas
+        - PractitionerRole/jeffery-sammy
+        - PractitionerRole/livingstone-yvonne
+        - PractitionerRole/lyons-shay
+        - PractitionerRole/mccormack-gertie
+        - PractitionerRole/mcintyre-hsiu
+        - PractitionerRole/mclean-brenda
+        - PractitionerRole/mills-kim
+        - PractitionerRole/murray-xenia
+        - PractitionerRole/oritz-philomena
+        - PractitionerRole/osborne-buster
+        - PractitionerRole/pearce-teresa
+        - PractitionerRole/potts-xuan
+        - PractitionerRole/pratt-colleen
+        - PractitionerRole/randall-anthony
+        - PractitionerRole/robbins-wilhelmina
+        - PractitionerRole/sherry-dean
+      # Young adult_adolescent scenario (19-20 yo)  (46 entities)
+      young-adult-adolescent-scenario-19-20-yo:
+        - Organization/melbourne-specialist-clinic
+        - Organization/southbank-medical-clinic
+        - Organization/southbank-specialist-clinic
+        - Organization/southbank-speech-pathology
+        - Organization/st-kilda-medical-clinic
+        - Organization/st-kilda-ot-services
+        - Organization/st-kilda-physiology
+        - Organization/st-kilda-physiotherapy
+        - Organization/st-kilda-psychology
+        - Patient/vaughan-seymour
+        - Practitioner/alcock-devon
+        - Practitioner/blackwood-ella
+        - Practitioner/dempsey-carli
+        - Practitioner/egan-anja
+        - Practitioner/findley-betty
+        - Practitioner/frankel-caroline
+        - Practitioner/greene-delores
+        - Practitioner/hatcher-merrill
+        - Practitioner/higgs-allegra
+        - Practitioner/hilton-della
+        - Practitioner/joyce-mae
+        - Practitioner/keith-margot
+        - Practitioner/laing-malinda
+        - Practitioner/mckane-eugena
+        - Practitioner/mullin-kenny
+        - Practitioner/murray-ashli
+        - Practitioner/rodd-illa
+        - Practitioner/shephard-vern
+        - PractitionerRole/alcock-devon
+        - PractitionerRole/blackwood-ella
+        - PractitionerRole/dempsey-carli
+        - PractitionerRole/egan-anja
+        - PractitionerRole/findley-betty
+        - PractitionerRole/frankel-caroline
+        - PractitionerRole/greene-delores
+        - PractitionerRole/hatcher-merrill
+        - PractitionerRole/higgs-allegra
+        - PractitionerRole/hilton-della
+        - PractitionerRole/joyce-mae
+        - PractitionerRole/keith-margot
+        - PractitionerRole/laing-malinda
+        - PractitionerRole/mckane-eugena
+        - PractitionerRole/mullin-kenny
+        - PractitionerRole/murray-ashli
+        - PractitionerRole/rodd-illa
+        - PractitionerRole/shephard-vern
+
+  - slug: geography-groups
+    title: Geographic groupings
+    type: derived+curated
+    owner: HL7 AU Test Data project
+    reserved: false
+    purpose: >
+      Proposes groupings of entities that are plausibly co-located, as a
+      starting point for constructing new consumer journeys.
+    governance: >
+      Grouping identifies plausible co-location only. Members are free to
+      build on and are not reserved to their originating group.
+    provenance: >
+      Proposed by a script from address data and confirmed by a human. Best-
+      effort by design: postcode proximity is a weak proxy, and there are no
+      coordinates anywhere in the data set to check real distance against.
+    relationships_note: >
+      {scenario-groups} draw heavily on the same entities, since each scenario
+      was built around a specific locality.
+    identification: >
+      Derived, then confirmed by a human. Metro entities group by capital
+      city; regional entities group by three-digit postcode bucket, widened to
+      buckets whose third digit differs by one. Each grouping is then expanded
+      by reverse reference to pull in the HealthcareServices and
+      PractitionerRoles attached to its organisations, locations and
+      practitioners. Every proposal is put to a human with its full suburb
+      list, which stands in for the distance check the data cannot support.
+    derivation_inputs:
+      # Australian postcodes are NOT spatially ordered. Within a capital they
+      # were allocated by delivery-office history, so numerically distant codes
+      # can be adjacent suburbs (Southbank 3006 / St Kilda 3182, ~6km) and
+      # numerically close ones can be far apart. No arithmetic on the digits
+      # captures proximity, so the rule differs by density:
+      #
+      #   metro    -> one group per capital city (everything within a capital
+      #               is plausibly co-located, ~50km worst case)
+      #   regional -> 3-digit postcode bucket, windowed to include buckets
+      #               whose 3rd digit is +/-1, within the same 2-digit prefix
+      #
+      # These ranges are a curated judgement and must stay TIGHT. A first pass
+      # used 0800-0899 for Darwin, which wrongly swept in 0872 — one of the
+      # largest postcodes on earth, covering remote Central Australia (Alice
+      # Springs, Areyonga, Docker River, Papunya; ~700km across, ~1500km from
+      # Darwin). Broad ranges silently turn remote regions into "metro".
+      metro_postcode_ranges:
+        attester: Stephanie Ong
+        confirmed_on: 2026-08-31
+        cities:
+          - city: Sydney
+            ranges: [[1000, 2234]]
+          - city: Canberra
+            ranges: [[2600, 2618], [2900, 2920]]
+          - city: Melbourne
+            ranges: [[3000, 3207], [8000, 8999]]
+          - city: Brisbane
+            ranges: [[4000, 4207], [9000, 9999]]
+          - city: Adelaide
+            ranges: [[5000, 5199]]
+          - city: Perth
+            ranges: [[6000, 6199]]
+          - city: Hobart
+            ranges: [[7000, 7053]]
+          - city: Darwin
+            ranges: [[800, 832]]
+      known_limitations:
+        # Recorded so a reviewer knows what the rule cannot catch, and why the
+        # suburb list on every candidate is load-bearing rather than decorative.
+        - >
+          Regional windows can still span great distances where postcodes cover
+          vast areas. Buckets 481 (Townsville 4810, Annandale 4814) and 482
+          (Mount Isa 4825, Camooweal 4828) are +/-1 adjacent so they merge, but
+          Townsville to Mount Isa is ~900km. No postcode rule fixes this; the
+          suburb list makes it visible to whoever confirms.
+        - >
+          There are no coordinates anywhere in the data set (no
+          Location.position, no geolocation extensions), so an automated
+          distance check is not possible without bundling an external dataset.
+          Deliberately deferred: the human confirmation step is the safety net.
+    members: []   # populated by write-back once confirmed (task 4.5, 4.7)
+
+  - slug: families
+    title: Families
+    type: derived+curated
+    owner: HL7 AU Test Data project
+    reserved: false
+    purpose: >
+      Identifies entities that constitute a family, for constructing consumer
+      journeys involving related patients.
+    governance: >
+      Grouping identifies plausible family relationships. Members are free to
+      build on and are not reserved to their originating group.
+    provenance: >
+      Proposed by a script from two independent signals and confirmed by a
+      human. Where a candidate can be neither confirmed nor rejected because
+      the evidence that would settle it is unavailable, it is recorded as
+      potentially related rather than forced into a binary.
+    relationships_note: >
+      Most members currently have no clinical data, so they are also {blank-
+      slate-patients}.
+    identification: >
+      Derived from two primary signals, then confirmed by a human. A shared
+      Medicare card is the strongest: the card number is shared by a family
+      and only the final individual reference number differs. The
+      RelatedPerson network is the second, giving an explicit relationship
+      code. Neither subsumes the other — a newborn not yet on the card is
+      found only by the RelatedPerson network — so both are applied and
+      combined. Matching surname or address is used only to propose further
+      candidates for review.
+    members: []   # populated by write-back once confirmed (task 4.6, 4.7)
+
+  # --- Derived ------------------------------------------------------------
+  # No `members` — these are recomputed fresh on every regeneration by the
+  # named script and never persisted here.
+
+  - slug: au-core-ig-examples
+    title: AU Core IG example entities
+    type: derived
+    owner: AU Core IG authors
+    reserved: true
+    purpose: >
+      Identifies the administrative entities and resources used in the AU Core
+      IG examples.
+    governance: >
+      Published IG examples must not be modified, added to, or removed without
+      coordination with and approval from the IG authors.
+    provenance: >
+      Generally derived from Services Australia data mapped to FHIR, with some
+      data enrichment and subsequent curation for the AU Core IG examples.
+      Some mapped data has been stripped to focus the examples on
+      demonstrating support for Must Support elements. The examples are
+      illustrative, not normative or fully representative of real-world data.
+    relationships_note: >
+      Some members are also included in the {inferno-default-patients} subset.
+    identification: >
+      Derived automatically. Each entity in this data set is matched against
+      the example set published in the AU Core IG repository under
+      input/examples/. Matching is on resource identity — resource id, or
+      business identifier where the ids differ — never on content, because IG
+      examples are published with some Services Australia identifier data
+      stripped.
+    source: hl7au/au-fhir-core, input/examples/
+    derived_by: scripts/data-subsets/ig_examples.py (task 3.3)
+
+  - slug: au-ps-ig-examples
+    title: AU Patient Summary IG example entities
+    type: derived
+    owner: AU Patient Summary IG authors
+    reserved: true
+    purpose: >
+      Identifies the administrative entities used in the AU Patient Summary IG
+      examples.
+    governance: >
+      Published IG examples must not be modified, added to, or removed without
+      coordination with and approval from the IG authors.
+    provenance: >
+      Generally derived from Services Australia data mapped to FHIR, with some
+      data enrichment and subsequent curation for the AU PS IG examples. The
+      examples are illustrative, not normative or fully representative of
+      real-world data.
+    relationships_note: >
+      A small number of members are also {au-core-ig-examples}.
+    identification: >
+      Derived automatically. AU PS examples are document Bundles rather than
+      one resource per file, so entities are extracted from Bundle.entry and
+      matched back to this data set on business identifier — resource ids
+      inside a Bundle are not reliable keys.
+    source: hl7au/au-fhir-ps, input/examples/ (Bundle.entry, matched by business identifier)
+    derived_by: scripts/data-subsets/ig_examples.py (task 3.4)
+
+  - slug: au-erequesting-ig-examples
+    title: AU eRequesting IG example entities
+    type: derived
+    owner: AU eRequesting IG authors
+    reserved: true
+    purpose: >
+      Identifies the administrative entities used in the AU eRequesting IG
+      examples.
+    governance: >
+      Published IG examples must not be modified, added to, or removed without
+      coordination with and approval from the IG authors.
+    provenance: >
+      Generally derived from Services Australia data mapped to FHIR, with some
+      data enrichment and subsequent curation for the AU eRequesting IG
+      examples. The examples are illustrative, not normative or fully
+      representative of real-world data.
+    relationships_note: >
+      No notable relationships to other subsets.
+    identification: >
+      Derived automatically, on the same basis as the AU Core IG examples —
+      matched against input/examples/ in the AU eRequesting IG repository on
+      resource identity rather than content. This IG also ships Bundles, whose
+      entries are extracted and matched on business identifier.
+    source: hl7au/au-fhir-erequesting, input/examples/
+    derived_by: scripts/data-subsets/ig_examples.py (task 3.3)
+
+  - slug: blank-slate-patients
+    title: Blank-slate patients
+    type: derived
+    owner: HL7 AU Test Data project
+    reserved: false
+    purpose: >
+      Identifies patients with no clinical data, so they can be selected for a
+      new consumer journey without pre-existing content conflicting.
+    governance: >
+      The purpose of this subset is to identify patients that are free to
+      build on. Adding clinical data to a member simply removes it from the
+      subset on the next regeneration.
+    provenance: >
+      Computed from the data set on every regeneration rather than recorded.
+      Membership therefore changes automatically as clinical data is added.
+    relationships_note: >
+      Many members also appear in {families}, and some are {missing-
+      suppressed-data} instances.
+    identification: >
+      Derived automatically. A patient is a member when no clinical resource
+      in the data set references it as subject. Administrative links such as
+      RelatedPerson or Coverage do not count, because they record no clinical
+      fact for new content to conflict with.
+    derived_by: scripts/data-subsets/blank_slate_patients.py (task 3.1)

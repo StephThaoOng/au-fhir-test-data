@@ -1,0 +1,57 @@
+schema: spec-driven
+
+context: |
+  Project: HL7 AU FHIR Test Data (hl7au/au-fhir-test-data).
+  A repository of synthetic (realistic but not real) FHIR R4 resource instances
+  for testing against HL7 AU FHIR Implementation Guides. Not a software project — the
+  "product" is the data set plus the documentation and tooling around it.
+
+  Data layout — JSON instances, one resource per file, under au-fhir-test-data-set/:
+    au-base/             AU Base examples
+    au-core/             AU Core examples (~1,479 files); some shared with eRequesting,
+                         distinguished by an additional meta.profile. Includes the
+                         missing-data and suppressed-data test cases.
+    au-erequesting/      AU eRequesting specific examples
+    au-patient-summary/  AU Patient Summary document Bundle examples
+    connected-care/      Connected Care journeys — on the connected-care branch only,
+                         not on master
+
+  Conventions:
+    - Filename is `{ResourceType}-{id}.json` and must match the resource's own id.
+    - Individual-person resource ids follow `{family}-{given}`, lowercase, hyphen-joined
+      (e.g. Practitioner-baldwin-chi.json). Some ids carry a role or scenario prefix
+      (e.g. PractitionerRole-generalpractitioner-packham-delores.json).
+    - Referential integrity across the whole data set is enforced in CI by
+      .github/scripts/reference_integrity.py; every Reference.reference must resolve.
+    - Profile conformance is validated with the Java FHIR validator CLI or Validodo.
+      Default target: the IG/profile declared in the resource's meta.profile. 
+      An explicit -ig can be supplied to validate against a different IG.
+
+  Synthetic-data constraints that must never be weakened (see docs/README.md):
+    - No personal or sensitive information. All persons and health data are fictional.
+    - Phone numbers come from the ACMA reserved set; email domains are reserved
+      documentation domains; ABNs are intentionally invalid.
+    - IHI, HPI-I and HPI-O values are Services Australia test-environment identifiers.
+    - Medicare, DVA and provider numbers are NOT reserved for testing — treat with care.
+
+  Upstream and fork:
+    - upstream = github.com/hl7au/au-fhir-test-data (master is the default branch)
+    - origin   = github.com/StephThaoOng/au-fhir-test-data (a fork)
+    - Planning artifacts, tooling and skills are committed to the fork only.
+      Generated documentation is proposed upstream only when explicitly promoted.
+
+rules:
+  specs:
+    - Every requirement must state how it is mechanically satisfied, not only what is
+      wanted. Prefer naming a file, a git ref, a field path, or a query.
+    - Every requirement must have at least one acceptance criterion that can be checked
+      against a produced artifact. Never leave an acceptance criterion blank.
+    - Keep facts (lists of resource ids, filenames, patient names) out of requirements.
+      A requirement names the mechanism; the data itself belongs in a facts file.
+    - State unresolved items as explicitly blocked scope with the blocker named. Never
+      write an unanswered question as an unchecked requirement.
+  design:
+    - Record the decisions and their reasons, and the table of sources of truth. 
+      Do not restate the requirements.
+  proposal:
+    - Say what changes and why. Always include a "Non-goals" section.
