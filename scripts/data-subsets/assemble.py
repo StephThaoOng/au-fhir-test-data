@@ -392,12 +392,36 @@ def build_reservation_index(resolved: dict[str, list[dict]],
     return index
 
 
+# Suppressed entirely as overlap TARGETS — both reserved: false, and every
+# appearance to date has been (free to build on) noise rather than a
+# reservation conflict (geography-groups: 1022 members, blank-slate-patients:
+# a similarly broad share). Does not affect these subsets' own sections,
+# where their members still show overlaps into OTHER subsets normally.
+SUPPRESSED_OVERLAP_TARGETS = {"geography-groups", "blank-slate-patients"}
+
+# Reservation status not yet reconfirmed for cross-reference purposes.
+# Display-only (D20): each subset's own governance section is unchanged;
+# only a MENTION of one of these from another entity's overlap note reads
+# "(maybe reserved — TBD)" instead of asserting reserved/free-to-build-on.
+# Does not reopen D9's reusable-journeys argument for sparked-cdg-journeys /
+# scenario-groups — D9 stands; this is a pending reconfirmation, not a
+# reversal.
+RESERVATION_TBD_TARGETS = {
+    "inferno-default-patients", "au-ps-test-patients", "smart-health-checks",
+    "sparked-cdg-journeys", "connected-care-journeys", "scenario-groups",
+}
+
+
 def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
-    others = [(s, r) for s, r in res_index.get(key, []) if s != current_slug]
+    others = [(s, r) for s, r in res_index.get(key, []) if s != current_slug
+              and s not in SUPPRESSED_OVERLAP_TARGETS]
     if not others:
         return None
-    parts = [f"[{s}](#{s}) ({'reserved' if r else 'free to build on'})"
-            for s, r in sorted(set(others))]
+    parts = []
+    for s, r in sorted(set(others)):
+        label = ("maybe reserved — TBD" if s in RESERVATION_TBD_TARGETS
+                 else "reserved" if r else "free to build on")
+        parts.append(f"[{s}](#{s}) ({label})")
     return "also in: " + ", ".join(parts)
 
 

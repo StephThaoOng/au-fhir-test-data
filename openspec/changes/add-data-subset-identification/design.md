@@ -325,6 +325,28 @@ The general rule: each of the five sections answers a different question, so a
 fact stated in the section that does not own it is duplication, and duplication
 crowds out the content that section was supposed to carry.
 
+### D20. Cross-reference reservation status shown as TBD for six subsets pending review
+
+Inferno default patients, AU PS test patients, Smart Health Checks, Sparked
+CDG journeys, Connected Care journeys and Scenario groupings each state a
+reservation verdict in their own governance section. That verdict is not yet
+reconfirmed for the separate purpose of flagging a conflict on another
+entity's cross-reference — so where one of these six is *named* in another
+entity's "also in:" note, the page shows "(maybe reserved — TBD)" rather than
+asserting reserved or free-to-build-on, pending that review.
+
+Display-only, scoped to `overlap_note()` in `scripts/data-subsets/assemble.py`.
+Does not change `reserved` in `subsets.yaml`, does not alter any subset's own
+governance section, and does not reopen D9's argument that CDG journey
+entities are reusable — D9's reasoning stands; the TBD label reflects only
+that its cross-reference use specifically has not yet been reconfirmed.
+
+Two subsets outside this list, geography-groups and blank-slate-patients, are
+instead suppressed entirely as overlap targets: both are `reserved: false`
+with no exceptions, and every appearance to date has been free-to-build-on
+noise rather than a reservation signal, so naming them added nothing a reader
+needed to see.
+
 ## Sources of truth
 
 | Subset | Type | Source of truth |
