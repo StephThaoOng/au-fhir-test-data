@@ -396,6 +396,40 @@ are now collapsed in a `<details>` block rather than always-visible
 blockquote text, for the same reason `<details>` is used everywhere else on
 the page: useful to a reviewer, not needed to read the section.
 
+### D24. A subset may state what it reserves, never that its entities are free
+
+A subset's governance may say whether *its own* membership reserves an
+entity. It may not conclude that its entities are therefore free to build
+on: reservation is a property of an entity across all of its memberships,
+and no subset controls the others.
+
+Four subsets made exactly that inference. Measured against the data:
+
+| Subset | members | reserved by another subset |
+| --- | ---: | ---: |
+| sparked-cdg-journeys | 19 | 5 |
+| geography-groups | 1034 | 43 |
+| families | 30 | 5 |
+| blank-slate-patients | 79 | 13 |
+
+Sparked's case is representative: five journey members are also published AU
+Patient Summary IG examples, whose governance says they must not be modified
+without the IG authors' approval — so the page asserted both that those
+entities were free to build on and that they were reserved.
+`blank-slate-patients` was the sharpest: carrying no clinical data is not the
+same as being free to write to, and several of its members are Missing and
+suppressed data examples, deliberately shaped to demonstrate absent data.
+
+This is D21's tightest-constraint rule, which the renderer already applied to
+the computed overlap notes, finally applied to the hand-written prose as
+well. The general principle is now stated once in the page intro, under
+"Reading versus writing", so each subset states only what it can support.
+
+`scenario-groups` also made the claim and was left alone: 0 of its 418
+members are reserved elsewhere, so it is true today. That is a fact about the
+current data, not a guarantee — if it acquires a reserved member the claim
+becomes wrong silently, and nothing checks for that.
+
 ## Sources of truth
 
 | Subset | Type | Source of truth |

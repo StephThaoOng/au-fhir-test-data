@@ -214,17 +214,17 @@ subsets:
       Identifies the entities used in Sparked Clinical Design Group consumer
       journeys, grouped by named journey.
     governance: >
-      Journey membership does not reserve an entity. An entity used in a
-      journey may also appear in the corresponding IG project use case and be
-      progressed into a technical use case, so these entities are free to
-      build on.
+      Journey membership does not itself reserve an entity. It does not
+      follow that a journey entity is free to build on — some are also
+      published IG examples, which that subset reserves. What governs an
+      entity is the tightest constraint across all of its memberships, so
+      check its other listings before adding to it.
     provenance: >
       Administrative entities are derived from Services Australia provided
-      data. Journey membership does not reserve an entity. An entity used in
-      a journey may also appear in the corresponding IG project use cases and
-      be progressed into technical use cases and subsequently, the IG
-      examples. Members are recorded as resolved resource ids rather than
-      display names so membership is unambiguous.
+      data. An entity used in a journey may also appear in the corresponding
+      IG project use cases and be progressed into technical use cases and
+      subsequently, the IG examples. Members are recorded as resolved
+      resource ids rather than display names so membership is unambiguous.
     relationships_note: >
       Several members also appear in {scenario-groups}, and some are {au-ps-
       ig-examples}.
@@ -1000,8 +1000,12 @@ subsets:
       Proposes groupings of entities that are plausibly co-located, as a
       starting point for constructing new consumer journeys.
     governance: >
-      Grouping identifies plausible co-location only. Members are free to
-      build on and are not reserved to their originating group.
+      Grouping identifies plausible co-location only, and does not itself
+      reserve a member to its group. That does not make a member free to
+      build on — many are also IG examples or test patients, which those
+      subsets reserve. What governs an entity is the tightest constraint
+      across all of its memberships, so check its other listings before
+      adding to it.
     provenance: >
       Proposed by a script from address data and confirmed by a human. Best-
       effort by design: postcode proximity is a weak proxy, and there are no
@@ -1079,8 +1083,12 @@ subsets:
       Identifies entities that constitute a family, for constructing consumer
       journeys involving related patients.
     governance: >
-      Grouping identifies plausible family relationships. Members are free to
-      build on and are not reserved to their originating group.
+      Grouping identifies plausible family relationships, and does not itself
+      reserve a member to its family. That does not make a member free to
+      build on — some are also IG examples, Inferno default patients or
+      Smart Health Checks entities, which those subsets reserve. What governs
+      an entity is the tightest constraint across all of its memberships, so
+      check its other listings before adding to it.
     provenance: >
       Proposed by a script from two independent signals and confirmed by a
       human. Where a candidate can be neither confirmed nor rejected because
@@ -1195,9 +1203,13 @@ subsets:
       Identifies patients with no clinical data, so they can be selected for a
       new consumer journey without pre-existing content conflicting.
     governance: >
-      The purpose of this subset is to identify patients that are free to
-      build on. Adding clinical data to a member simply removes it from the
-      subset on the next regeneration.
+      Carrying no clinical data is not the same as being free to build on: a
+      patient can have no clinical resource here and still be reserved by
+      another subset — several members are {missing-suppressed-data},
+      deliberately shaped to demonstrate absent data. What governs
+      an entity is the tightest constraint across all of its memberships, so
+      check its other listings before adding to it. Adding clinical data to a
+      member simply removes it from this subset on the next regeneration.
     provenance: >
       Computed from the data set on every regeneration rather than recorded.
       Membership therefore changes automatically as clinical data is added.

@@ -866,10 +866,20 @@ def main():
         "— because new content joins a graph that may already be shaped to "
         "serve a stated purpose.\n",
 
+        # D24, stated once here so no subset has to draw a conclusion it
+        # cannot support from its own membership alone.
+        "A subset stating that its own membership does not reserve an entity "
+        "does not make that entity free to build on — another subset may "
+        "reserve it. What governs is the tightest constraint across all of an "
+        "entity's memberships, which is what each entity's *also in* note "
+        "surfaces.\n",
+
         "### How each subset is identified\n",
-        "Every section closes with a classification. The four are defined "
-        "below; the practical difference is what each needs in order to be "
-        "trustworthy.\n",
+        # D23 removed the trailing "_Classification: X._" line; the type is
+        # now the opening word of each identification description.
+        "Every subset states its classification where it describes how it is "
+        "identified. The four are defined below; the practical difference is "
+        "what each needs in order to be trustworthy.\n",
         "<details><summary>What the four classifications mean</summary>\n\n"
         "- **Derived** — computed from the repository by a deterministic "
         "script, with no human input. Recomputed on every regeneration, so it "

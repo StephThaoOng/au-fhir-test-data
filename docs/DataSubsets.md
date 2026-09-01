@@ -16,9 +16,11 @@ Only the eight administrative entity types listed above. Clinical resources carr
 
 **Reading is always unconstrained.** Any entity may be read, loaded, queried or tested against without reference to this page. Where a subset's governance restricts something, it restricts *writing* — adding to or modifying an entity or its network of linked resources — because new content joins a graph that may already be shaped to serve a stated purpose.
 
+A subset stating that its own membership does not reserve an entity does not make that entity free to build on — another subset may reserve it. What governs is the tightest constraint across all of an entity's memberships, which is what each entity's *also in* note surfaces.
+
 ### How each subset is identified
 
-Every section closes with a classification. The four are defined below; the practical difference is what each needs in order to be trustworthy.
+Every subset states its classification where it describes how it is identified. The four are defined below; the practical difference is what each needs in order to be trustworthy.
 
 <details><summary>What the four classifications mean</summary>
 
@@ -31,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-01 23:21 UTC from test data at commit `267ec520e35ee30f6f465f8d2566e3abf712f25b`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-01 23:31 UTC from test data at commit `510729e24c32c62c9ece8a77a58509955cd65c05`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -405,11 +407,11 @@ Identifies the entities used in Sparked Clinical Design Group consumer journeys,
 ### Ownership & governance
 
 **Owner:** Shared between Sparked CDG and HL7 AU Test Data project — TBC.  
-Journey membership does not reserve an entity. An entity used in a journey may also appear in the corresponding IG project use case and be progressed into a technical use case, so these entities are free to build on.
+Journey membership does not itself reserve an entity. It does not follow that a journey entity is free to build on — some are also published IG examples, which that subset reserves. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it.
 
 ### Provenance & use
 
-Administrative entities are derived from Services Australia provided data. Journey membership does not reserve an entity. An entity used in a journey may also appear in the corresponding IG project use cases and be progressed into technical use cases and subsequently, the IG examples. Members are recorded as resolved resource ids rather than display names so membership is unambiguous.
+Administrative entities are derived from Services Australia provided data. An entity used in a journey may also appear in the corresponding IG project use cases and be progressed into technical use cases and subsequently, the IG examples. Members are recorded as resolved resource ids rather than display names so membership is unambiguous.
 
 ### Relationships
 
@@ -1480,7 +1482,7 @@ Proposes groupings of entities that are plausibly co-located, as a starting poin
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
-Grouping identifies plausible co-location only. Members are free to build on and are not reserved to their originating group.
+Grouping identifies plausible co-location only, and does not itself reserve a member to its group. That does not make a member free to build on — many are also IG examples or test patients, which those subsets reserve. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it.
 
 ### Provenance & use
 
@@ -4083,7 +4085,7 @@ Identifies entities that constitute a family, for constructing consumer journeys
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
-Grouping identifies plausible family relationships. Members are free to build on and are not reserved to their originating group.
+Grouping identifies plausible family relationships, and does not itself reserve a member to its family. That does not make a member free to build on — some are also IG examples, Inferno default patients or Smart Health Checks entities, which those subsets reserve. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it.
 
 ### Provenance & use
 
@@ -4225,7 +4227,7 @@ Identifies patients with no clinical data, so they can be selected for a new con
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
-The purpose of this subset is to identify patients that are free to build on. Adding clinical data to a member simply removes it from the subset on the next regeneration.
+Carrying no clinical data is not the same as being free to build on: a patient can have no clinical resource here and still be reserved by another subset — several members are [Missing and suppressed data examples](#missing-suppressed-data), deliberately shaped to demonstrate absent data. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it. Adding clinical data to a member simply removes it from this subset on the next regeneration.
 
 ### Provenance & use
 
