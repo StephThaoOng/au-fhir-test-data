@@ -208,7 +208,7 @@ subsets:
   - slug: sparked-cdg-journeys
     title: Sparked Clinical Design Group consumer journeys
     type: curated
-    owner: Sparked
+    owner: Shared between Sparked CDG and HL7 AU Test Data project — TBC.
     reserved: false
     purpose: >
       Identifies the entities used in Sparked Clinical Design Group consumer
@@ -219,9 +219,12 @@ subsets:
       progressed into a technical use case, so these entities are free to
       build on.
     provenance: >
-      Declared by the Sparked Clinical Design Group. Members are recorded as
-      resolved resource ids rather than display names so membership is
-      unambiguous.
+      Administrative entities are derived from Services Australia provided
+      data. Journey membership does not reserve an entity. An entity used in
+      a journey may also appear in the corresponding IG project use cases and
+      be progressed into technical use cases and subsequently, the IG
+      examples. Members are recorded as resolved resource ids rather than
+      display names so membership is unambiguous.
     relationships_note: >
       Several members also appear in {scenario-groups}, and some are {au-ps-
       ig-examples}.
@@ -414,7 +417,8 @@ subsets:
     relationships_note: >
       No notable relationships to other subsets.
     identification: >
-      Derived from commit authorship, then cross-checked. The commit that
+      Derived from commit authorship, then curated by cross-checking against
+      an attested list. The commit that
       introduced each file is matched against recognised organisation email
       domains, and the result is compared with an independently human-attested
       list so that a disagreement is reported rather than an entity silently
@@ -1006,7 +1010,7 @@ subsets:
       {scenario-groups} draw heavily on the same entities, since each scenario
       was built around a specific locality.
     identification: >
-      Derived, then confirmed by a human. Metro entities group by capital
+      Derived, then curated by human confirmation. Metro entities group by capital
       city; regional entities group by three-digit postcode bucket, widened to
       buckets whose third digit differs by one. Each grouping is then expanded
       by reverse reference to pull in the HealthcareServices and
@@ -1086,7 +1090,8 @@ subsets:
       Most members currently have no clinical data, so they are also {blank-
       slate-patients}.
     identification: >
-      Derived from two primary signals, then confirmed by a human. A shared
+      Derived from two primary signals, then curated by human confirmation.
+      A shared
       Medicare card is the strongest: the card number is shared by a family
       and only the final individual reference number differs. The
       RelatedPerson network is the second, giving an explicit relationship

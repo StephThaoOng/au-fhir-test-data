@@ -374,6 +374,28 @@ still decides *which* subsets appear; only the trailing label text is
 suppressed. Reversible: re-adding it is a one-line change to `overlap_note()`
 in `scripts/data-subsets/assemble.py`.
 
+### D23. Classification is stated once, inside the identification prose
+
+The trailing `_Classification: <type>._` line is removed. "How is this
+subset identified?" already opens with the type — "Derived automatically",
+"Declared, then drift-checked", "Curated. Journey membership is stated
+by..." — so the line only repeated what the section had just said, the same
+duplication pattern D19 named for Smart Health Checks.
+
+Three subsets (community-contributions, geography-groups, families) needed
+their identification prose corrected first: each was classified
+Derived + Curated but its opening sentence said only "Derived, then
+confirmed by a human" or similar, never using "curated" in any form — so
+removing the line would have silently dropped the Curated half of their
+classification from the page. Reworded each to name curation explicitly
+("Derived, then curated by human confirmation") before the line was
+removed, so nothing is lost by the removal.
+
+The evidence/derivation notes that follow (counts, exclusions, limitations)
+are now collapsed in a `<details>` block rather than always-visible
+blockquote text, for the same reason `<details>` is used everywhere else on
+the page: useful to a reviewer, not needed to read the section.
+
 ## Sources of truth
 
 | Subset | Type | Source of truth |

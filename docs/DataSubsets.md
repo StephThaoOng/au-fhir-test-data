@@ -31,7 +31,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-01 22:46 UTC from test data at commit `636b8f720d6728be022927eb21ea7f0ea0f3f05c`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-01 23:21 UTC from test data at commit `267ec520e35ee30f6f465f8d2566e3abf712f25b`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -77,11 +77,13 @@ Derived automatically. Each entity in this data set is matched against the examp
 **Source:** hl7au/au-fhir-core, input/examples/
 
 **Read at:** [`36e9c7ff08da`](https://github.com/hl7au/au-fhir-core/commit/36e9c7ff08da794cf381802a977a56502e9c715e) — the AU Core IG revision this page was last generated from.
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived._
 > 30 distinct administrative entities are published as examples in hl7au/au-fhir-core.
 > 51 non-administrative entities excluded: Observation x17, Condition x4, Medication x4, MedicationStatement x4, AllergyIntolerance x3, Encounter x3, MedicationDispense x3, MedicationRequest x3, DiagnosticReport x2, DocumentReference x2, Immunization x2, Procedure x2, Composition x1, Specimen x1. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
 > 2 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
+
+</details>
 
 ### Members (30)
 
@@ -171,12 +173,14 @@ Derived automatically. AU PS examples are document Bundles rather than one resou
 **Source:** hl7au/au-fhir-ps, input/examples/ (Bundle.entry, matched by business identifier)
 
 **Read at:** [`0f87741264db`](https://github.com/hl7au/au-fhir-ps/commit/0f87741264db7a9cb5aa7410e50476ee5884f419) — the AU Patient Summary IG revision this page was last generated from.
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived._
 > 16 distinct administrative entities are published as examples in hl7au/au-fhir-ps.
 > 1 non-administrative entities excluded: Immunization x1. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
 > 155 of the resources scanned came from Bundle entries, matched on business identifier only — ids inside a Bundle are not reliable keys.
 > 133 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
+
+</details>
 
 ### Members (16)
 
@@ -236,12 +240,14 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 **Source:** hl7au/au-fhir-erequesting, input/examples/
 
 **Read at:** [`224341319362`](https://github.com/hl7au/au-fhir-erequesting/commit/2243413193629b004c5edc4fec33a31e2ff6ceb9) — the AU eRequesting IG revision this page was last generated from.
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived._
 > 16 distinct administrative entities are published as examples in hl7au/au-fhir-erequesting.
 > 20 non-administrative entities excluded: ServiceRequest x8, CommunicationRequest x4, Coverage x2, Encounter x2, Consent x1, DocumentReference x1, Observation x1, Task x1. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
 > 35 of the resources scanned came from Bundle entries, matched on business identifier only — ids inside a Bundle are not reliable keys.
 > 19 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
+
+</details>
 
 ### Members (16)
 
@@ -304,9 +310,11 @@ Declared, then drift-checked. The patient id list is read from the inferno_suite
 **Source:** inferno_suite_generator, lib/inferno_suite_generator/utils/helpers.rb, method default_patient_ids_string (lines 217-219 at time of transcription)
 
 **Read at:** [`f4c668d05c1d`](https://github.com/hl7au/inferno_suite_generator/commit/f4c668d05c1da45ee14076b81634e89f255180b3) — the Inferno test kit revision this page was last generated from.
+<details><summary>Derivation notes</summary>
 
-_Classification: Declared._
 > No drift: source matches the transcribed list.
+
+</details>
 
 ### Members (7)
 
@@ -346,8 +354,6 @@ Declared. The patient list is transcribed from the AU PS Test Data Coverage page
 
 
 **Source:** https://confluence.hl7.org/spaces/HAFWG/pages/404097954/AU+PS+Test+Data+Coverage
-
-_Classification: Declared._
 ### Members (6)
 
 **Patient** (6)
@@ -383,8 +389,6 @@ Its single member also appears in [Families](#families). It carries no clinical 
 
 Curated. Membership is stated by a maintainer in the facts file and changes only when a maintainer adds or removes an entity.
 
-
-_Classification: Curated._
 ### Members (1)
 
 **Patient** (1)
@@ -400,12 +404,12 @@ Identifies the entities used in Sparked Clinical Design Group consumer journeys,
 
 ### Ownership & governance
 
-**Owner:** Sparked  
+**Owner:** Shared between Sparked CDG and HL7 AU Test Data project — TBC.  
 Journey membership does not reserve an entity. An entity used in a journey may also appear in the corresponding IG project use case and be progressed into a technical use case, so these entities are free to build on.
 
 ### Provenance & use
 
-Declared by the Sparked Clinical Design Group. Members are recorded as resolved resource ids rather than display names so membership is unambiguous.
+Administrative entities are derived from Services Australia provided data. Journey membership does not reserve an entity. An entity used in a journey may also appear in the corresponding IG project use cases and be progressed into technical use cases and subsequently, the IG examples. Members are recorded as resolved resource ids rather than display names so membership is unambiguous.
 
 ### Relationships
 
@@ -415,12 +419,14 @@ Several members also appear in [Scenario groupings](#scenario-groups), and some 
 
 Curated. Journey membership is stated by Sparked and recorded in the facts file; the AU Encounter Records journey additionally records each participant's stated journey role alongside the specialty declared by their PractitionerRole, because the two often differ.
 
+<details><summary>Derivation notes</summary>
 
-_Classification: Curated._
 > **Chemotherapy — acute admission to HITH and outpatient care**
 > Case scenario: Kendall presented for chemotherapy but was acutely unwell, requiring inpatient admission and multidisciplinary treatment before transitioning to Hospital in the Home and ongoing outpatient care.
 > Status: CARE TEAM ONLY. The 11 named individuals resolve to existing test data, but the clinical narrative this journey describes — chemotherapy, the acute inpatient admission, the HITH transition and outpatient follow-up — does not exist as test data yet. No chemotherapy or admission Encounter references Kendall.
 > CONFLICT — `Patient/sandilands-kendall`: Already carries unrelated clinical content: an ambulatory GP visit (Encounter/gpvisit, SNOMED 866149003 "Annual visit"), a pathology ServiceRequest (path-scenario-1) with two eRequesting Tasks, and two Coverage resources. None of it belongs to this chemotherapy journey. New journey content will join that existing graph.
+
+</details>
 
 ### Members (19)
 
@@ -548,13 +554,15 @@ Declared, and read from a branch. These entities are not on the default branch, 
 **Source:** Alex's Story — au-fhir-test-data-set/connected-care/Alex Story Data Set.md, on the connected-care branch (not on master). Yuri's Story — no source document yet; membership is the provisional remainder of the connected-care directory not claimed by Alex's Story.
 
 **Read at:** [`ddb96e935ee7`](https://github.com/hl7au/au-fhir-test-data/commit/ddb96e935ee71866b48d3b49291609868a414baa) — the Connected Care branch revision this page was last generated from.
+<details><summary>Derivation notes</summary>
 
-_Classification: Declared._
 > Alex's Story: 38 entities claimed by 'Alex Story Data Set.md', all resolved on upstream/connected-care.
 > Yuri's Story: 57 entities attributed by REMAINDER only — no source document exists for Yuri's Story yet. This attribution is provisional, not confirmed.
 > 56 of the 57 remainder entities are infrastructure types (Organization, Location, Practitioner, PractitionerRole, HealthcareService) that may plausibly serve both stories — see design.md Open Questions 'Connected Care shared infrastructure'. Tagged likely_shared rather than resolved here.
 > 1 narrative element(s) in Alex's Story have no resource mapped (marked *Unresolved* in the document).
 > 55 non-administrative entities excluded: Observation x8, ServiceRequest x7, Encounter x6, MedicationStatement x5, Appointment x4, MedicationRequest x5, Composition x3, MedicationDispense x4, Bundle x2, DiagnosticReport x2, Procedure x2, AllergyIntolerance x1, Condition x1, DocumentReference x1, Task x2, Binary x2. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
+
+</details>
 
 ### Members (95)
 
@@ -719,14 +727,16 @@ No notable relationships to other subsets.
 
 ### How is this subset identified?
 
-Derived from commit authorship, then cross-checked. The commit that introduced each file is matched against recognised organisation email domains, and the result is compared with an independently human-attested list so that a disagreement is reported rather than an entity silently dropping out. (see spec scenario "The limits of git-based attribution are stated").
+Derived from commit authorship, then curated by cross-checking against an attested list. The commit that introduced each file is matched against recognised organisation email domains, and the result is compared with an independently human-attested list so that a disagreement is reported rather than an entity silently dropping out. (see spec scenario "The limits of git-based attribution are stated").
 
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived + Curated._
 > 12 entities attributed across 1 organisation(s).
 > Attribution derives from the commit that introduced each file and may under-report: a contributor using a personal email address, or a merge that did not preserve original authorship, is not detected. The list is not exhaustive.
 > 1525 files in the data set carry no recognised-domain attribution; most are project-internal contributions.
 > Cross-check passed: all 12 human-attested entities were also found independently by the authorship scan.
+
+</details>
 
 ### Members (12)
 
@@ -773,10 +783,12 @@ Some members are also [Blank-slate patients](#blank-slate-patients).
 
 Derived from the documented cases, then extended by curation. Resource ids are scanned for keywords such as missing, suppressed and masked, and each hit is put to a human, who checks the resource actually carries a data-absent-reason mechanism rather than matching the keyword by coincidence.
 
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived + Curated._
 > 11 documented cases from docs/MissingAndSuppressedData_TestData.md.
 > 56 additional instances confirmed from keyword hits; 1 rejected.
+
+</details>
 
 ### Members (67)
 
@@ -920,8 +932,6 @@ Members are extensively represented in [Geographic groupings](#geography-groups)
 
 Curated, seeded once. The groupings were extracted a single time from the au-core/consumer-journey directory structure at a pinned git ref; from that point the facts file is authoritative and the seed is not re- run.
 
-
-_Classification: Curated._
 ### Members (418)
 
 <details><summary><strong>CCM_Aged care scenario - Future</strong> (49 entities)</summary>
@@ -1482,16 +1492,18 @@ Proposed by a script from address data and confirmed by a human. Best- effort by
 
 ### How is this subset identified?
 
-Derived, then confirmed by a human. Metro entities group by capital city; regional entities group by three-digit postcode bucket, widened to buckets whose third digit differs by one. Each grouping is then expanded by reverse reference to pull in the HealthcareServices and PractitionerRoles attached to its organisations, locations and practitioners. Every proposal is put to a human with its full suburb list, which stands in for the distance check the data cannot support.
+Derived, then curated by human confirmation. Metro entities group by capital city; regional entities group by three-digit postcode bucket, widened to buckets whose third digit differs by one. Each grouping is then expanded by reverse reference to pull in the HealthcareServices and PractitionerRoles attached to its organisations, locations and practitioners. Every proposal is put to a human with its full suburb list, which stands in for the distance check the data cannot support.
 
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived + Curated._
 > 8 metro groups (one per capital city) and 85 regional windows (3-digit postcode bucket, widened to buckets whose 3rd digit is +/-1).
 > 467 geo-eligible entities have no usable postcode and are excluded.
 > 11 entities have a non-Australian address and are excluded — Australian postcode logic does not apply to them, and their postcodes collide with Australian ones (Napier NZ 4104 falls inside Brisbane's metro range).
 > 60 confirmed, 33 rejected, 0 awaiting a decision.
 > Metro groups by city because Australian postcodes are not spatially ordered — Southbank 3006 and St Kilda 3182 are ~6km apart but differ in the 3rd digit by 8.
 > LIMITATION: a regional window can still span great distances where postcodes cover vast areas (Townsville 4810 and Mount Isa 4825 are +/-1 adjacent but ~900km apart). Check each candidate's suburb list — there are no coordinates in the data set to check distance against.
+
+</details>
 
 ### Members (1022)
 
@@ -4083,15 +4095,17 @@ Most members currently have no clinical data, so they are also [Blank-slate pati
 
 ### How is this subset identified?
 
-Derived from two primary signals, then confirmed by a human. A shared Medicare card is the strongest: the card number is shared by a family and only the final individual reference number differs. The RelatedPerson network is the second, giving an explicit relationship code. Neither subsumes the other — a newborn not yet on the card is found only by the RelatedPerson network — so both are applied and combined. Matching surname or address is used only to propose further candidates for review.
+Derived from two primary signals, then curated by human confirmation. A shared Medicare card is the strongest: the card number is shared by a family and only the final individual reference number differs. The RelatedPerson network is the second, giving an explicit relationship code. Neither subsumes the other — a newborn not yet on the card is found only by the RelatedPerson network — so both are applied and combined. Matching surname or address is used only to propose further candidates for review.
 
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived + Curated._
 > 7 RelatedPerson-network families (30 entities); 4 additional surname/address candidates.
 > 7 confirmed, 2 rejected, 2 flagged as potential families, 0 awaiting a decision.
 > A shared Medicare card is treated as a primary signal alongside the RelatedPerson network: the card number is 10 digits plus a per-person Individual Reference Number, so a family on one card shares the first 10 digits. Neither signal dominates — a newborn not yet on the card is found only via RelatedPerson.
 > 2 RelatedPerson record(s) excluded as 'unrelated friend' (FRND) and not used to join any family.
 > Family members are not required to share an address. Same-surname and same-address candidates are proposals only, never asserted — measured case: 9 Patient files sharing a surname and address are 9 test-data variants of one synthetic patient, not a family.
+
+</details>
 
 ### Members (30)
 
@@ -4225,10 +4239,12 @@ Many members also appear in [Families](#families), and some are [Missing and sup
 
 Derived automatically. A patient is a member when no clinical resource in the data set references it as subject. Administrative links such as RelatedPerson or Coverage do not count, because they record no clinical fact for new content to conflict with.
 
+<details><summary>Derivation notes</summary>
 
-_Classification: Derived._
 > 79 of 93 patients have no clinical data.
 > A patient referenced only by RelatedPerson, Coverage or Appointment counts as a blank slate: those record no clinical fact for new content to conflict with.
+
+</details>
 
 ### Members (79)
 

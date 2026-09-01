@@ -104,13 +104,6 @@ import lib
 OUTPUT_PATH = lib.REPO_ROOT / "docs" / "DataSubsets.md"
 ENTITY_LIST_THRESHOLD = 20
 
-TYPE_LABELS = {
-    "derived": "Derived",
-    "declared": "Declared",
-    "curated": "Curated",
-    "derived+curated": "Derived + Curated",
-}
-
 # Canonical publication order — matches the delta spec's requirement order
 # (R1-R14), not the order subsets happen to appear in subsets.yaml.
 SUBSET_ORDER = [
@@ -684,17 +677,22 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
         lines.append("")
         lines.append(f"**Read at:** {shown} — the {label} revision this page "
                      "was last generated from.")
-    # The four-way classification closes the section rather than leading it —
-    # the prose above already opens with "Derived automatically" / "Curated" /
-    # "Declared", so a leading label just repeats the next word.
-    type_label = TYPE_LABELS.get(subset["type"], subset["type"])
-    lines.append("")
-    lines.append(f"_Classification: {type_label}._")
+    # No separate classification line (D23): the identification prose above
+    # already states Derived/Declared/Curated as its opening word(s) — a
+    # trailing "_Classification: X._" line only repeated it.
 
     if notes:
+        # Collapsed like every other evidence block on the page (D20-era
+        # precedent): these are derivation detail — counts, exclusions,
+        # limitations — useful to a reviewer but not needed to read the
+        # section, so they default to closed rather than a permanent
+        # grey wall of text under every subset.
+        lines.append(
+            "<details><summary>Derivation notes</summary>\n"
+        )
         for note in notes:
             lines.append(f"> {note}")
-        lines.append("")
+        lines.append("\n</details>\n")
 
     group_field = GROUP_FIELD.get(slug)
     # Display labels for the sub-groups. Story labels are a presentation
