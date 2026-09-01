@@ -360,6 +360,20 @@ Free-to-build-on is shown only when it is the *only* signal an entity's
 overlaps carry — there, it remains real information, not noise beside a
 stricter fact.
 
+### D22. Overlap notes omit the reserved/TBD/free-to-build-on label, for now
+
+An overlap note now names only the subsets an entity also belongs to — e.g.
+`also in: [au-core-ig-examples](#au-core-ig-examples)` — without the
+`(reserved)` / `(maybe reserved — TBD)` / `(free to build on)` qualifier
+that D20/D21 govern. The qualifier made the page read as cluttered without
+giving a reader an action to take from the note alone.
+
+The D20/D21 selection logic — which subsets are worth naming, and dropping
+free-to-build-on entries once a stricter one is present — is unchanged and
+still decides *which* subsets appear; only the trailing label text is
+suppressed. Reversible: re-adding it is a one-line change to `overlap_note()`
+in `scripts/data-subsets/assemble.py`.
+
 ## Sources of truth
 
 | Subset | Type | Source of truth |

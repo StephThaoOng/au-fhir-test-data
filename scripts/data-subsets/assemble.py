@@ -443,10 +443,16 @@ def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
     # What governs an entity is the tightest constraint across its
     # memberships (D21) — once any membership is reserved or TBD, a
     # free-to-build-on membership elsewhere adds noise, not information, so
-    # it's dropped. Only shown when it's the sole signal available.
+    # it's dropped. Only shown when it's the sole signal available. This
+    # still decides WHICH subsets are named, even though the label itself is
+    # no longer printed (D22) — a reservation elsewhere is still what makes
+    # an overlap worth surfacing at all.
     stricter = [(s, l) for s, l in labelled if l != "free to build on"]
     shown = stricter or labelled
-    return "also in: " + ", ".join(f"[{s}](#{s}) ({l})" for s, l in shown)
+    # D22: the (reserved) / (maybe reserved — TBD) / (free to build on) label
+    # is omitted for now — cluttered the page without adding a decision a
+    # reader could act on from the note alone. Just the subset names.
+    return "also in: " + ", ".join(f"[{s}](#{s})" for s, _ in shown)
 
 
 # --- Rendering ----------------------------------------------------------

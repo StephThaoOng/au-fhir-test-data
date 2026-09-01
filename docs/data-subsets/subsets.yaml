@@ -104,10 +104,10 @@ subsets:
     reserved: true
     purpose: >
       Identifies the primary test patients for AU Patient Summary testing —
-      those for which the $summary operation can be invoked.
+      those for which the `$summary` operation can be invoked.
     governance: >
-      Relied on for $summary operation testing. Adding to or modifying these
-      patients or their linked resources must preserve that coverage.
+      Relied on for `$summary` operation testing. Adding to or modifying
+      these patients or their linked resources must preserve that coverage.
     provenance: >
       Declared by the AU PS Test Data Coverage page maintained by the project,
       rather than derived from the data set.
