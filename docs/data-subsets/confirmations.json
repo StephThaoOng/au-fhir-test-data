@@ -1024,6 +1024,16 @@
       "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
       "subset": "geography-groups"
     },
+    "8013c6bd95bab3e4": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-18",
+      "decision": "confirmed",
+      "members": [
+        "Observation/masked"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match. Re-confirmed under its new id after an upstream rename (AU Core IG PR https://github.com/hl7au/au-fhir-core/pull/459) — same resource and rationale as the 2026-09-01 confirmation of its old id.",
+      "subset": "missing-suppressed-data"
+    },
     "8034b864bf356d1e": {
       "attester": "Stephanie Ong",
       "confirmed_on": "2026-09-01",
@@ -2090,6 +2100,16 @@
         "MedicationStatement/missing-status"
       ],
       "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "de3a26085895d628": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-18",
+      "decision": "confirmed",
+      "members": [
+        "Condition/masked"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match. Re-confirmed under its new id after an upstream rename (AU Core IG PR https://github.com/hl7au/au-fhir-core/pull/459) — same resource and rationale as the 2026-09-01 confirmation of its old id.",
       "subset": "missing-suppressed-data"
     },
     "df11dc95a6f40703": {

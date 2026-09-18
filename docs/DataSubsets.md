@@ -33,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-01 23:31 UTC from test data at commit `510729e24c32c62c9ece8a77a58509955cd65c05`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-18 12:20 UTC from test data at commit `3b5ea08e7d109d65e43b26cf94c3c41036e37060`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -78,7 +78,7 @@ Derived automatically. Each entity in this data set is matched against the examp
 
 **Source:** hl7au/au-fhir-core, input/examples/
 
-**Read at:** [`36e9c7ff08da`](https://github.com/hl7au/au-fhir-core/commit/36e9c7ff08da794cf381802a977a56502e9c715e) — the AU Core IG revision this page was last generated from.
+**Read at:** [`d18d3444e998`](https://github.com/hl7au/au-fhir-core/commit/d18d3444e99890b73078d34fa2e6682a30d88720) — the AU Core IG revision this page was last generated from.
 <details><summary>Derivation notes</summary>
 
 > 30 distinct administrative entities are published as examples in hl7au/au-fhir-core.
@@ -241,7 +241,7 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 
 **Source:** hl7au/au-fhir-erequesting, input/examples/
 
-**Read at:** [`224341319362`](https://github.com/hl7au/au-fhir-erequesting/commit/2243413193629b004c5edc4fec33a31e2ff6ceb9) — the AU eRequesting IG revision this page was last generated from.
+**Read at:** [`68ea5951d9c3`](https://github.com/hl7au/au-fhir-erequesting/commit/68ea5951d9c3c36c178e1370da8c29f7b1257d4c) — the AU eRequesting IG revision this page was last generated from.
 <details><summary>Derivation notes</summary>
 
 > 16 distinct administrative entities are published as examples in hl7au/au-fhir-erequesting.
@@ -256,7 +256,7 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 **Patient** (3)
 
 - [`belger-remedios`](../au-fhir-test-data-set/au-erequesting/Patient-belger-remedios.json)
-- [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json)
+- [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`scott-elijah-ken`](../au-fhir-test-data-set/au-erequesting/Patient-scott-elijah-ken.json)
 
 **PractitionerRole** (4)
@@ -268,7 +268,7 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 
 **Practitioner** (4)
 
-- [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json)
+- [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`herbert-aimee`](../au-fhir-test-data-set/au-core/Practitioner-herbert-aimee.json)
 - [`losch-sallie`](../au-fhir-test-data-set/au-erequesting/Practitioner-losch-sallie.json)
 - [`mclaughlin-kimberlee`](../au-fhir-test-data-set/au-core/Practitioner-mclaughlin-kimberlee.json)
@@ -311,7 +311,7 @@ Declared, then drift-checked. The patient id list is read from the inferno_suite
 
 **Source:** inferno_suite_generator, lib/inferno_suite_generator/utils/helpers.rb, method default_patient_ids_string (lines 217-219 at time of transcription)
 
-**Read at:** [`f4c668d05c1d`](https://github.com/hl7au/inferno_suite_generator/commit/f4c668d05c1da45ee14076b81634e89f255180b3) — the Inferno test kit revision this page was last generated from.
+**Read at:** [`754d94714818`](https://github.com/hl7au/inferno_suite_generator/commit/754d947148181516cd48bfe5232659a8bf4b7573) — the Inferno test kit revision this page was last generated from.
 <details><summary>Derivation notes</summary>
 
 > No drift: source matches the transcribed list.
@@ -440,7 +440,7 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json) — **Patient**
+- [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json) — **Patient** — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples)*
 
 **Practitioner** (9)
 
@@ -567,7 +567,7 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- [`morris-charlotte`](../au-fhir-test-data-set/au-core/Patient-morris-charlotte.json)
+- [`morris-charlotte`](../au-fhir-test-data-set/au-core/Patient-morris-charlotte.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
 
 </details>
 </blockquote>
@@ -589,7 +589,7 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- [`banks-jeramy-ezra`](../au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json)
+- [`banks-jeramy-ezra`](../au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
 
 </details>
 </blockquote>
@@ -611,11 +611,11 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- [`johnson-joyce`](../au-fhir-test-data-set/au-core/Patient-johnson-joyce.json)
+- [`johnson-joyce`](../au-fhir-test-data-set/au-core/Patient-johnson-joyce.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
 
 **Practitioner** (1)
 
-- [`burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json)
+- [`burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
 
 </details>
 </blockquote>
@@ -892,11 +892,11 @@ Derived from the documented cases, then extended by curation. Resource ids are s
 
 **Patient** (8)
 
-- `italia-sofia-missing-birthDate` — `au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-birthDate.json`
+- [`italia-sofia-missing-birthDate`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-birthDate.json)
 - [`italia-sofia-missing-gender`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-gender.json)
 - [`italia-sofia-missing-identifier`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-identifier.json)
 - [`italia-sofia-missing-name`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-name.json)
-- `italia-sofia-suppressed-birthDate` — `au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-birthDate.json`
+- [`italia-sofia-suppressed-birthDate`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-birthDate.json)
 - [`italia-sofia-suppressed-gender`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-gender.json)
 - [`italia-sofia-suppressed-identifier`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-identifier.json)
 - [`italia-sofia-suppressed-name`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-name.json)
@@ -925,7 +925,7 @@ Derived from the documented cases, then extended by curation. Resource ids are s
 
 **Condition** (4)
 
-- [`condition-masked`](../au-fhir-test-data-set/au-core/Condition-condition-masked.json)
+- [`masked`](../au-fhir-test-data-set/au-core/Condition-masked.json)
 - [`nailwound-missing-category`](../au-fhir-test-data-set/au-core/Condition-nailwound-missing-category.json)
 - [`nailwound-missing-code`](../au-fhir-test-data-set/au-core/Condition-nailwound-missing-code.json)
 - [`nailwound-suppressed-subject`](../au-fhir-test-data-set/au-core/Condition-nailwound-suppressed-subject.json)
@@ -952,7 +952,7 @@ Derived from the documented cases, then extended by curation. Resource ids are s
 
 **MedicationRequest** (5)
 
-- `reaptan-missing-authoredOn` — `au-fhir-test-data-set/au-core/MedicationRequest-reaptan-missing-authoredOn.json`
+- [`reaptan-missing-authoredOn`](../au-fhir-test-data-set/au-core/MedicationRequest-reaptan-missing-authoredOn.json)
 - [`reaptan-missing-medication`](../au-fhir-test-data-set/au-core/MedicationRequest-reaptan-missing-medication.json)
 - [`reaptan-missing-requester`](../au-fhir-test-data-set/au-core/MedicationRequest-reaptan-missing-requester.json)
 - [`reaptan-missing-status`](../au-fhir-test-data-set/au-core/MedicationRequest-reaptan-missing-status.json)
@@ -980,16 +980,16 @@ Derived from the documented cases, then extended by curation. Resource ids are s
 - [`hearing-threshold-cancelled`](../au-fhir-test-data-set/au-core/Observation-hearing-threshold-cancelled.json)
 - [`heartrate-1-exercise-missing`](../au-fhir-test-data-set/au-core/Observation-heartrate-1-exercise-missing.json)
 - [`heartrate-cancelled`](../au-fhir-test-data-set/au-core/Observation-heartrate-cancelled.json)
-- [`observation-masked`](../au-fhir-test-data-set/au-core/Observation-observation-masked.json)
+- [`masked`](../au-fhir-test-data-set/au-core/Observation-masked.json)
 - [`pathresult-missing-code`](../au-fhir-test-data-set/au-core/Observation-pathresult-missing-code.json)
 - [`pathresult-missing-effective`](../au-fhir-test-data-set/au-core/Observation-pathresult-missing-effective.json)
 - [`pathresult-missing-status`](../au-fhir-test-data-set/au-core/Observation-pathresult-missing-status.json)
 - [`pathresult-missing-value`](../au-fhir-test-data-set/au-core/Observation-pathresult-missing-value.json)
 - [`pathresult-suppressed-code`](../au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-code.json)
-- `pathresult-suppressed-dataAbsentReason` — `au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-dataAbsentReason.json`
+- [`pathresult-suppressed-dataAbsentReason`](../au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-dataAbsentReason.json)
 - [`pathresult-suppressed-subject`](../au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-subject.json)
-- `pathresult-suppressed-valueCodeableConcept` — `au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-valueCodeableConcept.json`
-- `pathresult-suppressed-valueQuantity` — `au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-valueQuantity.json`
+- [`pathresult-suppressed-valueCodeableConcept`](../au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-valueCodeableConcept.json)
+- [`pathresult-suppressed-valueQuantity`](../au-fhir-test-data-set/au-core/Observation-pathresult-suppressed-valueQuantity.json)
 - [`resprate-1-exercise-missing`](../au-fhir-test-data-set/au-core/Observation-resprate-1-exercise-missing.json)
 - [`resprate-cancelled`](../au-fhir-test-data-set/au-core/Observation-resprate-cancelled.json)
 - [`smokingstatus-notasked`](../au-fhir-test-data-set/au-core/Observation-smokingstatus-notasked.json)
@@ -1817,7 +1817,7 @@ _Mount Mitchell._
 **Practitioner** (3)
 
 - [`guthrie-daine`](../au-fhir-test-data-set/au-core/Practitioner-guthrie-daine.json)
-- [`milgate-leisa`](../au-fhir-test-data-set/au-core/Practitioner-milgate-leisa.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- [`milgate-leisa`](../au-fhir-test-data-set/au-core/Practitioner-milgate-leisa.json)
 - [`munro-rose`](../au-fhir-test-data-set/au-core/Practitioner-munro-rose.json)
 
 **HealthcareService** (1)
@@ -2055,7 +2055,7 @@ _Tarlo, Wallendbeen._
 - [`fraser-abbie`](../au-fhir-test-data-set/au-core/Practitioner-fraser-abbie.json)
 - [`gartshore-indira`](../au-fhir-test-data-set/au-core/Practitioner-gartshore-indira.json)
 - [`jenkins-miranda`](../au-fhir-test-data-set/au-core/Practitioner-jenkins-miranda.json)
-- [`taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json)
+- [`taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 
 **HealthcareService** (1)
 
@@ -2262,24 +2262,24 @@ _Berowra, Blacktown, Canley Heights, Cremorne, Frenchs Forest East, Kensington, 
 **Practitioner** (38)
 
 - [`barrett-carey`](../au-fhir-test-data-set/au-core/Practitioner-barrett-carey.json)
-- [`berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`breadmore-phillip`](../au-fhir-test-data-set/au-core/Practitioner-breadmore-phillip.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- [`dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`duncan-xenia`](../au-fhir-test-data-set/au-core/Practitioner-duncan-xenia.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`ewing-jude`](../au-fhir-test-data-set/au-core/Practitioner-ewing-jude.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`fleming-kitty`](../au-fhir-test-data-set/au-core/Practitioner-fleming-kitty.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`fowler-christy`](../au-fhir-test-data-set/au-core/Practitioner-fowler-christy.json)
-- [`frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`fuller-christeen`](../au-fhir-test-data-set/au-core/Practitioner-fuller-christeen.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`goodwin-rae`](../au-fhir-test-data-set/au-core/Practitioner-goodwin-rae.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`hamilton-errol`](../au-fhir-test-data-set/au-core/Practitioner-hamilton-errol.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`healey-tamiko`](../au-fhir-test-data-set/au-core/Practitioner-healey-tamiko.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`howe-elden`](../au-fhir-test-data-set/au-core/Practitioner-howe-elden.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
-- [`little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`macey-brant`](../au-fhir-test-data-set/au-core/Practitioner-macey-brant.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`mackenzie-cinda`](../au-fhir-test-data-set/au-core/Practitioner-mackenzie-cinda.json)
 - [`mcbean-nicollette`](../au-fhir-test-data-set/au-core/Practitioner-mcbean-nicollette.json) — *also in: [scenario-groups](#scenario-groups)*
@@ -2287,15 +2287,15 @@ _Berowra, Blacktown, Canley Heights, Cremorne, Frenchs Forest East, Kensington, 
 - [`mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`nairn-vince`](../au-fhir-test-data-set/au-core/Practitioner-nairn-vince.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`nutley-bradley`](../au-fhir-test-data-set/au-core/Practitioner-nutley-bradley.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`osmond-michele`](../au-fhir-test-data-set/au-core/Practitioner-osmond-michele.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`perkins-amee`](../au-fhir-test-data-set/au-core/Practitioner-perkins-amee.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`redman-mariah`](../au-fhir-test-data-set/au-core/Practitioner-redman-mariah.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`roche-garfield`](../au-fhir-test-data-set/au-core/Practitioner-roche-garfield.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`seaby-penelope`](../au-fhir-test-data-set/au-core/Practitioner-seaby-penelope.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json)
+- [`shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`simons-reggie`](../au-fhir-test-data-set/au-core/Practitioner-simons-reggie.json)
 - [`stephens-nellie`](../au-fhir-test-data-set/au-core/Practitioner-stephens-nellie.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`tate-melvin`](../au-fhir-test-data-set/au-core/Practitioner-tate-melvin.json) — *also in: [scenario-groups](#scenario-groups)*
@@ -2454,10 +2454,10 @@ _Brisbane, Herston, Logan Reserve, Loganlea, Wilston._
 - [`bowden-hiroko`](../au-fhir-test-data-set/au-core/Practitioner-bowden-hiroko.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`greenhill-edmond`](../au-fhir-test-data-set/au-core/Practitioner-greenhill-edmond.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`irwin-corinna`](../au-fhir-test-data-set/au-core/Practitioner-irwin-corinna.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`lyons-shay`](../au-fhir-test-data-set/au-core/Practitioner-lyons-shay.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`mclean-brenda`](../au-fhir-test-data-set/au-core/Practitioner-mclean-brenda.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`stapleton-carole`](../au-fhir-test-data-set/au-core/Practitioner-stapleton-carole.json)
 
 **Organization** (3)
@@ -2506,7 +2506,7 @@ _Barney View, Cedar Grove._
 
 - [`armstrong-amada`](../au-fhir-test-data-set/au-core/Practitioner-armstrong-amada.json)
 - [`haywood-byron`](../au-fhir-test-data-set/au-core/Practitioner-haywood-byron.json)
-- [`kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json)
+- [`kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`manning-meg`](../au-fhir-test-data-set/au-core/Practitioner-manning-meg.json)
 - [`sinclair-forrest`](../au-fhir-test-data-set/au-core/Practitioner-sinclair-forrest.json)
 
@@ -2567,7 +2567,7 @@ _Berat, Carrington, Glennie Heights, Loch Lomond, Morgan Park, Purrawunda, Westb
 **Patient** (2)
 
 - [`hayes-arianne`](../au-fhir-test-data-set/au-core/Patient-hayes-arianne.json) — *also in: [au-ps-test-patients](#au-ps-test-patients), [inferno-default-patients](#inferno-default-patients)*
-- [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json) — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples)*
+- [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json) — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 
 **PractitionerRole** (8)
 
@@ -2586,7 +2586,7 @@ _Berat, Carrington, Glennie Heights, Loch Lomond, Morgan Park, Purrawunda, Westb
 - [`macnab-gregory`](../au-fhir-test-data-set/au-core/Practitioner-macnab-gregory.json)
 - [`marchant-ricki`](../au-fhir-test-data-set/au-core/Practitioner-marchant-ricki.json)
 - [`morton-eric`](../au-fhir-test-data-set/au-core/Practitioner-morton-eric.json)
-- [`rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json)
+- [`rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`samuels-wyatt`](../au-fhir-test-data-set/au-core/Practitioner-samuels-wyatt.json)
 - [`shearer-joesfine`](../au-fhir-test-data-set/au-core/Practitioner-shearer-joesfine.json)
 - [`springett-angelo`](../au-fhir-test-data-set/au-core/Practitioner-springett-angelo.json)
@@ -2676,7 +2676,7 @@ _Draper, Elimbah._
 
 **Patient** (1)
 
-- [`boulton-annika`](../au-fhir-test-data-set/au-core/Patient-boulton-annika.json)
+- [`boulton-annika`](../au-fhir-test-data-set/au-core/Patient-boulton-annika.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 
 **PractitionerRole** (2)
 
@@ -2686,7 +2686,7 @@ _Draper, Elimbah._
 **Practitioner** (2)
 
 - [`egan-shae`](../au-fhir-test-data-set/au-core/Practitioner-egan-shae.json)
-- [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples)*
+- [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 
 **HealthcareService** (1)
 
@@ -2740,7 +2740,7 @@ _Banana, Cracow._
 **Practitioner** (2)
 
 - [`crowley-pablo`](../au-fhir-test-data-set/au-core/Practitioner-crowley-pablo.json)
-- [`patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json)
+- [`patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 
 **HealthcareService** (1)
 
@@ -3328,7 +3328,7 @@ _Blackburn South, Eltham North, Launching Place, Melbourne, Ringwood East, South
 
 **Practitioner** (36)
 
-- [`alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`blackwood-ella`](../au-fhir-test-data-set/au-core/Practitioner-blackwood-ella.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`bond-edmundo`](../au-fhir-test-data-set/au-core/Practitioner-bond-edmundo.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`bowyer-norbert`](../au-fhir-test-data-set/au-core/Practitioner-bowyer-norbert.json) — *also in: [scenario-groups](#scenario-groups)*
@@ -3338,22 +3338,22 @@ _Blackburn South, Eltham North, Launching Place, Melbourne, Ringwood East, South
 - [`findley-betty`](../au-fhir-test-data-set/au-core/Practitioner-findley-betty.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`frankel-caroline`](../au-fhir-test-data-set/au-core/Practitioner-frankel-caroline.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`fuller-kendrick`](../au-fhir-test-data-set/au-core/Practitioner-fuller-kendrick.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`hallan-maggie`](../au-fhir-test-data-set/au-core/Practitioner-hallan-maggie.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`hamel-opal`](../au-fhir-test-data-set/au-core/Practitioner-hamel-opal.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`hatcher-merrill`](../au-fhir-test-data-set/au-core/Practitioner-hatcher-merrill.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`higgs-allegra`](../au-fhir-test-data-set/au-core/Practitioner-higgs-allegra.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`hilton-della`](../au-fhir-test-data-set/au-core/Practitioner-hilton-della.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`joyce-mae`](../au-fhir-test-data-set/au-core/Practitioner-joyce-mae.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`kelly-arlene`](../au-fhir-test-data-set/au-core/Practitioner-kelly-arlene.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`keyes-chau`](../au-fhir-test-data-set/au-core/Practitioner-keyes-chau.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`laing-malinda`](../au-fhir-test-data-set/au-core/Practitioner-laing-malinda.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`mckane-eugena`](../au-fhir-test-data-set/au-core/Practitioner-mckane-eugena.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`mcnaughton-opal`](../au-fhir-test-data-set/au-core/Practitioner-mcnaughton-opal.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`mullins-bonita`](../au-fhir-test-data-set/au-core/Practitioner-mullins-bonita.json) — *also in: [scenario-groups](#scenario-groups)*
-- [`murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) — *also in: [scenario-groups](#scenario-groups)*
+- [`murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) — *also in: [scenario-groups](#scenario-groups), [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`osland-deanne`](../au-fhir-test-data-set/au-core/Practitioner-osland-deanne.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`patterson-teri`](../au-fhir-test-data-set/au-core/Practitioner-patterson-teri.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`phillips-gerard`](../au-fhir-test-data-set/au-core/Practitioner-phillips-gerard.json) — *also in: [scenario-groups](#scenario-groups)*
@@ -4360,7 +4360,7 @@ Derived automatically. A patient is a member when no clinical resource in the da
 - [`banks-jonas-cary`](../au-fhir-test-data-set/au-core/Patient-banks-jonas-cary.json) — *also in: [families](#families)*
 - [`bassett-imogene-betsy`](../au-fhir-test-data-set/au-core/Patient-bassett-imogene-betsy.json)
 - [`black-kerry-dougal`](../au-fhir-test-data-set/au-core/Patient-black-kerry-dougal.json)
-- [`boulton-annika`](../au-fhir-test-data-set/au-core/Patient-boulton-annika.json)
+- [`boulton-annika`](../au-fhir-test-data-set/au-core/Patient-boulton-annika.json) — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - [`britton-brian-edwin`](../au-fhir-test-data-set/au-core/Patient-britton-brian-edwin.json)
 - [`callow-veronica-connie`](../au-fhir-test-data-set/au-core/Patient-callow-veronica-connie.json)
 - [`campbell-ambrose`](../au-fhir-test-data-set/au-core/Patient-campbell-ambrose.json)
@@ -4385,11 +4385,11 @@ Derived automatically. A patient is a member when no clinical resource in the da
 - [`hulme-brant`](../au-fhir-test-data-set/au-core/Patient-hulme-brant.json)
 - [`humphries-jayson`](../au-fhir-test-data-set/au-core/Patient-humphries-jayson.json)
 - [`inveraity-polly`](../au-fhir-test-data-set/au-core/Patient-inveraity-polly.json)
-- `italia-sofia-missing-birthDate` — `au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-birthDate.json` — *also in: [missing-suppressed-data](#missing-suppressed-data)*
+- [`italia-sofia-missing-birthDate`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-birthDate.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
 - [`italia-sofia-missing-gender`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-gender.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
 - [`italia-sofia-missing-identifier`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-identifier.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
 - [`italia-sofia-missing-name`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-missing-name.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
-- `italia-sofia-suppressed-birthDate` — `au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-birthDate.json` — *also in: [missing-suppressed-data](#missing-suppressed-data)*
+- [`italia-sofia-suppressed-birthDate`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-birthDate.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
 - [`italia-sofia-suppressed-gender`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-gender.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
 - [`italia-sofia-suppressed-identifier`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-identifier.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
 - [`italia-sofia-suppressed-name`](../au-fhir-test-data-set/au-core/Patient-italia-sofia-suppressed-name.json) — *also in: [missing-suppressed-data](#missing-suppressed-data)*
