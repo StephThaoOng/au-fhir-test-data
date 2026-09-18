@@ -97,6 +97,7 @@ import html
 import os
 import re
 import subprocess
+import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 
@@ -788,6 +789,216 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     return "\n".join(lines) + "\n"
 
 
+# --- Regeneration drift check -------------------------------------------
+#
+# A regeneration can silently lose a member the previous page had — the
+# case that prompted this: an upstream rename orphaned a confirmation keyed
+# to the old id (confirmations.json keys on exact Type/id), so the renamed
+# entity was re-detected by its script but sat unconfirmed under its new
+# identity and vanished from the page with no visible signal beyond a
+# smaller count buried in a details block. This compares this run's
+# membership against the last COMMITTED page and tries to tell a rename
+# (file moved, same content — git's own rename detection settles this)
+# apart from a genuine removal or an intentional curation change, so a
+# maintainer gets "X was probably renamed to Y" instead of just "it's
+# smaller now".
+
+PREVIOUS_ROW_RE = re.compile(r"^- \[`([^`]+)`\]\(([^)]+)\)")
+SECTION_ANCHOR_RE = re.compile(r'^## .*<a id="([^"]+)"></a>')
+STAMP_COMMIT_RE = re.compile(r"commit `([0-9a-f]{7,40})`")
+FILENAME_TYPE_ID_RE = re.compile(r"^([A-Z][A-Za-z]*)-(.+)\.json$")
+
+
+def _git_lines(*args: str) -> list[str] | None:
+    """Run git read-only; None on any failure rather than raising.
+
+    Unlike lib._git(), a failure here must never block regeneration — this
+    check is diagnostic, not a precondition the page depends on (a shallow
+    clone or an unreachable old commit just means less can be classified,
+    not that generation should stop).
+    """
+    result = subprocess.run(
+        ["git", "-C", str(lib.REPO_ROOT), *args],
+        capture_output=True, text=True,
+    )
+    return result.stdout.splitlines() if result.returncode == 0 else None
+
+
+def _type_and_id_from_path(path: str) -> tuple[str, str] | None:
+    m = FILENAME_TYPE_ID_RE.match(path.rsplit("/", 1)[-1])
+    return (m.group(1), m.group(2)) if m else None
+
+
+def parse_previous_page(text: str) -> tuple[dict[str, set[tuple[str, str, str]]], str | None]:
+    """Reconstruct each subset's membership from the last committed page.
+
+    Only resolved rows (a hyperlinked id, from render_flat() above) carry a
+    path to check a rename or removal against, so unresolved
+    (`_(no resource)_`) rows are not tracked here — there is nothing to
+    diff them against, and their disappearance is not this check's concern.
+    """
+    by_subset: dict[str, set[tuple[str, str, str]]] = defaultdict(set)
+    current_slug = None
+    commit = None
+    for line in text.splitlines():
+        anchor = SECTION_ANCHOR_RE.match(line)
+        if anchor:
+            current_slug = anchor.group(1)
+            continue
+        if commit is None:
+            stamp = STAMP_COMMIT_RE.search(line)
+            if stamp:
+                commit = stamp.group(1)
+        if current_slug is None:
+            continue
+        row = PREVIOUS_ROW_RE.match(line)
+        if not row:
+            continue
+        rid, href = row.groups()
+        path = href[3:] if href.startswith("../") else href
+        parsed = _type_and_id_from_path(path)
+        rtype = parsed[0] if parsed else "Unspecified"
+        by_subset[current_slug].add((rtype, rid, path))
+    return dict(by_subset), commit
+
+
+def check_for_dropped_members(resolved: dict[str, list[dict]]) -> list[dict]:
+    """Compare this run's membership against the last committed page.
+
+    Returns a list of finding dicts (subset, severity, resource_type, id,
+    old_path, and new_path/new_id when severity is RENAMED), one per entity
+    that was a member of some subset in the last committed page and is not
+    a member of that same subset now:
+
+      - RENAMED: git's own rename detection ties the old path to a new one
+        between the previous page's stamped commit and HEAD.
+      - REMOVED: the old file no longer exists and no rename was detected.
+      - DROPPED: the old file is unchanged, but the subset's membership
+        (curation, confirmation) no longer includes it — often intentional
+        (e.g. a journey's roster was edited), surfaced for visibility, not
+        as an error.
+    """
+    prev_lines = _git_lines("show", "HEAD:docs/DataSubsets.md")
+    if prev_lines is None:
+        return []  # First-ever run, or HEAD predates this file — nothing to compare.
+    previous_by_subset, anchor_commit = parse_previous_page("\n".join(prev_lines))
+
+    current_by_subset: dict[str, set[tuple[str, str]]] = {
+        slug: {(m.get("resource_type") or "Unspecified", m["id"]) for m in members}
+        for slug, members in resolved.items()
+    }
+
+    dropped = [
+        (slug, rtype, rid, path)
+        for slug, prev_members in previous_by_subset.items()
+        for rtype, rid, path in prev_members
+        if (rtype, rid) not in current_by_subset.get(slug, set())
+    ]
+    if not dropped:
+        return []
+
+    rename_map: dict[str, str] = {}
+    if anchor_commit:
+        dataset_pathspec = str(lib.DATA_SET_ROOT.relative_to(lib.REPO_ROOT))
+        rename_lines = _git_lines(
+            "diff", "--find-renames=50%", "--diff-filter=R", "--name-status",
+            anchor_commit, "HEAD", "--", dataset_pathspec,
+        )
+        for line in rename_lines or []:
+            cols = line.split("\t")
+            if len(cols) == 3 and cols[0].startswith("R"):
+                rename_map[cols[1]] = cols[2]
+
+    findings = []
+    for slug, rtype, rid, old_path in dropped:
+        if old_path in rename_map:
+            new_path = rename_map[old_path]
+            new_parsed = _type_and_id_from_path(new_path)
+            findings.append({
+                "subset": slug, "severity": "RENAMED",
+                "resource_type": rtype, "id": rid, "old_path": old_path,
+                "new_path": new_path,
+                "new_id": new_parsed[1] if new_parsed else None,
+            })
+        elif not (lib.REPO_ROOT / old_path).exists():
+            findings.append({
+                "subset": slug, "severity": "REMOVED",
+                "resource_type": rtype, "id": rid, "old_path": old_path,
+            })
+        else:
+            findings.append({
+                "subset": slug, "severity": "DROPPED",
+                "resource_type": rtype, "id": rid, "old_path": old_path,
+            })
+    return findings
+
+
+def print_drop_report(findings: list[dict]) -> None:
+    by_severity = {sev: [f for f in findings if f["severity"] == sev]
+                  for sev in ("RENAMED", "REMOVED", "DROPPED")}
+    print(f"\n{plural(len(findings), 'entity')} present in the previous "
+          "page are missing from this regeneration:\n")
+    if by_severity["RENAMED"]:
+        print("RENAMED — likely needs a subsets.yaml/confirmations.json "
+              "update to the new id:")
+        for f in by_severity["RENAMED"]:
+            new_id = f" (new id: {f['new_id']})" if f.get("new_id") else ""
+            print(f"  [{f['subset']}] {f['resource_type']}/{f['id']} "
+                  f"({f['old_path']}) -> {f['new_path']}{new_id}")
+    if by_severity["REMOVED"]:
+        print("\nREMOVED — file no longer exists, no rename detected:")
+        for f in by_severity["REMOVED"]:
+            print(f"  [{f['subset']}] {f['resource_type']}/{f['id']} "
+                  f"({f['old_path']})")
+    if by_severity["DROPPED"]:
+        print("\nDROPPED — resource unchanged, no longer a subset member "
+              "(verify this was intentional):")
+        for f in by_severity["DROPPED"]:
+            print(f"  [{f['subset']}] {f['resource_type']}/{f['id']} "
+                  f"({f['old_path']})")
+    print()
+
+
+def render_drop_callout(findings: list[dict]) -> str:
+    by_severity = {sev: [f for f in findings if f["severity"] == sev]
+                  for sev in ("RENAMED", "REMOVED", "DROPPED")}
+    body = []
+    if by_severity["RENAMED"]:
+        body.append("> **Likely renamed** — verify the subset's membership "
+                    "or confirmations.json reference the new id:")
+        for f in by_severity["RENAMED"]:
+            new_id = f" (new id `{f['new_id']}`)" if f.get("new_id") else ""
+            body.append(
+                f"> - `{f['resource_type']}/{f['id']}` (`{f['old_path']}`) "
+                f"→ likely `{f['new_path']}`{new_id} — subset "
+                f"[{f['subset']}](#{f['subset']})"
+            )
+    if by_severity["REMOVED"]:
+        body.append("> **No longer exists, no rename detected:**")
+        for f in by_severity["REMOVED"]:
+            body.append(
+                f"> - `{f['resource_type']}/{f['id']}` (`{f['old_path']}`) "
+                f"— subset [{f['subset']}](#{f['subset']})"
+            )
+    if by_severity["DROPPED"]:
+        body.append("> **Resource unchanged, no longer a subset member** "
+                    "— verify this was intentional:")
+        for f in by_severity["DROPPED"]:
+            body.append(
+                f"> - `{f['resource_type']}/{f['id']}` (`{f['old_path']}`) "
+                f"— subset [{f['subset']}](#{f['subset']})"
+            )
+    summary = (
+        f"⚠️ Regeneration drift check — {plural(len(findings), 'entity')} "
+        f"present in the previous page {'is' if len(findings) == 1 else 'are'} "
+        "missing from this one"
+    )
+    return (
+        f"<details><summary>{summary}</summary>\n\n"
+        + "\n".join(body) + "\n\n</details>\n"
+    )
+
+
 def generation_stamp(candidates: dict) -> str:
     """Page-level generation stamp.
 
@@ -827,6 +1038,9 @@ def main():
         notes_by_slug[slug] = notes
 
     res_index = build_reservation_index(resolved, subsets_by_slug)
+    drop_findings = check_for_dropped_members(resolved)
+    if drop_findings:
+        print_drop_report(drop_findings)
 
     parts = [
         "# HL7 AU FHIR Test Data — Data Subsets\n",
@@ -911,8 +1125,10 @@ def main():
         "show a **Source** and others show an attester.\n\n"
         "</details>\n",
         generation_stamp(candidates),
-        "## Contents\n",
     ]
+    if drop_findings:
+        parts.append(render_drop_callout(drop_findings))
+    parts.append("## Contents\n")
     parts.append("\n".join(
         f"- [{subsets_by_slug[s]['title']}](#{s})" for s in SUBSET_ORDER
     ) + "\n")
@@ -926,6 +1142,12 @@ def main():
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text("\n".join(parts), encoding="utf-8")
     print(f"Wrote {OUTPUT_PATH}")
+    # Never block the write on this — the page is always regenerated. A
+    # likely rename is the one finding worth a non-zero exit: it usually
+    # means subsets.yaml or confirmations.json needs a follow-up edit,
+    # unlike a plain removal or an intentional curation change.
+    if any(f["severity"] == "RENAMED" for f in drop_findings):
+        sys.exit(1)
     return None
 
 
