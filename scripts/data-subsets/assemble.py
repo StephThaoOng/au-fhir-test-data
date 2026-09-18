@@ -94,6 +94,7 @@ forcing horizontal scroll on the page.
 from __future__ import annotations
 
 import html
+import os
 import re
 import subprocess
 from collections import defaultdict
@@ -485,8 +486,18 @@ def render_entity_list(members: list[dict], group_field: str | None,
             for m in group:
                 key = f"{rtype}/{m['id']}"
                 note = overlap_note(key, current_slug, res_index)
-                path = f"`{m['path']}`" if m.get("path") else "_(no resource)_"
-                row = f"- `{m['id']}` — {path}"
+                if m.get("path"):
+                    # The id links straight to the file it resolved to,
+                    # rather than also printing the path inline — the path
+                    # is still discoverable (link hover / status bar), it
+                    # just no longer clutters the list. Relative to
+                    # OUTPUT_PATH's directory, not REPO_ROOT, since the path
+                    # in `m` is repo-root-relative but the link is embedded
+                    # one directory down in docs/.
+                    href = os.path.relpath(lib.REPO_ROOT / m["path"], OUTPUT_PATH.parent)
+                    row = f"- [`{m['id']}`]({href})"
+                else:
+                    row = f"- `{m['id']}` — _(no resource)_"
                 if m.get("journey_role"):
                     row += f" — **{m['journey_role']}**"
                 # Where the journey states a role the data's PractitionerRole
