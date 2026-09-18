@@ -423,19 +423,47 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 <details><summary>Derivation notes</summary>
 
-> **Chemotherapy — acute admission to HITH and outpatient care**
+> **Encounter Journey 2 - Chemotherapy, HITH, Allied Health**
 > Case scenario: Kendall presented for chemotherapy but was acutely unwell, requiring inpatient admission and multidisciplinary treatment before transitioning to Hospital in the Home and ongoing outpatient care.
-> Status: CARE TEAM ONLY. The 11 named individuals resolve to existing test data, but the clinical narrative this journey describes — chemotherapy, the acute inpatient admission, the HITH transition and outpatient follow-up — does not exist as test data yet. No chemotherapy or admission Encounter references Kendall.
+> Status: CARE TEAM ONLY. The named individuals resolve to existing test data, but the clinical narrative this journey describes — chemotherapy, the acute inpatient admission, the HITH transition and outpatient follow-up — does not exist as test data yet. No chemotherapy or admission Encounter references Kendall.
 > CONFLICT — `Patient/sandilands-kendall`: Already carries unrelated clinical content: an ambulatory GP visit (Encounter/gpvisit, SNOMED 866149003 "Annual visit"), a pathology ServiceRequest (path-scenario-1) with two eRequesting Tasks, and two Coverage resources. None of it belongs to this chemotherapy journey. New journey content will join that existing graph.
 
 </details>
 
-### Members (19)
+### Members (66)
 
-<details><summary><strong>AU Encounter Records</strong> (1 journey, 13 entities)</summary>
+<details><summary><strong>AU Encounter Records</strong> (4 journeys, 60 entities)</summary>
 
 <blockquote>
-<details><summary><strong>chemotherapy-acute-admission-to-hith</strong> (13 entities)</summary>
+<details><summary><strong>encounter-journey-1-routine-care-and-unplanned-events</strong> (12 entities)</summary>
+
+
+**Patient** (1)
+
+- `roberts-fred` — `au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json` — **Patient**
+
+**Practitioner** (9)
+
+- `cox-sandra` — `au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json` — **Registered Nurse** — *also in: [scenario-groups](#scenario-groups)*
+- `dawson-kent` — `au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json` — **ED Doctor** — *also in: [scenario-groups](#scenario-groups)*
+- `ellison-abby` — `au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json` — **ED Physiotherapist** — *declared specialty is only "Physiotherapist"* — *also in: [scenario-groups](#scenario-groups)*
+- `frank-gaylene` — `au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json` — **Nurse Practitioner** — *also in: [scenario-groups](#scenario-groups)*
+- `gilmore-dane` — `au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json` — **Paramedic** — *declared specialty is only "Ambulance Officer"*
+- `little-jerrie` — `au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json` — **General Practitioner** — *also in: [scenario-groups](#scenario-groups)*
+- `neville-isaiah` — `au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json` — **Physiotherapist** — *also in: [scenario-groups](#scenario-groups)*
+- `ohalloran-sheryl` — `au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json` — **Pharmacist** — *also in: [scenario-groups](#scenario-groups)*
+- `shephard-lizabeth` — `au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json` — **ED Triage Nurse** — *declared specialty is only "Registered Nurses nec"*
+
+**Unresolved** (2)
+
+- `roberts-nancy` — _(no resource)_ — **Fred's wife** — *no matching resource in the data set*
+- `smith-joe` — _(no resource)_ — **Emergency Dispatcher** — *no matching resource in the data set*
+
+</details>
+</blockquote>
+
+<blockquote>
+<details><summary><strong>encounter-journey-2-chemotherapy-hith-allied-health</strong> (14 entities)</summary>
 
 
 **Patient** (1)
@@ -444,21 +472,87 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Practitioner** (10)
 
+- `gordon-tad` — `au-fhir-test-data-set/au-core/Practitioner-gordon-tad.json` — **Exercise Physiologist**
 - `lapthorn-leisa` — `au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json` — **Inpatient Psychologist** — *declared specialty is only "Clinical Psychologist"* — *also in: [scenario-groups](#scenario-groups)*
 - `levings-richard` — `au-fhir-test-data-set/au-core/Practitioner-levings-richard.json` — **Outpatient Dietitian** — *declared specialty is only "Dietitian"* — *also in: [scenario-groups](#scenario-groups)*
 - `lowe-abe` — `au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json` — **General Practitioner (GP)** — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
 - `mcnab-angelina` — `au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json` — **Inpatient Dietitian** — *declared specialty is only "Dietitian"* — *also in: [scenario-groups](#scenario-groups)*
-- `milgate-leisa` — `au-fhir-test-data-set/au-core/Practitioner-milgate-leisa.json` — **Day Therapy Unit Nurse** — *declared specialty is only "Registered Nurses nec"*
 - `mills-hope` — `au-fhir-test-data-set/au-core/Practitioner-mills-hope.json` — **Occupational Therapist (OT)** — *also in: [scenario-groups](#scenario-groups)*
-- `parker-elijah` — `au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json` — **Physiotherapist**
 - `roberts-benjamin` — `au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json` — **Specialist Cancer Nurse** — *declared specialty is only "Registered Nurses nec"*
 - `sheppard-mathew` — `au-fhir-test-data-set/au-core/Practitioner-sheppard-mathew.json` — **Medical Oncologist**
+- `taylor-kittie` — `au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json` — **Day Therapy Unit Nurse** — *declared specialty is only "Registered Nurses nec"*
 - `vaughan-blaine` — `au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json` — **Private Psychologist** — *declared specialty is only "Clinical Psychologist"* — *also in: [scenario-groups](#scenario-groups)*
 
-**Unresolved** (2)
+**Unresolved** (3)
 
+- `cedric-lowe-friend` — _(no resource)_ — **Kendall's friend** — *no matching resource in the data set*
 - `hith-team` — _(no resource)_ — **Hospital-In-The-Home (HITH) team** — *no matching resource in the data set*
 - `medical-oncology-team` — _(no resource)_ — **Medical Oncology Team** — *no matching resource in the data set*
+
+</details>
+</blockquote>
+
+<blockquote>
+<details><summary><strong>encounter-journey-3-child-with-developmental-delay</strong> (10 entities)</summary>
+
+
+**Practitioner** (7)
+
+- `alcock-devon` — `au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json` — **Maternal and Child Health Nurse** — *declared specialty is only "Registered Nurses nec"* — *also in: [scenario-groups](#scenario-groups)*
+- `bradley-jill` — `au-fhir-test-data-set/au-core/Practitioner-bradley-jill.json` — **Audiologist**
+- `greene-delores` — `au-fhir-test-data-set/au-core/Practitioner-greene-delores.json` — **Paediatrician** — *also in: [scenario-groups](#scenario-groups)*
+- `keith-margot` — `au-fhir-test-data-set/au-core/Practitioner-keith-margot.json` — **General Practitioner** — *also in: [scenario-groups](#scenario-groups)*
+- `mullin-kenny` — `au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json` — **Speech Pathologist** — *also in: [scenario-groups](#scenario-groups)*
+- `murray-ashli` — `au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json` — **Occupational Therapist** — *also in: [scenario-groups](#scenario-groups)*
+- `vaughan-blaine` — `au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json` — **Private Psychologist** — *declared specialty is only "Clinical Psychologist"* — *also in: [scenario-groups](#scenario-groups)*
+
+**Unresolved** (3)
+
+- `smith-heather` — _(no resource)_ — **Noah's Mother** — *no matching resource in the data set*
+- `smith-noah` — _(no resource)_ — **Patient (age 3 years 6 months)** — *no matching resource in the data set*
+- `smith-shaun` — _(no resource)_ — **Noah's Father** — *no matching resource in the data set*
+
+</details>
+</blockquote>
+
+<blockquote>
+<details><summary><strong>encounter-journey-4-independent-living-admission-and-transition-care</strong> (26 entities)</summary>
+
+
+**Patient** (1)
+
+- `boulton-annika` — `au-fhir-test-data-set/au-core/Patient-boulton-annika.json` — **Patient**
+
+**Practitioner** (17)
+
+- `bailey-buck` — `au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json` — **Inpatient Social worker** — *declared specialty is only "Social Worker"* — *also in: [scenario-groups](#scenario-groups)*
+- `barrett-kirstie` — `au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json` — **TCP social worker** — *declared specialty is only "Social Worker"* — *also in: [scenario-groups](#scenario-groups)*
+- `berridge-beulah` — `au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json` — **Anaesthetist** — *also in: [scenario-groups](#scenario-groups)*
+- `gilmore-dane` — `au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json` — **Paramedic** — *declared specialty is only "Ambulance Officer"*
+- `guthridge-jarred` — `au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json` — **General Practitioner (GP)** — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples)*
+- `hipwood-fatimah` — `au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json` — **TCP OT** — *declared specialty is only "Occupational Therapist"* — *also in: [scenario-groups](#scenario-groups)*
+- `hobden-mark` — `au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json` — **Inpatient Pharmacist** — *declared specialty is only "Pharmacist"* — *also in: [scenario-groups](#scenario-groups)*
+- `jeffery-sammy` — `au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json` — **Inpatient Physiotherapist** — *declared specialty is only "Physiotherapist"* — *also in: [scenario-groups](#scenario-groups)*
+- `kelly-virginia` — `au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json` — **Inpatient Dietitian** — *declared specialty is only "Dietitian"*
+- `knowles-sunshine` — `au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json` — **Community Occupational Therapist** — *declared specialty is only "Occupational Therapist"* — *also in: [scenario-groups](#scenario-groups)*
+- `livingstone-yvonne` — `au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json` — **TCP Physiotherapist** — *declared specialty is only "Physiotherapist"* — *also in: [scenario-groups](#scenario-groups)*
+- `parker-elijah` — `au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json` — **Community physiotherapist** — *declared specialty is only "Physiotherapist"*
+- `patrick-manual` — `au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json` — **Community pharmacist**
+- `randall-anthony` — `au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json` — **Practice nurse** — *declared specialty is only "Registered Nurses nec"* — *also in: [scenario-groups](#scenario-groups)*
+- `robbins-wilhelmina` — `au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json` — **Transition Care Program (TCP) Nurse** — *declared specialty is only "Nurse Practitioner"* — *also in: [scenario-groups](#scenario-groups)*
+- `rowland-roger` — `au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json` — **Surgical ward nurse** — *declared specialty is only "Registered Nurses nec"*
+- `sherry-dean` — `au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json` — **Inpatient Occupational Therapist (OT)** — *declared specialty is only "Occupational Therapist"* — *also in: [scenario-groups](#scenario-groups)*
+
+**Unresolved** (8)
+
+- `acat-team` — _(no resource)_ — **Aged Care Assessment Team (ACAT)** — *no matching resource in the data set*
+- `boulton-sophie` — _(no resource)_ — **Annika's Daughter** — *no matching resource in the data set*
+- `donnelly-claire` — _(no resource)_ — **TCP Allied Health Assistant** — *no matching resource in the data set*
+- `ed-team` — _(no resource)_ — **Emergency Department team** — *no matching resource in the data set*
+- `geriatrics-team` — _(no resource)_ — **Geriatrics team** — *no matching resource in the data set*
+- `orthopaedic-team` — _(no resource)_ — **Orthopaedic team** — *no matching resource in the data set*
+- `pain-team` — _(no resource)_ — **Pain team** — *no matching resource in the data set*
+- `radiology-team` — _(no resource)_ — **Radiology team** — *no matching resource in the data set*
 
 </details>
 </blockquote>
@@ -473,7 +567,7 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- `morris-charlotte` — `au-fhir-test-data-set/au-core/Patient-morris-charlotte.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
+- `morris-charlotte` — `au-fhir-test-data-set/au-core/Patient-morris-charlotte.json`
 
 </details>
 </blockquote>
@@ -495,7 +589,7 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
+- `banks-jeramy-ezra` — `au-fhir-test-data-set/au-core/Patient-banks-jeramy-ezra.json`
 
 </details>
 </blockquote>
@@ -517,11 +611,11 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- `johnson-joyce` — `au-fhir-test-data-set/au-core/Patient-johnson-joyce.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
+- `johnson-joyce` — `au-fhir-test-data-set/au-core/Patient-johnson-joyce.json`
 
 **Practitioner** (1)
 
-- `burrows-ginger` — `au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json` — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
+- `burrows-ginger` — `au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json`
 
 </details>
 </blockquote>
@@ -1108,32 +1202,32 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 
 **Practitioner** (33)
 
-- `berridge-beulah` — `au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json`
+- `berridge-beulah` — `au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `breadmore-phillip` — `au-fhir-test-data-set/au-core/Practitioner-breadmore-phillip.json`
-- `cox-sandra` — `au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json`
-- `dawson-kent` — `au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json`
+- `cox-sandra` — `au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `dawson-kent` — `au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `duncan-xenia` — `au-fhir-test-data-set/au-core/Practitioner-duncan-xenia.json`
-- `ellison-abby` — `au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json`
+- `ellison-abby` — `au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `ewing-jude` — `au-fhir-test-data-set/au-core/Practitioner-ewing-jude.json`
 - `fleming-kitty` — `au-fhir-test-data-set/au-core/Practitioner-fleming-kitty.json`
-- `frank-gaylene` — `au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json`
+- `frank-gaylene` — `au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `fuller-christeen` — `au-fhir-test-data-set/au-core/Practitioner-fuller-christeen.json`
 - `goodwin-rae` — `au-fhir-test-data-set/au-core/Practitioner-goodwin-rae.json`
 - `hamilton-errol` — `au-fhir-test-data-set/au-core/Practitioner-hamilton-errol.json`
 - `healey-tamiko` — `au-fhir-test-data-set/au-core/Practitioner-healey-tamiko.json`
 - `howe-elden` — `au-fhir-test-data-set/au-core/Practitioner-howe-elden.json`
-- `knowles-sunshine` — `au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json`
+- `knowles-sunshine` — `au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `lapthorn-leisa` — `au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
-- `little-jerrie` — `au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json`
+- `little-jerrie` — `au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `macey-brant` — `au-fhir-test-data-set/au-core/Practitioner-macey-brant.json`
 - `mcbean-nicollette` — `au-fhir-test-data-set/au-core/Practitioner-mcbean-nicollette.json`
 - `mcintosh-angelica` — `au-fhir-test-data-set/au-core/Practitioner-mcintosh-angelica.json`
 - `mcnab-angelina` — `au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `mills-hope` — `au-fhir-test-data-set/au-core/Practitioner-mills-hope.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `nairn-vince` — `au-fhir-test-data-set/au-core/Practitioner-nairn-vince.json`
-- `neville-isaiah` — `au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json`
+- `neville-isaiah` — `au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `nutley-bradley` — `au-fhir-test-data-set/au-core/Practitioner-nutley-bradley.json`
-- `ohalloran-sheryl` — `au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json`
+- `ohalloran-sheryl` — `au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `osmond-michele` — `au-fhir-test-data-set/au-core/Practitioner-osmond-michele.json`
 - `perkins-amee` — `au-fhir-test-data-set/au-core/Practitioner-perkins-amee.json`
 - `redman-mariah` — `au-fhir-test-data-set/au-core/Practitioner-redman-mariah.json`
@@ -1359,20 +1453,20 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 
 **Practitioner** (28)
 
-- `bailey-buck` — `au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json`
-- `barrett-kirstie` — `au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json`
+- `bailey-buck` — `au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `barrett-kirstie` — `au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `bowden-hiroko` — `au-fhir-test-data-set/au-core/Practitioner-bowden-hiroko.json`
 - `gaynor-jasper` — `au-fhir-test-data-set/au-core/Practitioner-gaynor-jasper.json`
 - `greenhill-edmond` — `au-fhir-test-data-set/au-core/Practitioner-greenhill-edmond.json`
 - `haywood-dot` — `au-fhir-test-data-set/au-core/Practitioner-haywood-dot.json`
-- `hipwood-fatimah` — `au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json`
-- `hobden-mark` — `au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json`
+- `hipwood-fatimah` — `au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `hobden-mark` — `au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `hodge-irving` — `au-fhir-test-data-set/au-core/Practitioner-hodge-irving.json`
 - `irwin-corinna` — `au-fhir-test-data-set/au-core/Practitioner-irwin-corinna.json`
 - `jeffery-herman` — `au-fhir-test-data-set/au-core/Practitioner-jeffery-herman.json`
 - `jeffery-nicolas` — `au-fhir-test-data-set/au-core/Practitioner-jeffery-nicolas.json`
-- `jeffery-sammy` — `au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json`
-- `livingstone-yvonne` — `au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json`
+- `jeffery-sammy` — `au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `livingstone-yvonne` — `au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `lyons-shay` — `au-fhir-test-data-set/au-core/Practitioner-lyons-shay.json`
 - `mccormack-gertie` — `au-fhir-test-data-set/au-core/Practitioner-mccormack-gertie.json`
 - `mcintyre-hsiu` — `au-fhir-test-data-set/au-core/Practitioner-mcintyre-hsiu.json`
@@ -1384,9 +1478,9 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - `pearce-teresa` — `au-fhir-test-data-set/au-core/Practitioner-pearce-teresa.json`
 - `potts-xuan` — `au-fhir-test-data-set/au-core/Practitioner-potts-xuan.json`
 - `pratt-colleen` — `au-fhir-test-data-set/au-core/Practitioner-pratt-colleen.json`
-- `randall-anthony` — `au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json`
-- `robbins-wilhelmina` — `au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json`
-- `sherry-dean` — `au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json`
+- `randall-anthony` — `au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `robbins-wilhelmina` — `au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `sherry-dean` — `au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 
 **Organization** (17)
 
@@ -1439,22 +1533,22 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 
 **Practitioner** (18)
 
-- `alcock-devon` — `au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json`
+- `alcock-devon` — `au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `blackwood-ella` — `au-fhir-test-data-set/au-core/Practitioner-blackwood-ella.json`
 - `dempsey-carli` — `au-fhir-test-data-set/au-core/Practitioner-dempsey-carli.json`
 - `egan-anja` — `au-fhir-test-data-set/au-core/Practitioner-egan-anja.json`
 - `findley-betty` — `au-fhir-test-data-set/au-core/Practitioner-findley-betty.json`
 - `frankel-caroline` — `au-fhir-test-data-set/au-core/Practitioner-frankel-caroline.json`
-- `greene-delores` — `au-fhir-test-data-set/au-core/Practitioner-greene-delores.json`
+- `greene-delores` — `au-fhir-test-data-set/au-core/Practitioner-greene-delores.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `hatcher-merrill` — `au-fhir-test-data-set/au-core/Practitioner-hatcher-merrill.json`
 - `higgs-allegra` — `au-fhir-test-data-set/au-core/Practitioner-higgs-allegra.json`
 - `hilton-della` — `au-fhir-test-data-set/au-core/Practitioner-hilton-della.json`
 - `joyce-mae` — `au-fhir-test-data-set/au-core/Practitioner-joyce-mae.json`
-- `keith-margot` — `au-fhir-test-data-set/au-core/Practitioner-keith-margot.json`
+- `keith-margot` — `au-fhir-test-data-set/au-core/Practitioner-keith-margot.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `laing-malinda` — `au-fhir-test-data-set/au-core/Practitioner-laing-malinda.json`
 - `mckane-eugena` — `au-fhir-test-data-set/au-core/Practitioner-mckane-eugena.json`
-- `mullin-kenny` — `au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json`
-- `murray-ashli` — `au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json`
+- `mullin-kenny` — `au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
+- `murray-ashli` — `au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json` — *also in: [sparked-cdg-journeys](#sparked-cdg-journeys)*
 - `rodd-illa` — `au-fhir-test-data-set/au-core/Practitioner-rodd-illa.json`
 - `shephard-vern` — `au-fhir-test-data-set/au-core/Practitioner-shephard-vern.json`
 
