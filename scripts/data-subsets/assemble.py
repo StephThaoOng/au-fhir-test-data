@@ -737,7 +737,12 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     # already states Derived/Declared/Curated as its opening word(s) — a
     # trailing "_Classification: X._" line only repeated it.
 
-    if notes:
+    # Derivation notes exist only for subsets a script actually derives —
+    # counts, exclusions, drift/attribution reasoning a reviewer would want
+    # to check the machinery behind. A Curated or Declared subset's notes
+    # are a human's own account of what they stated, not something to
+    # cross-check against a derivation, so the section doesn't apply there.
+    if notes and subset.get("type") in ("derived", "derived+curated"):
         # Collapsed like every other evidence block on the page (D20-era
         # precedent): these are derivation detail — counts, exclusions,
         # limitations — useful to a reviewer but not needed to read the
@@ -783,6 +788,10 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     # under two adjacent groupings and would otherwise be double-counted.
     distinct = len({f"{m.get('resource_type')}/{m.get('id')}"
                     for m in members})
+    # Blank separator, not relied on from whatever precedes it (the Read-at
+    # line, or a Derivation notes block that's no longer guaranteed to be
+    # there) — a heading needs its own paragraph break regardless.
+    lines.append("")
     lines.append(f"### Members ({distinct})\n")
     lines.append(render_entity_list(members, group_field, res_index, slug,
                                     group_labels, subgroup_field,

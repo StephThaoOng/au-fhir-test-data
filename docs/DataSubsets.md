@@ -33,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-20 23:05 UTC from test data at commit `f36dba2789f39dfb7f5a172c0dce8c443eb081fd`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-20 23:46 UTC from test data at commit `54c879bcdcf4d2174786ee75073d4e3fed7ad0ba`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -86,6 +86,7 @@ Derived automatically. Each entity in this data set is matched against the examp
 > 2 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
 
 </details>
+
 
 ### Members (30)
 
@@ -186,6 +187,7 @@ Derived automatically. AU PS examples are document Bundles rather than one resou
 
 </details>
 
+
 ### Members (16)
 
 **Patient** (5)
@@ -255,6 +257,7 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 
 </details>
 
+
 ### Members (16)
 
 **Patient** (3)
@@ -316,11 +319,6 @@ Declared, then drift-checked. The patient id list is read from the inferno_suite
 **Source:** inferno_suite_generator, lib/inferno_suite_generator/utils/helpers.rb, method default_patient_ids_string (lines 217-219 at time of transcription)
 
 **Read at:** [`754d94714818`](https://github.com/hl7au/inferno_suite_generator/commit/754d947148181516cd48bfe5232659a8bf4b7573) — the Inferno test kit revision this page was last generated from.
-<details><summary>Derivation notes</summary>
-
-> No drift: source matches the transcribed list.
-
-</details>
 
 ### Members (7)
 
@@ -362,6 +360,7 @@ Declared. The patient list is transcribed from the AU PS Test Data Coverage page
 
 
 **Source:** https://confluence.hl7.org/spaces/HAFWG/pages/404097954/AU+PS+Test+Data+Coverage
+
 ### Members (6)
 
 **Patient** (6)
@@ -399,6 +398,7 @@ Its single member also appears in [Families](#families). It carries no clinical 
 
 Curated. Membership is stated by a maintainer in the facts file and changes only when a maintainer adds or removes an entity.
 
+
 ### Members (1)
 
 **Patient** (1)
@@ -415,7 +415,7 @@ Identifies the entities used in Sparked Clinical Design Group consumer journeys,
 ### Ownership & governance
 
 **Owner:** Shared between Sparked CDG and HL7 AU Test Data project — TBC.  
-Journey membership does not itself reserve an entity. It does not follow that a journey entity is free to build on — some are also published IG examples, which that subset reserves. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it.
+Journey membership does not itself reserve an entity. It does not follow that a journey entity is free to build on — some are also published IG examples, which that subset reserves. What governs an entity is the tightest constraint across all of its memberships, so check its other listings and with the data subset owners before adding to it.
 
 ### Provenance & use
 
@@ -427,16 +427,8 @@ Several members also appear in [Scenario groupings](#scenario-groups), and some 
 
 ### How is this subset identified?
 
-Curated. Journey membership is stated by Sparked and recorded in the facts file; the AU Encounter Records journey additionally records each participant's stated journey role alongside the specialty declared by their PractitionerRole, because the two often differ.
+Curated. Journey membership is stated by Sparked and recorded in the facts file; the AU Encounter Records journey additionally records each participant's stated journey role alongside the specialty declared by their PractitionerRole, because the two can differ.
 
-<details><summary>Derivation notes</summary>
-
-> **Encounter Journey 2 - Chemotherapy, HITH, Allied Health**
-> Case scenario: Kendall presented for chemotherapy but was acutely unwell, requiring inpatient admission and multidisciplinary treatment before transitioning to Hospital in the Home and ongoing outpatient care.
-> Status: CARE TEAM ONLY. The named individuals resolve to existing test data, but the clinical narrative this journey describes — chemotherapy, the acute inpatient admission, the HITH transition and outpatient follow-up — does not exist as test data yet. No chemotherapy or admission Encounter references Kendall.
-> CONFLICT — `Patient/sandilands-kendall`: Already carries unrelated clinical content: an ambulatory GP visit (Encounter/gpvisit, SNOMED 866149003 "Annual visit"), a pathology ServiceRequest (path-scenario-1) with two eRequesting Tasks, and two Coverage resources. None of it belongs to this chemotherapy journey. New journey content will join that existing graph.
-
-</details>
 
 ### Members (66)
 
@@ -478,7 +470,7 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 **Patient** (1)
 
-- [`sandilands-kendall`](../au-fhir-test-data-set/au-erequesting/Patient-sandilands-kendall.json) — **Patient (age 45)**
+- [`sandilands-kendall`](../au-fhir-test-data-set/au-erequesting/Patient-sandilands-kendall.json) — **Patient**
 
 **Practitioner** (10)
 
@@ -668,15 +660,6 @@ Declared, and read from a branch. These entities are not on the default branch, 
 **Source:** Alex's Story — au-fhir-test-data-set/connected-care/Alex Story Data Set.md, on the connected-care branch (not on master). Yuri's Story — no source document yet; membership is the provisional remainder of the connected-care directory not claimed by Alex's Story.
 
 **Read at:** [`ddb96e935ee7`](https://github.com/hl7au/au-fhir-test-data/commit/ddb96e935ee71866b48d3b49291609868a414baa) — the Connected Care branch revision this page was last generated from.
-<details><summary>Derivation notes</summary>
-
-> Alex's Story: 38 entities claimed by 'Alex Story Data Set.md', all resolved on upstream/connected-care.
-> Yuri's Story: 57 entities attributed by REMAINDER only — no source document exists for Yuri's Story yet. This attribution is provisional, not confirmed.
-> 56 of the 57 remainder entities are infrastructure types (Organization, Location, Practitioner, PractitionerRole, HealthcareService) that may plausibly serve both stories — see design.md Open Questions 'Connected Care shared infrastructure'. Tagged likely_shared rather than resolved here.
-> 1 narrative element(s) in Alex's Story have no resource mapped (marked *Unresolved* in the document).
-> 55 non-administrative entities excluded: Observation x8, ServiceRequest x7, Encounter x6, MedicationStatement x5, Appointment x4, MedicationRequest x5, Composition x3, MedicationDispense x4, Bundle x2, DiagnosticReport x2, Procedure x2, AllergyIntolerance x1, Condition x1, DocumentReference x1, Task x2, Binary x2. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
-
-</details>
 
 ### Members (95)
 
@@ -852,6 +835,7 @@ Derived from commit authorship, then curated by cross-checking against an attest
 
 </details>
 
+
 ### Members (12)
 
 <details><summary><strong>ADHA (Australian Digital Health Agency)</strong> (12 entities)</summary>
@@ -903,6 +887,7 @@ Derived from the documented cases, then extended by curation. Resource ids are s
 > 56 additional instances confirmed from keyword hits; 1 rejected.
 
 </details>
+
 
 ### Members (67)
 
@@ -1045,6 +1030,7 @@ Members are extensively represented in [Geographic groupings](#geography-groups)
 ### How is this subset identified?
 
 Curated, seeded once. The groupings were extracted a single time from the au-core/consumer-journey directory structure at a pinned git ref; from that point the facts file is authoritative and the seed is not re- run.
+
 
 ### Members (418)
 
@@ -1620,6 +1606,7 @@ Derived, then curated by human confirmation. Metro entities group by capital cit
 > LIMITATION: a regional window can still span great distances where postcodes cover vast areas (Townsville 4810 and Mount Isa 4825 are +/-1 adjacent but ~900km apart). Check each candidate's suburb list — there are no coordinates in the data set to check distance against.
 
 </details>
+
 
 ### Members (1022)
 
@@ -4267,6 +4254,7 @@ Derived from two primary signals, then curated by human confirmation. A shared M
 
 </details>
 
+
 ### Members (30)
 
 <details><summary><strong>Ballantyne</strong> (4 entities)</summary>
@@ -4409,6 +4397,7 @@ Derived automatically. A patient is a member when no clinical resource in the da
 > A patient referenced only by RelatedPerson, Coverage or Appointment counts as a blank slate: those record no clinical fact for new content to conflict with.
 
 </details>
+
 
 ### Members (79)
 

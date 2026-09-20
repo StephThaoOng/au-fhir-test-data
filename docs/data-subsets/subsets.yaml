@@ -218,7 +218,8 @@ subsets:
       follow that a journey entity is free to build on — some are also
       published IG examples, which that subset reserves. What governs an
       entity is the tightest constraint across all of its memberships, so
-      check its other listings before adding to it.
+      check its other listings and with the data subset owners before
+      adding to it.
     provenance: >
       Administrative entities are derived from Services Australia provided
       data. An entity used in a journey may also appear in the corresponding
@@ -232,7 +233,7 @@ subsets:
       Curated. Journey membership is stated by Sparked and recorded in the
       facts file; the AU Encounter Records journey additionally records each
       participant's stated journey role alongside the specialty declared by
-      their PractitionerRole, because the two often differ.
+      their PractitionerRole, because the two can differ.
     attester: Shelley Behen
     confirmed_on: 2026-08-31
     members:
@@ -396,7 +397,7 @@ subsets:
           # names the gap rather than silently preferring either one.
           members:
             - id: sandilands-kendall
-              journey_role: Patient (age 45)
+              journey_role: Patient
               resource: Patient/sandilands-kendall
               practitioner_role: null
               declared_specialty: null
