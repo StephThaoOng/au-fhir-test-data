@@ -483,38 +483,82 @@ def render_entity_list(members: list[dict], group_field: str | None,
         for rtype in sorted(by_type, key=_resource_type_sort_key):
             group = sorted(by_type[rtype], key=lambda m: m["id"])
             out.append(f"**{rtype}** ({len(group)})\n")
-            rows = []
-            for m in group:
-                key = f"{rtype}/{m['id']}"
-                note = overlap_note(key, current_slug, res_index)
-                if m.get("path"):
-                    # The id links straight to the file it resolved to,
-                    # rather than also printing the path inline — the path
-                    # is still discoverable (link hover / status bar), it
-                    # just no longer clutters the list. Relative to
-                    # OUTPUT_PATH's directory, not REPO_ROOT, since the path
-                    # in `m` is repo-root-relative but the link is embedded
-                    # one directory down in docs/.
-                    href = os.path.relpath(lib.REPO_ROOT / m["path"], OUTPUT_PATH.parent)
-                    row = f"- [`{m['id']}`]({href})"
-                else:
-                    row = f"- `{m['id']}` — _(no resource)_"
-                if m.get("journey_role"):
-                    row += f" — **{m['journey_role']}**"
-                # Where the journey states a role the data's PractitionerRole
-                # does not capture, say so — the journey is authoritative for
-                # the role, the data for the coded specialty, and the gap is
-                # a finding rather than something to smooth over.
-                if m.get("alignment") == "journey_role_more_specific":
-                    row += (f" — *declared specialty is only "
-                            f"\"{m.get('declared_specialty')}\"*")
-                elif m.get("alignment") == "unresolved":
-                    row += " — *no matching resource in the data set*"
-                if note:
-                    row += f" — *{note}*"
-                rows.append(row)
-            out.append("\n".join(rows) + "\n")
+            out.append(render_group(rtype, group))
         return "\n".join(out)
+
+    def render_group(rtype: str, group: list[dict]) -> str:
+        fields = []
+        for m in group:
+            key = f"{rtype}/{m['id']}"
+            also_in = overlap_note(key, current_slug, res_index)
+            if m.get("path"):
+                # The id links straight to the file it resolved to, rather
+                # than also printing the path inline — the path is still
+                # discoverable (link hover / status bar), it just no longer
+                # clutters the list. Relative to OUTPUT_PATH's directory,
+                # not REPO_ROOT, since the path in `m` is repo-root-relative
+                # but the link is embedded one directory down in docs/.
+                href = os.path.relpath(lib.REPO_ROOT / m["path"], OUTPUT_PATH.parent)
+                id_cell = f"[`{m['id']}`]({href})"
+            else:
+                id_cell = f"`{m['id']}`"
+            # Where the journey states a role the data's PractitionerRole
+            # does not capture, say so — the journey is authoritative for
+            # the role, the data for the coded specialty, and the gap is
+            # a finding rather than something to smooth over.
+            if m.get("alignment") == "journey_role_more_specific":
+                note = f"declared specialty is only \"{m.get('declared_specialty')}\""
+            elif m.get("alignment") == "unresolved":
+                note = "no matching resource in the data set"
+            else:
+                note = None
+            fields.append({
+                "id_cell": id_cell, "role": m.get("journey_role"),
+                "note": note,
+                # Column header already says "Also in" — the prefix would
+                # just repeat it.
+                "also_in": also_in[len("also in: "):] if also_in else None,
+            })
+
+        # A table earns its place only where most rows actually have
+        # something to align — a header+separator over one or two rows, or
+        # over a group that's almost all plain ids, is overhead without an
+        # alignment payoff. Below that, the existing bullet format stays
+        # exactly as it was.
+        has_extra = sum(1 for f in fields if f["role"] or f["note"] or f["also_in"])
+        if len(fields) < 4 or has_extra / len(fields) <= 0.5:
+            rows = []
+            for f in fields:
+                row = f"- {f['id_cell']}" if f["id_cell"].startswith("[") \
+                    else f"- {f['id_cell']} — _(no resource)_"
+                if f["role"]:
+                    row += f" — **{f['role']}**"
+                if f["note"]:
+                    row += f" — *{f['note']}*"
+                if f["also_in"]:
+                    row += f" — *also in: {f['also_in']}*"
+                rows.append(row)
+            return "\n".join(rows) + "\n"
+
+        use_role = any(f["role"] for f in fields)
+        use_note = any(f["note"] for f in fields)
+        use_also_in = any(f["also_in"] for f in fields)
+        headers = ["ID"]
+        headers += ["Role"] if use_role else []
+        headers += ["Note"] if use_note else []
+        headers += ["Also in"] if use_also_in else []
+        rows = ["| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for f in fields:
+            cells = [f["id_cell"]]
+            if use_role:
+                cells.append(f"**{f['role']}**" if f["role"] else "")
+            if use_note:
+                cells.append(f"*{f['note']}*" if f["note"] else "")
+            if use_also_in:
+                cells.append(f"*also in: {f['also_in']}*" if f["also_in"] else "")
+            rows.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
+        return "\n".join(rows) + "\n"
 
     def render_body(entries: list[dict]) -> tuple[str, str]:
         """Returns (body, count_phrase) for one outer group.
@@ -803,7 +847,7 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
 # maintainer gets "X was probably renamed to Y" instead of just "it's
 # smaller now".
 
-PREVIOUS_ROW_RE = re.compile(r"^- \[`([^`]+)`\]\(([^)]+)\)")
+PREVIOUS_ROW_RE = re.compile(r"^(?:- |\| )\[`([^`]+)`\]\(([^)]+)\)")
 SECTION_ANCHOR_RE = re.compile(r'^## .*<a id="([^"]+)"></a>')
 STAMP_COMMIT_RE = re.compile(r"commit `([0-9a-f]{7,40})`")
 FILENAME_TYPE_ID_RE = re.compile(r"^([A-Z][A-Za-z]*)-(.+)\.json$")
@@ -832,10 +876,15 @@ def _type_and_id_from_path(path: str) -> tuple[str, str] | None:
 def parse_previous_page(text: str) -> tuple[dict[str, set[tuple[str, str, str]]], str | None]:
     """Reconstruct each subset's membership from the last committed page.
 
-    Only resolved rows (a hyperlinked id, from render_flat() above) carry a
+    Only resolved rows (a hyperlinked id, from render_group() above) carry a
     path to check a rename or removal against, so unresolved
     (`_(no resource)_`) rows are not tracked here — there is nothing to
     diff them against, and their disappearance is not this check's concern.
+
+    PREVIOUS_ROW_RE matches the id/link on either a bullet row (`- [`id`]
+    (href)`) or a table row (`| [`id`](href) | ...`) — render_group() picks
+    one or the other per group, so both must parse or a dense group's
+    membership would silently read as empty here.
     """
     by_subset: dict[str, set[tuple[str, str, str]]] = defaultdict(set)
     current_slug = None
