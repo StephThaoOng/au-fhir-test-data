@@ -265,7 +265,7 @@ def derive(slug: str, repo: str, branch: str, by_key: dict,
     if unmatched:
         notes.append(
             f"{len(unmatched)} IG example resources matched nothing in the test "
-            "data set; they may be IG-only examples. Listed under evidence."
+            "data set; they may be IG-only examples. Listed below, under Members."
         )
 
     return lib.emit(

@@ -33,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-20 23:46 UTC from test data at commit `54c879bcdcf4d2174786ee75073d4e3fed7ad0ba`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-20 23:57 UTC from test data at commit `126391ecdbbbb83dcc35c82dedd7cccc4295467a`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -83,7 +83,7 @@ Derived automatically. Each entity in this data set is matched against the examp
 
 > 30 distinct administrative entities are published as examples in hl7au/au-fhir-core.
 > 51 non-administrative entities excluded: Observation x17, Condition x4, Medication x4, MedicationStatement x4, AllergyIntolerance x3, Encounter x3, MedicationDispense x3, MedicationRequest x3, DiagnosticReport x2, DocumentReference x2, Immunization x2, Procedure x2, Composition x1, Specimen x1. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
-> 2 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
+> 2 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed below, under Members.
 
 </details>
 
@@ -151,6 +151,16 @@ Derived automatically. Each entity in this data set is matched against the examp
 </details>
 
 
+<details><summary>IG example resources matched nothing in the test data set — 2 possibly IG-only</summary>
+
+| Example file | Resource | From a Bundle entry? |
+| --- | --- | --- |
+| `location-murrabit-hospital.xml` | `Location/murrabit-hospital` | no |
+| `practitionerrole-nephrologist-darleen-mackay.xml` | `PractitionerRole/nephrologist-darleen-mackay` | no |
+
+</details>
+
+
 ## AU Patient Summary IG example entities <a id="au-ps-ig-examples"></a>
 
 ### Purpose
@@ -183,7 +193,7 @@ Derived automatically. AU PS examples are document Bundles rather than one resou
 > 16 distinct administrative entities are published as examples in hl7au/au-fhir-ps.
 > 1 non-administrative entities excluded: Immunization x1. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
 > 155 of the resources scanned came from Bundle entries, matched on business identifier only — ids inside a Bundle are not reliable keys.
-> 133 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
+> 133 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed below, under Members.
 
 </details>
 
@@ -221,6 +231,147 @@ Derived automatically. AU PS examples are document Bundles rather than one resou
 - [`mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json)
 
 
+<details><summary>IG example resources matched nothing in the test data set — 133 possibly IG-only</summary>
+
+| Example file | Resource | From a Bundle entry? |
+| --- | --- | --- |
+| `Bundle-aups-basicsummary.xml` | `Composition/c5359ef2-ef27-445a-833a-c53e6bb437c5` | yes |
+| `Bundle-aups-basicsummary.xml` | `Practitioner/dce50472-2a94-47e6-9501-b52f0df0c813` | yes |
+| `Bundle-aups-basicsummary.xml` | `AllergyIntolerance/ad6fb7b7-c76f-441e-88a5-9051e795db26` | yes |
+| `Bundle-aups-basicsummary.xml` | `AllergyIntolerance/06ba95f5-345b-412d-aa66-99e354470015` | yes |
+| `Bundle-aups-basicsummary.xml` | `AllergyIntolerance/d24db2d5-3400-4158-892c-d018acdeba09` | yes |
+| `Bundle-aups-basicsummary.xml` | `MedicationStatement/347e8435-cea1-4e94-9755-abb027926bb1` | yes |
+| `Bundle-aups-basicsummary.xml` | `Condition/310f1593-d610-4144-a6e8-1f823d955e0d` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Composition/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `AllergyIntolerance/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `MedicationRequest/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Condition/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Condition/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Condition/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Condition/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Condition/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Immunization/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Immunization/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Immunization/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Procedure/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Procedure/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Observation/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Location/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Encounter/None` | yes |
+| `Bundle-aups-gpvisit-retrieval.xml` | `Encounter/None` | yes |
+| `Bundle-aups-noknownx.xml` | `Composition/63b319ec-7321-4a70-973b-2cead2b28c28` | yes |
+| `Bundle-aups-noknownx.xml` | `AllergyIntolerance/9840a67e-3621-470d-9a7c-e559422591f5` | yes |
+| `Bundle-aups-noknownx.xml` | `MedicationStatement/0fc878c1-a158-425f-ba08-ea4366fbb4e1` | yes |
+| `Bundle-aups-noknownx.xml` | `Condition/df366c47-c739-4c16-939e-b5cf9afb0b7d` | yes |
+| `Bundle-aups-patient-story.xml` | `Composition/048c37d9-9f41-4223-a8b2-ed322cb2f056` | yes |
+| `Bundle-aups-patient-story.xml` | `Condition/03e7d19a-a796-4779-a9c0-b72b9a63f7d6` | yes |
+| `Bundle-aups-patient-story.xml` | `Condition/a0deca67-656f-43bc-a6d7-ded0e4416804` | yes |
+| `Bundle-aups-patient-story.xml` | `Condition/7fe97b01-3def-4c5e-a53a-735b1aea6a62` | yes |
+| `Bundle-aups-patient-story.xml` | `Condition/6768ef5c-7e36-4124-a83b-f7a1d8f026e4` | yes |
+| `Bundle-aups-patient-story.xml` | `Condition/99d8f634-8dd6-4d48-8f79-c4dbfd9ee714` | yes |
+| `Bundle-aups-patient-story.xml` | `Condition/b2038034-fc91-4de8-83e2-44442fb33ceb` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Composition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `AllergyIntolerance/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `MedicationStatement/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `MedicationStatement/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `MedicationStatement/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `MedicationStatement/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `MedicationStatement/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Condition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Condition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Condition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Condition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Condition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Condition/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Immunization/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Observation/None` | yes |
+| `Bundle-aups-referral-endoconsult-autogen.xml` | `Device/None` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Composition/de2c9e3f-c4a8-4a65-b355-b08cd2c58c7c` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `AllergyIntolerance/0baac8a9-69b8-4e99-9460-03df08f92c98` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `MedicationStatement/05292a9c-2bc9-43a7-b935-0a61ede063da` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `MedicationStatement/166c2afe-c6fb-4928-88f0-1c1a1e5e65cd` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `MedicationStatement/7193cc2f-d03e-42cb-ab55-4130904505d5` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `MedicationStatement/1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Condition/cb647933-b18c-42ef-a1c8-ae137921ba83` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Condition/78f75926-3ee1-44a7-9424-6178d905af63` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Immunization/784ae7d5-22df-442d-b932-0c001720136c` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Observation/ad82d71b-ca1c-4db6-a726-cc70cf638306` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Observation/f85ad223-7bed-46f3-893d-e89d6082f9a9` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Immunization/62eb70e3-e814-4785-80d3-8aa45b1fc367` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Immunization/2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Immunization/97767fb5-3be7-4d16-9ee8-76c47a4ab0ce` | yes |
+| `Bundle-aups-referral-endoconsult-curated.xml` | `Observation/8924f910-53b3-4125-b0f2-58d0068f8983` | yes |
+| `Bundle-aups-section-emptyreason.xml` | `Composition/40e448e9-e323-4941-bb7c-60b0a91ac950` | yes |
+| `Bundle-aups-section-emptyreason.xml` | `Patient/9be88cc6-09e8-4dc6-b058-88676240dbc7` | yes |
+| `Bundle-aups-section-emptyreason.xml` | `RelatedPerson/715076f4-007a-4c9d-beed-c155cc46f765` | yes |
+
+</details>
+
+
 ## AU eRequesting IG example entities <a id="au-erequesting-ig-examples"></a>
 
 ### Purpose
@@ -253,7 +404,7 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 > 16 distinct administrative entities are published as examples in hl7au/au-fhir-erequesting.
 > 20 non-administrative entities excluded: ServiceRequest x8, CommunicationRequest x4, Coverage x2, Encounter x2, Consent x1, DocumentReference x1, Observation x1, Task x1. Subset identification covers administrative entities only; clinical content is retrievable from the administrative entity by FHIR mechanisms.
 > 35 of the resources scanned came from Bundle entries, matched on business identifier only — ids inside a Bundle are not reliable keys.
-> 19 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed under evidence.
+> 19 IG example resources matched nothing in the test data set; they may be IG-only examples. Listed below, under Members.
 
 </details>
 
@@ -290,6 +441,33 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 **Location** (1)
 
 - [`barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Location-barney-view-private-hospital.json)
+
+
+<details><summary>IG example resources matched nothing in the test data set — 19 possibly IG-only</summary>
+
+| Example file | Resource | From a Bundle entry? |
+| --- | --- | --- |
+| `bundle-imaging-1.xml` | `Encounter/None` | yes |
+| `bundle-imaging-1.xml` | `Coverage/None` | yes |
+| `bundle-imaging-1.xml` | `Task/None` | yes |
+| `bundle-imaging-1.xml` | `Task/None` | yes |
+| `bundle-imaging-put-1.xml` | `Encounter/None` | yes |
+| `bundle-imaging-put-1.xml` | `Coverage/None` | yes |
+| `bundle-imaging-put-1.xml` | `Task/None` | yes |
+| `bundle-imaging-put-1.xml` | `Task/None` | yes |
+| `bundle-pathology-multitest-1.xml` | `Encounter/None` | yes |
+| `bundle-pathology-multitest-1.xml` | `Task/None` | yes |
+| `bundle-pathology-multitest-1.xml` | `Task/None` | yes |
+| `bundle-pathology-multitest-1.xml` | `Task/None` | yes |
+| `bundle-pathology-multitest-1.xml` | `Task/None` | yes |
+| `bundle-pathology-multitest-1.xml` | `Task/None` | yes |
+| `encounter-gp-consult-finger-pain.xml` | `Encounter/gp-consult-finger-pain` | no |
+| `taskfulfilment-imaging-1.xml` | `Task/taskfulfilment-imaging-1` | no |
+| `taskfulfilment-pathology-1.xml` | `Task/taskfulfilment-pathology-1` | no |
+| `taskgroup-imaging-1.xml` | `Task/taskgroup-imaging-1` | no |
+| `taskgroup-pathology-1.xml` | `Task/taskgroup-pathology-1` | no |
+
+</details>
 
 
 ## Inferno AU Core test suite default patients <a id="inferno-default-patients"></a>

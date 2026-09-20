@@ -799,6 +799,28 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
                                     SUBGROUP_NOUN.get(slug, "grouping")))
 
     if candidate:
+        # ig_examples.py's note ("N IG example resources matched nothing...
+        # Listed under evidence") pointed at evidence that was written to
+        # the candidate JSON but never actually rendered anywhere on the
+        # page — a dangling reference nobody reading only the wiki could
+        # follow. Render it for real.
+        unmatched = (candidate.get("evidence") or {}).get(
+            "unmatched_ig_examples") or []
+        if unmatched:
+            rows = ["", "| Example file | Resource | From a Bundle entry? |",
+                    "| --- | --- | --- |"]
+            for u in unmatched:
+                in_bundle = "yes" if u.get("in_bundle") else "no"
+                rows.append(
+                    f"| `{u['example']}` | `{u['resource']}` | {in_bundle} |")
+            n = len(unmatched)
+            lines.append(
+                f"\n<details><summary>IG example resource{'s' if n != 1 else ''} "
+                f"matched nothing in the test data set — {n} "
+                f"possibly IG-only</summary>\n"
+                + "\n".join(rows) + "\n\n</details>\n"
+            )
+
         flagged = (candidate.get("evidence") or {}).get(
             "flagged_potential_families") or []
         if flagged:
