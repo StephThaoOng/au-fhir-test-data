@@ -556,7 +556,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
             if use_note:
                 cells.append(f"*{f['note']}*" if f["note"] else "")
             if use_also_in:
-                cells.append(f"*also in: {f['also_in']}*" if f["also_in"] else "")
+                cells.append(f"*{f['also_in']}*" if f["also_in"] else "")
             rows.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
         return "\n".join(rows) + "\n"
 
