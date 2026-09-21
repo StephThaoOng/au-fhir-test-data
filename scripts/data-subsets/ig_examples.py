@@ -226,9 +226,14 @@ def derive(slug: str, repo: str, branch: str, by_key: dict,
                     break
 
         if entry is None:
-            counts["unmatched"] += 1
-            unmatched.append({"example": filename, "resource": f"{rtype}/{rid}",
-                              "in_bundle": in_bundle})
+            # Same administrative-only scope as members (filter_administrative,
+            # applied below) — most unmatched entries are clinical resources
+            # from inside a Bundle (Observation, Condition, ...), which were
+            # never going to be tracked here regardless of whether they matched.
+            if rtype in lib.ADMINISTRATIVE_RESOURCE_TYPES:
+                counts["unmatched"] += 1
+                unmatched.append({"example": filename, "resource": f"{rtype}/{rid}",
+                                  "in_bundle": in_bundle})
             continue
 
         counts["by_id" if basis == "resource id" else "by_identifier"] += 1
