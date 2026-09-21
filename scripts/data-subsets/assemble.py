@@ -704,7 +704,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
                     # Not repeating the specialty text itself — that's its
                     # own column now, so the note only needs to flag that a
                     # gap might exist for the reader to compare directly.
-                    note = "journey role may differ from the declared specialty"
+                    note = "journey role may differ from the declared role (specialty)"
                 else:
                     note = None
                 rows.append((m, prac_key, role_key, note))
@@ -1023,21 +1023,27 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     slug = subset["slug"]
     lines = [f"## {subset['title']} <a id=\"{slug}\"></a>\n"]
 
+    # Each heading below carries its own leading blank line rather than
+    # relying on the previous field's own trailing newline for separation —
+    # a `>` folded YAML scalar happens to end with one, but a plain scalar
+    # (e.g. a bare "tbd") or the "_not yet recorded_" fallback doesn't, and
+    # without it the heading glues onto the line above with no blank-line
+    # break (the same class of bug fixed for the Members heading earlier).
     lines.append("### Purpose\n")
     lines.append(link_subsets(subset.get("purpose")) or "_not yet recorded_")
 
-    lines.append("### Ownership & governance\n")
+    lines.append("\n### Ownership & governance\n")
     lines.append(f"**Owner:** {subset.get('owner') or '_not yet recorded_'}  ")
     lines.append(link_subsets(subset.get("governance")) or "_not yet recorded_")
 
-    lines.append("### Provenance & use\n")
+    lines.append("\n### Provenance & use\n")
     lines.append(link_subsets(subset.get("provenance")) or "_not yet recorded_")
 
-    lines.append("### Relationships\n")
+    lines.append("\n### Relationships\n")
     lines.append(link_subsets(subset.get("relationships_note"))
                  or "_not yet recorded_")
 
-    lines.append("### How is this subset identified?\n")
+    lines.append("\n### How is this subset identified?\n")
     lines.append(link_subsets(subset.get("identification")) or "_not yet recorded_")
     source = subset.get("source")
     if source:

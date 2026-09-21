@@ -949,14 +949,8 @@ subsets:
     purpose: >
       Groups entities by the consumer-journey scenario they were originally
       built for.
-    governance: >
-      Grouping identifies plausible co-location as a starting point for new
-      consumer journeys or test scenarios. Members are free to build on and
-      are not reserved to their originating scenario.
-    provenance: >
-      Seeded once from a historical directory structure that no longer exists
-      on the default branch, then maintained by curation. The originating git
-      ref is recorded for traceability but is no longer consulted.
+    governance: tbd
+    provenance: tbd
     relationships_note: >
       Members are extensively represented in {geography-groups}, reflecting
       that each scenario was built around a specific locality. Several members

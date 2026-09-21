@@ -33,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-21 11:51 UTC from test data at commit `e5469c2a0753a533d1b301a218b3c7509be5ad15`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-21 11:58 UTC from test data at commit `e5e1fbe05f4ad05257dfb64a678dd7d828259385`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -58,18 +58,22 @@ _Generated 2026-09-21 11:51 UTC from test data at commit `e5469c2a0753a533d1b301
 
 Identifies the administrative entities and resources used in the AU Core IG examples.
 
+
 ### Ownership & governance
 
 **Owner:** AU Core IG authors  
 Published IG examples must not be modified, added to, or removed without coordination with and approval from the IG authors.
 
+
 ### Provenance & use
 
 Generally derived from Services Australia data mapped to FHIR, with some data enrichment and subsequent curation for the AU Core IG examples. Some mapped data has been stripped to focus the examples on demonstrating support for Must Support elements. The examples are illustrative, not normative or fully representative of real-world data.
 
+
 ### Relationships
 
 Some members are also included in the [Inferno AU Core test suite default patients](#inferno-default-patients) subset.
+
 
 ### How is this subset identified?
 
@@ -175,18 +179,22 @@ Derived automatically. Each entity in this data set is matched against the examp
 
 Identifies the administrative entities used in the AU Patient Summary IG examples.
 
+
 ### Ownership & governance
 
 **Owner:** AU Patient Summary IG authors  
 Published IG examples must not be modified, added to, or removed without coordination with and approval from the IG authors.
 
+
 ### Provenance & use
 
 Generally derived from Services Australia data mapped to FHIR, with some data enrichment and subsequent curation for the AU PS IG examples. The examples are illustrative, not normative or fully representative of real-world data.
 
+
 ### Relationships
 
 A small number of members are also [AU Core IG example entities](#au-core-ig-examples).
+
 
 ### How is this subset identified?
 
@@ -265,18 +273,22 @@ Derived automatically. AU PS examples are document Bundles rather than one resou
 
 Identifies the administrative entities used in the AU eRequesting IG examples.
 
+
 ### Ownership & governance
 
 **Owner:** AU eRequesting IG authors  
 Published IG examples must not be modified, added to, or removed without coordination with and approval from the IG authors.
 
+
 ### Provenance & use
 
 Generally derived from Services Australia data mapped to FHIR, with some data enrichment and subsequent curation for the AU eRequesting IG examples. The examples are illustrative, not normative or fully representative of real-world data.
 
+
 ### Relationships
 
 No notable relationships to other subsets.
+
 
 ### How is this subset identified?
 
@@ -342,18 +354,22 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 
 Identifies the patients the AU Core Inferno test kit uses as its default patient set.
 
+
 ### Ownership & governance
 
 **Owner:** inferno_suite_generator maintainers  
 The set is relied on to exercise every Must Support element in combination. Adding to or modifying these patients or their linked resources must preserve that coverage, and should be coordinated with the test kit maintainers.
 
+
 ### Provenance & use
 
 Stated by the Inferno test kit itself rather than decided here. The set is intended to give full Must Support coverage, but that is an intent rather than a guarantee — nothing verifies that it achieves full coverage or that it is the smallest set that does.
 
+
 ### Relationships
 
 Six of the seven members are also [AU Patient Summary test patients](#au-ps-test-patients), so a change affecting one set very likely affects the other. A few are also [AU Core IG example entities](#au-core-ig-examples).
+
 
 ### How is this subset identified?
 
@@ -385,18 +401,22 @@ Declared, then drift-checked. The patient id list is read from the inferno_suite
 
 Identifies the primary test patients for AU Patient Summary testing — those for which the `$summary` operation can be invoked.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 Relied on for `$summary` operation testing. Adding to or modifying these patients or their linked resources must preserve that coverage.
 
+
 ### Provenance & use
 
 Declared by the AU PS Test Data Coverage page maintained by the project, rather than derived from the data set.
 
+
 ### Relationships
 
 Six of the seven members are also [Inferno AU Core test suite default patients](#inferno-default-patients), so a change affecting one set very likely affects the other.
+
 
 ### How is this subset identified?
 
@@ -425,18 +445,22 @@ Declared. The patient list is transcribed from the AU PS Test Data Coverage page
 
 Identifies the entities used for Smart Health Checks demonstrators and testing.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 These entities are relied on for Smart Health Checks demonstrators and testing. Adding to or modifying them or their linked resources risks changing what those demonstrators show, so it should be coordinated with the project team.
 
+
 ### Provenance & use
 
 Derived from Services Australia data mapped to FHIR, in common with the rest of the au-core data set. Smart Health Checks work may use these entities; data generated by that work is not currently contributed back into this repository.
 
+
 ### Relationships
 
 Its single member also appears in [Families](#families). It carries no clinical data here, so it is also a [Blank-slate patients](#blank-slate-patients) member — but Smart Health Checks data generated against it lives outside this repository, so it is less free of prior content than that listing suggests.
+
 
 ### How is this subset identified?
 
@@ -456,18 +480,22 @@ Curated. Membership is stated by a maintainer in the facts file and changes only
 
 Identifies the entities used in Sparked Clinical Design Group consumer journeys, grouped by named journey.
 
+
 ### Ownership & governance
 
 **Owner:** Shared between Sparked CDG and HL7 AU Test Data project — TBC.  
 Journey membership does not itself reserve an entity. It does not follow that a journey entity is free to build on — some are also published IG examples, which that subset reserves. What governs an entity is the tightest constraint across all of its memberships, so check its other listings and with the data subset owners before adding to it.
 
+
 ### Provenance & use
 
 Administrative entities are derived from Services Australia provided data. An entity used in a journey may also appear in the corresponding IG project use cases and be progressed into technical use cases and subsequently, the IG examples. Members are recorded as resolved resource ids rather than display names so membership is unambiguous.
 
+
 ### Relationships
 
 Several members also appear in [Scenario groupings](#scenario-groups), and some are [AU Patient Summary IG example entities](#au-ps-ig-examples).
+
 
 ### How is this subset identified?
 
@@ -493,13 +521,13 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 | --- | --- | --- | --- | --- | --- |
 | [`cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) | [`cox-sandra`](../au-fhir-test-data-set/au-core/PractitionerRole-cox-sandra.json) | **Registered Nurse** | Registered Nurses nec (Nursing) |  | *[scenario-groups](#scenario-groups)* |
 | [`dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) | [`dawson-kent`](../au-fhir-test-data-set/au-core/PractitionerRole-dawson-kent.json) | **ED Doctor** | Emergency Medicine Specialist / Emergency Physician (Emergency medicine) |  | *[scenario-groups](#scenario-groups)* |
-| [`ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | [`ellison-abby`](../au-fhir-test-data-set/au-core/PractitionerRole-ellison-abby.json) | **ED Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | [`ellison-abby`](../au-fhir-test-data-set/au-core/PractitionerRole-ellison-abby.json) | **ED Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 | [`frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) | [`frank-gaylene`](../au-fhir-test-data-set/au-core/PractitionerRole-frank-gaylene.json) | **Nurse Practitioner** | Nurse Practitioner (Nursing) |  | *[scenario-groups](#scenario-groups)* |
-| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) | **Paramedic** | Ambulance Officer | *journey role may differ from the declared specialty* |  |
+| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) | **Paramedic** | Ambulance Officer | *journey role may differ from the declared role (specialty)* |  |
 | [`little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) | [`little-jerrie`](../au-fhir-test-data-set/au-core/PractitionerRole-little-jerrie.json) | **General Practitioner** | General Practitioner (General medical practice) |  | *[scenario-groups](#scenario-groups)* |
 | [`neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) | [`neville-isaiah`](../au-fhir-test-data-set/au-core/PractitionerRole-neville-isaiah.json) | **Physiotherapist** | Physiotherapist (Physiotherapy) |  | *[scenario-groups](#scenario-groups)* |
 | [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) | [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-ohalloran-sheryl.json) | **Pharmacist** | Pharmacist (Community pharmacy) |  | *[scenario-groups](#scenario-groups)* |
-| [`shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) | [`registerednurses-shephard-lizabeth`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-shephard-lizabeth.json) | **ED Triage Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
+| [`shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) | [`registerednurses-shephard-lizabeth`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-shephard-lizabeth.json) | **ED Triage Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared role (specialty)* |  |
 
 **Unresolved** (2)
 
@@ -539,15 +567,15 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 | Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
 | --- | --- | --- | --- | --- | --- |
 | [`gordon-tad`](../au-fhir-test-data-set/au-core/Practitioner-gordon-tad.json) | [`complementaryhealth-gordon-tad`](../au-fhir-test-data-set/au-core/PractitionerRole-complementaryhealth-gordon-tad.json) | **Exercise Physiologist** | Exercise Physiologist (Exercise physiology service) |  |  |
-| [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-lapthorn-leisa.json) | **Inpatient Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | [`levings-richard`](../au-fhir-test-data-set/au-core/PractitionerRole-levings-richard.json) | **Outpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-lapthorn-leisa.json) | **Inpatient Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | [`levings-richard`](../au-fhir-test-data-set/au-core/PractitionerRole-levings-richard.json) | **Outpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 | [`lowe-abe`](../au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json) | [`generalpractitioner-lowe-abe`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lowe-abe.json) | **General Practitioner (GP)** | General Practitioner (General medical practice) |  | *[au-ps-ig-examples](#au-ps-ig-examples)* |
-| [`mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | [`mcnab-angelina`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnab-angelina.json) | **Inpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | [`mcnab-angelina`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnab-angelina.json) | **Inpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 | [`mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) | [`mills-hope`](../au-fhir-test-data-set/au-core/PractitionerRole-mills-hope.json) | **Occupational Therapist (OT)** | Occupational Therapist |  | *[scenario-groups](#scenario-groups)* |
-| [`roberts-benjamin`](../au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json) | [`registerednurses-roberts-benjamin`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-roberts-benjamin.json) | **Specialist Cancer Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
+| [`roberts-benjamin`](../au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json) | [`registerednurses-roberts-benjamin`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-roberts-benjamin.json) | **Specialist Cancer Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared role (specialty)* |  |
 | [`sheppard-mathew`](../au-fhir-test-data-set/au-core/Practitioner-sheppard-mathew.json) | [`medicaloncologist-sheppard-mathew`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaloncologist-sheppard-mathew.json) | **Medical Oncologist** | Medical Oncologist (Medical oncology) |  |  |
-| [`taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) | [`registerednurses-taylor-kittie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-taylor-kittie.json) | **Day Therapy Unit Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
-| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | **Private Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) | [`registerednurses-taylor-kittie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-taylor-kittie.json) | **Day Therapy Unit Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared role (specialty)* |  |
+| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | **Private Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 
 **Unresolved** (3)
 
@@ -584,13 +612,13 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 | Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
 | --- | --- | --- | --- | --- | --- |
-| [`alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | [`alcock-devon`](../au-fhir-test-data-set/au-core/PractitionerRole-alcock-devon.json) | **Maternal and Child Health Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | [`alcock-devon`](../au-fhir-test-data-set/au-core/PractitionerRole-alcock-devon.json) | **Maternal and Child Health Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 | [`bradley-jill`](../au-fhir-test-data-set/au-core/Practitioner-bradley-jill.json) | [`audiologist-bradley-jill`](../au-fhir-test-data-set/au-core/PractitionerRole-audiologist-bradley-jill.json) | **Audiologist** | Audiologist (Audiological medicine) |  |  |
 | [`greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) | [`greene-delores`](../au-fhir-test-data-set/au-core/PractitionerRole-greene-delores.json) | **Paediatrician** | Paediatrician (General paediatric specialty) |  | *[scenario-groups](#scenario-groups)* |
 | [`keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) | [`keith-margot`](../au-fhir-test-data-set/au-core/PractitionerRole-keith-margot.json) | **General Practitioner** | General Practitioner (General medical practice) |  | *[scenario-groups](#scenario-groups)* |
 | [`mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) | [`mullin-kenny`](../au-fhir-test-data-set/au-core/PractitionerRole-mullin-kenny.json) | **Speech Pathologist** | Speech Pathologist |  | *[scenario-groups](#scenario-groups)* |
 | [`murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) | [`murray-ashli`](../au-fhir-test-data-set/au-core/PractitionerRole-murray-ashli.json) | **Occupational Therapist** | Occupational Therapist |  | *[scenario-groups](#scenario-groups)* |
-| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | **Private Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | **Private Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 
 **Unresolved** (3)
 
@@ -628,23 +656,23 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 | Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
 | --- | --- | --- | --- | --- | --- |
-| [`bailey-buck`](../au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json) | [`bailey-buck`](../au-fhir-test-data-set/au-core/PractitionerRole-bailey-buck.json) | **Inpatient Social worker** | Social Worker | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`barrett-kirstie`](../au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json) | [`barrett-kirstie`](../au-fhir-test-data-set/au-core/PractitionerRole-barrett-kirstie.json) | **TCP social worker** | Social Worker | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`bailey-buck`](../au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json) | [`bailey-buck`](../au-fhir-test-data-set/au-core/PractitionerRole-bailey-buck.json) | **Inpatient Social worker** | Social Worker | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`barrett-kirstie`](../au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json) | [`barrett-kirstie`](../au-fhir-test-data-set/au-core/PractitionerRole-barrett-kirstie.json) | **TCP social worker** | Social Worker | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 | [`berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) | [`berridge-beulah`](../au-fhir-test-data-set/au-core/PractitionerRole-berridge-beulah.json) | **Anaesthetist** | Anaesthetist (Anaesthetics) |  | *[scenario-groups](#scenario-groups)* |
-| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) | **Paramedic** | Ambulance Officer | *journey role may differ from the declared specialty* |  |
+| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) | **Paramedic** | Ambulance Officer | *journey role may differ from the declared role (specialty)* |  |
 | [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) | [`generalpractitioner-guthridge-jarred`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-guthridge-jarred.json) | **General Practitioner (GP)** | General Practitioner (General medical practice) |  | *[au-erequesting-ig-examples](#au-erequesting-ig-examples)* |
-| [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json) | [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/PractitionerRole-hipwood-fatimah.json) | **TCP OT** | Occupational Therapist | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`hobden-mark`](../au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json) | [`hobden-mark`](../au-fhir-test-data-set/au-core/PractitionerRole-hobden-mark.json) | **Inpatient Pharmacist** | Pharmacist (Community pharmacy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | [`jeffery-sammy`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-sammy.json) | **Inpatient Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) | [`dietitian-kelly-virginia`](../au-fhir-test-data-set/au-core/PractitionerRole-dietitian-kelly-virginia.json) | **Inpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared specialty* |  |
-| [`knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | [`knowles-sunshine`](../au-fhir-test-data-set/au-core/PractitionerRole-knowles-sunshine.json) | **Community Occupational Therapist** | Occupational Therapist | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json) | [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/PractitionerRole-livingstone-yvonne.json) | **TCP Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`parker-elijah`](../au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json) | [`physiotherapist-parker-elijah`](../au-fhir-test-data-set/au-core/PractitionerRole-physiotherapist-parker-elijah.json) | **Community physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* |  |
+| [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json) | [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/PractitionerRole-hipwood-fatimah.json) | **TCP OT** | Occupational Therapist | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`hobden-mark`](../au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json) | [`hobden-mark`](../au-fhir-test-data-set/au-core/PractitionerRole-hobden-mark.json) | **Inpatient Pharmacist** | Pharmacist (Community pharmacy) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | [`jeffery-sammy`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-sammy.json) | **Inpatient Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) | [`dietitian-kelly-virginia`](../au-fhir-test-data-set/au-core/PractitionerRole-dietitian-kelly-virginia.json) | **Inpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared role (specialty)* |  |
+| [`knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | [`knowles-sunshine`](../au-fhir-test-data-set/au-core/PractitionerRole-knowles-sunshine.json) | **Community Occupational Therapist** | Occupational Therapist | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json) | [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/PractitionerRole-livingstone-yvonne.json) | **TCP Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`parker-elijah`](../au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json) | [`physiotherapist-parker-elijah`](../au-fhir-test-data-set/au-core/PractitionerRole-physiotherapist-parker-elijah.json) | **Community physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared role (specialty)* |  |
 | [`patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json) | [`retailpharmacist-patrick-manual`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-patrick-manual.json) | **Community pharmacist** | Retail Pharmacist (Community pharmacy) |  |  |
-| [`randall-anthony`](../au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json) | [`randall-anthony`](../au-fhir-test-data-set/au-core/PractitionerRole-randall-anthony.json) | **Practice nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json) | [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/PractitionerRole-robbins-wilhelmina.json) | **Transition Care Program (TCP) Nurse** | Nurse Practitioner (Nursing) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
-| [`rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) | [`registerednurses-rowland-roger`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-rowland-roger.json) | **Surgical ward nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
-| [`sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | [`sherry-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-sherry-dean.json) | **Inpatient Occupational Therapist (OT)** | Occupational Therapist | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`randall-anthony`](../au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json) | [`randall-anthony`](../au-fhir-test-data-set/au-core/PractitionerRole-randall-anthony.json) | **Practice nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json) | [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/PractitionerRole-robbins-wilhelmina.json) | **Transition Care Program (TCP) Nurse** | Nurse Practitioner (Nursing) | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
+| [`rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) | [`registerednurses-rowland-roger`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-rowland-roger.json) | **Surgical ward nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared role (specialty)* |  |
+| [`sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | [`sherry-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-sherry-dean.json) | **Inpatient Occupational Therapist (OT)** | Occupational Therapist | *journey role may differ from the declared role (specialty)* | *[scenario-groups](#scenario-groups)* |
 
 **Unresolved** (8)
 
@@ -769,18 +797,22 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 Identifies the entities belonging to the Connected Care consumer journeys — Alex's Story and Yuri's Story.
 
+
 ### Ownership & governance
 
 **Owner:** DoHAC  
 Each journey tells one patient's story end-to-end. Adding to or modifying a member entity or its linked resources risks conflicting with that story's clinical timeline, so coordination with DoHAC is required.
 
+
 ### Provenance & use
 
 Alex's Story membership is declared by a data set document held alongside the instances. Yuri's Story has no source document yet, so its membership is the provisional remainder of the directory not claimed by Alex's Story.
 
+
 ### Relationships
 
 Members are geographically clustered — Kalgoorlie WA and Bathurst NSW — but do not appear in [Geographic groupings](#geography-groups), which currently indexes only the default branch.
+
 
 ### How is this subset identified?
 
@@ -954,18 +986,22 @@ Declared, and read from a branch. These entities are not on the default branch, 
 
 Identifies which community organisation contributed which entities.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 Attribution records origin only. It places no constraint on adding to or modifying the contributed entities or their linked resources.
 
+
 ### Provenance & use
 
 Attributed from the commit that introduced each file, cross-checked against a human-attested list. Attribution is best-effort: a contributor using a personal email address, or a merge that did not preserve original authorship, is not detected, so the list is not exhaustive.
 
+
 ### Relationships
 
 No notable relationships to other subsets.
+
 
 ### How is this subset identified?
 
@@ -1009,18 +1045,22 @@ Derived from commit authorship, then curated by cross-checking against an attest
 
 Identifies the instances demonstrating the correct representation of missing or suppressed data.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 Instances are deliberately shaped to demonstrate a specific representation of absent data. Adding to or modifying their linked resources risks misrepresenting what they demonstrate.
 
+
 ### Provenance & use
 
 Drawn from the repository's own missing and suppressed data documentation, extended by a keyword scan whose hits are individually confirmed against the resource's actual content. This is the one subset not restricted to administrative entities, because the property it demonstrates attaches to an Observation exactly as it does to a Patient.
 
+
 ### Relationships
 
 Some members are also [Blank-slate patients](#blank-slate-patients).
+
 
 ### How is this subset identified?
 
@@ -1159,18 +1199,20 @@ Derived from the documented cases, then extended by curation. Resource ids are s
 
 Groups entities by the consumer-journey scenario they were originally built for.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
-Grouping identifies plausible co-location as a starting point for new consumer journeys or test scenarios. Members are free to build on and are not reserved to their originating scenario.
+tbd
 
 ### Provenance & use
 
-Seeded once from a historical directory structure that no longer exists on the default branch, then maintained by curation. The originating git ref is recorded for traceability but is no longer consulted.
+tbd
 
 ### Relationships
 
 Members are extensively represented in [Geographic groupings](#geography-groups), reflecting that each scenario was built around a specific locality. Several members also appear in [Sparked Clinical Design Group consumer journeys](#sparked-cdg-journeys).
+
 
 ### How is this subset identified?
 
@@ -1773,18 +1815,22 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 
 Proposes groupings of entities that are plausibly co-located, as a starting point for constructing new consumer journeys.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 Grouping identifies plausible co-location only, and does not itself reserve a member to its group. That does not make a member free to build on — many are also IG examples or test patients, which those subsets reserve. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it.
 
+
 ### Provenance & use
 
 Proposed by a script from address data and confirmed by a human. Best- effort by design: postcode proximity is a weak proxy, and there are no coordinates anywhere in the data set to check real distance against.
 
+
 ### Relationships
 
 [Scenario groupings](#scenario-groups) draw heavily on the same entities, since each scenario was built around a specific locality.
+
 
 ### How is this subset identified?
 
@@ -4784,18 +4830,22 @@ _Mcbeath._
 
 Identifies entities that constitute a family, for constructing consumer journeys involving related patients.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 Grouping identifies plausible family relationships, and does not itself reserve a member to its family. That does not make a member free to build on — some are also IG examples, Inferno default patients or Smart Health Checks entities, which those subsets reserve. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it.
 
+
 ### Provenance & use
 
 Proposed by a script from two independent signals and confirmed by a human. Where a candidate can be neither confirmed nor rejected because the evidence that would settle it is unavailable, it is recorded as potentially related rather than forced into a binary.
 
+
 ### Relationships
 
 Most members currently have no clinical data, so they are also [Blank-slate patients](#blank-slate-patients).
+
 
 ### How is this subset identified?
 
@@ -4931,18 +4981,22 @@ _Signals: RelatedPerson network, shared Medicare card (4951652281)._
 
 Identifies patients with no clinical data, so they can be selected for a new consumer journey without pre-existing content conflicting.
 
+
 ### Ownership & governance
 
 **Owner:** HL7 AU Test Data project  
 Carrying no clinical data is not the same as being free to build on: a patient can have no clinical resource here and still be reserved by another subset — several members are [Missing and suppressed data examples](#missing-suppressed-data), deliberately shaped to demonstrate absent data. What governs an entity is the tightest constraint across all of its memberships, so check its other listings before adding to it. Adding clinical data to a member simply removes it from this subset on the next regeneration.
 
+
 ### Provenance & use
 
 Computed from the data set on every regeneration rather than recorded. Membership therefore changes automatically as clinical data is added.
 
+
 ### Relationships
 
 Many members also appear in [Families](#families), and some are [Missing and suppressed data examples](#missing-suppressed-data) instances.
+
 
 ### How is this subset identified?
 
