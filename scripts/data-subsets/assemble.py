@@ -1110,6 +1110,7 @@ PREVIOUS_ROW_RE = re.compile(r"^(?:- |\| )\[`([^`]+)`\]\(([^)]+)\)")
 SECTION_ANCHOR_RE = re.compile(r'^## .*<a id="([^"]+)"></a>')
 STAMP_COMMIT_RE = re.compile(r"commit `([0-9a-f]{7,40})`")
 FILENAME_TYPE_ID_RE = re.compile(r"^([A-Z][A-Za-z]*)-(.+)\.json$")
+GROUP_HEADING_RE = re.compile(r"^\*\*(.+?)\*\* \(\d+")
 
 
 def _git_lines(*args: str) -> list[str] | None:
@@ -1144,20 +1145,36 @@ def parse_previous_page(text: str) -> tuple[dict[str, set[tuple[str, str, str]]]
     (href)`) or a table row (`| [`id`](href) | ...`) — render_group() picks
     one or the other per group, so both must parse or a dense group's
     membership would silently read as empty here.
+
+    Rows under a "**Practitioner / PractitionerRole**" combined heading
+    (render_combined_practitioner_role) are deliberately NOT scraped: unlike
+    every other group, a row there isn't always an independent member of
+    this subset — a PractitionerRole member's Practitioner (or vice versa)
+    is resolved by reachability across the whole data set regardless of
+    whether it's itself tracked here, so treating every row's first cell as
+    "a member of this subset" would manufacture a false drop the moment
+    that cross-reference resolution shifts even slightly, for an entity
+    that was never counted as a member on either side of the comparison.
     """
     by_subset: dict[str, set[tuple[str, str, str]]] = defaultdict(set)
     current_slug = None
+    current_heading = None
     commit = None
     for line in text.splitlines():
         anchor = SECTION_ANCHOR_RE.match(line)
         if anchor:
             current_slug = anchor.group(1)
+            current_heading = None
+            continue
+        heading = GROUP_HEADING_RE.match(line)
+        if heading:
+            current_heading = heading.group(1)
             continue
         if commit is None:
             stamp = STAMP_COMMIT_RE.search(line)
             if stamp:
                 commit = stamp.group(1)
-        if current_slug is None:
+        if current_slug is None or current_heading == "Practitioner / PractitionerRole":
             continue
         row = PREVIOUS_ROW_RE.match(line)
         if not row:
