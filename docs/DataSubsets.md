@@ -33,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-21 11:28 UTC from test data at commit `00598ecb3afef9383eb876a6fafa6dac358b5eb0`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-21 11:51 UTC from test data at commit `e5469c2a0753a533d1b301a218b3c7509be5ad15`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -486,19 +486,20 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 - [`roberts-fred`](../au-fhir-test-data-set/au-erequesting/Patient-roberts-fred.json) — **Patient** — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples)*
 
-**Practitioner** (9)
+**Practitioner / PractitionerRole** (9)
 
-| ID | Role | Note | Also in |
-| --- | --- | --- | --- |
-| [`cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) | **Registered Nurse** |  | *[scenario-groups](#scenario-groups)* |
-| [`dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) | **ED Doctor** |  | *[scenario-groups](#scenario-groups)* |
-| [`ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | **ED Physiotherapist** | *declared specialty is only "Physiotherapist"* | *[scenario-groups](#scenario-groups)* |
-| [`frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) | **Nurse Practitioner** |  | *[scenario-groups](#scenario-groups)* |
-| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | **Paramedic** | *declared specialty is only "Ambulance Officer"* |  |
-| [`little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) | **General Practitioner** |  | *[scenario-groups](#scenario-groups)* |
-| [`neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) | **Physiotherapist** |  | *[scenario-groups](#scenario-groups)* |
-| [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) | **Pharmacist** |  | *[scenario-groups](#scenario-groups)* |
-| [`shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) | **ED Triage Nurse** | *declared specialty is only "Registered Nurses nec"* |  |
+
+| Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
+| --- | --- | --- | --- | --- | --- |
+| [`cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) | [`cox-sandra`](../au-fhir-test-data-set/au-core/PractitionerRole-cox-sandra.json) | **Registered Nurse** | Registered Nurses nec (Nursing) |  | *[scenario-groups](#scenario-groups)* |
+| [`dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) | [`dawson-kent`](../au-fhir-test-data-set/au-core/PractitionerRole-dawson-kent.json) | **ED Doctor** | Emergency Medicine Specialist / Emergency Physician (Emergency medicine) |  | *[scenario-groups](#scenario-groups)* |
+| [`ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | [`ellison-abby`](../au-fhir-test-data-set/au-core/PractitionerRole-ellison-abby.json) | **ED Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) | [`frank-gaylene`](../au-fhir-test-data-set/au-core/PractitionerRole-frank-gaylene.json) | **Nurse Practitioner** | Nurse Practitioner (Nursing) |  | *[scenario-groups](#scenario-groups)* |
+| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) | **Paramedic** | Ambulance Officer | *journey role may differ from the declared specialty* |  |
+| [`little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) | [`little-jerrie`](../au-fhir-test-data-set/au-core/PractitionerRole-little-jerrie.json) | **General Practitioner** | General Practitioner (General medical practice) |  | *[scenario-groups](#scenario-groups)* |
+| [`neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) | [`neville-isaiah`](../au-fhir-test-data-set/au-core/PractitionerRole-neville-isaiah.json) | **Physiotherapist** | Physiotherapist (Physiotherapy) |  | *[scenario-groups](#scenario-groups)* |
+| [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) | [`ohalloran-sheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-ohalloran-sheryl.json) | **Pharmacist** | Pharmacist (Community pharmacy) |  | *[scenario-groups](#scenario-groups)* |
+| [`shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) | [`registerednurses-shephard-lizabeth`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-shephard-lizabeth.json) | **ED Triage Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
 
 **Unresolved** (2)
 
@@ -532,20 +533,21 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 - [`sandilands-kendall`](../au-fhir-test-data-set/au-erequesting/Patient-sandilands-kendall.json) — **Patient**
 
-**Practitioner** (10)
+**Practitioner / PractitionerRole** (10)
 
-| ID | Role | Note | Also in |
-| --- | --- | --- | --- |
-| [`gordon-tad`](../au-fhir-test-data-set/au-core/Practitioner-gordon-tad.json) | **Exercise Physiologist** |  |  |
-| [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | **Inpatient Psychologist** | *declared specialty is only "Clinical Psychologist"* | *[scenario-groups](#scenario-groups)* |
-| [`levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | **Outpatient Dietitian** | *declared specialty is only "Dietitian"* | *[scenario-groups](#scenario-groups)* |
-| [`lowe-abe`](../au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json) | **General Practitioner (GP)** |  | *[au-ps-ig-examples](#au-ps-ig-examples)* |
-| [`mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | **Inpatient Dietitian** | *declared specialty is only "Dietitian"* | *[scenario-groups](#scenario-groups)* |
-| [`mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) | **Occupational Therapist (OT)** |  | *[scenario-groups](#scenario-groups)* |
-| [`roberts-benjamin`](../au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json) | **Specialist Cancer Nurse** | *declared specialty is only "Registered Nurses nec"* |  |
-| [`sheppard-mathew`](../au-fhir-test-data-set/au-core/Practitioner-sheppard-mathew.json) | **Medical Oncologist** |  |  |
-| [`taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) | **Day Therapy Unit Nurse** | *declared specialty is only "Registered Nurses nec"* |  |
-| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | **Private Psychologist** | *declared specialty is only "Clinical Psychologist"* | *[scenario-groups](#scenario-groups)* |
+
+| Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
+| --- | --- | --- | --- | --- | --- |
+| [`gordon-tad`](../au-fhir-test-data-set/au-core/Practitioner-gordon-tad.json) | [`complementaryhealth-gordon-tad`](../au-fhir-test-data-set/au-core/PractitionerRole-complementaryhealth-gordon-tad.json) | **Exercise Physiologist** | Exercise Physiologist (Exercise physiology service) |  |  |
+| [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | [`lapthorn-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-lapthorn-leisa.json) | **Inpatient Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | [`levings-richard`](../au-fhir-test-data-set/au-core/PractitionerRole-levings-richard.json) | **Outpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`lowe-abe`](../au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json) | [`generalpractitioner-lowe-abe`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lowe-abe.json) | **General Practitioner (GP)** | General Practitioner (General medical practice) |  | *[au-ps-ig-examples](#au-ps-ig-examples)* |
+| [`mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | [`mcnab-angelina`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnab-angelina.json) | **Inpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) | [`mills-hope`](../au-fhir-test-data-set/au-core/PractitionerRole-mills-hope.json) | **Occupational Therapist (OT)** | Occupational Therapist |  | *[scenario-groups](#scenario-groups)* |
+| [`roberts-benjamin`](../au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json) | [`registerednurses-roberts-benjamin`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-roberts-benjamin.json) | **Specialist Cancer Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
+| [`sheppard-mathew`](../au-fhir-test-data-set/au-core/Practitioner-sheppard-mathew.json) | [`medicaloncologist-sheppard-mathew`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaloncologist-sheppard-mathew.json) | **Medical Oncologist** | Medical Oncologist (Medical oncology) |  |  |
+| [`taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) | [`registerednurses-taylor-kittie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-taylor-kittie.json) | **Day Therapy Unit Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
+| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | **Private Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
 
 **Unresolved** (3)
 
@@ -577,17 +579,18 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 <details><summary><strong>encounter-journey-3-child-with-developmental-delay</strong> (10 entities)</summary>
 
 
-**Practitioner** (7)
+**Practitioner / PractitionerRole** (7)
 
-| ID | Role | Note | Also in |
-| --- | --- | --- | --- |
-| [`alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | **Maternal and Child Health Nurse** | *declared specialty is only "Registered Nurses nec"* | *[scenario-groups](#scenario-groups)* |
-| [`bradley-jill`](../au-fhir-test-data-set/au-core/Practitioner-bradley-jill.json) | **Audiologist** |  |  |
-| [`greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) | **Paediatrician** |  | *[scenario-groups](#scenario-groups)* |
-| [`keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) | **General Practitioner** |  | *[scenario-groups](#scenario-groups)* |
-| [`mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) | **Speech Pathologist** |  | *[scenario-groups](#scenario-groups)* |
-| [`murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) | **Occupational Therapist** |  | *[scenario-groups](#scenario-groups)* |
-| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | **Private Psychologist** | *declared specialty is only "Clinical Psychologist"* | *[scenario-groups](#scenario-groups)* |
+
+| Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
+| --- | --- | --- | --- | --- | --- |
+| [`alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | [`alcock-devon`](../au-fhir-test-data-set/au-core/PractitionerRole-alcock-devon.json) | **Maternal and Child Health Nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`bradley-jill`](../au-fhir-test-data-set/au-core/Practitioner-bradley-jill.json) | [`audiologist-bradley-jill`](../au-fhir-test-data-set/au-core/PractitionerRole-audiologist-bradley-jill.json) | **Audiologist** | Audiologist (Audiological medicine) |  |  |
+| [`greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) | [`greene-delores`](../au-fhir-test-data-set/au-core/PractitionerRole-greene-delores.json) | **Paediatrician** | Paediatrician (General paediatric specialty) |  | *[scenario-groups](#scenario-groups)* |
+| [`keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) | [`keith-margot`](../au-fhir-test-data-set/au-core/PractitionerRole-keith-margot.json) | **General Practitioner** | General Practitioner (General medical practice) |  | *[scenario-groups](#scenario-groups)* |
+| [`mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) | [`mullin-kenny`](../au-fhir-test-data-set/au-core/PractitionerRole-mullin-kenny.json) | **Speech Pathologist** | Speech Pathologist |  | *[scenario-groups](#scenario-groups)* |
+| [`murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) | [`murray-ashli`](../au-fhir-test-data-set/au-core/PractitionerRole-murray-ashli.json) | **Occupational Therapist** | Occupational Therapist |  | *[scenario-groups](#scenario-groups)* |
+| [`vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | **Private Psychologist** | Clinical Psychologist (Clinical psychology) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
 
 **Unresolved** (3)
 
@@ -620,27 +623,28 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 - [`boulton-annika`](../au-fhir-test-data-set/au-core/Patient-boulton-annika.json) — **Patient**
 
-**Practitioner** (17)
+**Practitioner / PractitionerRole** (17)
 
-| ID | Role | Note | Also in |
-| --- | --- | --- | --- |
-| [`bailey-buck`](../au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json) | **Inpatient Social worker** | *declared specialty is only "Social Worker"* | *[scenario-groups](#scenario-groups)* |
-| [`barrett-kirstie`](../au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json) | **TCP social worker** | *declared specialty is only "Social Worker"* | *[scenario-groups](#scenario-groups)* |
-| [`berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) | **Anaesthetist** |  | *[scenario-groups](#scenario-groups)* |
-| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | **Paramedic** | *declared specialty is only "Ambulance Officer"* |  |
-| [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) | **General Practitioner (GP)** |  | *[au-erequesting-ig-examples](#au-erequesting-ig-examples)* |
-| [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json) | **TCP OT** | *declared specialty is only "Occupational Therapist"* | *[scenario-groups](#scenario-groups)* |
-| [`hobden-mark`](../au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json) | **Inpatient Pharmacist** | *declared specialty is only "Pharmacist"* | *[scenario-groups](#scenario-groups)* |
-| [`jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | **Inpatient Physiotherapist** | *declared specialty is only "Physiotherapist"* | *[scenario-groups](#scenario-groups)* |
-| [`kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) | **Inpatient Dietitian** | *declared specialty is only "Dietitian"* |  |
-| [`knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | **Community Occupational Therapist** | *declared specialty is only "Occupational Therapist"* | *[scenario-groups](#scenario-groups)* |
-| [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json) | **TCP Physiotherapist** | *declared specialty is only "Physiotherapist"* | *[scenario-groups](#scenario-groups)* |
-| [`parker-elijah`](../au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json) | **Community physiotherapist** | *declared specialty is only "Physiotherapist"* |  |
-| [`patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json) | **Community pharmacist** |  |  |
-| [`randall-anthony`](../au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json) | **Practice nurse** | *declared specialty is only "Registered Nurses nec"* | *[scenario-groups](#scenario-groups)* |
-| [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json) | **Transition Care Program (TCP) Nurse** | *declared specialty is only "Nurse Practitioner"* | *[scenario-groups](#scenario-groups)* |
-| [`rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) | **Surgical ward nurse** | *declared specialty is only "Registered Nurses nec"* |  |
-| [`sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | **Inpatient Occupational Therapist (OT)** | *declared specialty is only "Occupational Therapist"* | *[scenario-groups](#scenario-groups)* |
+
+| Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
+| --- | --- | --- | --- | --- | --- |
+| [`bailey-buck`](../au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json) | [`bailey-buck`](../au-fhir-test-data-set/au-core/PractitionerRole-bailey-buck.json) | **Inpatient Social worker** | Social Worker | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`barrett-kirstie`](../au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json) | [`barrett-kirstie`](../au-fhir-test-data-set/au-core/PractitionerRole-barrett-kirstie.json) | **TCP social worker** | Social Worker | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) | [`berridge-beulah`](../au-fhir-test-data-set/au-core/PractitionerRole-berridge-beulah.json) | **Anaesthetist** | Anaesthetist (Anaesthetics) |  | *[scenario-groups](#scenario-groups)* |
+| [`gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) | **Paramedic** | Ambulance Officer | *journey role may differ from the declared specialty* |  |
+| [`guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) | [`generalpractitioner-guthridge-jarred`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-guthridge-jarred.json) | **General Practitioner (GP)** | General Practitioner (General medical practice) |  | *[au-erequesting-ig-examples](#au-erequesting-ig-examples)* |
+| [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json) | [`hipwood-fatimah`](../au-fhir-test-data-set/au-core/PractitionerRole-hipwood-fatimah.json) | **TCP OT** | Occupational Therapist | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`hobden-mark`](../au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json) | [`hobden-mark`](../au-fhir-test-data-set/au-core/PractitionerRole-hobden-mark.json) | **Inpatient Pharmacist** | Pharmacist (Community pharmacy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | [`jeffery-sammy`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-sammy.json) | **Inpatient Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) | [`dietitian-kelly-virginia`](../au-fhir-test-data-set/au-core/PractitionerRole-dietitian-kelly-virginia.json) | **Inpatient Dietitian** | Dietitian (Dietetics and nutrition) | *journey role may differ from the declared specialty* |  |
+| [`knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | [`knowles-sunshine`](../au-fhir-test-data-set/au-core/PractitionerRole-knowles-sunshine.json) | **Community Occupational Therapist** | Occupational Therapist | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json) | [`livingstone-yvonne`](../au-fhir-test-data-set/au-core/PractitionerRole-livingstone-yvonne.json) | **TCP Physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`parker-elijah`](../au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json) | [`physiotherapist-parker-elijah`](../au-fhir-test-data-set/au-core/PractitionerRole-physiotherapist-parker-elijah.json) | **Community physiotherapist** | Physiotherapist (Physiotherapy) | *journey role may differ from the declared specialty* |  |
+| [`patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json) | [`retailpharmacist-patrick-manual`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-patrick-manual.json) | **Community pharmacist** | Retail Pharmacist (Community pharmacy) |  |  |
+| [`randall-anthony`](../au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json) | [`randall-anthony`](../au-fhir-test-data-set/au-core/PractitionerRole-randall-anthony.json) | **Practice nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json) | [`robbins-wilhelmina`](../au-fhir-test-data-set/au-core/PractitionerRole-robbins-wilhelmina.json) | **Transition Care Program (TCP) Nurse** | Nurse Practitioner (Nursing) | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
+| [`rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) | [`registerednurses-rowland-roger`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-rowland-roger.json) | **Surgical ward nurse** | Registered Nurses nec (Nursing) | *journey role may differ from the declared specialty* |  |
+| [`sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | [`sherry-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-sherry-dean.json) | **Inpatient Occupational Therapist (OT)** | Occupational Therapist | *journey role may differ from the declared specialty* | *[scenario-groups](#scenario-groups)* |
 
 **Unresolved** (8)
 
@@ -738,9 +742,12 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 
 - [`johnson-joyce`](../au-fhir-test-data-set/au-core/Patient-johnson-joyce.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
 
-**Practitioner** (1)
+**Practitioner / PractitionerRole** (1)
 
-- [`burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
+
+| Practitioner | PractitionerRole | Role from journey | Role (specialty) from test data | Notes | Also in |
+| --- | --- | --- | --- | --- | --- |
+| [`burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) | [`generalpractitioner-burrows-ginger`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-burrows-ginger.json) |  | General Practitioner (General medical practice) |  | *[au-ps-ig-examples](#au-ps-ig-examples)* |
 
 <details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location / HealthcareService</summary>
 
@@ -792,27 +799,19 @@ Declared, and read from a branch. These entities are not on the default branch, 
 
 - [`thompson-alex`](../au-fhir-test-data-set/connected-care/Patient-thompson-alex.json)
 
-**Practitioner / PractitionerRole** (16)
+**Practitioner / PractitionerRole** (8)
 
 
 | Practitioner | PractitionerRole | Role (specialty) | Also in |
 | --- | --- | --- | --- |
-|  | [`counsellorsnec-patel-rachel`](../au-fhir-test-data-set/connected-care/PractitionerRole-counsellorsnec-patel-rachel.json) |  |  |
-|  | [`generalpractitioner-lee-chris`](../au-fhir-test-data-set/connected-care/PractitionerRole-generalpractitioner-lee-chris.json) |  |  |
-|  | [`generalpractitioner-smith-jane`](../au-fhir-test-data-set/connected-care/PractitionerRole-generalpractitioner-smith-jane.json) |  |  |
-|  | [`medicaltechnician-johnson-sally`](../au-fhir-test-data-set/connected-care/PractitionerRole-medicaltechnician-johnson-sally.json) |  |  |
-|  | [`obstetrician-chen-emily`](../au-fhir-test-data-set/connected-care/PractitionerRole-obstetrician-chen-emily.json) |  |  |
-|  | [`obstetrician-wilson-mark`](../au-fhir-test-data-set/connected-care/PractitionerRole-obstetrician-wilson-mark.json) |  |  |
-|  | [`physiotherapist-evans-sarah`](../au-fhir-test-data-set/connected-care/PractitionerRole-physiotherapist-evans-sarah.json) |  |  |
-|  | [`retailpharmacist-lee-sarah`](../au-fhir-test-data-set/connected-care/PractitionerRole-retailpharmacist-lee-sarah.json) |  |  |
-| [`chen-emily`](../au-fhir-test-data-set/connected-care/Practitioner-chen-emily.json) |  |  |  |
-| [`evans-sarah`](../au-fhir-test-data-set/connected-care/Practitioner-evans-sarah.json) |  |  |  |
-| [`johnson-sally`](../au-fhir-test-data-set/connected-care/Practitioner-johnson-sally.json) |  |  |  |
-| [`lee-chris`](../au-fhir-test-data-set/connected-care/Practitioner-lee-chris.json) |  |  |  |
-| [`lee-sarah`](../au-fhir-test-data-set/connected-care/Practitioner-lee-sarah.json) |  |  |  |
-| [`patel-rachel`](../au-fhir-test-data-set/connected-care/Practitioner-patel-rachel.json) |  |  |  |
-| [`smith-jane`](../au-fhir-test-data-set/connected-care/Practitioner-smith-jane.json) |  |  |  |
-| [`wilson-mark`](../au-fhir-test-data-set/connected-care/Practitioner-wilson-mark.json) |  |  |  |
+| [`chen-emily`](../au-fhir-test-data-set/connected-care/Practitioner-chen-emily.json) | [`obstetrician-chen-emily`](../au-fhir-test-data-set/connected-care/PractitionerRole-obstetrician-chen-emily.json) | Obstetrician and Gynaecologist (Obstetrics and gynaecology) |  |
+| [`evans-sarah`](../au-fhir-test-data-set/connected-care/Practitioner-evans-sarah.json) | [`physiotherapist-evans-sarah`](../au-fhir-test-data-set/connected-care/PractitionerRole-physiotherapist-evans-sarah.json) | Physiotherapist (Physiotherapy) |  |
+| [`johnson-sally`](../au-fhir-test-data-set/connected-care/Practitioner-johnson-sally.json) | [`medicaltechnician-johnson-sally`](../au-fhir-test-data-set/connected-care/PractitionerRole-medicaltechnician-johnson-sally.json) | Medical Technician |  |
+| [`lee-chris`](../au-fhir-test-data-set/connected-care/Practitioner-lee-chris.json) | [`generalpractitioner-lee-chris`](../au-fhir-test-data-set/connected-care/PractitionerRole-generalpractitioner-lee-chris.json) | General Practitioner (General medical practice) |  |
+| [`lee-sarah`](../au-fhir-test-data-set/connected-care/Practitioner-lee-sarah.json) | [`retailpharmacist-lee-sarah`](../au-fhir-test-data-set/connected-care/PractitionerRole-retailpharmacist-lee-sarah.json) | Pharmacist (Community pharmacy) |  |
+| [`patel-rachel`](../au-fhir-test-data-set/connected-care/Practitioner-patel-rachel.json) | [`counsellorsnec-patel-rachel`](../au-fhir-test-data-set/connected-care/PractitionerRole-counsellorsnec-patel-rachel.json) | Counsellor |  |
+| [`smith-jane`](../au-fhir-test-data-set/connected-care/Practitioner-smith-jane.json) | [`generalpractitioner-smith-jane`](../au-fhir-test-data-set/connected-care/PractitionerRole-generalpractitioner-smith-jane.json) | General Practitioner (General medical practice) |  |
+| [`wilson-mark`](../au-fhir-test-data-set/connected-care/Practitioner-wilson-mark.json) | [`obstetrician-wilson-mark`](../au-fhir-test-data-set/connected-care/PractitionerRole-obstetrician-wilson-mark.json) | Reproductive Endocrinologist/Infertility Specialist (Reproductive Endocrinologist/Infertility Specialist) |  |
 
 **HealthcareService** (7)
 
@@ -844,6 +843,21 @@ Declared, and read from a branch. These entities are not on the default branch, 
 - [`bathurst-physio-centre`](../au-fhir-test-data-set/connected-care/Location-bathurst-physio-centre.json)
 - [`bathurst-psychology`](../au-fhir-test-data-set/connected-care/Location-bathurst-psychology.json)
 
+<details><summary>8 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| `chen-emily` | `obstetrician-chen-emily` | `ashfield-private-clinic` | `ashfield-private-clinic` |
+| `evans-sarah` | `physiotherapist-evans-sarah` | `bathurst-physio-centre` | `bathurst-physio-centre` |
+| `johnson-sally` | `medicaltechnician-johnson-sally` | `bathurst-pathology` | `bathurst-pathology` |
+| `lee-chris` | `generalpractitioner-lee-chris` | `bathurst-medical-centre` | `bathurst-medical-centre` |
+| `lee-sarah` | `retailpharmacist-lee-sarah` | `bathurst-community-pharmacy` | `bathurst-community-pharmacy` |
+| `patel-rachel` | `counsellorsnec-patel-rachel` | `bathurst-psychology` | `bathurst-psychology` |
+| `smith-jane` | `generalpractitioner-smith-jane` | `bathurst-medical-centre` | `bathurst-medical-centre` |
+| `wilson-mark` | `obstetrician-wilson-mark` | `ashfield-private-hospital` | `ashfield-private-hospital` |
+
+</details>
+
 </details>
 
 <details><summary><strong>Yuri's Story (provisional)</strong> (57 entities)</summary>
@@ -852,34 +866,23 @@ Declared, and read from a branch. These entities are not on the default branch, 
 
 - [`petrov-yuri`](../au-fhir-test-data-set/connected-care/Patient-petrov-yuri.json)
 
-**Practitioner / PractitionerRole** (23)
+**Practitioner / PractitionerRole** (12)
 
 
 | Practitioner | PractitionerRole | Role (specialty) | Also in |
 | --- | --- | --- | --- |
-|  | [`aboriginal-king-narelle`](../au-fhir-test-data-set/connected-care/PractitionerRole-aboriginal-king-narelle.json) |  |  |
-|  | [`ambulanceofficer-bradley-tom`](../au-fhir-test-data-set/connected-care/PractitionerRole-ambulanceofficer-bradley-tom.json) |  |  |
-|  | [`emergencymedicinespecialist-green-susan-garran-hospital`](../au-fhir-test-data-set/connected-care/PractitionerRole-emergencymedicinespecialist-green-susan-garran-hospital.json) |  |  |
-|  | [`emergencymedicinespecialist-green-susan-garran-hospital-ed`](../au-fhir-test-data-set/connected-care/PractitionerRole-emergencymedicinespecialist-green-susan-garran-hospital-ed.json) |  |  |
-|  | [`endocrinologist-tench-natalie`](../au-fhir-test-data-set/connected-care/PractitionerRole-endocrinologist-tench-natalie.json) |  |  |
-|  | [`generalpractitioner-kumar-ravi`](../au-fhir-test-data-set/connected-care/PractitionerRole-generalpractitioner-kumar-ravi.json) |  |  |
-|  | [`nursepractitioner-brown-sarah`](../au-fhir-test-data-set/connected-care/PractitionerRole-nursepractitioner-brown-sarah.json) |  |  |
-|  | [`nursepractitioner-hayes-linda`](../au-fhir-test-data-set/connected-care/PractitionerRole-nursepractitioner-hayes-linda.json) |  |  |
-|  | [`occupationaltherapist-wong-lisa`](../au-fhir-test-data-set/connected-care/PractitionerRole-occupationaltherapist-wong-lisa.json) |  |  |
-|  | [`physiotherapist-smith-john`](../au-fhir-test-data-set/connected-care/PractitionerRole-physiotherapist-smith-john.json) |  |  |
-|  | [`retailpharmacist-sullivan-joy`](../au-fhir-test-data-set/connected-care/PractitionerRole-retailpharmacist-sullivan-joy.json) |  |  |
-|  | [`socialworker-mitchell-karen`](../au-fhir-test-data-set/connected-care/PractitionerRole-socialworker-mitchell-karen.json) |  |  |
-| [`bradley-tom`](../au-fhir-test-data-set/connected-care/Practitioner-bradley-tom.json) |  |  |  |
-| [`brown-sarah`](../au-fhir-test-data-set/connected-care/Practitioner-brown-sarah.json) |  |  |  |
-| [`green-susan`](../au-fhir-test-data-set/connected-care/Practitioner-green-susan.json) |  |  |  |
-| [`hayes-linda`](../au-fhir-test-data-set/connected-care/Practitioner-hayes-linda.json) |  |  |  |
-| [`king-narelle`](../au-fhir-test-data-set/connected-care/Practitioner-king-narelle.json) |  |  |  |
-| [`kumar-ravi`](../au-fhir-test-data-set/connected-care/Practitioner-kumar-ravi.json) |  |  |  |
-| [`mitchell-karen`](../au-fhir-test-data-set/connected-care/Practitioner-mitchell-karen.json) |  |  |  |
-| [`smith-john`](../au-fhir-test-data-set/connected-care/Practitioner-smith-john.json) |  |  |  |
-| [`sullivan-joy`](../au-fhir-test-data-set/connected-care/Practitioner-sullivan-joy.json) |  |  |  |
-| [`tench-natalie`](../au-fhir-test-data-set/connected-care/Practitioner-tench-natalie.json) |  |  |  |
-| [`wong-lisa`](../au-fhir-test-data-set/connected-care/Practitioner-wong-lisa.json) |  |  |  |
+| [`bradley-tom`](../au-fhir-test-data-set/connected-care/Practitioner-bradley-tom.json) | [`ambulanceofficer-bradley-tom`](../au-fhir-test-data-set/connected-care/PractitionerRole-ambulanceofficer-bradley-tom.json) | Intensive Care Ambulance Paramedic |  |
+| [`brown-sarah`](../au-fhir-test-data-set/connected-care/Practitioner-brown-sarah.json) | [`nursepractitioner-brown-sarah`](../au-fhir-test-data-set/connected-care/PractitionerRole-nursepractitioner-brown-sarah.json) | Nurse Practitioner (Nursing) |  |
+| [`green-susan`](../au-fhir-test-data-set/connected-care/Practitioner-green-susan.json) | [`emergencymedicinespecialist-green-susan-garran-hospital`](../au-fhir-test-data-set/connected-care/PractitionerRole-emergencymedicinespecialist-green-susan-garran-hospital.json) | Emergency Medicine Specialist/Emergency Physician (Emergency medicine) |  |
+| [`green-susan`](../au-fhir-test-data-set/connected-care/Practitioner-green-susan.json) | [`emergencymedicinespecialist-green-susan-garran-hospital-ed`](../au-fhir-test-data-set/connected-care/PractitionerRole-emergencymedicinespecialist-green-susan-garran-hospital-ed.json) | Emergency Medicine Specialist/Emergency Physician (Emergency medicine) |  |
+| [`hayes-linda`](../au-fhir-test-data-set/connected-care/Practitioner-hayes-linda.json) | [`nursepractitioner-hayes-linda`](../au-fhir-test-data-set/connected-care/PractitionerRole-nursepractitioner-hayes-linda.json) | Nurse Practitioner (Nursing) |  |
+| [`king-narelle`](../au-fhir-test-data-set/connected-care/Practitioner-king-narelle.json) | [`aboriginal-king-narelle`](../au-fhir-test-data-set/connected-care/PractitionerRole-aboriginal-king-narelle.json) | Aboriginal and Torres Strait Health Worker |  |
+| [`kumar-ravi`](../au-fhir-test-data-set/connected-care/Practitioner-kumar-ravi.json) | [`generalpractitioner-kumar-ravi`](../au-fhir-test-data-set/connected-care/PractitionerRole-generalpractitioner-kumar-ravi.json) | General Practitioner (General medical practice) |  |
+| [`mitchell-karen`](../au-fhir-test-data-set/connected-care/Practitioner-mitchell-karen.json) | [`socialworker-mitchell-karen`](../au-fhir-test-data-set/connected-care/PractitionerRole-socialworker-mitchell-karen.json) | Social Worker |  |
+| [`smith-john`](../au-fhir-test-data-set/connected-care/Practitioner-smith-john.json) | [`physiotherapist-smith-john`](../au-fhir-test-data-set/connected-care/PractitionerRole-physiotherapist-smith-john.json) | Physiotherapist (Physiotherapy) |  |
+| [`sullivan-joy`](../au-fhir-test-data-set/connected-care/Practitioner-sullivan-joy.json) | [`retailpharmacist-sullivan-joy`](../au-fhir-test-data-set/connected-care/PractitionerRole-retailpharmacist-sullivan-joy.json) | Pharmacist (Community pharmacy) |  |
+| [`tench-natalie`](../au-fhir-test-data-set/connected-care/Practitioner-tench-natalie.json) | [`endocrinologist-tench-natalie`](../au-fhir-test-data-set/connected-care/PractitionerRole-endocrinologist-tench-natalie.json) | Endocrinologist (Endocrinology) |  |
+| [`wong-lisa`](../au-fhir-test-data-set/connected-care/Practitioner-wong-lisa.json) | [`occupationaltherapist-wong-lisa`](../au-fhir-test-data-set/connected-care/PractitionerRole-occupationaltherapist-wong-lisa.json) | Occupational Therapist (Occupational medicine) |  |
 
 **HealthcareService** (11)
 
@@ -922,6 +925,25 @@ Declared, and read from a branch. These entities are not on the default branch, 
 - [`kalgoorlie-pharmacy`](../au-fhir-test-data-set/connected-care/Location-kalgoorlie-pharmacy.json)
 - [`kalgoorlie-physiotherapy`](../au-fhir-test-data-set/connected-care/Location-kalgoorlie-physiotherapy.json)
 - [`kalgoorlie-specialist-clinic`](../au-fhir-test-data-set/connected-care/Location-kalgoorlie-specialist-clinic.json)
+
+<details><summary>12 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| `bradley-tom` | `ambulanceofficer-bradley-tom` | `garran-ambulance-service` | `garran-ambulance-service` |
+| `brown-sarah` | `nursepractitioner-brown-sarah` | `kalgoorlie-community-health-service` | `kalgoorlie-community-health-service` |
+| `green-susan` | `emergencymedicinespecialist-green-susan-garran-hospital` | `garran-hospital` | `garran-hospital` |
+| `green-susan` | `emergencymedicinespecialist-green-susan-garran-hospital-ed` | `garran-hospital-ed` | `garran-hospital-ed` |
+| `hayes-linda` | `nursepractitioner-hayes-linda` |  |  |
+| `king-narelle` | `aboriginal-king-narelle` | `kalgoorlie-community-health-service` | `kalgoorlie-community-health-service` |
+| `kumar-ravi` | `generalpractitioner-kumar-ravi` | `kalgoorlie-medical-centre` | `kalgoorlie-medical-centre` |
+| `mitchell-karen` | `socialworker-mitchell-karen` | `kalgoorlie-aged-care-service` | `kalgoorlie-aged-care-service` |
+| `smith-john` | `physiotherapist-smith-john` | `kalgoorlie-physiotherapy` | `kalgoorlie-physiotherapy` |
+| `sullivan-joy` | `retailpharmacist-sullivan-joy` | `kalgoorlie-pharmacy` | `kalgoorlie-pharmacy` |
+| `tench-natalie` | `endocrinologist-tench-natalie` | `kalgoorlie-specialist-clinic` | `kalgoorlie-specialist-clinic` |
+| `wong-lisa` | `occupationaltherapist-wong-lisa` | `kalgoorlie-ot-services` | `kalgoorlie-ot-services` |
+
+</details>
 
 </details>
 

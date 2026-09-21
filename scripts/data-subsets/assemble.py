@@ -481,6 +481,7 @@ def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
 
 def render_entity_list(members: list[dict], group_field: str | None,
                        res_index: dict, current_slug: str, index: dict,
+                       candidate: dict | None = None,
                        group_labels: dict | None = None,
                        subgroup_field: str | None = None,
                        group_notes: dict | None = None,
@@ -500,6 +501,15 @@ def render_entity_list(members: list[dict], group_field: str | None,
     if not members:
         return "_(no members)_\n"
 
+    # Fallback for subsets whose entities live off the current working
+    # tree (only connected-care-journeys today — its members are read from
+    # a git branch, so they never appear in `index`, which only scans the
+    # working tree). connected_care.py reads the branch anyway and persists
+    # each PractitionerRole's references as this evidence, so pairing and
+    # code/specialty can still resolve here instead of every such entity
+    # rendering as a permanently unpaired row.
+    extra_refs = (candidate or {}).get("evidence", {}).get("practitioner_role_refs") or {}
+
     lines = []
 
     def render_flat(entries: list[dict]) -> str:
@@ -512,8 +522,24 @@ def render_entity_list(members: list[dict], group_field: str | None,
         # PractitionerRole's own slot in RESOURCE_TYPE_ORDER so the rest of
         # the type ordering is undisturbed.
         combine = bool(by_type.get("Practitioner") and by_type.get("PractitionerRole"))
+        # sparked-cdg-journeys never tracks PractitionerRole as its own
+        # member type, so it gets its own always-on combined table instead
+        # of render_group's density-gated bullet/table choice or the plain
+        # combine above — confirmed to apply to every journey in the
+        # subset, including the 5 AU Patient Summary journeys, which carry
+        # no journey_role/alignment data at all (mostly-blank cells there,
+        # not a fallback to the old rendering) — so this checks current_slug
+        # directly rather than the journey_role field's presence, which
+        # would silently exclude exactly those journeys.
+        is_journey = current_slug == "sparked-cdg-journeys" and bool(by_type.get("Practitioner"))
         out = []
         for rtype in sorted(by_type, key=_resource_type_sort_key):
+            if is_journey and rtype == "Practitioner":
+                group = sorted(by_type[rtype], key=lambda m: m["id"])
+                n, body = render_journey_practitioner_table(group)
+                out.append(f"**Practitioner / PractitionerRole** ({n})\n")
+                out.append(body)
+                continue
             if combine and rtype == "Practitioner":
                 continue
             if combine and rtype == "PractitionerRole":
@@ -603,27 +629,43 @@ def render_entity_list(members: list[dict], group_field: str | None,
         set — index["referenced_by"] is built from every outgoing reference
         found on every resource (lib.py's find_references()), not just
         PractitionerRole's, so this also surfaces e.g. a HealthcareService
-        that names an Organization via its own providedBy field."""
+        that names an Organization via its own providedBy field.
+
+        Falls back to `extra_refs` for PractitionerRole/Practitioner pairing
+        when the working-tree index has nothing — the only current case is
+        connected-care-journeys, whose entities live on a different branch.
+        """
         if not key:
             return []
-        return sorted(
+        found = sorted(
             k for k in index["referenced_by"].get(key, set())
             if k.startswith(f"{rtype}/")
+        )
+        if found or rtype != "PractitionerRole" or not key.startswith("Practitioner/"):
+            return found
+        return sorted(
+            f"PractitionerRole/{rid}" for rid, r in extra_refs.items()
+            if r.get("practitioner") == key
         )
 
     def _role_code_specialty(role_key: str | None) -> str | None:
         if not role_key:
             return None
-        role = index["resources"].get(role_key, {}).get("resource") or {}
-        code = role.get("code") or []
-        code_text = (code[0].get("text") or (code[0].get("coding") or [{}])[0].get("display")
-                    if code else None)
+        role = index["resources"].get(role_key, {}).get("resource")
+        if role:
+            code = role.get("code") or []
+            code_text = (code[0].get("text") or (code[0].get("coding") or [{}])[0].get("display")
+                        if code else None)
+            specialty = role.get("specialty") or []
+            specialty_text = (specialty[0].get("text")
+                              or (specialty[0].get("coding") or [{}])[0].get("display")
+                              if specialty else None)
+        else:
+            extra = extra_refs.get(role_key.split("/", 1)[-1]) or {}
+            code_text = extra.get("code_text")
+            specialty_text = extra.get("specialty_text")
         if not code_text:
             return None
-        specialty = role.get("specialty") or []
-        specialty_text = (specialty[0].get("text")
-                          or (specialty[0].get("coding") or [{}])[0].get("display")
-                          if specialty else None)
         # Confirmed: never empty parens — the code stands alone when there's
         # no specialty to qualify it.
         return f"{code_text} ({specialty_text})" if specialty_text else code_text
@@ -643,6 +685,49 @@ def render_entity_list(members: list[dict], group_field: str | None,
                     links.append(link)
         return ", ".join(links) if links else None
 
+    def render_journey_practitioner_table(group: list[dict]) -> tuple[int, str]:
+        """Sparked CDG journeys' Practitioner listing. journey_role/
+        alignment are stated by the journey, not derived, so unlike
+        render_combined_practitioner_role this never pairs against a
+        co-located PractitionerRole member (the subset doesn't track one) —
+        every role is resolved by reachability from the Practitioner member
+        alone, the same as render_practitioner_relationships.
+        """
+        rows = []
+        for m in group:
+            prac_key = f"Practitioner/{m['id']}"
+            role_keys = referencing(prac_key, "PractitionerRole") or [None]
+            for role_key in role_keys:
+                if role_key is None:
+                    note = "no matching PractitionerRole in the data set"
+                elif m.get("alignment") == "journey_role_more_specific":
+                    # Not repeating the specialty text itself — that's its
+                    # own column now, so the note only needs to flag that a
+                    # gap might exist for the reader to compare directly.
+                    note = "journey role may differ from the declared specialty"
+                else:
+                    note = None
+                rows.append((m, prac_key, role_key, note))
+
+        headers = ["Practitioner", "PractitionerRole", "Role from journey",
+                   "Role (specialty) from test data", "Notes", "Also in"]
+        table = ["", "| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for m, prac_key, role_key, note in rows:
+            id_cell = f"[`{m['id']}`]({_href(m['path'])})" if m.get("path") \
+                else f"`{m['id']}`"
+            also_in = _combined_also_in(prac_key, role_key)
+            cells = [
+                id_cell,
+                _resolve_cell(role_key, index) if role_key else "",
+                f"**{m['journey_role']}**" if m.get("journey_role") else "",
+                _role_code_specialty(role_key) or "",
+                f"*{note}*" if note else "",
+                f"*{also_in}*" if also_in else "",
+            ]
+            table.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
+        return len(rows), "\n".join(table) + "\n"
+
     def render_combined_practitioner_role(
             prac_group: list[dict], role_group: list[dict]) -> tuple[int, str]:
         """Practitioner and PractitionerRole, today rendered as two separate
@@ -658,11 +743,10 @@ def render_entity_list(members: list[dict], group_field: str | None,
         working tree's data-set dirs, but connected-care-journeys resolves
         its members by reading the connected-care branch directly, so its
         members exist with a valid path despite never appearing in index.
-        The trade-off: such a PractitionerRole's actual resource content
-        (for code/specialty, or to resolve its practitioner reference)
-        genuinely isn't available here either way, so those cells stay
-        blank rather than guessing — an unpaired row is honest; a guessed
-        pairing would not be.
+        Pairing and code/specialty for such entities come from `extra_refs`
+        instead (via `referencing()` and `_role_code_specialty()`, and the
+        forward-resolution fallback below) — connected_care.py persists
+        exactly this from the branch for this reason.
         """
         known_paths = {f"Practitioner/{m['id']}": m["path"] for m in prac_group
                        if m.get("path")}
@@ -691,8 +775,11 @@ def render_entity_list(members: list[dict], group_field: str | None,
             role_key = f"PractitionerRole/{m['id']}"
             if role_key in covered_roles:
                 continue
-            role = index["resources"].get(role_key, {}).get("resource") or {}
-            prac_ref = (role.get("practitioner") or {}).get("reference")
+            role = index["resources"].get(role_key, {}).get("resource")
+            if role:
+                prac_ref = (role.get("practitioner") or {}).get("reference")
+            else:
+                prac_ref = (extra_refs.get(m["id"]) or {}).get("practitioner")
             row_keys.add((prac_ref, role_key))
 
         rows = sorted(row_keys, key=lambda r: (r[0] or "", r[1] or ""))
@@ -731,10 +818,15 @@ def render_entity_list(members: list[dict], group_field: str | None,
             prac_key = f"Practitioner/{m['id']}"
             role_keys = referencing(prac_key, "PractitionerRole")
             for role_key in role_keys:
-                role = index["resources"].get(role_key, {}).get("resource") or {}
-                org_ref = (role.get("organization") or {}).get("reference")
-                loc_refs = [l.get("reference") for l in role.get("location") or []
-                           if l.get("reference")]
+                role = index["resources"].get(role_key, {}).get("resource")
+                if role:
+                    org_ref = (role.get("organization") or {}).get("reference")
+                    loc_refs = [l.get("reference") for l in role.get("location") or []
+                               if l.get("reference")]
+                else:
+                    extra = extra_refs.get(role_key.split("/", 1)[-1]) or {}
+                    org_ref = extra.get("organization")
+                    loc_refs = extra.get("location") or []
                 hs_keys = sorted({
                     *referencing(org_ref, "HealthcareService"),
                     *(k for loc in loc_refs for k in referencing(loc, "HealthcareService")),
@@ -1022,8 +1114,8 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     lines.append("")
     lines.append(f"### Members ({distinct})\n")
     lines.append(render_entity_list(members, group_field, res_index, slug,
-                                    index, group_labels, subgroup_field,
-                                    group_notes,
+                                    index, candidate, group_labels,
+                                    subgroup_field, group_notes,
                                     SUBGROUP_NOUN.get(slug, "grouping")))
 
     if candidate:
