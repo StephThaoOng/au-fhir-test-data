@@ -33,7 +33,7 @@ The distinguishing test between Declared and Curated is whether the fact has a s
 
 </details>
 
-_Generated 2026-09-21 00:41 UTC from test data at commit `ba757b2f709724494bd06928cb5a3c70a6c2fc95`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
+_Generated 2026-09-21 06:11 UTC from test data at commit `1c52e1dbcf6b1ff745aeca0d8f81bdb53beaeda3`. This page is regenerated manually — see [docs/data-subsets/README.md](data-subsets/README.md)._
 
 ## Contents
 
@@ -148,6 +148,18 @@ Derived automatically. Each entity in this data set is matched against the examp
 - [`banks-mia-leanne-father`](../au-fhir-test-data-set/au-core/RelatedPerson-banks-mia-leanne-father.json) — *also in: [families](#families)*
 - [`wang-li-friend`](../au-fhir-test-data-set/au-core/RelatedPerson-wang-li-friend.json)
 
+<details><summary>5 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/bobrester-bob`](../au-fhir-test-data-set/au-core/Practitioner-bobrester-bob.json) | [`PractitionerRole/bobrester-bob-gp`](../au-fhir-test-data-set/au-core/PractitionerRole-bobrester-bob-gp.json) | [`Organization/bobrester-medical-center`](../au-fhir-test-data-set/au-core/Organization-bobrester-medical-center.json) |  |
+| [`Practitioner/chau-fryer`](../au-fhir-test-data-set/au-core/Practitioner-chau-fryer.json) | [`PractitionerRole/surgeon-chau-fryer`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeon-chau-fryer.json) | [`Organization/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Organization-murrabit-public-hospital.json) | [`Location/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Location-murrabit-public-hospital.json) |
+| [`Practitioner/mackay-darleen`](../au-fhir-test-data-set/au-core/Practitioner-mackay-darleen.json) | [`PractitionerRole/renalmedicine-mackay-darleen`](../au-fhir-test-data-set/au-core/PractitionerRole-renalmedicine-mackay-darleen.json) |  |  |
+| [`Practitioner/megan-peterson`](../au-fhir-test-data-set/au-core/Practitioner-megan-peterson.json) | [`PractitionerRole/pharmacist-megan-peterson`](../au-fhir-test-data-set/au-core/PractitionerRole-pharmacist-megan-peterson.json) | [`Organization/appin-pharmacy`](../au-fhir-test-data-set/au-core/Organization-appin-pharmacy.json) |  |
+| [`Practitioner/sutherland-sallie`](../au-fhir-test-data-set/au-core/Practitioner-sutherland-sallie.json) | [`PractitionerRole/cardiologist-sutherland-sallie`](../au-fhir-test-data-set/au-core/PractitionerRole-cardiologist-sutherland-sallie.json) | [`Organization/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Organization-murrabit-public-hospital.json) | [`Location/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Location-murrabit-public-hospital.json) |
+
+</details>
+
 </details>
 
 
@@ -230,6 +242,16 @@ Derived automatically. AU PS examples are document Bundles rather than one resou
 - [`kensington-public-hospital`](../au-fhir-test-data-set/au-core/Organization-kensington-public-hospital.json)
 - [`mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json)
 
+<details><summary>3 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/burdett-palmer`](../au-fhir-test-data-set/au-core/Practitioner-burdett-palmer.json) | [`PractitionerRole/diagnostic-burdett-palmer`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-burdett-palmer.json) | [`Organization/douglas-radiology`](../au-fhir-test-data-set/au-core/Organization-douglas-radiology.json) | [`Location/douglas-radiology`](../au-fhir-test-data-set/au-core/Location-douglas-radiology.json) |
+| [`Practitioner/burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) | [`PractitionerRole/generalpractitioner-burrows-ginger`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-burrows-ginger.json) | [`Organization/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-bungabbee-medical-clinic.json) | [`Location/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Location-bungabbee-medical-clinic.json) |
+| [`Practitioner/lowe-abe`](../au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json) | [`PractitionerRole/generalpractitioner-lowe-abe`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lowe-abe.json) | [`Organization/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json) | [`Location/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Location-mossy-point-medical-centre.json) |
+
+</details>
+
 
 <details><summary>IG example resources matched nothing in the test data set — 4 possibly IG-only</summary>
 
@@ -311,6 +333,17 @@ Derived automatically, on the same basis as the AU Core IG examples — matched 
 **Location** (1)
 
 - [`barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Location-barney-view-private-hospital.json)
+
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) | [`PractitionerRole/generalpractitioner-guthridge-jarred`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-guthridge-jarred.json) | [`Organization/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Organization-elimbah-medical-centre.json) | [`Location/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Location-elimbah-medical-centre.json) |
+| [`Practitioner/herbert-aimee`](../au-fhir-test-data-set/au-core/Practitioner-herbert-aimee.json) | [`PractitionerRole/pathologist-herbert-aimee`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-herbert-aimee.json) | [`Organization/kioma-pathology`](../au-fhir-test-data-set/au-core/Organization-kioma-pathology.json) | [`Location/kioma-pathology`](../au-fhir-test-data-set/au-core/Location-kioma-pathology.json) |
+| [`Practitioner/losch-sallie`](../au-fhir-test-data-set/au-erequesting/Practitioner-losch-sallie.json) | [`PractitionerRole/obstetrician-losch-sallie`](../au-fhir-test-data-set/au-erequesting/PractitionerRole-obstetrician-losch-sallie.json) |  |  |
+| [`Practitioner/mclaughlin-kimberlee`](../au-fhir-test-data-set/au-core/Practitioner-mclaughlin-kimberlee.json) | [`PractitionerRole/diagnostic-mclaughlin-kimberlee`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-mclaughlin-kimberlee.json) | [`Organization/mount-charlton-radiology`](../au-fhir-test-data-set/au-core/Organization-mount-charlton-radiology.json) | [`Location/mount-charlton-radiology`](../au-fhir-test-data-set/au-core/Location-mount-charlton-radiology.json) |
+
+</details>
 
 
 ## Inferno AU Core test suite default patients <a id="inferno-default-patients"></a>
@@ -482,6 +515,22 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 - `roberts-nancy` — _(no resource)_ — **Fred's wife** — *no matching resource in the data set*
 - `smith-joe` — _(no resource)_ — **Emergency Dispatcher** — *no matching resource in the data set*
 
+<details><summary>9 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) | [`PractitionerRole/cox-sandra`](../au-fhir-test-data-set/au-core/PractitionerRole-cox-sandra.json) | [`Organization/parramatta-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-medical-clinic.json) |  |
+| [`Practitioner/dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) | [`PractitionerRole/dawson-kent`](../au-fhir-test-data-set/au-core/PractitionerRole-dawson-kent.json) | [`Organization/parramatta-public-hospital`](../au-fhir-test-data-set/au-core/Organization-parramatta-public-hospital.json) |  |
+| [`Practitioner/ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | [`PractitionerRole/ellison-abby`](../au-fhir-test-data-set/au-core/PractitionerRole-ellison-abby.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) | [`PractitionerRole/frank-gaylene`](../au-fhir-test-data-set/au-core/PractitionerRole-frank-gaylene.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`PractitionerRole/ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) |  |  |
+| [`Practitioner/little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) | [`PractitionerRole/little-jerrie`](../au-fhir-test-data-set/au-core/PractitionerRole-little-jerrie.json) | [`Organization/parramatta-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-medical-clinic.json) |  |
+| [`Practitioner/neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) | [`PractitionerRole/neville-isaiah`](../au-fhir-test-data-set/au-core/PractitionerRole-neville-isaiah.json) | [`Organization/westmead-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-westmead-physiotherapy.json) |  |
+| [`Practitioner/ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) | [`PractitionerRole/ohalloran-sheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-ohalloran-sheryl.json) | [`Organization/westmead-pharmacy`](../au-fhir-test-data-set/au-core/Organization-westmead-pharmacy.json) |  |
+| [`Practitioner/shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) | [`PractitionerRole/registerednurses-shephard-lizabeth`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-shephard-lizabeth.json) | [`Organization/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Organization-kensington-public-hospital.json) | [`Location/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Location-kensington-public-hospital.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -514,6 +563,23 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 - `hith-team` — _(no resource)_ — **Hospital-In-The-Home (HITH) team** — *no matching resource in the data set*
 - `medical-oncology-team` — _(no resource)_ — **Medical Oncology Team** — *no matching resource in the data set*
 
+<details><summary>10 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gordon-tad`](../au-fhir-test-data-set/au-core/Practitioner-gordon-tad.json) | [`PractitionerRole/complementaryhealth-gordon-tad`](../au-fhir-test-data-set/au-core/PractitionerRole-complementaryhealth-gordon-tad.json) |  |  |
+| [`Practitioner/lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | [`PractitionerRole/lapthorn-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-lapthorn-leisa.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | [`PractitionerRole/levings-richard`](../au-fhir-test-data-set/au-core/PractitionerRole-levings-richard.json) | [`Organization/garran-nutrition`](../au-fhir-test-data-set/au-core/Organization-garran-nutrition.json) |  |
+| [`Practitioner/lowe-abe`](../au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json) | [`PractitionerRole/generalpractitioner-lowe-abe`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lowe-abe.json) | [`Organization/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json) | [`Location/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Location-mossy-point-medical-centre.json) |
+| [`Practitioner/mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | [`PractitionerRole/mcnab-angelina`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnab-angelina.json) | [`Organization/parramatta-nutrition`](../au-fhir-test-data-set/au-core/Organization-parramatta-nutrition.json) |  |
+| [`Practitioner/mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) | [`PractitionerRole/mills-hope`](../au-fhir-test-data-set/au-core/PractitionerRole-mills-hope.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/roberts-benjamin`](../au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json) | [`PractitionerRole/registerednurses-roberts-benjamin`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-roberts-benjamin.json) | [`Organization/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json) | [`Location/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Location-mossy-point-medical-centre.json) |
+| [`Practitioner/sheppard-mathew`](../au-fhir-test-data-set/au-core/Practitioner-sheppard-mathew.json) | [`PractitionerRole/medicaloncologist-sheppard-mathew`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaloncologist-sheppard-mathew.json) |  |  |
+| [`Practitioner/taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) | [`PractitionerRole/registerednurses-taylor-kittie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-taylor-kittie.json) | [`Organization/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Organization-wallendbeen-aged-care.json) | [`Location/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Location-wallendbeen-aged-care.json) |
+| [`Practitioner/vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`PractitionerRole/vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -538,6 +604,20 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 - `smith-heather` — _(no resource)_ — **Noah's Mother** — *no matching resource in the data set*
 - `smith-noah` — _(no resource)_ — **Patient (age 3 years 6 months)** — *no matching resource in the data set*
 - `smith-shaun` — _(no resource)_ — **Noah's Father** — *no matching resource in the data set*
+
+<details><summary>7 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | [`PractitionerRole/alcock-devon`](../au-fhir-test-data-set/au-core/PractitionerRole-alcock-devon.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/bradley-jill`](../au-fhir-test-data-set/au-core/Practitioner-bradley-jill.json) | [`PractitionerRole/audiologist-bradley-jill`](../au-fhir-test-data-set/au-core/PractitionerRole-audiologist-bradley-jill.json) | [`Organization/adv-hearing-care`](../au-fhir-test-data-set/au-core/Organization-adv-hearing-care.json) |  |
+| [`Practitioner/greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) | [`PractitionerRole/greene-delores`](../au-fhir-test-data-set/au-core/PractitionerRole-greene-delores.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) | [`PractitionerRole/keith-margot`](../au-fhir-test-data-set/au-core/PractitionerRole-keith-margot.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) | [`PractitionerRole/mullin-kenny`](../au-fhir-test-data-set/au-core/PractitionerRole-mullin-kenny.json) | [`Organization/southbank-speech-pathology`](../au-fhir-test-data-set/au-core/Organization-southbank-speech-pathology.json) |  |
+| [`Practitioner/murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) | [`PractitionerRole/murray-ashli`](../au-fhir-test-data-set/au-core/PractitionerRole-murray-ashli.json) | [`Organization/st-kilda-ot-services`](../au-fhir-test-data-set/au-core/Organization-st-kilda-ot-services.json) |  |
+| [`Practitioner/vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`PractitionerRole/vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -584,6 +664,30 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 | `orthopaedic-team` | **Orthopaedic team** | *no matching resource in the data set* |
 | `pain-team` | **Pain team** | *no matching resource in the data set* |
 | `radiology-team` | **Radiology team** | *no matching resource in the data set* |
+
+<details><summary>17 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/bailey-buck`](../au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json) | [`PractitionerRole/bailey-buck`](../au-fhir-test-data-set/au-core/PractitionerRole-bailey-buck.json) | [`Organization/townsville-public-hospital`](../au-fhir-test-data-set/au-core/Organization-townsville-public-hospital.json) |  |
+| [`Practitioner/barrett-kirstie`](../au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json) | [`PractitionerRole/barrett-kirstie`](../au-fhir-test-data-set/au-core/PractitionerRole-barrett-kirstie.json) | [`Organization/mt-isa-community-health`](../au-fhir-test-data-set/au-core/Organization-mt-isa-community-health.json) |  |
+| [`Practitioner/berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) | [`PractitionerRole/berridge-beulah`](../au-fhir-test-data-set/au-core/PractitionerRole-berridge-beulah.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/gilmore-dane`](../au-fhir-test-data-set/au-core/Practitioner-gilmore-dane.json) | [`PractitionerRole/ambulanceofficer-gilmore-dane`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-gilmore-dane.json) |  |  |
+| [`Practitioner/guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) | [`PractitionerRole/generalpractitioner-guthridge-jarred`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-guthridge-jarred.json) | [`Organization/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Organization-elimbah-medical-centre.json) | [`Location/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Location-elimbah-medical-centre.json) |
+| [`Practitioner/hipwood-fatimah`](../au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json) | [`PractitionerRole/hipwood-fatimah`](../au-fhir-test-data-set/au-core/PractitionerRole-hipwood-fatimah.json) | [`Organization/mt-isa-ot-services`](../au-fhir-test-data-set/au-core/Organization-mt-isa-ot-services.json) |  |
+| [`Practitioner/hobden-mark`](../au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json) | [`PractitionerRole/hobden-mark`](../au-fhir-test-data-set/au-core/PractitionerRole-hobden-mark.json) | [`Organization/camooweal-pharmacy`](../au-fhir-test-data-set/au-core/Organization-camooweal-pharmacy.json) |  |
+| [`Practitioner/jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | [`PractitionerRole/jeffery-sammy`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-sammy.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) | [`PractitionerRole/dietitian-kelly-virginia`](../au-fhir-test-data-set/au-core/PractitionerRole-dietitian-kelly-virginia.json) |  |  |
+| [`Practitioner/knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | [`PractitionerRole/knowles-sunshine`](../au-fhir-test-data-set/au-core/PractitionerRole-knowles-sunshine.json) | [`Organization/westmead-ot-services`](../au-fhir-test-data-set/au-core/Organization-westmead-ot-services.json) |  |
+| [`Practitioner/livingstone-yvonne`](../au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json) | [`PractitionerRole/livingstone-yvonne`](../au-fhir-test-data-set/au-core/PractitionerRole-livingstone-yvonne.json) | [`Organization/mt-isa-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-mt-isa-physiotherapy.json) |  |
+| [`Practitioner/parker-elijah`](../au-fhir-test-data-set/au-core/Practitioner-parker-elijah.json) | [`PractitionerRole/physiotherapist-parker-elijah`](../au-fhir-test-data-set/au-core/PractitionerRole-physiotherapist-parker-elijah.json) |  |  |
+| [`Practitioner/patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json) | [`PractitionerRole/retailpharmacist-patrick-manual`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-patrick-manual.json) | [`Organization/cracow-pharmacy`](../au-fhir-test-data-set/au-core/Organization-cracow-pharmacy.json) | [`Location/cracow-pharmacy`](../au-fhir-test-data-set/au-core/Location-cracow-pharmacy.json) |
+| [`Practitioner/randall-anthony`](../au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json) | [`PractitionerRole/randall-anthony`](../au-fhir-test-data-set/au-core/PractitionerRole-randall-anthony.json) | [`Organization/mt-isa-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-mt-isa-medical-clinic.json) |  |
+| [`Practitioner/robbins-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json) | [`PractitionerRole/robbins-wilhelmina`](../au-fhir-test-data-set/au-core/PractitionerRole-robbins-wilhelmina.json) | [`Organization/camooweal-community-health`](../au-fhir-test-data-set/au-core/Organization-camooweal-community-health.json) |  |
+| [`Practitioner/rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) | [`PractitionerRole/registerednurses-rowland-roger`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-rowland-roger.json) | [`Organization/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Organization-glennie-heights-public-hospital.json) | [`Location/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Location-glennie-heights-public-hospital.json) |
+| [`Practitioner/sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | [`PractitionerRole/sherry-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-sherry-dean.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -647,6 +751,14 @@ Curated. Journey membership is stated by Sparked and recorded in the facts file;
 **Practitioner** (1)
 
 - [`burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) — *also in: [au-ps-ig-examples](#au-ps-ig-examples)*
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) | [`PractitionerRole/generalpractitioner-burrows-ginger`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-burrows-ginger.json) | [`Organization/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-bungabbee-medical-clinic.json) | [`Location/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Location-bungabbee-medical-clinic.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -1118,6 +1230,31 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`woodville-podiatry`](../au-fhir-test-data-set/au-core/Organization-woodville-podiatry.json)
 - [`woodville-radiology`](../au-fhir-test-data-set/au-core/Organization-woodville-radiology.json)
 
+<details><summary>18 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/baker-troy`](../au-fhir-test-data-set/au-core/Practitioner-baker-troy.json) | [`PractitionerRole/baker-troy`](../au-fhir-test-data-set/au-core/PractitionerRole-baker-troy.json) | [`Organization/woodville-pathology`](../au-fhir-test-data-set/au-core/Organization-woodville-pathology.json) |  |
+| [`Practitioner/baynton-lolita`](../au-fhir-test-data-set/au-core/Practitioner-baynton-lolita.json) | [`PractitionerRole/baynton-lolita`](../au-fhir-test-data-set/au-core/PractitionerRole-baynton-lolita.json) | [`Organization/woodville-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-woodville-medical-clinic.json) |  |
+| [`Practitioner/bell-rudolf`](../au-fhir-test-data-set/au-core/Practitioner-bell-rudolf.json) | [`PractitionerRole/bell-rudolf`](../au-fhir-test-data-set/au-core/PractitionerRole-bell-rudolf.json) | [`Organization/royal-park-medical-centre`](../au-fhir-test-data-set/au-core/Organization-royal-park-medical-centre.json) |  |
+| [`Practitioner/berry-lisa`](../au-fhir-test-data-set/au-core/Practitioner-berry-lisa.json) | [`PractitionerRole/berry-lisa`](../au-fhir-test-data-set/au-core/PractitionerRole-berry-lisa.json) | [`Organization/woodville-ot-services`](../au-fhir-test-data-set/au-core/Organization-woodville-ot-services.json) |  |
+| [`Practitioner/carey-joyce`](../au-fhir-test-data-set/au-core/Practitioner-carey-joyce.json) | [`PractitionerRole/carey-joyce`](../au-fhir-test-data-set/au-core/PractitionerRole-carey-joyce.json) | [`Organization/semaphore-aged-care`](../au-fhir-test-data-set/au-core/Organization-semaphore-aged-care.json) |  |
+| [`Practitioner/couch-joel`](../au-fhir-test-data-set/au-core/Practitioner-couch-joel.json) | [`PractitionerRole/couch-joel`](../au-fhir-test-data-set/au-core/PractitionerRole-couch-joel.json) | [`Organization/adelaide-public-hospital`](../au-fhir-test-data-set/au-core/Organization-adelaide-public-hospital.json) |  |
+| [`Practitioner/cruickshank-marlyn`](../au-fhir-test-data-set/au-core/Practitioner-cruickshank-marlyn.json) | [`PractitionerRole/cruickshank-marlyn`](../au-fhir-test-data-set/au-core/PractitionerRole-cruickshank-marlyn.json) | [`Organization/woodville-podiatry`](../au-fhir-test-data-set/au-core/Organization-woodville-podiatry.json) |  |
+| [`Practitioner/fleming-skye`](../au-fhir-test-data-set/au-core/Practitioner-fleming-skye.json) | [`PractitionerRole/fleming-skye`](../au-fhir-test-data-set/au-core/PractitionerRole-fleming-skye.json) | [`Organization/woodville-pharmacy`](../au-fhir-test-data-set/au-core/Organization-woodville-pharmacy.json) |  |
+| [`Practitioner/freeman-anya`](../au-fhir-test-data-set/au-core/Practitioner-freeman-anya.json) | [`PractitionerRole/freeman-anya`](../au-fhir-test-data-set/au-core/PractitionerRole-freeman-anya.json) | [`Organization/semaphore-aged-care`](../au-fhir-test-data-set/au-core/Organization-semaphore-aged-care.json) |  |
+| [`Practitioner/harley-reynalda`](../au-fhir-test-data-set/au-core/Practitioner-harley-reynalda.json) | [`PractitionerRole/harley-reynalda`](../au-fhir-test-data-set/au-core/PractitionerRole-harley-reynalda.json) | [`Organization/woodville-dietitian-service`](../au-fhir-test-data-set/au-core/Organization-woodville-dietitian-service.json) |  |
+| [`Practitioner/hoskins-earl`](../au-fhir-test-data-set/au-core/Practitioner-hoskins-earl.json) | [`PractitionerRole/hoskins-earl`](../au-fhir-test-data-set/au-core/PractitionerRole-hoskins-earl.json) | [`Organization/woodville-dental`](../au-fhir-test-data-set/au-core/Organization-woodville-dental.json) |  |
+| [`Practitioner/huddlestone-velda`](../au-fhir-test-data-set/au-core/Practitioner-huddlestone-velda.json) | [`PractitionerRole/huddlestone-velda`](../au-fhir-test-data-set/au-core/PractitionerRole-huddlestone-velda.json) | [`Organization/adelaide-public-hospital`](../au-fhir-test-data-set/au-core/Organization-adelaide-public-hospital.json) |  |
+| [`Practitioner/hutton-cortez`](../au-fhir-test-data-set/au-core/Practitioner-hutton-cortez.json) | [`PractitionerRole/hutton-cortez`](../au-fhir-test-data-set/au-core/PractitionerRole-hutton-cortez.json) | [`Organization/woodville-radiology`](../au-fhir-test-data-set/au-core/Organization-woodville-radiology.json) |  |
+| [`Practitioner/lawrence-drew`](../au-fhir-test-data-set/au-core/Practitioner-lawrence-drew.json) | [`PractitionerRole/lawrence-drew`](../au-fhir-test-data-set/au-core/PractitionerRole-lawrence-drew.json) | [`Organization/semaphore-aged-care`](../au-fhir-test-data-set/au-core/Organization-semaphore-aged-care.json) |  |
+| [`Practitioner/manning-opal`](../au-fhir-test-data-set/au-core/Practitioner-manning-opal.json) | [`PractitionerRole/manning-opal`](../au-fhir-test-data-set/au-core/PractitionerRole-manning-opal.json) | [`Organization/adelaide-public-hospital`](../au-fhir-test-data-set/au-core/Organization-adelaide-public-hospital.json) |  |
+| [`Practitioner/rowlands-donya`](../au-fhir-test-data-set/au-core/Practitioner-rowlands-donya.json) | [`PractitionerRole/rowlands-donya`](../au-fhir-test-data-set/au-core/PractitionerRole-rowlands-donya.json) | [`Organization/woodville-dental`](../au-fhir-test-data-set/au-core/Organization-woodville-dental.json) |  |
+| [`Practitioner/tierney-gisela`](../au-fhir-test-data-set/au-core/Practitioner-tierney-gisela.json) | [`PractitionerRole/tierney-gisela`](../au-fhir-test-data-set/au-core/PractitionerRole-tierney-gisela.json) | [`Organization/woodville-cardiology`](../au-fhir-test-data-set/au-core/Organization-woodville-cardiology.json) |  |
+| [`Practitioner/vaughan-sol`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-sol.json) | [`PractitionerRole/vaughan-sol`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-sol.json) | [`Organization/royal-park-medical-centre`](../au-fhir-test-data-set/au-core/Organization-royal-park-medical-centre.json) |  |
+
+</details>
+
 </details>
 
 <details><summary><strong>CCM scenario - Drafted</strong> (44 entities)</summary>
@@ -1177,6 +1314,29 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`sunshine-pharmacy`](../au-fhir-test-data-set/au-core/Organization-sunshine-pharmacy.json)
 - [`sunshine-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-sunshine-physiotherapy.json)
 - [`sunshine-radiology`](../au-fhir-test-data-set/au-core/Organization-sunshine-radiology.json)
+
+<details><summary>16 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/bond-edmundo`](../au-fhir-test-data-set/au-core/Practitioner-bond-edmundo.json) | [`PractitionerRole/bond-edmundo`](../au-fhir-test-data-set/au-core/PractitionerRole-bond-edmundo.json) | [`Organization/sunshine-pharmacy`](../au-fhir-test-data-set/au-core/Organization-sunshine-pharmacy.json) |  |
+| [`Practitioner/bowyer-norbert`](../au-fhir-test-data-set/au-core/Practitioner-bowyer-norbert.json) | [`PractitionerRole/bowyer-norbert`](../au-fhir-test-data-set/au-core/PractitionerRole-bowyer-norbert.json) | [`Organization/sunshine-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-sunshine-physiotherapy.json) |  |
+| [`Practitioner/fuller-kendrick`](../au-fhir-test-data-set/au-core/Practitioner-fuller-kendrick.json) | [`PractitionerRole/fuller-kendrick`](../au-fhir-test-data-set/au-core/PractitionerRole-fuller-kendrick.json) | [`Organization/sunshine-nephrology`](../au-fhir-test-data-set/au-core/Organization-sunshine-nephrology.json) |  |
+| [`Practitioner/hallan-maggie`](../au-fhir-test-data-set/au-core/Practitioner-hallan-maggie.json) | [`PractitionerRole/hallan-maggie`](../au-fhir-test-data-set/au-core/PractitionerRole-hallan-maggie.json) | [`Organization/sunshine-radiology`](../au-fhir-test-data-set/au-core/Organization-sunshine-radiology.json) |  |
+| [`Practitioner/hamel-opal`](../au-fhir-test-data-set/au-core/Practitioner-hamel-opal.json) | [`PractitionerRole/hamel-opal`](../au-fhir-test-data-set/au-core/PractitionerRole-hamel-opal.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/kelly-arlene`](../au-fhir-test-data-set/au-core/Practitioner-kelly-arlene.json) | [`PractitionerRole/kelly-arlene`](../au-fhir-test-data-set/au-core/PractitionerRole-kelly-arlene.json) | [`Organization/sunshine-ophthalmology`](../au-fhir-test-data-set/au-core/Organization-sunshine-ophthalmology.json) |  |
+| [`Practitioner/keyes-chau`](../au-fhir-test-data-set/au-core/Practitioner-keyes-chau.json) | [`PractitionerRole/keyes-chau`](../au-fhir-test-data-set/au-core/PractitionerRole-keyes-chau.json) | [`Organization/sunshine-pathology`](../au-fhir-test-data-set/au-core/Organization-sunshine-pathology.json) |  |
+| [`Practitioner/mcnaughton-opal`](../au-fhir-test-data-set/au-core/Practitioner-mcnaughton-opal.json) | [`PractitionerRole/mcnaughton-opal`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnaughton-opal.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/mullins-bonita`](../au-fhir-test-data-set/au-core/Practitioner-mullins-bonita.json) | [`PractitionerRole/mullins-bonita`](../au-fhir-test-data-set/au-core/PractitionerRole-mullins-bonita.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/osland-deanne`](../au-fhir-test-data-set/au-core/Practitioner-osland-deanne.json) | [`PractitionerRole/osland-deanne`](../au-fhir-test-data-set/au-core/PractitionerRole-osland-deanne.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+| [`Practitioner/patterson-teri`](../au-fhir-test-data-set/au-core/Practitioner-patterson-teri.json) | [`PractitionerRole/patterson-teri`](../au-fhir-test-data-set/au-core/PractitionerRole-patterson-teri.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+| [`Practitioner/phillips-gerard`](../au-fhir-test-data-set/au-core/Practitioner-phillips-gerard.json) | [`PractitionerRole/phillips-gerard`](../au-fhir-test-data-set/au-core/PractitionerRole-phillips-gerard.json) | [`Organization/sunshine-endocrinology`](../au-fhir-test-data-set/au-core/Organization-sunshine-endocrinology.json) |  |
+| [`Practitioner/quinn-jeramy`](../au-fhir-test-data-set/au-core/Practitioner-quinn-jeramy.json) | [`PractitionerRole/quinn-jeramy`](../au-fhir-test-data-set/au-core/PractitionerRole-quinn-jeramy.json) | [`Organization/sunshine-optical`](../au-fhir-test-data-set/au-core/Organization-sunshine-optical.json) |  |
+| [`Practitioner/schaefer-elden`](../au-fhir-test-data-set/au-core/Practitioner-schaefer-elden.json) | [`PractitionerRole/schaefer-elden`](../au-fhir-test-data-set/au-core/PractitionerRole-schaefer-elden.json) | [`Organization/sunshine-cardiology`](../au-fhir-test-data-set/au-core/Organization-sunshine-cardiology.json) |  |
+| [`Practitioner/sharp-cherish`](../au-fhir-test-data-set/au-core/Practitioner-sharp-cherish.json) | [`PractitionerRole/sharp-cherish`](../au-fhir-test-data-set/au-core/PractitionerRole-sharp-cherish.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`PractitionerRole/vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+
+</details>
 
 </details>
 
@@ -1297,6 +1457,46 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`lowe-valerie-2`](../au-fhir-test-data-set/au-core/RelatedPerson-lowe-valerie-2.json)
 - [`lowe-valerie-3`](../au-fhir-test-data-set/au-core/RelatedPerson-lowe-valerie-3.json)
 
+<details><summary>33 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) | [`PractitionerRole/berridge-beulah`](../au-fhir-test-data-set/au-core/PractitionerRole-berridge-beulah.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/breadmore-phillip`](../au-fhir-test-data-set/au-core/Practitioner-breadmore-phillip.json) | [`PractitionerRole/breadmore-phillip`](../au-fhir-test-data-set/au-core/PractitionerRole-breadmore-phillip.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) | [`PractitionerRole/cox-sandra`](../au-fhir-test-data-set/au-core/PractitionerRole-cox-sandra.json) | [`Organization/parramatta-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-medical-clinic.json) |  |
+| [`Practitioner/dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) | [`PractitionerRole/dawson-kent`](../au-fhir-test-data-set/au-core/PractitionerRole-dawson-kent.json) | [`Organization/parramatta-public-hospital`](../au-fhir-test-data-set/au-core/Organization-parramatta-public-hospital.json) |  |
+| [`Practitioner/duncan-xenia`](../au-fhir-test-data-set/au-core/Practitioner-duncan-xenia.json) | [`PractitionerRole/duncan-xenia`](../au-fhir-test-data-set/au-core/PractitionerRole-duncan-xenia.json) | [`Organization/parramatta-community-health`](../au-fhir-test-data-set/au-core/Organization-parramatta-community-health.json) |  |
+| [`Practitioner/ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | [`PractitionerRole/ellison-abby`](../au-fhir-test-data-set/au-core/PractitionerRole-ellison-abby.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/ewing-jude`](../au-fhir-test-data-set/au-core/Practitioner-ewing-jude.json) | [`PractitionerRole/ewing-jude`](../au-fhir-test-data-set/au-core/PractitionerRole-ewing-jude.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/fleming-kitty`](../au-fhir-test-data-set/au-core/Practitioner-fleming-kitty.json) | [`PractitionerRole/fleming-kitty`](../au-fhir-test-data-set/au-core/PractitionerRole-fleming-kitty.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) | [`PractitionerRole/frank-gaylene`](../au-fhir-test-data-set/au-core/PractitionerRole-frank-gaylene.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/fuller-christeen`](../au-fhir-test-data-set/au-core/Practitioner-fuller-christeen.json) | [`PractitionerRole/fuller-christeen`](../au-fhir-test-data-set/au-core/PractitionerRole-fuller-christeen.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/goodwin-rae`](../au-fhir-test-data-set/au-core/Practitioner-goodwin-rae.json) | [`PractitionerRole/goodwin-rae`](../au-fhir-test-data-set/au-core/PractitionerRole-goodwin-rae.json) | [`Organization/westmead-optical`](../au-fhir-test-data-set/au-core/Organization-westmead-optical.json) |  |
+| [`Practitioner/hamilton-errol`](../au-fhir-test-data-set/au-core/Practitioner-hamilton-errol.json) | [`PractitionerRole/hamilton-errol`](../au-fhir-test-data-set/au-core/PractitionerRole-hamilton-errol.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/healey-tamiko`](../au-fhir-test-data-set/au-core/Practitioner-healey-tamiko.json) | [`PractitionerRole/healey-tamiko`](../au-fhir-test-data-set/au-core/PractitionerRole-healey-tamiko.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/howe-elden`](../au-fhir-test-data-set/au-core/Practitioner-howe-elden.json) | [`PractitionerRole/howe-elden`](../au-fhir-test-data-set/au-core/PractitionerRole-howe-elden.json) | [`Organization/parramatta-midwifery`](../au-fhir-test-data-set/au-core/Organization-parramatta-midwifery.json) |  |
+| [`Practitioner/knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | [`PractitionerRole/knowles-sunshine`](../au-fhir-test-data-set/au-core/PractitionerRole-knowles-sunshine.json) | [`Organization/westmead-ot-services`](../au-fhir-test-data-set/au-core/Organization-westmead-ot-services.json) |  |
+| [`Practitioner/lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | [`PractitionerRole/lapthorn-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-lapthorn-leisa.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) | [`PractitionerRole/little-jerrie`](../au-fhir-test-data-set/au-core/PractitionerRole-little-jerrie.json) | [`Organization/parramatta-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-medical-clinic.json) |  |
+| [`Practitioner/macey-brant`](../au-fhir-test-data-set/au-core/Practitioner-macey-brant.json) | [`PractitionerRole/macey-brant`](../au-fhir-test-data-set/au-core/PractitionerRole-macey-brant.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/mcbean-nicollette`](../au-fhir-test-data-set/au-core/Practitioner-mcbean-nicollette.json) | [`PractitionerRole/mcbean-nicollette`](../au-fhir-test-data-set/au-core/PractitionerRole-mcbean-nicollette.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/mcintosh-angelica`](../au-fhir-test-data-set/au-core/Practitioner-mcintosh-angelica.json) | [`PractitionerRole/mcintosh-angelica`](../au-fhir-test-data-set/au-core/PractitionerRole-mcintosh-angelica.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | [`PractitionerRole/mcnab-angelina`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnab-angelina.json) | [`Organization/parramatta-nutrition`](../au-fhir-test-data-set/au-core/Organization-parramatta-nutrition.json) |  |
+| [`Practitioner/mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) | [`PractitionerRole/mills-hope`](../au-fhir-test-data-set/au-core/PractitionerRole-mills-hope.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/nairn-vince`](../au-fhir-test-data-set/au-core/Practitioner-nairn-vince.json) | [`PractitionerRole/nairn-vince`](../au-fhir-test-data-set/au-core/PractitionerRole-nairn-vince.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) | [`PractitionerRole/neville-isaiah`](../au-fhir-test-data-set/au-core/PractitionerRole-neville-isaiah.json) | [`Organization/westmead-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-westmead-physiotherapy.json) |  |
+| [`Practitioner/nutley-bradley`](../au-fhir-test-data-set/au-core/Practitioner-nutley-bradley.json) | [`PractitionerRole/nutley-bradley`](../au-fhir-test-data-set/au-core/PractitionerRole-nutley-bradley.json) | [`Organization/westmead-pathology`](../au-fhir-test-data-set/au-core/Organization-westmead-pathology.json) |  |
+| [`Practitioner/ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) | [`PractitionerRole/ohalloran-sheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-ohalloran-sheryl.json) | [`Organization/westmead-pharmacy`](../au-fhir-test-data-set/au-core/Organization-westmead-pharmacy.json) |  |
+| [`Practitioner/osmond-michele`](../au-fhir-test-data-set/au-core/Practitioner-osmond-michele.json) | [`PractitionerRole/osmond-michele`](../au-fhir-test-data-set/au-core/PractitionerRole-osmond-michele.json) | [`Organization/parramatta-dental`](../au-fhir-test-data-set/au-core/Organization-parramatta-dental.json) |  |
+| [`Practitioner/perkins-amee`](../au-fhir-test-data-set/au-core/Practitioner-perkins-amee.json) | [`PractitionerRole/perkins-amee`](../au-fhir-test-data-set/au-core/PractitionerRole-perkins-amee.json) | [`Organization/westmead-radiology`](../au-fhir-test-data-set/au-core/Organization-westmead-radiology.json) |  |
+| [`Practitioner/redman-mariah`](../au-fhir-test-data-set/au-core/Practitioner-redman-mariah.json) | [`PractitionerRole/redman-mariah`](../au-fhir-test-data-set/au-core/PractitionerRole-redman-mariah.json) | [`Organization/parramatta-midwifery`](../au-fhir-test-data-set/au-core/Organization-parramatta-midwifery.json) |  |
+| [`Practitioner/roche-garfield`](../au-fhir-test-data-set/au-core/Practitioner-roche-garfield.json) | [`PractitionerRole/roche-garfield`](../au-fhir-test-data-set/au-core/PractitionerRole-roche-garfield.json) | [`Organization/westmead-radiology`](../au-fhir-test-data-set/au-core/Organization-westmead-radiology.json) |  |
+| [`Practitioner/seaby-penelope`](../au-fhir-test-data-set/au-core/Practitioner-seaby-penelope.json) | [`PractitionerRole/seaby-penelope`](../au-fhir-test-data-set/au-core/PractitionerRole-seaby-penelope.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/stephens-nellie`](../au-fhir-test-data-set/au-core/Practitioner-stephens-nellie.json) | [`PractitionerRole/stephens-nellie`](../au-fhir-test-data-set/au-core/PractitionerRole-stephens-nellie.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/tate-melvin`](../au-fhir-test-data-set/au-core/Practitioner-tate-melvin.json) | [`PractitionerRole/tate-melvin`](../au-fhir-test-data-set/au-core/PractitionerRole-tate-melvin.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+
+</details>
+
 </details>
 
 <details><summary><strong>FIrst nations scenario</strong> (51 entities)</summary>
@@ -1363,6 +1563,33 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`broome-podiatry`](../au-fhir-test-data-set/au-core/Organization-broome-podiatry.json)
 - [`broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json)
 - [`broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json)
+
+<details><summary>20 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/allardice-della`](../au-fhir-test-data-set/au-core/Practitioner-allardice-della.json) | [`PractitionerRole/allardice-della`](../au-fhir-test-data-set/au-core/PractitionerRole-allardice-della.json) | [`Organization/broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) |  |
+| [`Practitioner/baratz-layla`](../au-fhir-test-data-set/au-core/Practitioner-baratz-layla.json) | [`PractitionerRole/baratz-layla`](../au-fhir-test-data-set/au-core/PractitionerRole-baratz-layla.json) | [`Organization/broome-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-broome-physiotherapy.json) |  |
+| [`Practitioner/bassett-elmer`](../au-fhir-test-data-set/au-core/Practitioner-bassett-elmer.json) | [`PractitionerRole/bassett-elmer`](../au-fhir-test-data-set/au-core/PractitionerRole-bassett-elmer.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/butler-cheryl`](../au-fhir-test-data-set/au-core/Practitioner-butler-cheryl.json) | [`PractitionerRole/butler-cheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-butler-cheryl.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/clapham-laurie`](../au-fhir-test-data-set/au-core/Practitioner-clapham-laurie.json) | [`PractitionerRole/clapham-laurie`](../au-fhir-test-data-set/au-core/PractitionerRole-clapham-laurie.json) | [`Organization/broome-physiology`](../au-fhir-test-data-set/au-core/Organization-broome-physiology.json) |  |
+| [`Practitioner/davies-keiko`](../au-fhir-test-data-set/au-core/Practitioner-davies-keiko.json) | [`PractitionerRole/davies-keiko`](../au-fhir-test-data-set/au-core/PractitionerRole-davies-keiko.json) | [`Organization/broome-nutrition`](../au-fhir-test-data-set/au-core/Organization-broome-nutrition.json) |  |
+| [`Practitioner/devine-frank`](../au-fhir-test-data-set/au-core/Practitioner-devine-frank.json) | [`PractitionerRole/devine-frank`](../au-fhir-test-data-set/au-core/PractitionerRole-devine-frank.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/gates-anton`](../au-fhir-test-data-set/au-core/Practitioner-gates-anton.json) | [`PractitionerRole/gates-anton`](../au-fhir-test-data-set/au-core/PractitionerRole-gates-anton.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/giles-veronique`](../au-fhir-test-data-set/au-core/Practitioner-giles-veronique.json) | [`PractitionerRole/giles-veronique`](../au-fhir-test-data-set/au-core/PractitionerRole-giles-veronique.json) | [`Organization/broome-optometry`](../au-fhir-test-data-set/au-core/Organization-broome-optometry.json) |  |
+| [`Practitioner/goldsmith-monique`](../au-fhir-test-data-set/au-core/Practitioner-goldsmith-monique.json) | [`PractitionerRole/goldsmith-monique`](../au-fhir-test-data-set/au-core/PractitionerRole-goldsmith-monique.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/hackett-norman`](../au-fhir-test-data-set/au-core/Practitioner-hackett-norman.json) | [`PractitionerRole/hackett-norman`](../au-fhir-test-data-set/au-core/PractitionerRole-hackett-norman.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/hodges-julia`](../au-fhir-test-data-set/au-core/Practitioner-hodges-julia.json) | [`PractitionerRole/hodges-julia`](../au-fhir-test-data-set/au-core/PractitionerRole-hodges-julia.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/horn-wes`](../au-fhir-test-data-set/au-core/Practitioner-horn-wes.json) | [`PractitionerRole/horn-wes`](../au-fhir-test-data-set/au-core/PractitionerRole-horn-wes.json) | [`Organization/broome-podiatry`](../au-fhir-test-data-set/au-core/Organization-broome-podiatry.json) |  |
+| [`Practitioner/ibbotson-destiny`](../au-fhir-test-data-set/au-core/Practitioner-ibbotson-destiny.json) | [`PractitionerRole/ibbotson-destiny`](../au-fhir-test-data-set/au-core/PractitionerRole-ibbotson-destiny.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/lowry-bennett`](../au-fhir-test-data-set/au-core/Practitioner-lowry-bennett.json) | [`PractitionerRole/lowry-bennett`](../au-fhir-test-data-set/au-core/PractitionerRole-lowry-bennett.json) | [`Organization/broome-ot-services`](../au-fhir-test-data-set/au-core/Organization-broome-ot-services.json) |  |
+| [`Practitioner/moran-linoel`](../au-fhir-test-data-set/au-core/Practitioner-moran-linoel.json) | [`PractitionerRole/moran-linoel`](../au-fhir-test-data-set/au-core/PractitionerRole-moran-linoel.json) | [`Organization/broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) |  |
+| [`Practitioner/patrick-thalia`](../au-fhir-test-data-set/au-core/Practitioner-patrick-thalia.json) | [`PractitionerRole/patrick-thalia`](../au-fhir-test-data-set/au-core/PractitionerRole-patrick-thalia.json) | [`Organization/broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) |  |
+| [`Practitioner/poulson-lisa`](../au-fhir-test-data-set/au-core/Practitioner-poulson-lisa.json) | [`PractitionerRole/poulson-lisa`](../au-fhir-test-data-set/au-core/PractitionerRole-poulson-lisa.json) | [`Organization/broome-community-health`](../au-fhir-test-data-set/au-core/Organization-broome-community-health.json) |  |
+| [`Practitioner/simmons-ashton`](../au-fhir-test-data-set/au-core/Practitioner-simmons-ashton.json) | [`PractitionerRole/simmons-ashton`](../au-fhir-test-data-set/au-core/PractitionerRole-simmons-ashton.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/thorburn-juanita`](../au-fhir-test-data-set/au-core/Practitioner-thorburn-juanita.json) | [`PractitionerRole/thorburn-juanita`](../au-fhir-test-data-set/au-core/PractitionerRole-thorburn-juanita.json) | [`Organization/broome-community-health`](../au-fhir-test-data-set/au-core/Organization-broome-community-health.json) |  |
+
+</details>
 
 </details>
 
@@ -1438,6 +1665,30 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`hennessy-jenny-2`](../au-fhir-test-data-set/au-core/RelatedPerson-hennessy-jenny-2.json)
 - [`hennessy-kacey-1`](../au-fhir-test-data-set/au-core/RelatedPerson-hennessy-kacey-1.json)
 - [`hennessy-kacey-2`](../au-fhir-test-data-set/au-core/RelatedPerson-hennessy-kacey-2.json)
+
+<details><summary>17 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/allerton-skye`](../au-fhir-test-data-set/au-core/Practitioner-allerton-skye.json) | [`PractitionerRole/allerton-skye`](../au-fhir-test-data-set/au-core/PractitionerRole-allerton-skye.json) | [`Organization/garran-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-medical-clinic.json) |  |
+| [`Practitioner/bennett-tawnya`](../au-fhir-test-data-set/au-core/Practitioner-bennett-tawnya.json) | [`PractitionerRole/bennett-tawnya`](../au-fhir-test-data-set/au-core/PractitionerRole-bennett-tawnya.json) | [`Organization/garran-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-garran-physiotherapy.json) |  |
+| [`Practitioner/colliss-jocelyn`](../au-fhir-test-data-set/au-core/Practitioner-colliss-jocelyn.json) | [`PractitionerRole/colliss-jocelyn`](../au-fhir-test-data-set/au-core/PractitionerRole-colliss-jocelyn.json) | [`Organization/garran-cardiology-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-cardiology-clinic.json) |  |
+| [`Practitioner/harris-stephan`](../au-fhir-test-data-set/au-core/Practitioner-harris-stephan.json) | [`PractitionerRole/harris-stephan`](../au-fhir-test-data-set/au-core/PractitionerRole-harris-stephan.json) | [`Organization/garran-pharmacy`](../au-fhir-test-data-set/au-core/Organization-garran-pharmacy.json) |  |
+| [`Practitioner/harrower-austin`](../au-fhir-test-data-set/au-core/Practitioner-harrower-austin.json) | [`PractitionerRole/harrower-austin`](../au-fhir-test-data-set/au-core/PractitionerRole-harrower-austin.json) | [`Organization/manuka-medical-centre`](../au-fhir-test-data-set/au-core/Organization-manuka-medical-centre.json) |  |
+| [`Practitioner/harwood-kathaleen`](../au-fhir-test-data-set/au-core/Practitioner-harwood-kathaleen.json) | [`PractitionerRole/harwood-kathaleen`](../au-fhir-test-data-set/au-core/PractitionerRole-harwood-kathaleen.json) | [`Organization/garran-radiology`](../au-fhir-test-data-set/au-core/Organization-garran-radiology.json) |  |
+| [`Practitioner/henderson-elaine`](../au-fhir-test-data-set/au-core/Practitioner-henderson-elaine.json) | [`PractitionerRole/henderson-elaine`](../au-fhir-test-data-set/au-core/PractitionerRole-henderson-elaine.json) | [`Organization/garran-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-medical-clinic.json) |  |
+| [`Practitioner/humphreys-christeen`](../au-fhir-test-data-set/au-core/Practitioner-humphreys-christeen.json) | [`PractitionerRole/humphreys-christeen`](../au-fhir-test-data-set/au-core/PractitionerRole-humphreys-christeen.json) | [`Organization/garran-ophthalmology`](../au-fhir-test-data-set/au-core/Organization-garran-ophthalmology.json) |  |
+| [`Practitioner/krug-chas`](../au-fhir-test-data-set/au-core/Practitioner-krug-chas.json) | [`PractitionerRole/krug-chas`](../au-fhir-test-data-set/au-core/PractitionerRole-krug-chas.json) | [`Organization/garran-ot-services`](../au-fhir-test-data-set/au-core/Organization-garran-ot-services.json) |  |
+| [`Practitioner/levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | [`PractitionerRole/levings-richard`](../au-fhir-test-data-set/au-core/PractitionerRole-levings-richard.json) | [`Organization/garran-nutrition`](../au-fhir-test-data-set/au-core/Organization-garran-nutrition.json) |  |
+| [`Practitioner/mackenzie-wilbur`](../au-fhir-test-data-set/au-core/Practitioner-mackenzie-wilbur.json) | [`PractitionerRole/mackenzie-wilbur`](../au-fhir-test-data-set/au-core/PractitionerRole-mackenzie-wilbur.json) | [`Organization/garran-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-medical-clinic.json) |  |
+| [`Practitioner/maxwell-israel`](../au-fhir-test-data-set/au-core/Practitioner-maxwell-israel.json) | [`PractitionerRole/maxwell-israel`](../au-fhir-test-data-set/au-core/PractitionerRole-maxwell-israel.json) | [`Organization/garran-dental`](../au-fhir-test-data-set/au-core/Organization-garran-dental.json) |  |
+| [`Practitioner/murphy-kyla`](../au-fhir-test-data-set/au-core/Practitioner-murphy-kyla.json) | [`PractitionerRole/murphy-kyla`](../au-fhir-test-data-set/au-core/PractitionerRole-murphy-kyla.json) | [`Organization/manuka-medical-centre`](../au-fhir-test-data-set/au-core/Organization-manuka-medical-centre.json) |  |
+| [`Practitioner/newling-mariella`](../au-fhir-test-data-set/au-core/Practitioner-newling-mariella.json) | [`PractitionerRole/newling-mariella`](../au-fhir-test-data-set/au-core/PractitionerRole-newling-mariella.json) | [`Organization/manuka-medical-centre`](../au-fhir-test-data-set/au-core/Organization-manuka-medical-centre.json) |  |
+| [`Practitioner/patrick-tricia`](../au-fhir-test-data-set/au-core/Practitioner-patrick-tricia.json) | [`PractitionerRole/patrick-tricia`](../au-fhir-test-data-set/au-core/PractitionerRole-patrick-tricia.json) | [`Organization/garran-optical`](../au-fhir-test-data-set/au-core/Organization-garran-optical.json) |  |
+| [`Practitioner/sawtell-tomasa`](../au-fhir-test-data-set/au-core/Practitioner-sawtell-tomasa.json) | [`PractitionerRole/sawtell-tomasa`](../au-fhir-test-data-set/au-core/PractitionerRole-sawtell-tomasa.json) | [`Organization/garran-nephrology`](../au-fhir-test-data-set/au-core/Organization-garran-nephrology.json) |  |
+| [`Practitioner/short-tandra`](../au-fhir-test-data-set/au-core/Practitioner-short-tandra.json) | [`PractitionerRole/short-tandra`](../au-fhir-test-data-set/au-core/PractitionerRole-short-tandra.json) | [`Organization/garran-pathology`](../au-fhir-test-data-set/au-core/Organization-garran-pathology.json) |  |
+
+</details>
 
 </details>
 
@@ -1529,6 +1780,41 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`townsville-public-hospital`](../au-fhir-test-data-set/au-core/Organization-townsville-public-hospital.json)
 - [`townsville-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-townsville-specialist-clinic.json)
 
+<details><summary>28 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/bailey-buck`](../au-fhir-test-data-set/au-core/Practitioner-bailey-buck.json) | [`PractitionerRole/bailey-buck`](../au-fhir-test-data-set/au-core/PractitionerRole-bailey-buck.json) | [`Organization/townsville-public-hospital`](../au-fhir-test-data-set/au-core/Organization-townsville-public-hospital.json) |  |
+| [`Practitioner/barrett-kirstie`](../au-fhir-test-data-set/au-core/Practitioner-barrett-kirstie.json) | [`PractitionerRole/barrett-kirstie`](../au-fhir-test-data-set/au-core/PractitionerRole-barrett-kirstie.json) | [`Organization/mt-isa-community-health`](../au-fhir-test-data-set/au-core/Organization-mt-isa-community-health.json) |  |
+| [`Practitioner/bowden-hiroko`](../au-fhir-test-data-set/au-core/Practitioner-bowden-hiroko.json) | [`PractitionerRole/bowden-hiroko`](../au-fhir-test-data-set/au-core/PractitionerRole-bowden-hiroko.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/gaynor-jasper`](../au-fhir-test-data-set/au-core/Practitioner-gaynor-jasper.json) | [`PractitionerRole/gaynor-jasper`](../au-fhir-test-data-set/au-core/PractitionerRole-gaynor-jasper.json) | [`Organization/townsville-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-townsville-medical-clinic.json) |  |
+| [`Practitioner/greenhill-edmond`](../au-fhir-test-data-set/au-core/Practitioner-greenhill-edmond.json) | [`PractitionerRole/greenhill-edmond`](../au-fhir-test-data-set/au-core/PractitionerRole-greenhill-edmond.json) | [`Organization/herston-pathology`](../au-fhir-test-data-set/au-core/Organization-herston-pathology.json) |  |
+| [`Practitioner/haywood-dot`](../au-fhir-test-data-set/au-core/Practitioner-haywood-dot.json) | [`PractitionerRole/haywood-dot`](../au-fhir-test-data-set/au-core/PractitionerRole-haywood-dot.json) | [`Organization/mt-isa-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-mt-isa-specialist-clinic.json) |  |
+| [`Practitioner/hipwood-fatimah`](../au-fhir-test-data-set/au-core/Practitioner-hipwood-fatimah.json) | [`PractitionerRole/hipwood-fatimah`](../au-fhir-test-data-set/au-core/PractitionerRole-hipwood-fatimah.json) | [`Organization/mt-isa-ot-services`](../au-fhir-test-data-set/au-core/Organization-mt-isa-ot-services.json) |  |
+| [`Practitioner/hobden-mark`](../au-fhir-test-data-set/au-core/Practitioner-hobden-mark.json) | [`PractitionerRole/hobden-mark`](../au-fhir-test-data-set/au-core/PractitionerRole-hobden-mark.json) | [`Organization/camooweal-pharmacy`](../au-fhir-test-data-set/au-core/Organization-camooweal-pharmacy.json) |  |
+| [`Practitioner/hodge-irving`](../au-fhir-test-data-set/au-core/Practitioner-hodge-irving.json) | [`PractitionerRole/hodge-irving`](../au-fhir-test-data-set/au-core/PractitionerRole-hodge-irving.json) | [`Organization/mt-isa-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-mt-isa-specialist-clinic.json) |  |
+| [`Practitioner/irwin-corinna`](../au-fhir-test-data-set/au-core/Practitioner-irwin-corinna.json) | [`PractitionerRole/irwin-corinna`](../au-fhir-test-data-set/au-core/PractitionerRole-irwin-corinna.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/jeffery-herman`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-herman.json) | [`PractitionerRole/jeffery-herman`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-herman.json) | [`Organization/camooweal-community-health`](../au-fhir-test-data-set/au-core/Organization-camooweal-community-health.json) |  |
+| [`Practitioner/jeffery-nicolas`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-nicolas.json) | [`PractitionerRole/jeffery-nicolas`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-nicolas.json) | [`Organization/mt-isa-pathology`](../au-fhir-test-data-set/au-core/Organization-mt-isa-pathology.json) |  |
+| [`Practitioner/jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | [`PractitionerRole/jeffery-sammy`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-sammy.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/livingstone-yvonne`](../au-fhir-test-data-set/au-core/Practitioner-livingstone-yvonne.json) | [`PractitionerRole/livingstone-yvonne`](../au-fhir-test-data-set/au-core/PractitionerRole-livingstone-yvonne.json) | [`Organization/mt-isa-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-mt-isa-physiotherapy.json) |  |
+| [`Practitioner/lyons-shay`](../au-fhir-test-data-set/au-core/Practitioner-lyons-shay.json) | [`PractitionerRole/lyons-shay`](../au-fhir-test-data-set/au-core/PractitionerRole-lyons-shay.json) | [`Organization/herston-radiology`](../au-fhir-test-data-set/au-core/Organization-herston-radiology.json) |  |
+| [`Practitioner/mccormack-gertie`](../au-fhir-test-data-set/au-core/Practitioner-mccormack-gertie.json) | [`PractitionerRole/mccormack-gertie`](../au-fhir-test-data-set/au-core/PractitionerRole-mccormack-gertie.json) | [`Organization/mt-isa-psychology`](../au-fhir-test-data-set/au-core/Organization-mt-isa-psychology.json) |  |
+| [`Practitioner/mcintyre-hsiu`](../au-fhir-test-data-set/au-core/Practitioner-mcintyre-hsiu.json) | [`PractitionerRole/mcintyre-hsiu`](../au-fhir-test-data-set/au-core/PractitionerRole-mcintyre-hsiu.json) | [`Organization/townsville-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-townsville-medical-clinic.json) |  |
+| [`Practitioner/mclean-brenda`](../au-fhir-test-data-set/au-core/Practitioner-mclean-brenda.json) | [`PractitionerRole/mclean-brenda`](../au-fhir-test-data-set/au-core/PractitionerRole-mclean-brenda.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/mills-kim`](../au-fhir-test-data-set/au-core/Practitioner-mills-kim.json) | [`PractitionerRole/mills-kim`](../au-fhir-test-data-set/au-core/PractitionerRole-mills-kim.json) | [`Organization/mt-isa-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-mt-isa-specialist-clinic.json) |  |
+| [`Practitioner/murray-xenia`](../au-fhir-test-data-set/au-core/Practitioner-murray-xenia.json) | [`PractitionerRole/murray-xenia`](../au-fhir-test-data-set/au-core/PractitionerRole-murray-xenia.json) | [`Organization/mt-isa-pharmacy`](../au-fhir-test-data-set/au-core/Organization-mt-isa-pharmacy.json) |  |
+| [`Practitioner/oritz-philomena`](../au-fhir-test-data-set/au-core/Practitioner-oritz-philomena.json) | [`PractitionerRole/oritz-philomena`](../au-fhir-test-data-set/au-core/PractitionerRole-oritz-philomena.json) | [`Organization/camooweal-community-health`](../au-fhir-test-data-set/au-core/Organization-camooweal-community-health.json) |  |
+| [`Practitioner/osborne-buster`](../au-fhir-test-data-set/au-core/Practitioner-osborne-buster.json) | [`PractitionerRole/osborne-buster`](../au-fhir-test-data-set/au-core/PractitionerRole-osborne-buster.json) | [`Organization/townsville-public-hospital`](../au-fhir-test-data-set/au-core/Organization-townsville-public-hospital.json) |  |
+| [`Practitioner/pearce-teresa`](../au-fhir-test-data-set/au-core/Practitioner-pearce-teresa.json) | [`PractitionerRole/pearce-teresa`](../au-fhir-test-data-set/au-core/PractitionerRole-pearce-teresa.json) | [`Organization/townsville-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-townsville-specialist-clinic.json) |  |
+| [`Practitioner/potts-xuan`](../au-fhir-test-data-set/au-core/Practitioner-potts-xuan.json) | [`PractitionerRole/potts-xuan`](../au-fhir-test-data-set/au-core/PractitionerRole-potts-xuan.json) | [`Organization/mt-isa-dental`](../au-fhir-test-data-set/au-core/Organization-mt-isa-dental.json) |  |
+| [`Practitioner/pratt-colleen`](../au-fhir-test-data-set/au-core/Practitioner-pratt-colleen.json) | [`PractitionerRole/pratt-colleen`](../au-fhir-test-data-set/au-core/PractitionerRole-pratt-colleen.json) | [`Organization/mt-isa-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-mt-isa-medical-clinic.json) |  |
+| [`Practitioner/randall-anthony`](../au-fhir-test-data-set/au-core/Practitioner-randall-anthony.json) | [`PractitionerRole/randall-anthony`](../au-fhir-test-data-set/au-core/PractitionerRole-randall-anthony.json) | [`Organization/mt-isa-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-mt-isa-medical-clinic.json) |  |
+| [`Practitioner/robbins-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-robbins-wilhelmina.json) | [`PractitionerRole/robbins-wilhelmina`](../au-fhir-test-data-set/au-core/PractitionerRole-robbins-wilhelmina.json) | [`Organization/camooweal-community-health`](../au-fhir-test-data-set/au-core/Organization-camooweal-community-health.json) |  |
+| [`Practitioner/sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | [`PractitionerRole/sherry-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-sherry-dean.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+
+</details>
+
 </details>
 
 <details><summary><strong>Young adult_adolescent scenario (19-20 yo)</strong> (46 entities)</summary>
@@ -1590,6 +1876,31 @@ Curated, seeded once. The groupings were extracted a single time from the au-cor
 - [`st-kilda-physiology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-physiology.json)
 - [`st-kilda-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-st-kilda-physiotherapy.json)
 - [`st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json)
+
+<details><summary>18 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | [`PractitionerRole/alcock-devon`](../au-fhir-test-data-set/au-core/PractitionerRole-alcock-devon.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/blackwood-ella`](../au-fhir-test-data-set/au-core/Practitioner-blackwood-ella.json) | [`PractitionerRole/blackwood-ella`](../au-fhir-test-data-set/au-core/PractitionerRole-blackwood-ella.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/dempsey-carli`](../au-fhir-test-data-set/au-core/Practitioner-dempsey-carli.json) | [`PractitionerRole/dempsey-carli`](../au-fhir-test-data-set/au-core/PractitionerRole-dempsey-carli.json) | [`Organization/melbourne-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-melbourne-specialist-clinic.json) |  |
+| [`Practitioner/egan-anja`](../au-fhir-test-data-set/au-core/Practitioner-egan-anja.json) | [`PractitionerRole/egan-anja`](../au-fhir-test-data-set/au-core/PractitionerRole-egan-anja.json) | [`Organization/st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json) |  |
+| [`Practitioner/findley-betty`](../au-fhir-test-data-set/au-core/Practitioner-findley-betty.json) | [`PractitionerRole/findley-betty`](../au-fhir-test-data-set/au-core/PractitionerRole-findley-betty.json) | [`Organization/southbank-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-specialist-clinic.json) |  |
+| [`Practitioner/frankel-caroline`](../au-fhir-test-data-set/au-core/Practitioner-frankel-caroline.json) | [`PractitionerRole/frankel-caroline`](../au-fhir-test-data-set/au-core/PractitionerRole-frankel-caroline.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) | [`PractitionerRole/greene-delores`](../au-fhir-test-data-set/au-core/PractitionerRole-greene-delores.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/hatcher-merrill`](../au-fhir-test-data-set/au-core/Practitioner-hatcher-merrill.json) | [`PractitionerRole/hatcher-merrill`](../au-fhir-test-data-set/au-core/PractitionerRole-hatcher-merrill.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/higgs-allegra`](../au-fhir-test-data-set/au-core/Practitioner-higgs-allegra.json) | [`PractitionerRole/higgs-allegra`](../au-fhir-test-data-set/au-core/PractitionerRole-higgs-allegra.json) | [`Organization/st-kilda-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-st-kilda-physiotherapy.json) |  |
+| [`Practitioner/hilton-della`](../au-fhir-test-data-set/au-core/Practitioner-hilton-della.json) | [`PractitionerRole/hilton-della`](../au-fhir-test-data-set/au-core/PractitionerRole-hilton-della.json) | [`Organization/st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json) |  |
+| [`Practitioner/joyce-mae`](../au-fhir-test-data-set/au-core/Practitioner-joyce-mae.json) | [`PractitionerRole/joyce-mae`](../au-fhir-test-data-set/au-core/PractitionerRole-joyce-mae.json) | [`Organization/st-kilda-physiology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-physiology.json) |  |
+| [`Practitioner/keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) | [`PractitionerRole/keith-margot`](../au-fhir-test-data-set/au-core/PractitionerRole-keith-margot.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/laing-malinda`](../au-fhir-test-data-set/au-core/Practitioner-laing-malinda.json) | [`PractitionerRole/laing-malinda`](../au-fhir-test-data-set/au-core/PractitionerRole-laing-malinda.json) | [`Organization/southbank-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-specialist-clinic.json) |  |
+| [`Practitioner/mckane-eugena`](../au-fhir-test-data-set/au-core/Practitioner-mckane-eugena.json) | [`PractitionerRole/mckane-eugena`](../au-fhir-test-data-set/au-core/PractitionerRole-mckane-eugena.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) | [`PractitionerRole/mullin-kenny`](../au-fhir-test-data-set/au-core/PractitionerRole-mullin-kenny.json) | [`Organization/southbank-speech-pathology`](../au-fhir-test-data-set/au-core/Organization-southbank-speech-pathology.json) |  |
+| [`Practitioner/murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) | [`PractitionerRole/murray-ashli`](../au-fhir-test-data-set/au-core/PractitionerRole-murray-ashli.json) | [`Organization/st-kilda-ot-services`](../au-fhir-test-data-set/au-core/Organization-st-kilda-ot-services.json) |  |
+| [`Practitioner/rodd-illa`](../au-fhir-test-data-set/au-core/Practitioner-rodd-illa.json) | [`PractitionerRole/rodd-illa`](../au-fhir-test-data-set/au-core/PractitionerRole-rodd-illa.json) | [`Organization/melbourne-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-melbourne-specialist-clinic.json) |  |
+| [`Practitioner/shephard-vern`](../au-fhir-test-data-set/au-core/Practitioner-shephard-vern.json) | [`PractitionerRole/shephard-vern`](../au-fhir-test-data-set/au-core/PractitionerRole-shephard-vern.json) | [`Organization/st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json) |  |
+
+</details>
 
 </details>
 
@@ -1797,6 +2108,44 @@ _Bonython, Calwell, Chisholm, Conder, Curtin, Erindale Centre, Garran, Gilmore, 
 | [`hennessy-kacey-1`](../au-fhir-test-data-set/au-core/RelatedPerson-hennessy-kacey-1.json) | *[scenario-groups](#scenario-groups)* |
 | [`hennessy-kacey-2`](../au-fhir-test-data-set/au-core/RelatedPerson-hennessy-kacey-2.json) | *[scenario-groups](#scenario-groups)* |
 
+<details><summary>31 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/alderson-helene`](../au-fhir-test-data-set/au-core/Practitioner-alderson-helene.json) | [`PractitionerRole/medicaldiagnostic-alderson-helene`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-alderson-helene.json) |  |  |
+| [`Practitioner/allerton-skye`](../au-fhir-test-data-set/au-core/Practitioner-allerton-skye.json) | [`PractitionerRole/allerton-skye`](../au-fhir-test-data-set/au-core/PractitionerRole-allerton-skye.json) | [`Organization/garran-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-medical-clinic.json) |  |
+| [`Practitioner/bennett-tawnya`](../au-fhir-test-data-set/au-core/Practitioner-bennett-tawnya.json) | [`PractitionerRole/bennett-tawnya`](../au-fhir-test-data-set/au-core/PractitionerRole-bennett-tawnya.json) | [`Organization/garran-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-garran-physiotherapy.json) |  |
+| [`Practitioner/bishop-horace`](../au-fhir-test-data-set/au-core/Practitioner-bishop-horace.json) | [`PractitionerRole/generalpractitioner-bishop-horace`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-bishop-horace.json) | [`Organization/ngunnawal-medical-practice`](../au-fhir-test-data-set/au-core/Organization-ngunnawal-medical-practice.json) | [`Location/ngunnawal-medical-practice`](../au-fhir-test-data-set/au-core/Location-ngunnawal-medical-practice.json) |
+| [`Practitioner/cohen-jamel`](../au-fhir-test-data-set/au-core/Practitioner-cohen-jamel.json) | [`PractitionerRole/nursepractitioner-cohen-jamel`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-cohen-jamel.json) | [`Organization/oxley-public-hospital`](../au-fhir-test-data-set/au-core/Organization-oxley-public-hospital.json) | [`Location/oxley-public-hospital`](../au-fhir-test-data-set/au-core/Location-oxley-public-hospital.json) |
+| [`Practitioner/colliss-jocelyn`](../au-fhir-test-data-set/au-core/Practitioner-colliss-jocelyn.json) | [`PractitionerRole/colliss-jocelyn`](../au-fhir-test-data-set/au-core/PractitionerRole-colliss-jocelyn.json) | [`Organization/garran-cardiology-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-cardiology-clinic.json) |  |
+| [`Practitioner/cross-lizzie`](../au-fhir-test-data-set/au-core/Practitioner-cross-lizzie.json) | [`PractitionerRole/surgeongeneral-cross-lizzie`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-cross-lizzie.json) | [`Organization/oxley-public-hospital`](../au-fhir-test-data-set/au-core/Organization-oxley-public-hospital.json) | [`Location/oxley-public-hospital`](../au-fhir-test-data-set/au-core/Location-oxley-public-hospital.json) |
+| [`Practitioner/donaldson-stephanie`](../au-fhir-test-data-set/au-core/Practitioner-donaldson-stephanie.json) | [`PractitionerRole/registerednurses-donaldson-stephanie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-donaldson-stephanie.json) | [`Organization/monash-private-hospital`](../au-fhir-test-data-set/au-core/Organization-monash-private-hospital.json) | [`Location/monash-private-hospital`](../au-fhir-test-data-set/au-core/Location-monash-private-hospital.json) |
+| [`Practitioner/gidley-stan`](../au-fhir-test-data-set/au-core/Practitioner-gidley-stan.json) | [`PractitionerRole/registerednurses-gidley-stan`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-gidley-stan.json) | [`Organization/oxley-public-hospital`](../au-fhir-test-data-set/au-core/Organization-oxley-public-hospital.json) | [`Location/oxley-public-hospital`](../au-fhir-test-data-set/au-core/Location-oxley-public-hospital.json) |
+| [`Practitioner/grant-lindsay`](../au-fhir-test-data-set/au-core/Practitioner-grant-lindsay.json) | [`PractitionerRole/nursepractitioner-grant-lindsay`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-grant-lindsay.json) | [`Organization/monash-private-hospital`](../au-fhir-test-data-set/au-core/Organization-monash-private-hospital.json) | [`Location/monash-private-hospital`](../au-fhir-test-data-set/au-core/Location-monash-private-hospital.json) |
+| [`Practitioner/harris-stephan`](../au-fhir-test-data-set/au-core/Practitioner-harris-stephan.json) | [`PractitionerRole/harris-stephan`](../au-fhir-test-data-set/au-core/PractitionerRole-harris-stephan.json) | [`Organization/garran-pharmacy`](../au-fhir-test-data-set/au-core/Organization-garran-pharmacy.json) |  |
+| [`Practitioner/harrower-austin`](../au-fhir-test-data-set/au-core/Practitioner-harrower-austin.json) | [`PractitionerRole/harrower-austin`](../au-fhir-test-data-set/au-core/PractitionerRole-harrower-austin.json) | [`Organization/manuka-medical-centre`](../au-fhir-test-data-set/au-core/Organization-manuka-medical-centre.json) |  |
+| [`Practitioner/harwood-kathaleen`](../au-fhir-test-data-set/au-core/Practitioner-harwood-kathaleen.json) | [`PractitionerRole/harwood-kathaleen`](../au-fhir-test-data-set/au-core/PractitionerRole-harwood-kathaleen.json) | [`Organization/garran-radiology`](../au-fhir-test-data-set/au-core/Organization-garran-radiology.json) |  |
+| [`Practitioner/henderson-elaine`](../au-fhir-test-data-set/au-core/Practitioner-henderson-elaine.json) | [`PractitionerRole/henderson-elaine`](../au-fhir-test-data-set/au-core/PractitionerRole-henderson-elaine.json) | [`Organization/garran-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-medical-clinic.json) |  |
+| [`Practitioner/hill-maryln`](../au-fhir-test-data-set/au-core/Practitioner-hill-maryln.json) | [`PractitionerRole/diagnostic-hill-maryln`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-hill-maryln.json) | [`Organization/nicholls-radiology`](../au-fhir-test-data-set/au-core/Organization-nicholls-radiology.json) | [`Location/nicholls-radiology`](../au-fhir-test-data-set/au-core/Location-nicholls-radiology.json) |
+| [`Practitioner/humphreys-christeen`](../au-fhir-test-data-set/au-core/Practitioner-humphreys-christeen.json) | [`PractitionerRole/humphreys-christeen`](../au-fhir-test-data-set/au-core/PractitionerRole-humphreys-christeen.json) | [`Organization/garran-ophthalmology`](../au-fhir-test-data-set/au-core/Organization-garran-ophthalmology.json) |  |
+| [`Practitioner/krug-chas`](../au-fhir-test-data-set/au-core/Practitioner-krug-chas.json) | [`PractitionerRole/krug-chas`](../au-fhir-test-data-set/au-core/PractitionerRole-krug-chas.json) | [`Organization/garran-ot-services`](../au-fhir-test-data-set/au-core/Organization-garran-ot-services.json) |  |
+| [`Practitioner/lees-noreen`](../au-fhir-test-data-set/au-core/Practitioner-lees-noreen.json) | [`PractitionerRole/retailpharmacist-lees-noreen`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-lees-noreen.json) | [`Organization/ginninderra-pharmacy`](../au-fhir-test-data-set/au-core/Organization-ginninderra-pharmacy.json) | [`Location/ginninderra-pharmacy`](../au-fhir-test-data-set/au-core/Location-ginninderra-pharmacy.json) |
+| [`Practitioner/levings-richard`](../au-fhir-test-data-set/au-core/Practitioner-levings-richard.json) | [`PractitionerRole/levings-richard`](../au-fhir-test-data-set/au-core/PractitionerRole-levings-richard.json) | [`Organization/garran-nutrition`](../au-fhir-test-data-set/au-core/Organization-garran-nutrition.json) |  |
+| [`Practitioner/mackenzie-wilbur`](../au-fhir-test-data-set/au-core/Practitioner-mackenzie-wilbur.json) | [`PractitionerRole/mackenzie-wilbur`](../au-fhir-test-data-set/au-core/PractitionerRole-mackenzie-wilbur.json) | [`Organization/garran-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-garran-medical-clinic.json) |  |
+| [`Practitioner/maxwell-israel`](../au-fhir-test-data-set/au-core/Practitioner-maxwell-israel.json) | [`PractitionerRole/maxwell-israel`](../au-fhir-test-data-set/au-core/PractitionerRole-maxwell-israel.json) | [`Organization/garran-dental`](../au-fhir-test-data-set/au-core/Organization-garran-dental.json) |  |
+| [`Practitioner/murphy-kyla`](../au-fhir-test-data-set/au-core/Practitioner-murphy-kyla.json) | [`PractitionerRole/murphy-kyla`](../au-fhir-test-data-set/au-core/PractitionerRole-murphy-kyla.json) | [`Organization/manuka-medical-centre`](../au-fhir-test-data-set/au-core/Organization-manuka-medical-centre.json) |  |
+| [`Practitioner/nairn-ricky`](../au-fhir-test-data-set/au-core/Practitioner-nairn-ricky.json) | [`PractitionerRole/registerednurses-nairn-ricky`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-nairn-ricky.json) | [`Organization/ngunnawal-medical-practice`](../au-fhir-test-data-set/au-core/Organization-ngunnawal-medical-practice.json) | [`Location/ngunnawal-medical-practice`](../au-fhir-test-data-set/au-core/Location-ngunnawal-medical-practice.json) |
+| [`Practitioner/newling-mariella`](../au-fhir-test-data-set/au-core/Practitioner-newling-mariella.json) | [`PractitionerRole/newling-mariella`](../au-fhir-test-data-set/au-core/PractitionerRole-newling-mariella.json) | [`Organization/manuka-medical-centre`](../au-fhir-test-data-set/au-core/Organization-manuka-medical-centre.json) |  |
+| [`Practitioner/patrick-tricia`](../au-fhir-test-data-set/au-core/Practitioner-patrick-tricia.json) | [`PractitionerRole/patrick-tricia`](../au-fhir-test-data-set/au-core/PractitionerRole-patrick-tricia.json) | [`Organization/garran-optical`](../au-fhir-test-data-set/au-core/Organization-garran-optical.json) |  |
+| [`Practitioner/pickford-aimee`](../au-fhir-test-data-set/au-core/Practitioner-pickford-aimee.json) | [`PractitionerRole/surgeongeneral-pickford-aimee`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-pickford-aimee.json) | [`Organization/monash-private-hospital`](../au-fhir-test-data-set/au-core/Organization-monash-private-hospital.json) | [`Location/monash-private-hospital`](../au-fhir-test-data-set/au-core/Location-monash-private-hospital.json) |
+| [`Practitioner/pollock-dinah`](../au-fhir-test-data-set/au-core/Practitioner-pollock-dinah.json) | [`PractitionerRole/midwife-pollock-dinah`](../au-fhir-test-data-set/au-core/PractitionerRole-midwife-pollock-dinah.json) |  |  |
+| [`Practitioner/rowlands-alvera`](../au-fhir-test-data-set/au-core/Practitioner-rowlands-alvera.json) | [`PractitionerRole/paediatrician-rowlands-alvera`](../au-fhir-test-data-set/au-core/PractitionerRole-paediatrician-rowlands-alvera.json) |  |  |
+| [`Practitioner/sawtell-tomasa`](../au-fhir-test-data-set/au-core/Practitioner-sawtell-tomasa.json) | [`PractitionerRole/sawtell-tomasa`](../au-fhir-test-data-set/au-core/PractitionerRole-sawtell-tomasa.json) | [`Organization/garran-nephrology`](../au-fhir-test-data-set/au-core/Organization-garran-nephrology.json) |  |
+| [`Practitioner/short-tandra`](../au-fhir-test-data-set/au-core/Practitioner-short-tandra.json) | [`PractitionerRole/short-tandra`](../au-fhir-test-data-set/au-core/PractitionerRole-short-tandra.json) | [`Organization/garran-pathology`](../au-fhir-test-data-set/au-core/Organization-garran-pathology.json) |  |
+| [`Practitioner/stevens-chelsea`](../au-fhir-test-data-set/au-core/Practitioner-stevens-chelsea.json) | [`PractitionerRole/pathologist-stevens-chelsea`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-stevens-chelsea.json) | [`Organization/calwell-pathology`](../au-fhir-test-data-set/au-core/Organization-calwell-pathology.json) | [`Location/calwell-pathology`](../au-fhir-test-data-set/au-core/Location-calwell-pathology.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -1834,6 +2183,14 @@ _Bucketty, Canton Beach, Koolewong._
 - [`bucketty-oncology-clinic`](../au-fhir-test-data-set/au-core/Location-bucketty-oncology-clinic.json)
 - [`canton-beach-physiotherapy`](../au-fhir-test-data-set/au-core/Location-canton-beach-physiotherapy.json)
 
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/tennant-carlyn`](../au-fhir-test-data-set/au-core/Practitioner-tennant-carlyn.json) | [`PractitionerRole/medicaldiagnostic-tennant-carlyn`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-tennant-carlyn.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -1868,6 +2225,16 @@ _Mount Mitchell._
 
 - [`mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Location-mount-mitchell-private-hospital.json)
 
+<details><summary>3 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/guthrie-daine`](../au-fhir-test-data-set/au-core/Practitioner-guthrie-daine.json) | [`PractitionerRole/surgeongeneral-guthrie-daine`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-guthrie-daine.json) | [`Organization/mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Organization-mount-mitchell-private-hospital.json) | [`Location/mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Location-mount-mitchell-private-hospital.json) |
+| [`Practitioner/milgate-leisa`](../au-fhir-test-data-set/au-core/Practitioner-milgate-leisa.json) | [`PractitionerRole/registerednurses-milgate-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-milgate-leisa.json) | [`Organization/mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Organization-mount-mitchell-private-hospital.json) | [`Location/mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Location-mount-mitchell-private-hospital.json) |
+| [`Practitioner/munro-rose`](../au-fhir-test-data-set/au-core/Practitioner-munro-rose.json) | [`PractitionerRole/nursepractitioner-munro-rose`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-munro-rose.json) | [`Organization/mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Organization-mount-mitchell-private-hospital.json) | [`Location/mount-mitchell-private-hospital`](../au-fhir-test-data-set/au-core/Location-mount-mitchell-private-hospital.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -1897,6 +2264,14 @@ _Cundle Flat, Gangat._
 **Location** (1)
 
 - [`gangat-endocrinology-clinic`](../au-fhir-test-data-set/au-core/Location-gangat-endocrinology-clinic.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gates-glenda`](../au-fhir-test-data-set/au-core/Practitioner-gates-glenda.json) | [`PractitionerRole/medicaldiagnostic-gates-glenda`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-gates-glenda.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -1934,6 +2309,15 @@ _Belmore River, Fishermans Reach, Yarravel._
 
 - [`fishermans-reach-radiology`](../au-fhir-test-data-set/au-core/Location-fishermans-reach-radiology.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gilchrist-daniel`](../au-fhir-test-data-set/au-core/Practitioner-gilchrist-daniel.json) | [`PractitionerRole/complementaryhealth-gilchrist-daniel`](../au-fhir-test-data-set/au-core/PractitionerRole-complementaryhealth-gilchrist-daniel.json) |  |  |
+| [`Practitioner/osborne-bonny`](../au-fhir-test-data-set/au-core/Practitioner-osborne-bonny.json) | [`PractitionerRole/diagnostic-osborne-bonny`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-osborne-bonny.json) | [`Organization/fishermans-reach-radiology`](../au-fhir-test-data-set/au-core/Organization-fishermans-reach-radiology.json) | [`Location/fishermans-reach-radiology`](../au-fhir-test-data-set/au-core/Location-fishermans-reach-radiology.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -1966,6 +2350,14 @@ _Kippenduff, Lilydale._
 
 - [`kippenduff-cardiologist`](../au-fhir-test-data-set/au-core/Location-kippenduff-cardiologist.json)
 - [`lilydale-pharmacy`](../au-fhir-test-data-set/au-core/Location-lilydale-pharmacy.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/cane-elden`](../au-fhir-test-data-set/au-core/Practitioner-cane-elden.json) | [`PractitionerRole/retailpharmacist-cane-elden`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-cane-elden.json) | [`Organization/lilydale-pharmacy`](../au-fhir-test-data-set/au-core/Organization-lilydale-pharmacy.json) | [`Location/lilydale-pharmacy`](../au-fhir-test-data-set/au-core/Location-lilydale-pharmacy.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2003,6 +2395,15 @@ _Bungabbee, Palmvale._
 
 - [`bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Location-bungabbee-medical-clinic.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/burrows-ginger`](../au-fhir-test-data-set/au-core/Practitioner-burrows-ginger.json) | [`PractitionerRole/generalpractitioner-burrows-ginger`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-burrows-ginger.json) | [`Organization/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-bungabbee-medical-clinic.json) | [`Location/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Location-bungabbee-medical-clinic.json) |
+| [`Practitioner/patrick-fletcher`](../au-fhir-test-data-set/au-core/Practitioner-patrick-fletcher.json) | [`PractitionerRole/registerednurses-patrick-fletcher`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-patrick-fletcher.json) | [`Organization/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-bungabbee-medical-clinic.json) | [`Location/bungabbee-medical-clinic`](../au-fhir-test-data-set/au-core/Location-bungabbee-medical-clinic.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2034,6 +2435,15 @@ _Mossy Point._
 **Location** (1)
 
 - [`mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Location-mossy-point-medical-centre.json)
+
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/lowe-abe`](../au-fhir-test-data-set/au-core/Practitioner-lowe-abe.json) | [`PractitionerRole/generalpractitioner-lowe-abe`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lowe-abe.json) | [`Organization/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json) | [`Location/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Location-mossy-point-medical-centre.json) |
+| [`Practitioner/roberts-benjamin`](../au-fhir-test-data-set/au-core/Practitioner-roberts-benjamin.json) | [`PractitionerRole/registerednurses-roberts-benjamin`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-roberts-benjamin.json) | [`Organization/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Organization-mossy-point-medical-centre.json) | [`Location/mossy-point-medical-centre`](../au-fhir-test-data-set/au-core/Location-mossy-point-medical-centre.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2068,6 +2478,16 @@ _Appin, Mogareeka, Stony Creek._
 **Location** (1)
 
 - [`appin-pharmacy`](../au-fhir-test-data-set/au-core/Location-appin-pharmacy.json)
+
+<details><summary>3 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/cruickshank-bryce`](../au-fhir-test-data-set/au-core/Practitioner-cruickshank-bryce.json) | [`PractitionerRole/endocrinologist-cruickshank-bryce`](../au-fhir-test-data-set/au-core/PractitionerRole-endocrinologist-cruickshank-bryce.json) |  |  |
+| [`Practitioner/peterson-megan`](../au-fhir-test-data-set/au-core/Practitioner-peterson-megan.json) | [`PractitionerRole/retailpharmacist-peterson-megan`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-peterson-megan.json) | [`Organization/appin-pharmacy`](../au-fhir-test-data-set/au-core/Organization-appin-pharmacy.json) | [`Location/appin-pharmacy`](../au-fhir-test-data-set/au-core/Location-appin-pharmacy.json) |
+| [`Practitioner/sheppard-mathew`](../au-fhir-test-data-set/au-core/Practitioner-sheppard-mathew.json) | [`PractitionerRole/medicaloncologist-sheppard-mathew`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaloncologist-sheppard-mathew.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -2104,6 +2524,17 @@ _Tarlo, Wallendbeen._
 **Location** (1)
 
 - [`wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Location-wallendbeen-aged-care.json)
+
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/fraser-abbie`](../au-fhir-test-data-set/au-core/Practitioner-fraser-abbie.json) | [`PractitionerRole/registerednurses-fraser-abbie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-fraser-abbie.json) | [`Organization/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Organization-wallendbeen-aged-care.json) | [`Location/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Location-wallendbeen-aged-care.json) |
+| [`Practitioner/gartshore-indira`](../au-fhir-test-data-set/au-core/Practitioner-gartshore-indira.json) | [`PractitionerRole/nursepractitioner-gartshore-indira`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-gartshore-indira.json) | [`Organization/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Organization-wallendbeen-aged-care.json) | [`Location/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Location-wallendbeen-aged-care.json) |
+| [`Practitioner/jenkins-miranda`](../au-fhir-test-data-set/au-core/Practitioner-jenkins-miranda.json) | [`PractitionerRole/ophthalmologist-jenkins-miranda`](../au-fhir-test-data-set/au-core/PractitionerRole-ophthalmologist-jenkins-miranda.json) |  |  |
+| [`Practitioner/taylor-kittie`](../au-fhir-test-data-set/au-core/Practitioner-taylor-kittie.json) | [`PractitionerRole/registerednurses-taylor-kittie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-taylor-kittie.json) | [`Organization/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Organization-wallendbeen-aged-care.json) | [`Location/wallendbeen-aged-care`](../au-fhir-test-data-set/au-core/Location-wallendbeen-aged-care.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2145,6 +2576,15 @@ _Hatfield, Leeton, Minjary, Wermatong._
 - [`banks-jeramy-4`](../au-fhir-test-data-set/au-core/RelatedPerson-banks-jeramy-4.json)
 - [`banks-mia-leanne`](../au-fhir-test-data-set/au-core/RelatedPerson-banks-mia-leanne.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/browne-wilfred`](../au-fhir-test-data-set/au-core/Practitioner-browne-wilfred.json) | [`PractitionerRole/midwife-browne-wilfred`](../au-fhir-test-data-set/au-core/PractitionerRole-midwife-browne-wilfred.json) |  |  |
+| [`Practitioner/thorn-tonya`](../au-fhir-test-data-set/au-core/Practitioner-thorn-tonya.json) | [`PractitionerRole/nuclearmedicine-thorn-tonya`](../au-fhir-test-data-set/au-core/PractitionerRole-nuclearmedicine-thorn-tonya.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2175,6 +2615,14 @@ _Higher Macdonald._
 
 - [`higher-macdonald-pathology`](../au-fhir-test-data-set/au-core/Location-higher-macdonald-pathology.json)
 
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/clarke-malcolm`](../au-fhir-test-data-set/au-core/Practitioner-clarke-malcolm.json) | [`PractitionerRole/pathologist-clarke-malcolm`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-clarke-malcolm.json) | [`Organization/higher-macdonald-pathology`](../au-fhir-test-data-set/au-core/Organization-higher-macdonald-pathology.json) | [`Location/higher-macdonald-pathology`](../au-fhir-test-data-set/au-core/Location-higher-macdonald-pathology.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2204,6 +2652,14 @@ _Pullabooka._
 **Location** (1)
 
 - [`pullabooka-pathology`](../au-fhir-test-data-set/au-core/Location-pullabooka-pathology.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/pratley-philomena`](../au-fhir-test-data-set/au-core/Practitioner-pratley-philomena.json) | [`PractitionerRole/pathologist-pratley-philomena`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-pratley-philomena.json) | [`Organization/pullabooka-pathology`](../au-fhir-test-data-set/au-core/Organization-pullabooka-pathology.json) | [`Location/pullabooka-pathology`](../au-fhir-test-data-set/au-core/Location-pullabooka-pathology.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2236,6 +2692,15 @@ _Balladoran, Dubbo._
 **Location** (1)
 
 - [`dubbo-emergency`](../au-fhir-test-data-set/au-core/Location-dubbo-emergency.json)
+
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gilmour-damon`](../au-fhir-test-data-set/au-core/Practitioner-gilmour-damon.json) | [`PractitionerRole/emergencymedicine-gilmour-damon`](../au-fhir-test-data-set/au-core/PractitionerRole-emergencymedicine-gilmour-damon.json) | [`Organization/dubbo-emergency`](../au-fhir-test-data-set/au-core/Organization-dubbo-emergency.json) | [`Location/dubbo-emergency`](../au-fhir-test-data-set/au-core/Location-dubbo-emergency.json) |
+| [`Practitioner/leishman-leesa`](../au-fhir-test-data-set/au-core/Practitioner-leishman-leesa.json) | [`PractitionerRole/paediatrician-leishman-leesa`](../au-fhir-test-data-set/au-core/PractitionerRole-paediatrician-leishman-leesa.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -2397,6 +2862,51 @@ _Berowra, Blacktown, Canley Heights, Cremorne, Frenchs Forest East, Kensington, 
 | [`rabbit-peter`](../au-fhir-test-data-set/au-core/RelatedPerson-rabbit-peter.json) |  |
 | [`wang-li-friend`](../au-fhir-test-data-set/au-core/RelatedPerson-wang-li-friend.json) | *[au-core-ig-examples](#au-core-ig-examples)* |
 
+<details><summary>38 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/barrett-carey`](../au-fhir-test-data-set/au-core/Practitioner-barrett-carey.json) | [`PractitionerRole/diagnostic-barrett-carey`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-barrett-carey.json) | [`Organization/frenchs-forest-east-radiology`](../au-fhir-test-data-set/au-core/Organization-frenchs-forest-east-radiology.json) | [`Location/frenchs-forest-east-radiology`](../au-fhir-test-data-set/au-core/Location-frenchs-forest-east-radiology.json) |
+| [`Practitioner/berridge-beulah`](../au-fhir-test-data-set/au-core/Practitioner-berridge-beulah.json) | [`PractitionerRole/berridge-beulah`](../au-fhir-test-data-set/au-core/PractitionerRole-berridge-beulah.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/breadmore-phillip`](../au-fhir-test-data-set/au-core/Practitioner-breadmore-phillip.json) | [`PractitionerRole/breadmore-phillip`](../au-fhir-test-data-set/au-core/PractitionerRole-breadmore-phillip.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/cox-sandra`](../au-fhir-test-data-set/au-core/Practitioner-cox-sandra.json) | [`PractitionerRole/cox-sandra`](../au-fhir-test-data-set/au-core/PractitionerRole-cox-sandra.json) | [`Organization/parramatta-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-medical-clinic.json) |  |
+| [`Practitioner/dawson-kent`](../au-fhir-test-data-set/au-core/Practitioner-dawson-kent.json) | [`PractitionerRole/dawson-kent`](../au-fhir-test-data-set/au-core/PractitionerRole-dawson-kent.json) | [`Organization/parramatta-public-hospital`](../au-fhir-test-data-set/au-core/Organization-parramatta-public-hospital.json) |  |
+| [`Practitioner/duncan-xenia`](../au-fhir-test-data-set/au-core/Practitioner-duncan-xenia.json) | [`PractitionerRole/duncan-xenia`](../au-fhir-test-data-set/au-core/PractitionerRole-duncan-xenia.json) | [`Organization/parramatta-community-health`](../au-fhir-test-data-set/au-core/Organization-parramatta-community-health.json) |  |
+| [`Practitioner/ellison-abby`](../au-fhir-test-data-set/au-core/Practitioner-ellison-abby.json) | [`PractitionerRole/ellison-abby`](../au-fhir-test-data-set/au-core/PractitionerRole-ellison-abby.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/ewing-jude`](../au-fhir-test-data-set/au-core/Practitioner-ewing-jude.json) | [`PractitionerRole/ewing-jude`](../au-fhir-test-data-set/au-core/PractitionerRole-ewing-jude.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/fleming-kitty`](../au-fhir-test-data-set/au-core/Practitioner-fleming-kitty.json) | [`PractitionerRole/fleming-kitty`](../au-fhir-test-data-set/au-core/PractitionerRole-fleming-kitty.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/fowler-christy`](../au-fhir-test-data-set/au-core/Practitioner-fowler-christy.json) | [`PractitionerRole/medicalradiation-fowler-christy`](../au-fhir-test-data-set/au-core/PractitionerRole-medicalradiation-fowler-christy.json) |  |  |
+| [`Practitioner/frank-gaylene`](../au-fhir-test-data-set/au-core/Practitioner-frank-gaylene.json) | [`PractitionerRole/frank-gaylene`](../au-fhir-test-data-set/au-core/PractitionerRole-frank-gaylene.json) | [`Organization/westmead-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-medical-clinic.json) |  |
+| [`Practitioner/fuller-christeen`](../au-fhir-test-data-set/au-core/Practitioner-fuller-christeen.json) | [`PractitionerRole/fuller-christeen`](../au-fhir-test-data-set/au-core/PractitionerRole-fuller-christeen.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/goodwin-rae`](../au-fhir-test-data-set/au-core/Practitioner-goodwin-rae.json) | [`PractitionerRole/goodwin-rae`](../au-fhir-test-data-set/au-core/PractitionerRole-goodwin-rae.json) | [`Organization/westmead-optical`](../au-fhir-test-data-set/au-core/Organization-westmead-optical.json) |  |
+| [`Practitioner/hamilton-errol`](../au-fhir-test-data-set/au-core/Practitioner-hamilton-errol.json) | [`PractitionerRole/hamilton-errol`](../au-fhir-test-data-set/au-core/PractitionerRole-hamilton-errol.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/healey-tamiko`](../au-fhir-test-data-set/au-core/Practitioner-healey-tamiko.json) | [`PractitionerRole/healey-tamiko`](../au-fhir-test-data-set/au-core/PractitionerRole-healey-tamiko.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/howe-elden`](../au-fhir-test-data-set/au-core/Practitioner-howe-elden.json) | [`PractitionerRole/howe-elden`](../au-fhir-test-data-set/au-core/PractitionerRole-howe-elden.json) | [`Organization/parramatta-midwifery`](../au-fhir-test-data-set/au-core/Organization-parramatta-midwifery.json) |  |
+| [`Practitioner/knowles-sunshine`](../au-fhir-test-data-set/au-core/Practitioner-knowles-sunshine.json) | [`PractitionerRole/knowles-sunshine`](../au-fhir-test-data-set/au-core/PractitionerRole-knowles-sunshine.json) | [`Organization/westmead-ot-services`](../au-fhir-test-data-set/au-core/Organization-westmead-ot-services.json) |  |
+| [`Practitioner/lapthorn-leisa`](../au-fhir-test-data-set/au-core/Practitioner-lapthorn-leisa.json) | [`PractitionerRole/lapthorn-leisa`](../au-fhir-test-data-set/au-core/PractitionerRole-lapthorn-leisa.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/little-jerrie`](../au-fhir-test-data-set/au-core/Practitioner-little-jerrie.json) | [`PractitionerRole/little-jerrie`](../au-fhir-test-data-set/au-core/PractitionerRole-little-jerrie.json) | [`Organization/parramatta-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-medical-clinic.json) |  |
+| [`Practitioner/macey-brant`](../au-fhir-test-data-set/au-core/Practitioner-macey-brant.json) | [`PractitionerRole/macey-brant`](../au-fhir-test-data-set/au-core/PractitionerRole-macey-brant.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/mackenzie-cinda`](../au-fhir-test-data-set/au-core/Practitioner-mackenzie-cinda.json) | [`PractitionerRole/surgeongeneral-mackenzie-cinda`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-mackenzie-cinda.json) | [`Organization/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Organization-kensington-public-hospital.json) | [`Location/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Location-kensington-public-hospital.json) |
+| [`Practitioner/mcbean-nicollette`](../au-fhir-test-data-set/au-core/Practitioner-mcbean-nicollette.json) | [`PractitionerRole/mcbean-nicollette`](../au-fhir-test-data-set/au-core/PractitionerRole-mcbean-nicollette.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/mcintosh-angelica`](../au-fhir-test-data-set/au-core/Practitioner-mcintosh-angelica.json) | [`PractitionerRole/mcintosh-angelica`](../au-fhir-test-data-set/au-core/PractitionerRole-mcintosh-angelica.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/mcnab-angelina`](../au-fhir-test-data-set/au-core/Practitioner-mcnab-angelina.json) | [`PractitionerRole/mcnab-angelina`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnab-angelina.json) | [`Organization/parramatta-nutrition`](../au-fhir-test-data-set/au-core/Organization-parramatta-nutrition.json) |  |
+| [`Practitioner/mills-hope`](../au-fhir-test-data-set/au-core/Practitioner-mills-hope.json) | [`PractitionerRole/mills-hope`](../au-fhir-test-data-set/au-core/PractitionerRole-mills-hope.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/nairn-vince`](../au-fhir-test-data-set/au-core/Practitioner-nairn-vince.json) | [`PractitionerRole/nairn-vince`](../au-fhir-test-data-set/au-core/PractitionerRole-nairn-vince.json) | [`Organization/westmead-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-westmead-specialist-clinic.json) |  |
+| [`Practitioner/neville-isaiah`](../au-fhir-test-data-set/au-core/Practitioner-neville-isaiah.json) | [`PractitionerRole/neville-isaiah`](../au-fhir-test-data-set/au-core/PractitionerRole-neville-isaiah.json) | [`Organization/westmead-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-westmead-physiotherapy.json) |  |
+| [`Practitioner/nutley-bradley`](../au-fhir-test-data-set/au-core/Practitioner-nutley-bradley.json) | [`PractitionerRole/nutley-bradley`](../au-fhir-test-data-set/au-core/PractitionerRole-nutley-bradley.json) | [`Organization/westmead-pathology`](../au-fhir-test-data-set/au-core/Organization-westmead-pathology.json) |  |
+| [`Practitioner/ohalloran-sheryl`](../au-fhir-test-data-set/au-core/Practitioner-ohalloran-sheryl.json) | [`PractitionerRole/ohalloran-sheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-ohalloran-sheryl.json) | [`Organization/westmead-pharmacy`](../au-fhir-test-data-set/au-core/Organization-westmead-pharmacy.json) |  |
+| [`Practitioner/osmond-michele`](../au-fhir-test-data-set/au-core/Practitioner-osmond-michele.json) | [`PractitionerRole/osmond-michele`](../au-fhir-test-data-set/au-core/PractitionerRole-osmond-michele.json) | [`Organization/parramatta-dental`](../au-fhir-test-data-set/au-core/Organization-parramatta-dental.json) |  |
+| [`Practitioner/perkins-amee`](../au-fhir-test-data-set/au-core/Practitioner-perkins-amee.json) | [`PractitionerRole/perkins-amee`](../au-fhir-test-data-set/au-core/PractitionerRole-perkins-amee.json) | [`Organization/westmead-radiology`](../au-fhir-test-data-set/au-core/Organization-westmead-radiology.json) |  |
+| [`Practitioner/redman-mariah`](../au-fhir-test-data-set/au-core/Practitioner-redman-mariah.json) | [`PractitionerRole/redman-mariah`](../au-fhir-test-data-set/au-core/PractitionerRole-redman-mariah.json) | [`Organization/parramatta-midwifery`](../au-fhir-test-data-set/au-core/Organization-parramatta-midwifery.json) |  |
+| [`Practitioner/roche-garfield`](../au-fhir-test-data-set/au-core/Practitioner-roche-garfield.json) | [`PractitionerRole/roche-garfield`](../au-fhir-test-data-set/au-core/PractitionerRole-roche-garfield.json) | [`Organization/westmead-radiology`](../au-fhir-test-data-set/au-core/Organization-westmead-radiology.json) |  |
+| [`Practitioner/seaby-penelope`](../au-fhir-test-data-set/au-core/Practitioner-seaby-penelope.json) | [`PractitionerRole/seaby-penelope`](../au-fhir-test-data-set/au-core/PractitionerRole-seaby-penelope.json) | [`Organization/parramatta-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-parramatta-specialist-clinic.json) |  |
+| [`Practitioner/shephard-lizabeth`](../au-fhir-test-data-set/au-core/Practitioner-shephard-lizabeth.json) | [`PractitionerRole/registerednurses-shephard-lizabeth`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-shephard-lizabeth.json) | [`Organization/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Organization-kensington-public-hospital.json) | [`Location/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Location-kensington-public-hospital.json) |
+| [`Practitioner/simons-reggie`](../au-fhir-test-data-set/au-core/Practitioner-simons-reggie.json) | [`PractitionerRole/nursepractitioner-simons-reggie`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-simons-reggie.json) | [`Organization/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Organization-kensington-public-hospital.json) | [`Location/kensington-public-hospital`](../au-fhir-test-data-set/au-core/Location-kensington-public-hospital.json) |
+| [`Practitioner/stephens-nellie`](../au-fhir-test-data-set/au-core/Practitioner-stephens-nellie.json) | [`PractitionerRole/stephens-nellie`](../au-fhir-test-data-set/au-core/PractitionerRole-stephens-nellie.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+| [`Practitioner/tate-melvin`](../au-fhir-test-data-set/au-core/Practitioner-tate-melvin.json) | [`PractitionerRole/tate-melvin`](../au-fhir-test-data-set/au-core/PractitionerRole-tate-melvin.json) | [`Organization/westmead-public-hospital`](../au-fhir-test-data-set/au-core/Organization-westmead-public-hospital.json) |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2466,6 +2976,23 @@ _Acacia Hills, Annie River, Bayview, Coconut Grove, Cullen Bay, East Point, Ludm
 - [`east-point-renal-clinic`](../au-fhir-test-data-set/au-core/Location-east-point-renal-clinic.json)
 - [`ludmilla-pharmacy`](../au-fhir-test-data-set/au-core/Location-ludmilla-pharmacy.json)
 
+<details><summary>10 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/cook-natalie`](../au-fhir-test-data-set/au-core/Practitioner-cook-natalie.json) | [`PractitionerRole/osteopath-cook-natalie`](../au-fhir-test-data-set/au-core/PractitionerRole-osteopath-cook-natalie.json) |  |  |
+| [`Practitioner/coulter-francine`](../au-fhir-test-data-set/au-core/Practitioner-coulter-francine.json) | [`PractitionerRole/medicaldiagnostic-coulter-francine`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-coulter-francine.json) |  |  |
+| [`Practitioner/craig-kenneth`](../au-fhir-test-data-set/au-core/Practitioner-craig-kenneth.json) | [`PractitionerRole/registerednurses-craig-kenneth`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-craig-kenneth.json) | [`Organization/annie-river-practice`](../au-fhir-test-data-set/au-core/Organization-annie-river-practice.json) | [`Location/annie-river-practice`](../au-fhir-test-data-set/au-core/Location-annie-river-practice.json) |
+| [`Practitioner/darcy-alexandra`](../au-fhir-test-data-set/au-core/Practitioner-darcy-alexandra.json) | [`PractitionerRole/physiotherapist-darcy-alexandra`](../au-fhir-test-data-set/au-core/PractitionerRole-physiotherapist-darcy-alexandra.json) |  |  |
+| [`Practitioner/faint-darryl`](../au-fhir-test-data-set/au-core/Practitioner-faint-darryl.json) | [`PractitionerRole/generalpractitioner-faint-darryl`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-faint-darryl.json) | [`Organization/cullen-bay-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-cullen-bay-medical-clinic.json) | [`Location/cullen-bay-medical-clinic`](../au-fhir-test-data-set/au-core/Location-cullen-bay-medical-clinic.json) |
+| [`Practitioner/gifford-cassidy`](../au-fhir-test-data-set/au-core/Practitioner-gifford-cassidy.json) | [`PractitionerRole/pathologist-gifford-cassidy`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-gifford-cassidy.json) | [`Organization/bayview-pathology`](../au-fhir-test-data-set/au-core/Organization-bayview-pathology.json) | [`Location/bayview-pathology`](../au-fhir-test-data-set/au-core/Location-bayview-pathology.json) |
+| [`Practitioner/gillies-han`](../au-fhir-test-data-set/au-core/Practitioner-gillies-han.json) | [`PractitionerRole/aboriginal-gillies-han`](../au-fhir-test-data-set/au-core/PractitionerRole-aboriginal-gillies-han.json) | [`Organization/annie-river-practice`](../au-fhir-test-data-set/au-core/Organization-annie-river-practice.json) | [`Location/annie-river-practice`](../au-fhir-test-data-set/au-core/Location-annie-river-practice.json) |
+| [`Practitioner/harding-clyde`](../au-fhir-test-data-set/au-core/Practitioner-harding-clyde.json) | [`PractitionerRole/retailpharmacist-harding-clyde`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-harding-clyde.json) | [`Organization/ludmilla-pharmacy`](../au-fhir-test-data-set/au-core/Organization-ludmilla-pharmacy.json) | [`Location/ludmilla-pharmacy`](../au-fhir-test-data-set/au-core/Location-ludmilla-pharmacy.json) |
+| [`Practitioner/mccormack-annamaria`](../au-fhir-test-data-set/au-core/Practitioner-mccormack-annamaria.json) | [`PractitionerRole/registerednurses-mccormack-annamaria`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-mccormack-annamaria.json) | [`Organization/cullen-bay-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-cullen-bay-medical-clinic.json) | [`Location/cullen-bay-medical-clinic`](../au-fhir-test-data-set/au-core/Location-cullen-bay-medical-clinic.json) |
+| [`Practitioner/polglase-belen`](../au-fhir-test-data-set/au-core/Practitioner-polglase-belen.json) | [`PractitionerRole/counsellorsnec-polglase-belen`](../au-fhir-test-data-set/au-core/PractitionerRole-counsellorsnec-polglase-belen.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2517,6 +3044,21 @@ _Brisbane, Herston, Logan Reserve, Loganlea, Wilston._
 - [`herston-pathology`](../au-fhir-test-data-set/au-core/Organization-herston-pathology.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) — *also in: [scenario-groups](#scenario-groups)*
 - [`herston-radiology`](../au-fhir-test-data-set/au-core/Organization-herston-radiology.json) — *also in: [scenario-groups](#scenario-groups)*
+
+<details><summary>8 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/bowden-hiroko`](../au-fhir-test-data-set/au-core/Practitioner-bowden-hiroko.json) | [`PractitionerRole/bowden-hiroko`](../au-fhir-test-data-set/au-core/PractitionerRole-bowden-hiroko.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/greenhill-edmond`](../au-fhir-test-data-set/au-core/Practitioner-greenhill-edmond.json) | [`PractitionerRole/greenhill-edmond`](../au-fhir-test-data-set/au-core/PractitionerRole-greenhill-edmond.json) | [`Organization/herston-pathology`](../au-fhir-test-data-set/au-core/Organization-herston-pathology.json) |  |
+| [`Practitioner/irwin-corinna`](../au-fhir-test-data-set/au-core/Practitioner-irwin-corinna.json) | [`PractitionerRole/irwin-corinna`](../au-fhir-test-data-set/au-core/PractitionerRole-irwin-corinna.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/jeffery-sammy`](../au-fhir-test-data-set/au-core/Practitioner-jeffery-sammy.json) | [`PractitionerRole/jeffery-sammy`](../au-fhir-test-data-set/au-core/PractitionerRole-jeffery-sammy.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/lyons-shay`](../au-fhir-test-data-set/au-core/Practitioner-lyons-shay.json) | [`PractitionerRole/lyons-shay`](../au-fhir-test-data-set/au-core/PractitionerRole-lyons-shay.json) | [`Organization/herston-radiology`](../au-fhir-test-data-set/au-core/Organization-herston-radiology.json) |  |
+| [`Practitioner/mclean-brenda`](../au-fhir-test-data-set/au-core/Practitioner-mclean-brenda.json) | [`PractitionerRole/mclean-brenda`](../au-fhir-test-data-set/au-core/PractitionerRole-mclean-brenda.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/sherry-dean`](../au-fhir-test-data-set/au-core/Practitioner-sherry-dean.json) | [`PractitionerRole/sherry-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-sherry-dean.json) | [`Organization/herston-public-hospital`](../au-fhir-test-data-set/au-core/Organization-herston-public-hospital.json) |  |
+| [`Practitioner/stapleton-carole`](../au-fhir-test-data-set/au-core/Practitioner-stapleton-carole.json) | [`PractitionerRole/speechpathologist-stapleton-carole`](../au-fhir-test-data-set/au-core/PractitionerRole-speechpathologist-stapleton-carole.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -2576,6 +3118,18 @@ _Barney View, Cedar Grove._
 - [`barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Location-barney-view-private-hospital.json) — *also in: [au-erequesting-ig-examples](#au-erequesting-ig-examples)*
 - [`renal-dialysis-unit`](../au-fhir-test-data-set/au-core/Location-renal-dialysis-unit.json)
 
+<details><summary>5 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/armstrong-amada`](../au-fhir-test-data-set/au-core/Practitioner-armstrong-amada.json) | [`PractitionerRole/surgeongeneral-armstrong-amada`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-armstrong-amada.json) | [`Organization/barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Organization-barney-view-private-hospital.json) | [`Location/barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Location-barney-view-private-hospital.json) |
+| [`Practitioner/haywood-byron`](../au-fhir-test-data-set/au-core/Practitioner-haywood-byron.json) | [`PractitionerRole/nursepractitioner-haywood-byron`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-haywood-byron.json) | [`Organization/barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Organization-barney-view-private-hospital.json) | [`Location/barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Location-barney-view-private-hospital.json) |
+| [`Practitioner/kelly-virginia`](../au-fhir-test-data-set/au-core/Practitioner-kelly-virginia.json) | [`PractitionerRole/dietitian-kelly-virginia`](../au-fhir-test-data-set/au-core/PractitionerRole-dietitian-kelly-virginia.json) |  |  |
+| [`Practitioner/manning-meg`](../au-fhir-test-data-set/au-core/Practitioner-manning-meg.json) | [`PractitionerRole/cardiothoracicsurgeon-manning-meg`](../au-fhir-test-data-set/au-core/PractitionerRole-cardiothoracicsurgeon-manning-meg.json) |  |  |
+| [`Practitioner/sinclair-forrest`](../au-fhir-test-data-set/au-core/Practitioner-sinclair-forrest.json) | [`PractitionerRole/registerednurses-sinclair-forrest`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-sinclair-forrest.json) | [`Organization/barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Organization-barney-view-private-hospital.json) | [`Location/barney-view-private-hospital`](../au-fhir-test-data-set/au-core/Location-barney-view-private-hospital.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2605,6 +3159,14 @@ _Tarampa._
 **Location** (1)
 
 - [`tarampa-emergency`](../au-fhir-test-data-set/au-core/Location-tarampa-emergency.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/mitchell-frankie`](../au-fhir-test-data-set/au-core/Practitioner-mitchell-frankie.json) | [`PractitionerRole/emergencymedicine-mitchell-frankie`](../au-fhir-test-data-set/au-core/PractitionerRole-emergencymedicine-mitchell-frankie.json) | [`Organization/tarampa-emergency`](../au-fhir-test-data-set/au-core/Organization-tarampa-emergency.json) | [`Location/tarampa-emergency`](../au-fhir-test-data-set/au-core/Location-tarampa-emergency.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2664,6 +3226,21 @@ _Berat, Carrington, Glennie Heights, Loch Lomond, Morgan Park, Purrawunda, Westb
 - [`glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Location-glennie-heights-public-hospital.json)
 - [`loch-lomond-medical-clinic`](../au-fhir-test-data-set/au-core/Location-loch-lomond-medical-clinic.json)
 
+<details><summary>8 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/berry-millicent`](../au-fhir-test-data-set/au-core/Practitioner-berry-millicent.json) | [`PractitionerRole/diagnostic-berry-millicent`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-berry-millicent.json) | [`Organization/berat-radiology`](../au-fhir-test-data-set/au-core/Organization-berat-radiology.json) | [`Location/berat-radiology`](../au-fhir-test-data-set/au-core/Location-berat-radiology.json) |
+| [`Practitioner/macnab-gregory`](../au-fhir-test-data-set/au-core/Practitioner-macnab-gregory.json) | [`PractitionerRole/psychiatrist-macnab-gregory`](../au-fhir-test-data-set/au-core/PractitionerRole-psychiatrist-macnab-gregory.json) |  |  |
+| [`Practitioner/marchant-ricki`](../au-fhir-test-data-set/au-core/Practitioner-marchant-ricki.json) | [`PractitionerRole/surgeongeneral-marchant-ricki`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-marchant-ricki.json) | [`Organization/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Organization-glennie-heights-public-hospital.json) | [`Location/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Location-glennie-heights-public-hospital.json) |
+| [`Practitioner/morton-eric`](../au-fhir-test-data-set/au-core/Practitioner-morton-eric.json) | [`PractitionerRole/registerednurses-morton-eric`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-morton-eric.json) | [`Organization/loch-lomond-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-loch-lomond-medical-clinic.json) | [`Location/loch-lomond-medical-clinic`](../au-fhir-test-data-set/au-core/Location-loch-lomond-medical-clinic.json) |
+| [`Practitioner/rowland-roger`](../au-fhir-test-data-set/au-core/Practitioner-rowland-roger.json) | [`PractitionerRole/registerednurses-rowland-roger`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-rowland-roger.json) | [`Organization/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Organization-glennie-heights-public-hospital.json) | [`Location/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Location-glennie-heights-public-hospital.json) |
+| [`Practitioner/samuels-wyatt`](../au-fhir-test-data-set/au-core/Practitioner-samuels-wyatt.json) | [`PractitionerRole/generalpractitioner-samuels-wyatt`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-samuels-wyatt.json) | [`Organization/loch-lomond-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-loch-lomond-medical-clinic.json) | [`Location/loch-lomond-medical-clinic`](../au-fhir-test-data-set/au-core/Location-loch-lomond-medical-clinic.json) |
+| [`Practitioner/shearer-joesfine`](../au-fhir-test-data-set/au-core/Practitioner-shearer-joesfine.json) | [`PractitionerRole/pathologist-shearer-joesfine`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-shearer-joesfine.json) | [`Organization/carrington-pathology`](../au-fhir-test-data-set/au-core/Organization-carrington-pathology.json) | [`Location/carrington-pathology`](../au-fhir-test-data-set/au-core/Location-carrington-pathology.json) |
+| [`Practitioner/springett-angelo`](../au-fhir-test-data-set/au-core/Practitioner-springett-angelo.json) | [`PractitionerRole/nursepractitioner-springett-angelo`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-springett-angelo.json) | [`Organization/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Organization-glennie-heights-public-hospital.json) | [`Location/glennie-heights-public-hospital`](../au-fhir-test-data-set/au-core/Location-glennie-heights-public-hospital.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2685,6 +3262,14 @@ _Goondiwindi, Lundavra._
 **Organization** (1)
 
 - [`goondiwindi-health-network`](../au-fhir-test-data-set/au-core/Organization-goondiwindi-health-network.json) — *also in: [community-contributions](#community-contributions)*
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gore-jess`](../au-fhir-test-data-set/au-core/Practitioner-gore-jess.json) | [`PractitionerRole/chiropractor-gore-jess`](../au-fhir-test-data-set/au-core/PractitionerRole-chiropractor-gore-jess.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -2715,6 +3300,14 @@ _Kioma._
 **Location** (1)
 
 - [`kioma-pathology`](../au-fhir-test-data-set/au-core/Location-kioma-pathology.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/herbert-aimee`](../au-fhir-test-data-set/au-core/Practitioner-herbert-aimee.json) | [`PractitionerRole/pathologist-herbert-aimee`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-herbert-aimee.json) | [`Organization/kioma-pathology`](../au-fhir-test-data-set/au-core/Organization-kioma-pathology.json) | [`Location/kioma-pathology`](../au-fhir-test-data-set/au-core/Location-kioma-pathology.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2751,6 +3344,15 @@ _Draper, Elimbah._
 **Location** (1)
 
 - [`elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Location-elimbah-medical-centre.json)
+
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/egan-shae`](../au-fhir-test-data-set/au-core/Practitioner-egan-shae.json) | [`PractitionerRole/registerednurses-egan-shae`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-egan-shae.json) | [`Organization/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Organization-elimbah-medical-centre.json) | [`Location/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Location-elimbah-medical-centre.json) |
+| [`Practitioner/guthridge-jarred`](../au-fhir-test-data-set/au-core/Practitioner-guthridge-jarred.json) | [`PractitionerRole/generalpractitioner-guthridge-jarred`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-guthridge-jarred.json) | [`Organization/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Organization-elimbah-medical-centre.json) | [`Location/elimbah-medical-centre`](../au-fhir-test-data-set/au-core/Location-elimbah-medical-centre.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2806,6 +3408,15 @@ _Banana, Cracow._
 
 - [`cracow-pharmacy`](../au-fhir-test-data-set/au-core/Location-cracow-pharmacy.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/crowley-pablo`](../au-fhir-test-data-set/au-core/Practitioner-crowley-pablo.json) | [`PractitionerRole/plastic-crowley-pablo`](../au-fhir-test-data-set/au-core/PractitionerRole-plastic-crowley-pablo.json) |  |  |
+| [`Practitioner/patrick-manual`](../au-fhir-test-data-set/au-core/Practitioner-patrick-manual.json) | [`PractitionerRole/retailpharmacist-patrick-manual`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-patrick-manual.json) | [`Organization/cracow-pharmacy`](../au-fhir-test-data-set/au-core/Organization-cracow-pharmacy.json) | [`Location/cracow-pharmacy`](../au-fhir-test-data-set/au-core/Location-cracow-pharmacy.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -2840,6 +3451,15 @@ _East Mackay, Mount Charlton._
 
 - [`east-mackay-pharmacy`](../au-fhir-test-data-set/au-core/Location-east-mackay-pharmacy.json)
 - [`mount-charlton-radiology`](../au-fhir-test-data-set/au-core/Location-mount-charlton-radiology.json)
+
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/ford-dean`](../au-fhir-test-data-set/au-core/Practitioner-ford-dean.json) | [`PractitionerRole/retailpharmacist-ford-dean`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-ford-dean.json) | [`Organization/east-mackay-pharmacy`](../au-fhir-test-data-set/au-core/Organization-east-mackay-pharmacy.json) | [`Location/east-mackay-pharmacy`](../au-fhir-test-data-set/au-core/Location-east-mackay-pharmacy.json) |
+| [`Practitioner/mclaughlin-kimberlee`](../au-fhir-test-data-set/au-core/Practitioner-mclaughlin-kimberlee.json) | [`PractitionerRole/diagnostic-mclaughlin-kimberlee`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-mclaughlin-kimberlee.json) | [`Organization/mount-charlton-radiology`](../au-fhir-test-data-set/au-core/Organization-mount-charlton-radiology.json) | [`Location/mount-charlton-radiology`](../au-fhir-test-data-set/au-core/Location-mount-charlton-radiology.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2886,6 +3506,19 @@ _Bayview Heights, Hudson, Southedge._
 - [`bayview-heights-oncology-clinic`](../au-fhir-test-data-set/au-core/Location-bayview-heights-oncology-clinic.json)
 - [`hudson-aged-care`](../au-fhir-test-data-set/au-core/Location-hudson-aged-care.json)
 - [`southedge-practice`](../au-fhir-test-data-set/au-core/Location-southedge-practice.json)
+
+<details><summary>6 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/berry-shay`](../au-fhir-test-data-set/au-core/Practitioner-berry-shay.json) | [`PractitionerRole/registerednurses-berry-shay`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-berry-shay.json) | [`Organization/hudson-aged-care`](../au-fhir-test-data-set/au-core/Organization-hudson-aged-care.json) | [`Location/hudson-aged-care`](../au-fhir-test-data-set/au-core/Location-hudson-aged-care.json) |
+| [`Practitioner/coulter-oliver`](../au-fhir-test-data-set/au-core/Practitioner-coulter-oliver.json) | [`PractitionerRole/aboriginal-coulter-oliver`](../au-fhir-test-data-set/au-core/PractitionerRole-aboriginal-coulter-oliver.json) | [`Organization/southedge-practice`](../au-fhir-test-data-set/au-core/Organization-southedge-practice.json) | [`Location/southedge-practice`](../au-fhir-test-data-set/au-core/Location-southedge-practice.json) |
+| [`Practitioner/lamerton-buck`](../au-fhir-test-data-set/au-core/Practitioner-lamerton-buck.json) | [`PractitionerRole/registerednurses-lamerton-buck`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-lamerton-buck.json) | [`Organization/southedge-practice`](../au-fhir-test-data-set/au-core/Organization-southedge-practice.json) | [`Location/southedge-practice`](../au-fhir-test-data-set/au-core/Location-southedge-practice.json) |
+| [`Practitioner/leeds-luigi`](../au-fhir-test-data-set/au-core/Practitioner-leeds-luigi.json) | [`PractitionerRole/medicaloncologist-leeds-luigi`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaloncologist-leeds-luigi.json) |  |  |
+| [`Practitioner/mclean-lizzette`](../au-fhir-test-data-set/au-core/Practitioner-mclean-lizzette.json) | [`PractitionerRole/registerednurses-mclean-lizzette`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-mclean-lizzette.json) | [`Organization/hudson-aged-care`](../au-fhir-test-data-set/au-core/Organization-hudson-aged-care.json) | [`Location/hudson-aged-care`](../au-fhir-test-data-set/au-core/Location-hudson-aged-care.json) |
+| [`Practitioner/mcleod-clinton`](../au-fhir-test-data-set/au-core/Practitioner-mcleod-clinton.json) | [`PractitionerRole/nursepractitioner-mcleod-clinton`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-mcleod-clinton.json) | [`Organization/hudson-aged-care`](../au-fhir-test-data-set/au-core/Organization-hudson-aged-care.json) | [`Location/hudson-aged-care`](../au-fhir-test-data-set/au-core/Location-hudson-aged-care.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -2999,6 +3632,39 @@ _Adelaide, Croydon, Edwardstown, Hawthorn, Park Holme, Royal park, Salisbury Sou
 - [`wingfield-pathology`](../au-fhir-test-data-set/au-core/Location-wingfield-pathology.json)
 - [`woodcroft-pathology`](../au-fhir-test-data-set/au-core/Location-woodcroft-pathology.json)
 
+<details><summary>26 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/baker-troy`](../au-fhir-test-data-set/au-core/Practitioner-baker-troy.json) | [`PractitionerRole/baker-troy`](../au-fhir-test-data-set/au-core/PractitionerRole-baker-troy.json) | [`Organization/woodville-pathology`](../au-fhir-test-data-set/au-core/Organization-woodville-pathology.json) |  |
+| [`Practitioner/baynton-lolita`](../au-fhir-test-data-set/au-core/Practitioner-baynton-lolita.json) | [`PractitionerRole/baynton-lolita`](../au-fhir-test-data-set/au-core/PractitionerRole-baynton-lolita.json) | [`Organization/woodville-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-woodville-medical-clinic.json) |  |
+| [`Practitioner/bell-rudolf`](../au-fhir-test-data-set/au-core/Practitioner-bell-rudolf.json) | [`PractitionerRole/bell-rudolf`](../au-fhir-test-data-set/au-core/PractitionerRole-bell-rudolf.json) | [`Organization/royal-park-medical-centre`](../au-fhir-test-data-set/au-core/Organization-royal-park-medical-centre.json) |  |
+| [`Practitioner/berry-lisa`](../au-fhir-test-data-set/au-core/Practitioner-berry-lisa.json) | [`PractitionerRole/berry-lisa`](../au-fhir-test-data-set/au-core/PractitionerRole-berry-lisa.json) | [`Organization/woodville-ot-services`](../au-fhir-test-data-set/au-core/Organization-woodville-ot-services.json) |  |
+| [`Practitioner/carey-joyce`](../au-fhir-test-data-set/au-core/Practitioner-carey-joyce.json) | [`PractitionerRole/carey-joyce`](../au-fhir-test-data-set/au-core/PractitionerRole-carey-joyce.json) | [`Organization/semaphore-aged-care`](../au-fhir-test-data-set/au-core/Organization-semaphore-aged-care.json) |  |
+| [`Practitioner/couch-joel`](../au-fhir-test-data-set/au-core/Practitioner-couch-joel.json) | [`PractitionerRole/couch-joel`](../au-fhir-test-data-set/au-core/PractitionerRole-couch-joel.json) | [`Organization/adelaide-public-hospital`](../au-fhir-test-data-set/au-core/Organization-adelaide-public-hospital.json) |  |
+| [`Practitioner/cruickshank-marlyn`](../au-fhir-test-data-set/au-core/Practitioner-cruickshank-marlyn.json) | [`PractitionerRole/cruickshank-marlyn`](../au-fhir-test-data-set/au-core/PractitionerRole-cruickshank-marlyn.json) | [`Organization/woodville-podiatry`](../au-fhir-test-data-set/au-core/Organization-woodville-podiatry.json) |  |
+| [`Practitioner/dixon-astrid`](../au-fhir-test-data-set/au-core/Practitioner-dixon-astrid.json) | [`PractitionerRole/pathologist-dixon-astrid`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-dixon-astrid.json) | [`Organization/woodcroft-pathology`](../au-fhir-test-data-set/au-core/Organization-woodcroft-pathology.json) | [`Location/woodcroft-pathology`](../au-fhir-test-data-set/au-core/Location-woodcroft-pathology.json) |
+| [`Practitioner/ellison-shawn`](../au-fhir-test-data-set/au-core/Practitioner-ellison-shawn.json) | [`PractitionerRole/paediatrician-ellison-shawn`](../au-fhir-test-data-set/au-core/PractitionerRole-paediatrician-ellison-shawn.json) |  |  |
+| [`Practitioner/fleming-skye`](../au-fhir-test-data-set/au-core/Practitioner-fleming-skye.json) | [`PractitionerRole/fleming-skye`](../au-fhir-test-data-set/au-core/PractitionerRole-fleming-skye.json) | [`Organization/woodville-pharmacy`](../au-fhir-test-data-set/au-core/Organization-woodville-pharmacy.json) |  |
+| [`Practitioner/freeman-anya`](../au-fhir-test-data-set/au-core/Practitioner-freeman-anya.json) | [`PractitionerRole/freeman-anya`](../au-fhir-test-data-set/au-core/PractitionerRole-freeman-anya.json) | [`Organization/semaphore-aged-care`](../au-fhir-test-data-set/au-core/Organization-semaphore-aged-care.json) |  |
+| [`Practitioner/harley-reynalda`](../au-fhir-test-data-set/au-core/Practitioner-harley-reynalda.json) | [`PractitionerRole/harley-reynalda`](../au-fhir-test-data-set/au-core/PractitionerRole-harley-reynalda.json) | [`Organization/woodville-dietitian-service`](../au-fhir-test-data-set/au-core/Organization-woodville-dietitian-service.json) |  |
+| [`Practitioner/henderson-nelson`](../au-fhir-test-data-set/au-core/Practitioner-henderson-nelson.json) | [`PractitionerRole/dietitian-henderson-nelson`](../au-fhir-test-data-set/au-core/PractitionerRole-dietitian-henderson-nelson.json) |  |  |
+| [`Practitioner/hickson-eldora`](../au-fhir-test-data-set/au-core/Practitioner-hickson-eldora.json) | [`PractitionerRole/pathologist-hickson-eldora`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-hickson-eldora.json) | [`Organization/wingfield-pathology`](../au-fhir-test-data-set/au-core/Organization-wingfield-pathology.json) | [`Location/wingfield-pathology`](../au-fhir-test-data-set/au-core/Location-wingfield-pathology.json) |
+| [`Practitioner/hoskins-earl`](../au-fhir-test-data-set/au-core/Practitioner-hoskins-earl.json) | [`PractitionerRole/hoskins-earl`](../au-fhir-test-data-set/au-core/PractitionerRole-hoskins-earl.json) | [`Organization/woodville-dental`](../au-fhir-test-data-set/au-core/Organization-woodville-dental.json) |  |
+| [`Practitioner/huddlestone-velda`](../au-fhir-test-data-set/au-core/Practitioner-huddlestone-velda.json) | [`PractitionerRole/huddlestone-velda`](../au-fhir-test-data-set/au-core/PractitionerRole-huddlestone-velda.json) | [`Organization/adelaide-public-hospital`](../au-fhir-test-data-set/au-core/Organization-adelaide-public-hospital.json) |  |
+| [`Practitioner/hutton-cortez`](../au-fhir-test-data-set/au-core/Practitioner-hutton-cortez.json) | [`PractitionerRole/hutton-cortez`](../au-fhir-test-data-set/au-core/PractitionerRole-hutton-cortez.json) | [`Organization/woodville-radiology`](../au-fhir-test-data-set/au-core/Organization-woodville-radiology.json) |  |
+| [`Practitioner/hyde-cortez`](../au-fhir-test-data-set/au-core/Practitioner-hyde-cortez.json) | [`PractitionerRole/nuclearmedicine-hyde-cortez`](../au-fhir-test-data-set/au-core/PractitionerRole-nuclearmedicine-hyde-cortez.json) |  |  |
+| [`Practitioner/lavender-astrid`](../au-fhir-test-data-set/au-core/Practitioner-lavender-astrid.json) | [`PractitionerRole/medicaldiagnostic-lavender-astrid`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-lavender-astrid.json) |  |  |
+| [`Practitioner/lawrence-drew`](../au-fhir-test-data-set/au-core/Practitioner-lawrence-drew.json) | [`PractitionerRole/lawrence-drew`](../au-fhir-test-data-set/au-core/PractitionerRole-lawrence-drew.json) | [`Organization/semaphore-aged-care`](../au-fhir-test-data-set/au-core/Organization-semaphore-aged-care.json) |  |
+| [`Practitioner/mackee-sara`](../au-fhir-test-data-set/au-core/Practitioner-mackee-sara.json) | [`PractitionerRole/cardiothoracicsurgeon-mackee-sara`](../au-fhir-test-data-set/au-core/PractitionerRole-cardiothoracicsurgeon-mackee-sara.json) |  |  |
+| [`Practitioner/manning-opal`](../au-fhir-test-data-set/au-core/Practitioner-manning-opal.json) | [`PractitionerRole/manning-opal`](../au-fhir-test-data-set/au-core/PractitionerRole-manning-opal.json) | [`Organization/adelaide-public-hospital`](../au-fhir-test-data-set/au-core/Organization-adelaide-public-hospital.json) |  |
+| [`Practitioner/newling-louis`](../au-fhir-test-data-set/au-core/Practitioner-newling-louis.json) | [`PractitionerRole/retailpharmacist-newling-louis`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-newling-louis.json) | [`Organization/edwardstown-pharmacy`](../au-fhir-test-data-set/au-core/Organization-edwardstown-pharmacy.json) | [`Location/edwardstown-pharmacy`](../au-fhir-test-data-set/au-core/Location-edwardstown-pharmacy.json) |
+| [`Practitioner/rowlands-donya`](../au-fhir-test-data-set/au-core/Practitioner-rowlands-donya.json) | [`PractitionerRole/rowlands-donya`](../au-fhir-test-data-set/au-core/PractitionerRole-rowlands-donya.json) | [`Organization/woodville-dental`](../au-fhir-test-data-set/au-core/Organization-woodville-dental.json) |  |
+| [`Practitioner/tierney-gisela`](../au-fhir-test-data-set/au-core/Practitioner-tierney-gisela.json) | [`PractitionerRole/tierney-gisela`](../au-fhir-test-data-set/au-core/PractitionerRole-tierney-gisela.json) | [`Organization/woodville-cardiology`](../au-fhir-test-data-set/au-core/Organization-woodville-cardiology.json) |  |
+| [`Practitioner/vaughan-sol`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-sol.json) | [`PractitionerRole/vaughan-sol`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-sol.json) | [`Organization/royal-park-medical-centre`](../au-fhir-test-data-set/au-core/Organization-royal-park-medical-centre.json) |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3032,6 +3698,15 @@ _Back Valley, Deep Creek, Hayborough._
 
 - [`back-valley-radiology`](../au-fhir-test-data-set/au-core/Location-back-valley-radiology.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/heaney-brock`](../au-fhir-test-data-set/au-core/Practitioner-heaney-brock.json) | [`PractitionerRole/diagnostic-heaney-brock`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-heaney-brock.json) | [`Organization/back-valley-radiology`](../au-fhir-test-data-set/au-core/Organization-back-valley-radiology.json) | [`Location/back-valley-radiology`](../au-fhir-test-data-set/au-core/Location-back-valley-radiology.json) |
+| [`Practitioner/rogers-lorilee`](../au-fhir-test-data-set/au-core/Practitioner-rogers-lorilee.json) | [`PractitionerRole/obstetrician-rogers-lorilee`](../au-fhir-test-data-set/au-core/PractitionerRole-obstetrician-rogers-lorilee.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3061,6 +3736,14 @@ _Cape Jaffa._
 **Location** (1)
 
 - [`cape-jaffa-radiology`](../au-fhir-test-data-set/au-core/Location-cape-jaffa-radiology.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/parr-adelaide`](../au-fhir-test-data-set/au-core/Practitioner-parr-adelaide.json) | [`PractitionerRole/diagnostic-parr-adelaide`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-parr-adelaide.json) | [`Organization/cape-jaffa-radiology`](../au-fhir-test-data-set/au-core/Organization-cape-jaffa-radiology.json) | [`Location/cape-jaffa-radiology`](../au-fhir-test-data-set/au-core/Location-cape-jaffa-radiology.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -3106,6 +3789,20 @@ _Leasingham, Stockyard Creek, Yunta._
 
 - [`leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Location-leasingham-public-hospital.json)
 - [`yunta-private-hospital`](../au-fhir-test-data-set/au-core/Location-yunta-private-hospital.json)
+
+<details><summary>7 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/doyle-hana`](../au-fhir-test-data-set/au-core/Practitioner-doyle-hana.json) | [`PractitionerRole/nursepractitioner-doyle-hana`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-doyle-hana.json) | [`Organization/yunta-private-hospital`](../au-fhir-test-data-set/au-core/Organization-yunta-private-hospital.json) | [`Location/yunta-private-hospital`](../au-fhir-test-data-set/au-core/Location-yunta-private-hospital.json) |
+| [`Practitioner/frankel-mary`](../au-fhir-test-data-set/au-core/Practitioner-frankel-mary.json) | [`PractitionerRole/registerednurses-frankel-mary`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-frankel-mary.json) | [`Organization/leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Organization-leasingham-public-hospital.json) | [`Location/leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Location-leasingham-public-hospital.json) |
+| [`Practitioner/patrick-nancy`](../au-fhir-test-data-set/au-core/Practitioner-patrick-nancy.json) | [`PractitionerRole/surgeongeneral-patrick-nancy`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-patrick-nancy.json) | [`Organization/yunta-private-hospital`](../au-fhir-test-data-set/au-core/Organization-yunta-private-hospital.json) | [`Location/yunta-private-hospital`](../au-fhir-test-data-set/au-core/Location-yunta-private-hospital.json) |
+| [`Practitioner/pratley-maynard`](../au-fhir-test-data-set/au-core/Practitioner-pratley-maynard.json) | [`PractitionerRole/surgeongeneral-pratley-maynard`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-pratley-maynard.json) | [`Organization/leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Organization-leasingham-public-hospital.json) | [`Location/leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Location-leasingham-public-hospital.json) |
+| [`Practitioner/pye-dusty`](../au-fhir-test-data-set/au-core/Practitioner-pye-dusty.json) | [`PractitionerRole/plastic-pye-dusty`](../au-fhir-test-data-set/au-core/PractitionerRole-plastic-pye-dusty.json) |  |  |
+| [`Practitioner/rowland-josh`](../au-fhir-test-data-set/au-core/Practitioner-rowland-josh.json) | [`PractitionerRole/nursepractitioner-rowland-josh`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-rowland-josh.json) | [`Organization/leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Organization-leasingham-public-hospital.json) | [`Location/leasingham-public-hospital`](../au-fhir-test-data-set/au-core/Location-leasingham-public-hospital.json) |
+| [`Practitioner/steele-clyde`](../au-fhir-test-data-set/au-core/Practitioner-steele-clyde.json) | [`PractitionerRole/registerednurses-steele-clyde`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-steele-clyde.json) | [`Organization/yunta-private-hospital`](../au-fhir-test-data-set/au-core/Organization-yunta-private-hospital.json) | [`Location/yunta-private-hospital`](../au-fhir-test-data-set/au-core/Location-yunta-private-hospital.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -3165,6 +3862,15 @@ _Beltana._
 
 - [`beltana-medical-practice`](../au-fhir-test-data-set/au-core/Location-beltana-medical-practice.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/packham-delores`](../au-fhir-test-data-set/au-core/Practitioner-packham-delores.json) | [`PractitionerRole/generalpractitioner-packham-delores`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-packham-delores.json) | [`Organization/beltana-medical-practice`](../au-fhir-test-data-set/au-core/Organization-beltana-medical-practice.json) | [`Location/beltana-medical-practice`](../au-fhir-test-data-set/au-core/Location-beltana-medical-practice.json) |
+| [`Practitioner/pickford-lisa`](../au-fhir-test-data-set/au-core/Practitioner-pickford-lisa.json) | [`PractitionerRole/registerednurses-pickford-lisa`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-pickford-lisa.json) | [`Organization/beltana-medical-practice`](../au-fhir-test-data-set/au-core/Organization-beltana-medical-practice.json) | [`Location/beltana-medical-practice`](../au-fhir-test-data-set/au-core/Location-beltana-medical-practice.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3212,6 +3918,18 @@ _Derwent Park, Moonah, Opossum Bay, Rosetta._
 
 - [`rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Location-rosetta-public-hospital.json)
 
+<details><summary>5 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/beale-collette`](../au-fhir-test-data-set/au-core/Practitioner-beale-collette.json) | [`PractitionerRole/diagnostic-beale-collette`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-beale-collette.json) |  |  |
+| [`Practitioner/burrows-tegan`](../au-fhir-test-data-set/au-core/Practitioner-burrows-tegan.json) | [`PractitionerRole/surgeongeneral-burrows-tegan`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-burrows-tegan.json) | [`Organization/rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Organization-rosetta-public-hospital.json) | [`Location/rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Location-rosetta-public-hospital.json) |
+| [`Practitioner/harvey-brooke`](../au-fhir-test-data-set/au-core/Practitioner-harvey-brooke.json) | [`PractitionerRole/registerednurses-harvey-brooke`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-harvey-brooke.json) | [`Organization/rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Organization-rosetta-public-hospital.json) | [`Location/rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Location-rosetta-public-hospital.json) |
+| [`Practitioner/mortenson-kerry`](../au-fhir-test-data-set/au-core/Practitioner-mortenson-kerry.json) | [`PractitionerRole/nursepractitioner-mortenson-kerry`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-mortenson-kerry.json) | [`Organization/rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Organization-rosetta-public-hospital.json) | [`Location/rosetta-public-hospital`](../au-fhir-test-data-set/au-core/Location-rosetta-public-hospital.json) |
+| [`Practitioner/rawlings-hong`](../au-fhir-test-data-set/au-core/Practitioner-rawlings-hong.json) | [`PractitionerRole/paediatrician-rawlings-hong`](../au-fhir-test-data-set/au-core/PractitionerRole-paediatrician-rawlings-hong.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3251,6 +3969,17 @@ _Garden Island Creek, Southport, Verona Sands._
 - [`southport-medical-practice`](../au-fhir-test-data-set/au-core/Location-southport-medical-practice.json)
 - [`verona-sands-pathology`](../au-fhir-test-data-set/au-core/Location-verona-sands-pathology.json)
 
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/ellison-malinda`](../au-fhir-test-data-set/au-core/Practitioner-ellison-malinda.json) | [`PractitionerRole/registerednurses-ellison-malinda`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-ellison-malinda.json) | [`Organization/southport-medical-practice`](../au-fhir-test-data-set/au-core/Organization-southport-medical-practice.json) | [`Location/southport-medical-practice`](../au-fhir-test-data-set/au-core/Location-southport-medical-practice.json) |
+| [`Practitioner/emmett-wilhelmina`](../au-fhir-test-data-set/au-core/Practitioner-emmett-wilhelmina.json) | [`PractitionerRole/pathologist-emmett-wilhelmina`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-emmett-wilhelmina.json) | [`Organization/verona-sands-pathology`](../au-fhir-test-data-set/au-core/Organization-verona-sands-pathology.json) | [`Location/verona-sands-pathology`](../au-fhir-test-data-set/au-core/Location-verona-sands-pathology.json) |
+| [`Practitioner/fletcher-dani`](../au-fhir-test-data-set/au-core/Practitioner-fletcher-dani.json) | [`PractitionerRole/ambulanceofficer-fletcher-dani`](../au-fhir-test-data-set/au-core/PractitionerRole-ambulanceofficer-fletcher-dani.json) |  |  |
+| [`Practitioner/moran-vincent`](../au-fhir-test-data-set/au-core/Practitioner-moran-vincent.json) | [`PractitionerRole/generalpractitioner-moran-vincent`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-moran-vincent.json) | [`Organization/southport-medical-practice`](../au-fhir-test-data-set/au-core/Organization-southport-medical-practice.json) | [`Location/southport-medical-practice`](../au-fhir-test-data-set/au-core/Location-southport-medical-practice.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3274,6 +4003,15 @@ _Lewisham, Saltwater River, Sorell._
 **Organization** (1)
 
 - [`sorell-health-network`](../au-fhir-test-data-set/au-core/Organization-sorell-health-network.json) — *also in: [community-contributions](#community-contributions)*
+
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/coulter-lani`](../au-fhir-test-data-set/au-core/Practitioner-coulter-lani.json) | [`PractitionerRole/medicalradiation-coulter-lani`](../au-fhir-test-data-set/au-core/PractitionerRole-medicalradiation-coulter-lani.json) |  |  |
+| [`Practitioner/felmingham-emma`](../au-fhir-test-data-set/au-core/Practitioner-felmingham-emma.json) | [`PractitionerRole/cardiologist-felmingham-emma`](../au-fhir-test-data-set/au-core/PractitionerRole-cardiologist-felmingham-emma.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -3324,6 +4062,19 @@ _Blumont, Launceston, Norwood, Robigana, Rushy Lagoon._
 - [`blumont-radiology`](../au-fhir-test-data-set/au-core/Location-blumont-radiology.json)
 - [`launceston-pharmacy`](../au-fhir-test-data-set/au-core/Location-launceston-pharmacy.json)
 - [`robigana-private-hospital`](../au-fhir-test-data-set/au-core/Location-robigana-private-hospital.json)
+
+<details><summary>6 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/goldsmith-melody`](../au-fhir-test-data-set/au-core/Practitioner-goldsmith-melody.json) | [`PractitionerRole/medicaldiagnostic-goldsmith-melody`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-goldsmith-melody.json) |  |  |
+| [`Practitioner/houston-katrina`](../au-fhir-test-data-set/au-core/Practitioner-houston-katrina.json) | [`PractitionerRole/diagnostic-houston-katrina`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-houston-katrina.json) | [`Organization/blumont-radiology`](../au-fhir-test-data-set/au-core/Organization-blumont-radiology.json) | [`Location/blumont-radiology`](../au-fhir-test-data-set/au-core/Location-blumont-radiology.json) |
+| [`Practitioner/jolley-beulah`](../au-fhir-test-data-set/au-core/Practitioner-jolley-beulah.json) | [`PractitionerRole/retailpharmacist-jolley-beulah`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-jolley-beulah.json) | [`Organization/launceston-pharmacy`](../au-fhir-test-data-set/au-core/Organization-launceston-pharmacy.json) | [`Location/launceston-pharmacy`](../au-fhir-test-data-set/au-core/Location-launceston-pharmacy.json) |
+| [`Practitioner/marchant-ivy`](../au-fhir-test-data-set/au-core/Practitioner-marchant-ivy.json) | [`PractitionerRole/registerednurses-marchant-ivy`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-marchant-ivy.json) | [`Organization/robigana-private-hospital`](../au-fhir-test-data-set/au-core/Organization-robigana-private-hospital.json) | [`Location/robigana-private-hospital`](../au-fhir-test-data-set/au-core/Location-robigana-private-hospital.json) |
+| [`Practitioner/mcguire-jesse`](../au-fhir-test-data-set/au-core/Practitioner-mcguire-jesse.json) | [`PractitionerRole/surgeongeneral-mcguire-jesse`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-mcguire-jesse.json) | [`Organization/robigana-private-hospital`](../au-fhir-test-data-set/au-core/Organization-robigana-private-hospital.json) | [`Location/robigana-private-hospital`](../au-fhir-test-data-set/au-core/Location-robigana-private-hospital.json) |
+| [`Practitioner/patten-annie`](../au-fhir-test-data-set/au-core/Practitioner-patten-annie.json) | [`PractitionerRole/nursepractitioner-patten-annie`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-patten-annie.json) | [`Organization/robigana-private-hospital`](../au-fhir-test-data-set/au-core/Organization-robigana-private-hospital.json) | [`Location/robigana-private-hospital`](../au-fhir-test-data-set/au-core/Location-robigana-private-hospital.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -3465,6 +4216,49 @@ _Blackburn South, Eltham North, Launching Place, Melbourne, Ringwood East, South
 - [`eltham-north-optical`](../au-fhir-test-data-set/au-core/Location-eltham-north-optical.json)
 - [`launching-place-pharmacy`](../au-fhir-test-data-set/au-core/Location-launching-place-pharmacy.json)
 
+<details><summary>36 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/alcock-devon`](../au-fhir-test-data-set/au-core/Practitioner-alcock-devon.json) | [`PractitionerRole/alcock-devon`](../au-fhir-test-data-set/au-core/PractitionerRole-alcock-devon.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/blackwood-ella`](../au-fhir-test-data-set/au-core/Practitioner-blackwood-ella.json) | [`PractitionerRole/blackwood-ella`](../au-fhir-test-data-set/au-core/PractitionerRole-blackwood-ella.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/bond-edmundo`](../au-fhir-test-data-set/au-core/Practitioner-bond-edmundo.json) | [`PractitionerRole/bond-edmundo`](../au-fhir-test-data-set/au-core/PractitionerRole-bond-edmundo.json) | [`Organization/sunshine-pharmacy`](../au-fhir-test-data-set/au-core/Organization-sunshine-pharmacy.json) |  |
+| [`Practitioner/bowyer-norbert`](../au-fhir-test-data-set/au-core/Practitioner-bowyer-norbert.json) | [`PractitionerRole/bowyer-norbert`](../au-fhir-test-data-set/au-core/PractitionerRole-bowyer-norbert.json) | [`Organization/sunshine-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-sunshine-physiotherapy.json) |  |
+| [`Practitioner/coughlin-tonda`](../au-fhir-test-data-set/au-core/Practitioner-coughlin-tonda.json) | [`PractitionerRole/retailpharmacist-coughlin-tonda`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-coughlin-tonda.json) | [`Organization/launching-place-pharmacy`](../au-fhir-test-data-set/au-core/Organization-launching-place-pharmacy.json) | [`Location/launching-place-pharmacy`](../au-fhir-test-data-set/au-core/Location-launching-place-pharmacy.json) |
+| [`Practitioner/dempsey-carli`](../au-fhir-test-data-set/au-core/Practitioner-dempsey-carli.json) | [`PractitionerRole/dempsey-carli`](../au-fhir-test-data-set/au-core/PractitionerRole-dempsey-carli.json) | [`Organization/melbourne-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-melbourne-specialist-clinic.json) |  |
+| [`Practitioner/egan-anja`](../au-fhir-test-data-set/au-core/Practitioner-egan-anja.json) | [`PractitionerRole/egan-anja`](../au-fhir-test-data-set/au-core/PractitionerRole-egan-anja.json) | [`Organization/st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json) |  |
+| [`Practitioner/findley-betty`](../au-fhir-test-data-set/au-core/Practitioner-findley-betty.json) | [`PractitionerRole/findley-betty`](../au-fhir-test-data-set/au-core/PractitionerRole-findley-betty.json) | [`Organization/southbank-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-specialist-clinic.json) |  |
+| [`Practitioner/frankel-caroline`](../au-fhir-test-data-set/au-core/Practitioner-frankel-caroline.json) | [`PractitionerRole/frankel-caroline`](../au-fhir-test-data-set/au-core/PractitionerRole-frankel-caroline.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/fuller-kendrick`](../au-fhir-test-data-set/au-core/Practitioner-fuller-kendrick.json) | [`PractitionerRole/fuller-kendrick`](../au-fhir-test-data-set/au-core/PractitionerRole-fuller-kendrick.json) | [`Organization/sunshine-nephrology`](../au-fhir-test-data-set/au-core/Organization-sunshine-nephrology.json) |  |
+| [`Practitioner/greene-delores`](../au-fhir-test-data-set/au-core/Practitioner-greene-delores.json) | [`PractitionerRole/greene-delores`](../au-fhir-test-data-set/au-core/PractitionerRole-greene-delores.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/hallan-maggie`](../au-fhir-test-data-set/au-core/Practitioner-hallan-maggie.json) | [`PractitionerRole/hallan-maggie`](../au-fhir-test-data-set/au-core/PractitionerRole-hallan-maggie.json) | [`Organization/sunshine-radiology`](../au-fhir-test-data-set/au-core/Organization-sunshine-radiology.json) |  |
+| [`Practitioner/hamel-opal`](../au-fhir-test-data-set/au-core/Practitioner-hamel-opal.json) | [`PractitionerRole/hamel-opal`](../au-fhir-test-data-set/au-core/PractitionerRole-hamel-opal.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/hatcher-merrill`](../au-fhir-test-data-set/au-core/Practitioner-hatcher-merrill.json) | [`PractitionerRole/hatcher-merrill`](../au-fhir-test-data-set/au-core/PractitionerRole-hatcher-merrill.json) | [`Organization/southbank-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-medical-clinic.json) |  |
+| [`Practitioner/higgs-allegra`](../au-fhir-test-data-set/au-core/Practitioner-higgs-allegra.json) | [`PractitionerRole/higgs-allegra`](../au-fhir-test-data-set/au-core/PractitionerRole-higgs-allegra.json) | [`Organization/st-kilda-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-st-kilda-physiotherapy.json) |  |
+| [`Practitioner/hilton-della`](../au-fhir-test-data-set/au-core/Practitioner-hilton-della.json) | [`PractitionerRole/hilton-della`](../au-fhir-test-data-set/au-core/PractitionerRole-hilton-della.json) | [`Organization/st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json) |  |
+| [`Practitioner/joyce-mae`](../au-fhir-test-data-set/au-core/Practitioner-joyce-mae.json) | [`PractitionerRole/joyce-mae`](../au-fhir-test-data-set/au-core/PractitionerRole-joyce-mae.json) | [`Organization/st-kilda-physiology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-physiology.json) |  |
+| [`Practitioner/keith-margot`](../au-fhir-test-data-set/au-core/Practitioner-keith-margot.json) | [`PractitionerRole/keith-margot`](../au-fhir-test-data-set/au-core/PractitionerRole-keith-margot.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/kelly-arlene`](../au-fhir-test-data-set/au-core/Practitioner-kelly-arlene.json) | [`PractitionerRole/kelly-arlene`](../au-fhir-test-data-set/au-core/PractitionerRole-kelly-arlene.json) | [`Organization/sunshine-ophthalmology`](../au-fhir-test-data-set/au-core/Organization-sunshine-ophthalmology.json) |  |
+| [`Practitioner/keyes-chau`](../au-fhir-test-data-set/au-core/Practitioner-keyes-chau.json) | [`PractitionerRole/keyes-chau`](../au-fhir-test-data-set/au-core/PractitionerRole-keyes-chau.json) | [`Organization/sunshine-pathology`](../au-fhir-test-data-set/au-core/Organization-sunshine-pathology.json) |  |
+| [`Practitioner/laing-malinda`](../au-fhir-test-data-set/au-core/Practitioner-laing-malinda.json) | [`PractitionerRole/laing-malinda`](../au-fhir-test-data-set/au-core/PractitionerRole-laing-malinda.json) | [`Organization/southbank-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-southbank-specialist-clinic.json) |  |
+| [`Practitioner/mckane-eugena`](../au-fhir-test-data-set/au-core/Practitioner-mckane-eugena.json) | [`PractitionerRole/mckane-eugena`](../au-fhir-test-data-set/au-core/PractitionerRole-mckane-eugena.json) | [`Organization/st-kilda-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-st-kilda-medical-clinic.json) |  |
+| [`Practitioner/mcnaughton-opal`](../au-fhir-test-data-set/au-core/Practitioner-mcnaughton-opal.json) | [`PractitionerRole/mcnaughton-opal`](../au-fhir-test-data-set/au-core/PractitionerRole-mcnaughton-opal.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/mullin-kenny`](../au-fhir-test-data-set/au-core/Practitioner-mullin-kenny.json) | [`PractitionerRole/mullin-kenny`](../au-fhir-test-data-set/au-core/PractitionerRole-mullin-kenny.json) | [`Organization/southbank-speech-pathology`](../au-fhir-test-data-set/au-core/Organization-southbank-speech-pathology.json) |  |
+| [`Practitioner/mullins-bonita`](../au-fhir-test-data-set/au-core/Practitioner-mullins-bonita.json) | [`PractitionerRole/mullins-bonita`](../au-fhir-test-data-set/au-core/PractitionerRole-mullins-bonita.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/murray-ashli`](../au-fhir-test-data-set/au-core/Practitioner-murray-ashli.json) | [`PractitionerRole/murray-ashli`](../au-fhir-test-data-set/au-core/PractitionerRole-murray-ashli.json) | [`Organization/st-kilda-ot-services`](../au-fhir-test-data-set/au-core/Organization-st-kilda-ot-services.json) |  |
+| [`Practitioner/osland-deanne`](../au-fhir-test-data-set/au-core/Practitioner-osland-deanne.json) | [`PractitionerRole/osland-deanne`](../au-fhir-test-data-set/au-core/PractitionerRole-osland-deanne.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+| [`Practitioner/patterson-teri`](../au-fhir-test-data-set/au-core/Practitioner-patterson-teri.json) | [`PractitionerRole/patterson-teri`](../au-fhir-test-data-set/au-core/PractitionerRole-patterson-teri.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+| [`Practitioner/phillips-gerard`](../au-fhir-test-data-set/au-core/Practitioner-phillips-gerard.json) | [`PractitionerRole/phillips-gerard`](../au-fhir-test-data-set/au-core/PractitionerRole-phillips-gerard.json) | [`Organization/sunshine-endocrinology`](../au-fhir-test-data-set/au-core/Organization-sunshine-endocrinology.json) |  |
+| [`Practitioner/quinn-aisha`](../au-fhir-test-data-set/au-core/Practitioner-quinn-aisha.json) | [`PractitionerRole/dentalpractitioner-quinn-aisha`](../au-fhir-test-data-set/au-core/PractitionerRole-dentalpractitioner-quinn-aisha.json) |  |  |
+| [`Practitioner/quinn-jeramy`](../au-fhir-test-data-set/au-core/Practitioner-quinn-jeramy.json) | [`PractitionerRole/quinn-jeramy`](../au-fhir-test-data-set/au-core/PractitionerRole-quinn-jeramy.json) | [`Organization/sunshine-optical`](../au-fhir-test-data-set/au-core/Organization-sunshine-optical.json) |  |
+| [`Practitioner/rodd-illa`](../au-fhir-test-data-set/au-core/Practitioner-rodd-illa.json) | [`PractitionerRole/rodd-illa`](../au-fhir-test-data-set/au-core/PractitionerRole-rodd-illa.json) | [`Organization/melbourne-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-melbourne-specialist-clinic.json) |  |
+| [`Practitioner/schaefer-elden`](../au-fhir-test-data-set/au-core/Practitioner-schaefer-elden.json) | [`PractitionerRole/schaefer-elden`](../au-fhir-test-data-set/au-core/PractitionerRole-schaefer-elden.json) | [`Organization/sunshine-cardiology`](../au-fhir-test-data-set/au-core/Organization-sunshine-cardiology.json) |  |
+| [`Practitioner/sharp-cherish`](../au-fhir-test-data-set/au-core/Practitioner-sharp-cherish.json) | [`PractitionerRole/sharp-cherish`](../au-fhir-test-data-set/au-core/PractitionerRole-sharp-cherish.json) | [`Organization/sunshine-medical-centre`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-centre.json) |  |
+| [`Practitioner/shephard-vern`](../au-fhir-test-data-set/au-core/Practitioner-shephard-vern.json) | [`PractitionerRole/shephard-vern`](../au-fhir-test-data-set/au-core/PractitionerRole-shephard-vern.json) | [`Organization/st-kilda-psychology`](../au-fhir-test-data-set/au-core/Organization-st-kilda-psychology.json) |  |
+| [`Practitioner/vaughan-blaine`](../au-fhir-test-data-set/au-core/Practitioner-vaughan-blaine.json) | [`PractitionerRole/vaughan-blaine`](../au-fhir-test-data-set/au-core/PractitionerRole-vaughan-blaine.json) | [`Organization/sunshine-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-sunshine-medical-clinic.json) |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3523,6 +4317,17 @@ _Langkoop, Wannon._
 
 - [`wannon-private-hospital`](../au-fhir-test-data-set/au-core/Location-wannon-private-hospital.json)
 
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/chambers-greg`](../au-fhir-test-data-set/au-core/Practitioner-chambers-greg.json) | [`PractitionerRole/registerednurses-chambers-greg`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-chambers-greg.json) | [`Organization/wannon-private-hospital`](../au-fhir-test-data-set/au-core/Organization-wannon-private-hospital.json) | [`Location/wannon-private-hospital`](../au-fhir-test-data-set/au-core/Location-wannon-private-hospital.json) |
+| [`Practitioner/healy-damian`](../au-fhir-test-data-set/au-core/Practitioner-healy-damian.json) | [`PractitionerRole/nursepractitioner-healy-damian`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-healy-damian.json) | [`Organization/wannon-private-hospital`](../au-fhir-test-data-set/au-core/Organization-wannon-private-hospital.json) | [`Location/wannon-private-hospital`](../au-fhir-test-data-set/au-core/Location-wannon-private-hospital.json) |
+| [`Practitioner/lamerton-betsy`](../au-fhir-test-data-set/au-core/Practitioner-lamerton-betsy.json) | [`PractitionerRole/surgeongeneral-lamerton-betsy`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-lamerton-betsy.json) | [`Organization/wannon-private-hospital`](../au-fhir-test-data-set/au-core/Organization-wannon-private-hospital.json) | [`Location/wannon-private-hospital`](../au-fhir-test-data-set/au-core/Location-wannon-private-hospital.json) |
+| [`Practitioner/spiers-erich`](../au-fhir-test-data-set/au-core/Practitioner-spiers-erich.json) | [`PractitionerRole/midwife-spiers-erich`](../au-fhir-test-data-set/au-core/PractitionerRole-midwife-spiers-erich.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3563,6 +4368,17 @@ _Maddingley, Mount Doran, Rowsley._
 
 - [`rowsley-aged-care`](../au-fhir-test-data-set/au-core/Location-rowsley-aged-care.json)
 
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/corbett-clementine`](../au-fhir-test-data-set/au-core/Practitioner-corbett-clementine.json) | [`PractitionerRole/paediatrician-corbett-clementine`](../au-fhir-test-data-set/au-core/PractitionerRole-paediatrician-corbett-clementine.json) |  |  |
+| [`Practitioner/goodwin-aida`](../au-fhir-test-data-set/au-core/Practitioner-goodwin-aida.json) | [`PractitionerRole/registerednurses-goodwin-aida`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-goodwin-aida.json) | [`Organization/rowsley-aged-care`](../au-fhir-test-data-set/au-core/Organization-rowsley-aged-care.json) | [`Location/rowsley-aged-care`](../au-fhir-test-data-set/au-core/Location-rowsley-aged-care.json) |
+| [`Practitioner/ross-moses`](../au-fhir-test-data-set/au-core/Practitioner-ross-moses.json) | [`PractitionerRole/registerednurses-ross-moses`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-ross-moses.json) | [`Organization/rowsley-aged-care`](../au-fhir-test-data-set/au-core/Organization-rowsley-aged-care.json) | [`Location/rowsley-aged-care`](../au-fhir-test-data-set/au-core/Location-rowsley-aged-care.json) |
+| [`Practitioner/thorpe-mia`](../au-fhir-test-data-set/au-core/Practitioner-thorpe-mia.json) | [`PractitionerRole/nursepractitioner-thorpe-mia`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-thorpe-mia.json) | [`Organization/rowsley-aged-care`](../au-fhir-test-data-set/au-core/Organization-rowsley-aged-care.json) | [`Location/rowsley-aged-care`](../au-fhir-test-data-set/au-core/Location-rowsley-aged-care.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3592,6 +4408,14 @@ _Mount Glasgow._
 **Location** (1)
 
 - [`mount-glasgow-emergency`](../au-fhir-test-data-set/au-core/Location-mount-glasgow-emergency.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/hickson-ngoc`](../au-fhir-test-data-set/au-core/Practitioner-hickson-ngoc.json) | [`PractitionerRole/emergencymedicine-hickson-ngoc`](../au-fhir-test-data-set/au-core/PractitionerRole-emergencymedicine-hickson-ngoc.json) | [`Organization/mount-glasgow-emergency`](../au-fhir-test-data-set/au-core/Organization-mount-glasgow-emergency.json) | [`Location/mount-glasgow-emergency`](../au-fhir-test-data-set/au-core/Location-mount-glasgow-emergency.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -3629,6 +4453,16 @@ _Douglas, Mckenzie Creek._
 
 - [`douglas-radiology`](../au-fhir-test-data-set/au-core/Location-douglas-radiology.json)
 - [`mckenzie-creek-radiology`](../au-fhir-test-data-set/au-core/Location-mckenzie-creek-radiology.json)
+
+<details><summary>3 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/burdett-palmer`](../au-fhir-test-data-set/au-core/Practitioner-burdett-palmer.json) | [`PractitionerRole/diagnostic-burdett-palmer`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-burdett-palmer.json) | [`Organization/douglas-radiology`](../au-fhir-test-data-set/au-core/Organization-douglas-radiology.json) | [`Location/douglas-radiology`](../au-fhir-test-data-set/au-core/Location-douglas-radiology.json) |
+| [`Practitioner/mccarthy-kate`](../au-fhir-test-data-set/au-core/Practitioner-mccarthy-kate.json) | [`PractitionerRole/diagnostic-mccarthy-kate`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-mccarthy-kate.json) | [`Organization/mckenzie-creek-radiology`](../au-fhir-test-data-set/au-core/Organization-mckenzie-creek-radiology.json) | [`Location/mckenzie-creek-radiology`](../au-fhir-test-data-set/au-core/Location-mckenzie-creek-radiology.json) |
+| [`Practitioner/short-miranda`](../au-fhir-test-data-set/au-core/Practitioner-short-miranda.json) | [`PractitionerRole/medicaldiagnostic-short-miranda`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-short-miranda.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -3670,6 +4504,16 @@ _Joyces Creek, Mitchells Hill, Trentham._
 - [`mitchells-hill-audiology`](../au-fhir-test-data-set/au-core/Location-mitchells-hill-audiology.json)
 - [`trentham-pathology`](../au-fhir-test-data-set/au-core/Location-trentham-pathology.json)
 
+<details><summary>3 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gidley-dee`](../au-fhir-test-data-set/au-core/Practitioner-gidley-dee.json) | [`PractitionerRole/registerednurses-gidley-dee`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-gidley-dee.json) | [`Organization/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-joyces-creek-medical-clinic.json) | [`Location/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Location-joyces-creek-medical-clinic.json) |
+| [`Practitioner/hart-clifton`](../au-fhir-test-data-set/au-core/Practitioner-hart-clifton.json) | [`PractitionerRole/pathologist-hart-clifton`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-hart-clifton.json) | [`Organization/trentham-pathology`](../au-fhir-test-data-set/au-core/Organization-trentham-pathology.json) | [`Location/trentham-pathology`](../au-fhir-test-data-set/au-core/Location-trentham-pathology.json) |
+| [`Practitioner/lumb-mary`](../au-fhir-test-data-set/au-core/Practitioner-lumb-mary.json) | [`PractitionerRole/generalpractitioner-lumb-mary`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lumb-mary.json) | [`Organization/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-joyces-creek-medical-clinic.json) | [`Location/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Location-joyces-creek-medical-clinic.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3709,6 +4553,17 @@ _Areegra, Joyces Creek, Mitchells Hill, Swanwater West._
 - [`joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Location-joyces-creek-medical-clinic.json)
 - [`mitchells-hill-audiology`](../au-fhir-test-data-set/au-core/Location-mitchells-hill-audiology.json)
 
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/baldwin-chi`](../au-fhir-test-data-set/au-core/Practitioner-baldwin-chi.json) | [`PractitionerRole/diagnostic-baldwin-chi`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-baldwin-chi.json) |  |  |
+| [`Practitioner/gidley-dee`](../au-fhir-test-data-set/au-core/Practitioner-gidley-dee.json) | [`PractitionerRole/registerednurses-gidley-dee`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-gidley-dee.json) | [`Organization/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-joyces-creek-medical-clinic.json) | [`Location/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Location-joyces-creek-medical-clinic.json) |
+| [`Practitioner/lumb-mary`](../au-fhir-test-data-set/au-core/Practitioner-lumb-mary.json) | [`PractitionerRole/generalpractitioner-lumb-mary`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-lumb-mary.json) | [`Organization/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-joyces-creek-medical-clinic.json) | [`Location/joyces-creek-medical-clinic`](../au-fhir-test-data-set/au-core/Location-joyces-creek-medical-clinic.json) |
+| [`Practitioner/sheehan-ginger`](../au-fhir-test-data-set/au-core/Practitioner-sheehan-ginger.json) | [`PractitionerRole/complementaryhealth-sheehan-ginger`](../au-fhir-test-data-set/au-core/PractitionerRole-complementaryhealth-sheehan-ginger.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3738,6 +4593,14 @@ _Bridgewater On Loddon._
 **Location** (1)
 
 - [`bridgewater-pathology`](../au-fhir-test-data-set/au-core/Location-bridgewater-pathology.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/hollands-beryl`](../au-fhir-test-data-set/au-core/Practitioner-hollands-beryl.json) | [`PractitionerRole/pathologist-hollands-beryl`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-hollands-beryl.json) | [`Organization/bridgewater-pathology`](../au-fhir-test-data-set/au-core/Organization-bridgewater-pathology.json) | [`Location/bridgewater-pathology`](../au-fhir-test-data-set/au-core/Location-bridgewater-pathology.json) |
+
+</details>
 
 </details>
 </blockquote>
@@ -3798,6 +4661,20 @@ _Appin South, Milnes Bridge, Murrabit, Piavella, Pine View._
 - [`mackay-heather-2`](../au-fhir-test-data-set/au-core/RelatedPerson-mackay-heather-2.json)
 - [`mackay-heather-3`](../au-fhir-test-data-set/au-core/RelatedPerson-mackay-heather-3.json)
 
+<details><summary>7 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/hilton-jaclyn`](../au-fhir-test-data-set/au-core/Practitioner-hilton-jaclyn.json) | [`PractitionerRole/nursepractitioner-hilton-jaclyn`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-hilton-jaclyn.json) | [`Organization/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Organization-murrabit-public-hospital.json) | [`Location/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Location-murrabit-public-hospital.json) |
+| [`Practitioner/howell-natalia`](../au-fhir-test-data-set/au-core/Practitioner-howell-natalia.json) | [`PractitionerRole/retailpharmacist-howell-natalia`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-howell-natalia.json) | [`Organization/pine-view-pharmacy`](../au-fhir-test-data-set/au-core/Organization-pine-view-pharmacy.json) | [`Location/pine-view-pharmacy`](../au-fhir-test-data-set/au-core/Location-pine-view-pharmacy.json) |
+| [`Practitioner/leech-darnell`](../au-fhir-test-data-set/au-core/Practitioner-leech-darnell.json) | [`PractitionerRole/registerednurses-leech-darnell`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-leech-darnell.json) | [`Organization/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Organization-murrabit-public-hospital.json) | [`Location/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Location-murrabit-public-hospital.json) |
+| [`Practitioner/moss-jaime`](../au-fhir-test-data-set/au-core/Practitioner-moss-jaime.json) | [`PractitionerRole/generalpractitioner-moss-jaime`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-moss-jaime.json) | [`Organization/milnes-bridge-medical-centre`](../au-fhir-test-data-set/au-core/Organization-milnes-bridge-medical-centre.json) | [`Location/milnes-bridge-medical-centre`](../au-fhir-test-data-set/au-core/Location-milnes-bridge-medical-centre.json) |
+| [`Practitioner/roche-louis`](../au-fhir-test-data-set/au-core/Practitioner-roche-louis.json) | [`PractitionerRole/gastroenterologist-roche-louis`](../au-fhir-test-data-set/au-core/PractitionerRole-gastroenterologist-roche-louis.json) |  |  |
+| [`Practitioner/shea-ingrid`](../au-fhir-test-data-set/au-core/Practitioner-shea-ingrid.json) | [`PractitionerRole/registerednurses-shea-ingrid`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-shea-ingrid.json) | [`Organization/milnes-bridge-medical-centre`](../au-fhir-test-data-set/au-core/Organization-milnes-bridge-medical-centre.json) | [`Location/milnes-bridge-medical-centre`](../au-fhir-test-data-set/au-core/Location-milnes-bridge-medical-centre.json) |
+| [`Practitioner/sutherland-sallie`](../au-fhir-test-data-set/au-core/Practitioner-sutherland-sallie.json) | [`PractitionerRole/cardiologist-sutherland-sallie`](../au-fhir-test-data-set/au-core/PractitionerRole-cardiologist-sutherland-sallie.json) | [`Organization/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Organization-murrabit-public-hospital.json) | [`Location/murrabit-public-hospital`](../au-fhir-test-data-set/au-core/Location-murrabit-public-hospital.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3841,6 +4718,14 @@ _Bassendean, Henderson, South Lake._
 **Organization** (1)
 
 - [`south-lake-care-and-support`](../au-fhir-test-data-set/au-core/Organization-south-lake-care-and-support.json) — *also in: [community-contributions](#community-contributions)*
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/mcnaughton-chante`](../au-fhir-test-data-set/au-core/Practitioner-mcnaughton-chante.json) | [`PractitionerRole/clinicalpsychologist-mcnaughton-chante`](../au-fhir-test-data-set/au-core/PractitionerRole-clinicalpsychologist-mcnaughton-chante.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -3893,6 +4778,16 @@ _Bunbury, Wellington Forest._
 - [`ballantyne-sandy`](../au-fhir-test-data-set/au-core/RelatedPerson-ballantyne-sandy.json)
 - [`ballantyne-terry`](../au-fhir-test-data-set/au-core/RelatedPerson-ballantyne-terry.json)
 
+<details><summary>3 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/dent-aldo`](../au-fhir-test-data-set/au-core/Practitioner-dent-aldo.json) | [`PractitionerRole/registerednurses-dent-aldo`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-dent-aldo.json) | [`Organization/bunbury-public-hospital`](../au-fhir-test-data-set/au-core/Organization-bunbury-public-hospital.json) | [`Location/bunbury-public-hospital`](../au-fhir-test-data-set/au-core/Location-bunbury-public-hospital.json) |
+| [`Practitioner/osmond-deadra`](../au-fhir-test-data-set/au-core/Practitioner-osmond-deadra.json) | [`PractitionerRole/nursepractitioner-osmond-deadra`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-osmond-deadra.json) | [`Organization/bunbury-public-hospital`](../au-fhir-test-data-set/au-core/Organization-bunbury-public-hospital.json) | [`Location/bunbury-public-hospital`](../au-fhir-test-data-set/au-core/Location-bunbury-public-hospital.json) |
+| [`Practitioner/potter-lamar`](../au-fhir-test-data-set/au-core/Practitioner-potter-lamar.json) | [`PractitionerRole/surgeongeneral-potter-lamar`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-potter-lamar.json) | [`Organization/bunbury-public-hospital`](../au-fhir-test-data-set/au-core/Organization-bunbury-public-hospital.json) | [`Location/bunbury-public-hospital`](../au-fhir-test-data-set/au-core/Location-bunbury-public-hospital.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3932,6 +4827,17 @@ _Balbarrup, Quinninup._
 - [`balbarrup-practice`](../au-fhir-test-data-set/au-core/Location-balbarrup-practice.json)
 - [`quinninup-medical-clinic`](../au-fhir-test-data-set/au-core/Location-quinninup-medical-clinic.json)
 
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/clare-evonne`](../au-fhir-test-data-set/au-core/Practitioner-clare-evonne.json) | [`PractitionerRole/registerednurses-clare-evonne`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-clare-evonne.json) | [`Organization/quinninup-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-quinninup-medical-clinic.json) | [`Location/quinninup-medical-clinic`](../au-fhir-test-data-set/au-core/Location-quinninup-medical-clinic.json) |
+| [`Practitioner/darcy-stella`](../au-fhir-test-data-set/au-core/Practitioner-darcy-stella.json) | [`PractitionerRole/aboriginal-darcy-stella`](../au-fhir-test-data-set/au-core/PractitionerRole-aboriginal-darcy-stella.json) | [`Organization/balbarrup-practice`](../au-fhir-test-data-set/au-core/Organization-balbarrup-practice.json) | [`Location/balbarrup-practice`](../au-fhir-test-data-set/au-core/Location-balbarrup-practice.json) |
+| [`Practitioner/jones-blanch`](../au-fhir-test-data-set/au-core/Practitioner-jones-blanch.json) | [`PractitionerRole/generalpractitioner-jones-blanch`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-jones-blanch.json) | [`Organization/quinninup-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-quinninup-medical-clinic.json) | [`Location/quinninup-medical-clinic`](../au-fhir-test-data-set/au-core/Location-quinninup-medical-clinic.json) |
+| [`Practitioner/power-linda`](../au-fhir-test-data-set/au-core/Practitioner-power-linda.json) | [`PractitionerRole/registerednurses-power-linda`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-power-linda.json) | [`Organization/balbarrup-practice`](../au-fhir-test-data-set/au-core/Organization-balbarrup-practice.json) | [`Location/balbarrup-practice`](../au-fhir-test-data-set/au-core/Location-balbarrup-practice.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3966,6 +4872,14 @@ _Broomehill, Bulyee, Piesseville._
 
 - [`piesseville-gastroenterology`](../au-fhir-test-data-set/au-core/Location-piesseville-gastroenterology.json)
 
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/coulter-rosalina`](../au-fhir-test-data-set/au-core/Practitioner-coulter-rosalina.json) | [`PractitionerRole/optometrist-coulter-rosalina`](../au-fhir-test-data-set/au-core/PractitionerRole-optometrist-coulter-rosalina.json) |  |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -3991,6 +4905,14 @@ _Bruce Rock, Menzies, Moorine Rock._
 **Organization** (1)
 
 - [`menzies-health-network`](../au-fhir-test-data-set/au-core/Organization-menzies-health-network.json) — *also in: [community-contributions](#community-contributions)*
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/oritz-abbie`](../au-fhir-test-data-set/au-core/Practitioner-oritz-abbie.json) | [`PractitionerRole/medicaldiagnostic-oritz-abbie`](../au-fhir-test-data-set/au-core/PractitionerRole-medicaldiagnostic-oritz-abbie.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -4029,6 +4951,15 @@ _Lake Wells, Menzies, Moorine Rock._
 
 - [`lake-wells-medical-practice`](../au-fhir-test-data-set/au-core/Location-lake-wells-medical-practice.json)
 
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/harding-diana`](../au-fhir-test-data-set/au-core/Practitioner-harding-diana.json) | [`PractitionerRole/generalpractitioner-harding-diana`](../au-fhir-test-data-set/au-core/PractitionerRole-generalpractitioner-harding-diana.json) | [`Organization/lake-wells-medical-practice`](../au-fhir-test-data-set/au-core/Organization-lake-wells-medical-practice.json) | [`Location/lake-wells-medical-practice`](../au-fhir-test-data-set/au-core/Location-lake-wells-medical-practice.json) |
+| [`Practitioner/lumb-lovie`](../au-fhir-test-data-set/au-core/Practitioner-lumb-lovie.json) | [`PractitionerRole/registerednurses-lumb-lovie`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-lumb-lovie.json) | [`Organization/lake-wells-medical-practice`](../au-fhir-test-data-set/au-core/Organization-lake-wells-medical-practice.json) | [`Location/lake-wells-medical-practice`](../au-fhir-test-data-set/au-core/Location-lake-wells-medical-practice.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -4060,6 +4991,15 @@ _Bunjil, Koolanooka._
 **Location** (1)
 
 - [`koolanooka-radiology`](../au-fhir-test-data-set/au-core/Location-koolanooka-radiology.json)
+
+<details><summary>2 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/gidley-aubrey`](../au-fhir-test-data-set/au-core/Practitioner-gidley-aubrey.json) | [`PractitionerRole/diagnostic-gidley-aubrey`](../au-fhir-test-data-set/au-core/PractitionerRole-diagnostic-gidley-aubrey.json) | [`Organization/koolanooka-radiology`](../au-fhir-test-data-set/au-core/Organization-koolanooka-radiology.json) | [`Location/koolanooka-radiology`](../au-fhir-test-data-set/au-core/Location-koolanooka-radiology.json) |
+| [`Practitioner/hickman-sally`](../au-fhir-test-data-set/au-core/Practitioner-hickman-sally.json) | [`PractitionerRole/specialistphysicians-hickman-sally`](../au-fhir-test-data-set/au-core/PractitionerRole-specialistphysicians-hickman-sally.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -4096,6 +5036,17 @@ _Morgantown, Wooramel._
 **Location** (1)
 
 - [`morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Location-morgantown-private-hospital.json)
+
+<details><summary>4 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/brooksby-caterina`](../au-fhir-test-data-set/au-core/Practitioner-brooksby-caterina.json) | [`PractitionerRole/surgeongeneral-brooksby-caterina`](../au-fhir-test-data-set/au-core/PractitionerRole-surgeongeneral-brooksby-caterina.json) | [`Organization/morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Organization-morgantown-private-hospital.json) | [`Location/morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Location-morgantown-private-hospital.json) |
+| [`Practitioner/cooke-arthur`](../au-fhir-test-data-set/au-core/Practitioner-cooke-arthur.json) | [`PractitionerRole/registerednurses-cooke-arthur`](../au-fhir-test-data-set/au-core/PractitionerRole-registerednurses-cooke-arthur.json) | [`Organization/morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Organization-morgantown-private-hospital.json) | [`Location/morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Location-morgantown-private-hospital.json) |
+| [`Practitioner/gaynor-phil`](../au-fhir-test-data-set/au-core/Practitioner-gaynor-phil.json) | [`PractitionerRole/nursepractitioner-gaynor-phil`](../au-fhir-test-data-set/au-core/PractitionerRole-nursepractitioner-gaynor-phil.json) | [`Organization/morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Organization-morgantown-private-hospital.json) | [`Location/morgantown-private-hospital`](../au-fhir-test-data-set/au-core/Location-morgantown-private-hospital.json) |
+| [`Practitioner/miller-kittie`](../au-fhir-test-data-set/au-core/Practitioner-miller-kittie.json) | [`PractitionerRole/gastroenterologist-miller-kittie`](../au-fhir-test-data-set/au-core/PractitionerRole-gastroenterologist-miller-kittie.json) |  |  |
+
+</details>
 
 </details>
 </blockquote>
@@ -4176,6 +5127,33 @@ _Broome._
 | [`broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) | *[scenario-groups](#scenario-groups)* |
 | [`broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) | *[scenario-groups](#scenario-groups)* |
 
+<details><summary>20 relationships — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/allardice-della`](../au-fhir-test-data-set/au-core/Practitioner-allardice-della.json) | [`PractitionerRole/allardice-della`](../au-fhir-test-data-set/au-core/PractitionerRole-allardice-della.json) | [`Organization/broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) |  |
+| [`Practitioner/baratz-layla`](../au-fhir-test-data-set/au-core/Practitioner-baratz-layla.json) | [`PractitionerRole/baratz-layla`](../au-fhir-test-data-set/au-core/PractitionerRole-baratz-layla.json) | [`Organization/broome-physiotherapy`](../au-fhir-test-data-set/au-core/Organization-broome-physiotherapy.json) |  |
+| [`Practitioner/bassett-elmer`](../au-fhir-test-data-set/au-core/Practitioner-bassett-elmer.json) | [`PractitionerRole/bassett-elmer`](../au-fhir-test-data-set/au-core/PractitionerRole-bassett-elmer.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/butler-cheryl`](../au-fhir-test-data-set/au-core/Practitioner-butler-cheryl.json) | [`PractitionerRole/butler-cheryl`](../au-fhir-test-data-set/au-core/PractitionerRole-butler-cheryl.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/clapham-laurie`](../au-fhir-test-data-set/au-core/Practitioner-clapham-laurie.json) | [`PractitionerRole/clapham-laurie`](../au-fhir-test-data-set/au-core/PractitionerRole-clapham-laurie.json) | [`Organization/broome-physiology`](../au-fhir-test-data-set/au-core/Organization-broome-physiology.json) |  |
+| [`Practitioner/davies-keiko`](../au-fhir-test-data-set/au-core/Practitioner-davies-keiko.json) | [`PractitionerRole/davies-keiko`](../au-fhir-test-data-set/au-core/PractitionerRole-davies-keiko.json) | [`Organization/broome-nutrition`](../au-fhir-test-data-set/au-core/Organization-broome-nutrition.json) |  |
+| [`Practitioner/devine-frank`](../au-fhir-test-data-set/au-core/Practitioner-devine-frank.json) | [`PractitionerRole/devine-frank`](../au-fhir-test-data-set/au-core/PractitionerRole-devine-frank.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/gates-anton`](../au-fhir-test-data-set/au-core/Practitioner-gates-anton.json) | [`PractitionerRole/gates-anton`](../au-fhir-test-data-set/au-core/PractitionerRole-gates-anton.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/giles-veronique`](../au-fhir-test-data-set/au-core/Practitioner-giles-veronique.json) | [`PractitionerRole/giles-veronique`](../au-fhir-test-data-set/au-core/PractitionerRole-giles-veronique.json) | [`Organization/broome-optometry`](../au-fhir-test-data-set/au-core/Organization-broome-optometry.json) |  |
+| [`Practitioner/goldsmith-monique`](../au-fhir-test-data-set/au-core/Practitioner-goldsmith-monique.json) | [`PractitionerRole/goldsmith-monique`](../au-fhir-test-data-set/au-core/PractitionerRole-goldsmith-monique.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/hackett-norman`](../au-fhir-test-data-set/au-core/Practitioner-hackett-norman.json) | [`PractitionerRole/hackett-norman`](../au-fhir-test-data-set/au-core/PractitionerRole-hackett-norman.json) | [`Organization/broome-medical-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-medical-clinic.json) |  |
+| [`Practitioner/hodges-julia`](../au-fhir-test-data-set/au-core/Practitioner-hodges-julia.json) | [`PractitionerRole/hodges-julia`](../au-fhir-test-data-set/au-core/PractitionerRole-hodges-julia.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/horn-wes`](../au-fhir-test-data-set/au-core/Practitioner-horn-wes.json) | [`PractitionerRole/horn-wes`](../au-fhir-test-data-set/au-core/PractitionerRole-horn-wes.json) | [`Organization/broome-podiatry`](../au-fhir-test-data-set/au-core/Organization-broome-podiatry.json) |  |
+| [`Practitioner/ibbotson-destiny`](../au-fhir-test-data-set/au-core/Practitioner-ibbotson-destiny.json) | [`PractitionerRole/ibbotson-destiny`](../au-fhir-test-data-set/au-core/PractitionerRole-ibbotson-destiny.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/lowry-bennett`](../au-fhir-test-data-set/au-core/Practitioner-lowry-bennett.json) | [`PractitionerRole/lowry-bennett`](../au-fhir-test-data-set/au-core/PractitionerRole-lowry-bennett.json) | [`Organization/broome-ot-services`](../au-fhir-test-data-set/au-core/Organization-broome-ot-services.json) |  |
+| [`Practitioner/moran-linoel`](../au-fhir-test-data-set/au-core/Practitioner-moran-linoel.json) | [`PractitionerRole/moran-linoel`](../au-fhir-test-data-set/au-core/PractitionerRole-moran-linoel.json) | [`Organization/broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) |  |
+| [`Practitioner/patrick-thalia`](../au-fhir-test-data-set/au-core/Practitioner-patrick-thalia.json) | [`PractitionerRole/patrick-thalia`](../au-fhir-test-data-set/au-core/PractitionerRole-patrick-thalia.json) | [`Organization/broome-psychology`](../au-fhir-test-data-set/au-core/Organization-broome-psychology.json) |  |
+| [`Practitioner/poulson-lisa`](../au-fhir-test-data-set/au-core/Practitioner-poulson-lisa.json) | [`PractitionerRole/poulson-lisa`](../au-fhir-test-data-set/au-core/PractitionerRole-poulson-lisa.json) | [`Organization/broome-community-health`](../au-fhir-test-data-set/au-core/Organization-broome-community-health.json) |  |
+| [`Practitioner/simmons-ashton`](../au-fhir-test-data-set/au-core/Practitioner-simmons-ashton.json) | [`PractitionerRole/simmons-ashton`](../au-fhir-test-data-set/au-core/PractitionerRole-simmons-ashton.json) | [`Organization/broome-specialist-clinic`](../au-fhir-test-data-set/au-core/Organization-broome-specialist-clinic.json) |  |
+| [`Practitioner/thorburn-juanita`](../au-fhir-test-data-set/au-core/Practitioner-thorburn-juanita.json) | [`PractitionerRole/thorburn-juanita`](../au-fhir-test-data-set/au-core/PractitionerRole-thorburn-juanita.json) | [`Organization/broome-community-health`](../au-fhir-test-data-set/au-core/Organization-broome-community-health.json) |  |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -4206,6 +5184,14 @@ _Kununurra._
 
 - [`kununurra-pathology`](../au-fhir-test-data-set/au-core/Location-kununurra-pathology.json)
 
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/khouri-stewart`](../au-fhir-test-data-set/au-core/Practitioner-khouri-stewart.json) | [`PractitionerRole/pathologist-khouri-stewart`](../au-fhir-test-data-set/au-core/PractitionerRole-pathologist-khouri-stewart.json) | [`Organization/kununurra-pathology`](../au-fhir-test-data-set/au-core/Organization-kununurra-pathology.json) | [`Location/kununurra-pathology`](../au-fhir-test-data-set/au-core/Location-kununurra-pathology.json) |
+
+</details>
+
 </details>
 </blockquote>
 
@@ -4235,6 +5221,14 @@ _Mcbeath._
 **Location** (1)
 
 - [`mcbeath-pharmacy`](../au-fhir-test-data-set/au-core/Location-mcbeath-pharmacy.json)
+
+<details><summary>1 relationship — Practitioner / PractitionerRole / Organization / Location</summary>
+
+| Practitioner | PractitionerRole | Organization | Location |
+| --- | --- | --- | --- |
+| [`Practitioner/mclennan-miguel`](../au-fhir-test-data-set/au-core/Practitioner-mclennan-miguel.json) | [`PractitionerRole/retailpharmacist-mclennan-miguel`](../au-fhir-test-data-set/au-core/PractitionerRole-retailpharmacist-mclennan-miguel.json) | [`Organization/mcbeath-pharmacy`](../au-fhir-test-data-set/au-core/Organization-mcbeath-pharmacy.json) | [`Location/mcbeath-pharmacy`](../au-fhir-test-data-set/au-core/Location-mcbeath-pharmacy.json) |
+
+</details>
 
 </details>
 </blockquote>

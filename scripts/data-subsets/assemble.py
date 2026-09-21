@@ -106,6 +106,13 @@ import lib
 OUTPUT_PATH = lib.REPO_ROOT / "docs" / "DataSubsets.md"
 ENTITY_LIST_THRESHOLD = 20
 
+
+def _href(path: str) -> str:
+    """A repo-root-relative path, as a link relative to OUTPUT_PATH's own
+    directory (docs/) — the path stored on a member is repo-root-relative,
+    but the link is embedded one directory down."""
+    return os.path.relpath(lib.REPO_ROOT / path, OUTPUT_PATH.parent)
+
 # Canonical publication order — matches the delta spec's requirement order
 # (R1-R14), not the order subsets happen to appear in subsets.yaml.
 SUBSET_ORDER = [
@@ -124,7 +131,8 @@ RESOURCE_TYPE_ORDER = [
 
 
 PLURALS = {"entity": "entities", "grouping": "groupings",
-           "candidate": "candidates", "journey": "journeys"}
+           "candidate": "candidates", "journey": "journeys",
+           "relationship": "relationships"}
 
 
 def plural(n: int, word: str) -> str:
@@ -453,7 +461,7 @@ def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
 # --- Rendering ----------------------------------------------------------
 
 def render_entity_list(members: list[dict], group_field: str | None,
-                       res_index: dict, current_slug: str,
+                       res_index: dict, current_slug: str, index: dict,
                        group_labels: dict | None = None,
                        subgroup_field: str | None = None,
                        group_notes: dict | None = None,
@@ -495,11 +503,8 @@ def render_entity_list(members: list[dict], group_field: str | None,
                 # The id links straight to the file it resolved to, rather
                 # than also printing the path inline — the path is still
                 # discoverable (link hover / status bar), it just no longer
-                # clutters the list. Relative to OUTPUT_PATH's directory,
-                # not REPO_ROOT, since the path in `m` is repo-root-relative
-                # but the link is embedded one directory down in docs/.
-                href = os.path.relpath(lib.REPO_ROOT / m["path"], OUTPUT_PATH.parent)
-                id_cell = f"[`{m['id']}`]({href})"
+                # clutters the list.
+                id_cell = f"[`{m['id']}`]({_href(m['path'])})"
             else:
                 id_cell = f"`{m['id']}`"
             # Where the journey states a role the data's PractitionerRole
@@ -560,6 +565,59 @@ def render_entity_list(members: list[dict], group_field: str | None,
             rows.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
         return "\n".join(rows) + "\n"
 
+    def render_practitioner_relationships(entries: list[dict]) -> str | None:
+        """One row per (Practitioner, PractitionerRole) pair reachable from
+        this unit's own Practitioner members, resolved against the WHOLE
+        data set — not gated on whether the PractitionerRole, Organization
+        or Location are themselves members of this subset or unit. Most
+        subsets track Practitioner without separately tracking
+        PractitionerRole, so there would be nothing to show if this only
+        looked at existing members.
+        """
+        def cell(ref: str | None) -> str:
+            if not ref:
+                return ""
+            entry = index["resources"].get(ref)
+            return f"[`{ref}`]({_href(entry['path'])})" if entry else f"`{ref}`"
+
+        rows = []
+        for m in entries:
+            if m.get("resource_type") != "Practitioner":
+                continue
+            prac_key = f"Practitioner/{m['id']}"
+            role_keys = sorted(
+                k for k in index["referenced_by"].get(prac_key, set())
+                if k.startswith("PractitionerRole/")
+            )
+            for role_key in role_keys:
+                role = index["resources"].get(role_key, {}).get("resource") or {}
+                org_ref = (role.get("organization") or {}).get("reference")
+                loc_refs = [l.get("reference") for l in role.get("location") or []
+                           if l.get("reference")]
+                rows.append((prac_key, role_key, org_ref, loc_refs))
+        if not rows:
+            return None
+
+        rows.sort(key=lambda r: (r[0], r[1]))
+        # Leading "" so the join below inserts a blank line after </summary>
+        # — GitHub only parses Markdown inside an HTML block (<details>) when
+        # it's preceded by a blank line; without it this renders as literal
+        # pipe text, not a table.
+        table = ["", "| Practitioner | PractitionerRole | Organization | Location |",
+                "| --- | --- | --- | --- |"]
+        for prac_key, role_key, org_ref, loc_refs in rows:
+            loc_cell = ", ".join(cell(r) for r in loc_refs)
+            table.append(
+                f"| {cell(prac_key)} | {cell(role_key)} | {cell(org_ref)} | "
+                f"{loc_cell} |"
+            )
+        return (
+            f"\n<details><summary>{plural(len(rows), 'relationship')} — "
+            f"Practitioner / PractitionerRole / Organization / "
+            f"Location</summary>\n"
+            + "\n".join(table) + "\n\n</details>\n"
+        )
+
     def render_body(entries: list[dict]) -> tuple[str, str]:
         """Returns (body, count_phrase) for one outer group.
 
@@ -568,7 +626,11 @@ def render_entity_list(members: list[dict], group_field: str | None,
         the same entity can legitimately sit in two adjacent groupings.
         """
         if not subgroup_field:
-            return render_flat(entries), plural(len(entries), "entity")
+            body = render_flat(entries)
+            rel = render_practitioner_relationships(entries)
+            if rel:
+                body += rel
+            return body, plural(len(entries), "entity")
 
 
         by_sub: dict[str, list[dict]] = defaultdict(list)
@@ -592,7 +654,11 @@ def render_entity_list(members: list[dict], group_field: str | None,
             note = (group_notes or {}).get(sub_value)
             if note:
                 out.append(f"\n{note}\n")
-            out.append(f"\n{render_flat(sub_entries)}\n</details>\n</blockquote>\n")
+            sub_body = render_flat(sub_entries)
+            rel = render_practitioner_relationships(sub_entries)
+            if rel:
+                sub_body += rel
+            out.append(f"\n{sub_body}\n</details>\n</blockquote>\n")
         distinct = len({f"{m.get('resource_type')}/{m.get('id')}"
                         for m in entries})
         n = len(by_sub)
@@ -621,6 +687,9 @@ def render_entity_list(members: list[dict], group_field: str | None,
         return "\n".join(lines)
 
     body = render_flat(members)
+    rel = render_practitioner_relationships(members)
+    if rel:
+        body += rel
     if len(members) > ENTITY_LIST_THRESHOLD:
         return (f"<details><summary>{plural(len(members), 'entity')}"
                 f" — click to expand"
@@ -684,7 +753,7 @@ def revision_url(slug: str, revision: str) -> str | None:
 
 
 def render_subset(subset: dict, members: list[dict], notes: list[str],
-                  candidate: dict | None, res_index: dict) -> str:
+                  candidate: dict | None, res_index: dict, index: dict) -> str:
     """Render one subset section.
 
     Five headings, in a fixed order, then Members. Purpose and governance lead
@@ -794,7 +863,7 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     lines.append("")
     lines.append(f"### Members ({distinct})\n")
     lines.append(render_entity_list(members, group_field, res_index, slug,
-                                    group_labels, subgroup_field,
+                                    index, group_labels, subgroup_field,
                                     group_notes,
                                     SUBGROUP_NOUN.get(slug, "grouping")))
 
@@ -1216,7 +1285,7 @@ def main():
     for slug in SUBSET_ORDER:
         parts.append(render_subset(
             subsets_by_slug[slug], resolved[slug], notes_by_slug[slug],
-            candidates.get(slug), res_index,
+            candidates.get(slug), res_index, index,
         ))
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
