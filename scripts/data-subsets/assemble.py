@@ -113,6 +113,25 @@ def _href(path: str) -> str:
     but the link is embedded one directory down."""
     return os.path.relpath(lib.REPO_ROOT / path, OUTPUT_PATH.parent)
 
+
+def _resolve_cell(ref: str | None, index: dict) -> str:
+    """A "Type/id" reference as a table cell: linked to its file if it
+    resolves in the data set (dataset-wide, not gated on subset/group
+    membership), plain backtick text if it doesn't (dangling, or the
+    reference is simply absent), empty if there's no reference at all.
+
+    Displays the bare id, not "Type/id" — every other entity listing in
+    this document shows the bare id (the column/group heading already
+    establishes the type), and the drift check's row parser
+    (parse_previous_page) assumes exactly that convention when
+    reconstructing a subset's previous membership from the rendered page.
+    """
+    if not ref:
+        return ""
+    rid = ref.split("/", 1)[-1]
+    entry = index["resources"].get(ref)
+    return f"[`{rid}`]({_href(entry['path'])})" if entry else f"`{rid}`"
+
 # Canonical publication order — matches the delta spec's requirement order
 # (R1-R14), not the order subsets happen to appear in subsets.yaml.
 SUBSET_ORDER = [
@@ -487,8 +506,22 @@ def render_entity_list(members: list[dict], group_field: str | None,
         by_type: dict[str, list[dict]] = defaultdict(list)
         for m in entries:
             by_type[m.get("resource_type") or "Unspecified"].append(m)
+        # Wherever both are present, Practitioner and PractitionerRole
+        # combine into one table (render_combined_practitioner_role) instead
+        # of rendering as two separate type-groups — folded into
+        # PractitionerRole's own slot in RESOURCE_TYPE_ORDER so the rest of
+        # the type ordering is undisturbed.
+        combine = bool(by_type.get("Practitioner") and by_type.get("PractitionerRole"))
         out = []
         for rtype in sorted(by_type, key=_resource_type_sort_key):
+            if combine and rtype == "Practitioner":
+                continue
+            if combine and rtype == "PractitionerRole":
+                n, body = render_combined_practitioner_role(
+                    by_type["Practitioner"], by_type["PractitionerRole"])
+                out.append(f"**Practitioner / PractitionerRole** ({n})\n")
+                out.append(body)
+                continue
             group = sorted(by_type[rtype], key=lambda m: m["id"])
             out.append(f"**{rtype}** ({len(group)})\n")
             out.append(render_group(rtype, group))
@@ -565,56 +598,182 @@ def render_entity_list(members: list[dict], group_field: str | None,
             rows.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
         return "\n".join(rows) + "\n"
 
-    def render_practitioner_relationships(entries: list[dict]) -> str | None:
-        """One row per (Practitioner, PractitionerRole) pair reachable from
-        this unit's own Practitioner members, resolved against the WHOLE
-        data set — not gated on whether the PractitionerRole, Organization
-        or Location are themselves members of this subset or unit. Most
-        subsets track Practitioner without separately tracking
-        PractitionerRole, so there would be nothing to show if this only
-        looked at existing members.
+    def referencing(key: str | None, rtype: str) -> list[str]:
+        """Every "{rtype}/id" that references `key` anywhere in the data
+        set — index["referenced_by"] is built from every outgoing reference
+        found on every resource (lib.py's find_references()), not just
+        PractitionerRole's, so this also surfaces e.g. a HealthcareService
+        that names an Organization via its own providedBy field."""
+        if not key:
+            return []
+        return sorted(
+            k for k in index["referenced_by"].get(key, set())
+            if k.startswith(f"{rtype}/")
+        )
+
+    def _role_code_specialty(role_key: str | None) -> str | None:
+        if not role_key:
+            return None
+        role = index["resources"].get(role_key, {}).get("resource") or {}
+        code = role.get("code") or []
+        code_text = (code[0].get("text") or (code[0].get("coding") or [{}])[0].get("display")
+                    if code else None)
+        if not code_text:
+            return None
+        specialty = role.get("specialty") or []
+        specialty_text = (specialty[0].get("text")
+                          or (specialty[0].get("coding") or [{}])[0].get("display")
+                          if specialty else None)
+        # Confirmed: never empty parens — the code stands alone when there's
+        # no specialty to qualify it.
+        return f"{code_text} ({specialty_text})" if specialty_text else code_text
+
+    def _combined_also_in(prac_key: str | None, role_key: str | None) -> str | None:
+        # A practitioner and their own role are very often members of the
+        # same other subsets (e.g. both in scenario-groups) — union and
+        # de-duplicate rather than show the same subset link twice.
+        links, seen = [], set()
+        for key in (prac_key, role_key):
+            note = overlap_note(key, current_slug, res_index) if key else None
+            if not note:
+                continue
+            for link in note[len("also in: "):].split(", "):
+                if link not in seen:
+                    seen.add(link)
+                    links.append(link)
+        return ", ".join(links) if links else None
+
+    def render_combined_practitioner_role(
+            prac_group: list[dict], role_group: list[dict]) -> tuple[int, str]:
+        """Practitioner and PractitionerRole, today rendered as two separate
+        type-groups, combined into one table with the role's occupation
+        code/specialty alongside — reachability, not membership, decides
+        pairing (as in render_practitioner_relationships), so a practitioner
+        with no PractitionerRole member here still gets a row instead of
+        disappearing, and likewise a PractitionerRole whose practitioner
+        isn't itself a member.
+
+        A member's own `path` (from resolve_membership) is preferred over
+        index["resources"] for linking — index only scans the CURRENT
+        working tree's data-set dirs, but connected-care-journeys resolves
+        its members by reading the connected-care branch directly, so its
+        members exist with a valid path despite never appearing in index.
+        The trade-off: such a PractitionerRole's actual resource content
+        (for code/specialty, or to resolve its practitioner reference)
+        genuinely isn't available here either way, so those cells stay
+        blank rather than guessing — an unpaired row is honest; a guessed
+        pairing would not be.
         """
+        known_paths = {f"Practitioner/{m['id']}": m["path"] for m in prac_group
+                       if m.get("path")}
+        known_paths.update({f"PractitionerRole/{m['id']}": m["path"]
+                            for m in role_group if m.get("path")})
+
         def cell(ref: str | None) -> str:
             if not ref:
                 return ""
-            entry = index["resources"].get(ref)
-            return f"[`{ref}`]({_href(entry['path'])})" if entry else f"`{ref}`"
+            path = known_paths.get(ref) or (index["resources"].get(ref) or {}).get("path")
+            rid = ref.split("/", 1)[-1]
+            return f"[`{rid}`]({_href(path)})" if path else f"`{rid}`"
 
+        covered_roles: set[str] = set()
+        row_keys: set[tuple[str | None, str | None]] = set()
+        for m in prac_group:
+            prac_key = f"Practitioner/{m['id']}"
+            role_keys = referencing(prac_key, "PractitionerRole")
+            if role_keys:
+                for role_key in role_keys:
+                    row_keys.add((prac_key, role_key))
+                    covered_roles.add(role_key)
+            else:
+                row_keys.add((prac_key, None))
+        for m in role_group:
+            role_key = f"PractitionerRole/{m['id']}"
+            if role_key in covered_roles:
+                continue
+            role = index["resources"].get(role_key, {}).get("resource") or {}
+            prac_ref = (role.get("practitioner") or {}).get("reference")
+            row_keys.add((prac_ref, role_key))
+
+        rows = sorted(row_keys, key=lambda r: (r[0] or "", r[1] or ""))
+        headers = ["Practitioner", "PractitionerRole", "Role (specialty)", "Also in"]
+        table = ["", "| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for prac_key, role_key in rows:
+            cells = [
+                cell(prac_key), cell(role_key),
+                _role_code_specialty(role_key) or "",
+                _combined_also_in(prac_key, role_key) or "",
+            ]
+            table.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
+        return len(rows), "\n".join(table) + "\n"
+
+    def render_practitioner_relationships(entries: list[dict]) -> str | None:
+        """One row per (Practitioner, PractitionerRole) pair reachable from
+        this unit's own Practitioner members, resolved against the WHOLE
+        data set — not gated on whether the PractitionerRole, Organization,
+        Location, HealthcareService or Endpoint are themselves members of
+        this subset or unit. Most subsets track Practitioner without
+        separately tracking PractitionerRole, so there would be nothing to
+        show if this only looked at existing members.
+
+        HealthcareService and Endpoint aren't referenced FROM PractitionerRole
+        in this data set (no PractitionerRole.healthcareService is ever
+        populated, and nothing references an Endpoint at all) — they're
+        reached in reverse instead: a HealthcareService names an Organization/
+        Location via its own providedBy/location fields, so `referencing`
+        surfaces it from the Organization/Location side.
+        """
         rows = []
         for m in entries:
             if m.get("resource_type") != "Practitioner":
                 continue
             prac_key = f"Practitioner/{m['id']}"
-            role_keys = sorted(
-                k for k in index["referenced_by"].get(prac_key, set())
-                if k.startswith("PractitionerRole/")
-            )
+            role_keys = referencing(prac_key, "PractitionerRole")
             for role_key in role_keys:
                 role = index["resources"].get(role_key, {}).get("resource") or {}
                 org_ref = (role.get("organization") or {}).get("reference")
                 loc_refs = [l.get("reference") for l in role.get("location") or []
                            if l.get("reference")]
-                rows.append((prac_key, role_key, org_ref, loc_refs))
+                hs_keys = sorted({
+                    *referencing(org_ref, "HealthcareService"),
+                    *(k for loc in loc_refs for k in referencing(loc, "HealthcareService")),
+                })
+                ep_keys = sorted({
+                    *referencing(org_ref, "Endpoint"),
+                    *(k for loc in loc_refs for k in referencing(loc, "Endpoint")),
+                    *(k for hs in hs_keys for k in referencing(hs, "Endpoint")),
+                })
+                rows.append((prac_key, role_key, org_ref, loc_refs, hs_keys, ep_keys))
         if not rows:
             return None
 
         rows.sort(key=lambda r: (r[0], r[1]))
+        use_hs = any(r[4] for r in rows)
+        use_ep = any(r[5] for r in rows)
+        headers = ["Practitioner", "PractitionerRole", "Organization", "Location"]
+        headers += ["HealthcareService"] if use_hs else []
+        headers += ["Endpoint"] if use_ep else []
         # Leading "" so the join below inserts a blank line after </summary>
         # — GitHub only parses Markdown inside an HTML block (<details>) when
         # it's preceded by a blank line; without it this renders as literal
         # pipe text, not a table.
-        table = ["", "| Practitioner | PractitionerRole | Organization | Location |",
-                "| --- | --- | --- | --- |"]
-        for prac_key, role_key, org_ref, loc_refs in rows:
-            loc_cell = ", ".join(cell(r) for r in loc_refs)
-            table.append(
-                f"| {cell(prac_key)} | {cell(role_key)} | {cell(org_ref)} | "
-                f"{loc_cell} |"
-            )
+        table = ["", "| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for prac_key, role_key, org_ref, loc_refs, hs_keys, ep_keys in rows:
+            cells = [
+                _resolve_cell(prac_key, index), _resolve_cell(role_key, index),
+                _resolve_cell(org_ref, index),
+                ", ".join(_resolve_cell(r, index) for r in loc_refs),
+            ]
+            if use_hs:
+                cells.append(", ".join(_resolve_cell(r, index) for r in hs_keys))
+            if use_ep:
+                cells.append(", ".join(_resolve_cell(r, index) for r in ep_keys))
+            table.append("| " + " | ".join(cells) + " |")
         return (
             f"\n<details><summary>{plural(len(rows), 'relationship')} — "
-            f"Practitioner / PractitionerRole / Organization / "
-            f"Location</summary>\n"
+            + " / ".join(headers) + "</summary>\n"
             + "\n".join(table) + "\n\n</details>\n"
         )
 
