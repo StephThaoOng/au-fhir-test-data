@@ -257,8 +257,111 @@ subsets:
       au-encounter-records:
         # Journey value may be a plain list of members (as under au-ps above)
         # or this richer mapping with `members` plus journey-level metadata.
-        chemotherapy-acute-admission-to-hith:
-          title: Chemotherapy — acute admission to HITH and outpatient care
+        encounter-journey-1-routine-care-and-unplanned-events:
+          title: Encounter Journey 1 - Routine Care and Unplanned Events
+          attester: Stephanie Ong
+          confirmed_on: 2026-09-18
+          source: >
+            AU Encounter Records consumer journey care team diagram
+            (case scenario + care team panel).
+          # journey_role is AUTHORITATIVE — it is what the consumer journey
+          # states. declared_specialty records what the test data's
+          # PractitionerRole actually says. Where they differ, `alignment`
+          # names the gap rather than silently preferring either one.
+          members:
+            - id: roberts-fred
+              journey_role: Patient
+              resource: Patient/roberts-fred
+              practitioner_role: null
+              declared_specialty: null
+              alignment: not_applicable
+              downstream_use: []
+            - id: roberts-nancy
+              journey_role: Fred's wife
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey; no test data exists for this
+                entity yet (need test data).
+              downstream_use: []
+            - id: little-jerrie
+              journey_role: General Practitioner
+              resource: Practitioner/little-jerrie
+              practitioner_role: PractitionerRole/little-jerrie
+              declared_specialty: General Practitioner
+              alignment: aligned
+              downstream_use: []
+            - id: cox-sandra
+              journey_role: Registered Nurse
+              resource: Practitioner/cox-sandra
+              practitioner_role: PractitionerRole/cox-sandra
+              declared_specialty: Registered Nurses nec
+              alignment: aligned
+              downstream_use: []
+            - id: frank-gaylene
+              journey_role: Nurse Practitioner
+              resource: Practitioner/frank-gaylene
+              practitioner_role: PractitionerRole/frank-gaylene
+              declared_specialty: Nurse Practitioner
+              alignment: aligned
+              downstream_use: []
+            - id: ohalloran-sheryl
+              journey_role: Pharmacist
+              resource: Practitioner/ohalloran-sheryl
+              practitioner_role: PractitionerRole/ohalloran-sheryl
+              declared_specialty: Pharmacist
+              alignment: aligned
+              downstream_use: []
+            - id: smith-joe
+              journey_role: Emergency Dispatcher
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as an individual; no matching
+                Practitioner resource exists in the data set.
+              downstream_use: []
+            - id: gilmore-dane
+              journey_role: Paramedic
+              resource: Practitioner/gilmore-dane
+              practitioner_role: PractitionerRole/ambulanceofficer-gilmore-dane
+              declared_specialty: Ambulance Officer
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: shephard-lizabeth
+              journey_role: ED Triage Nurse
+              resource: Practitioner/shephard-lizabeth
+              practitioner_role: PractitionerRole/registerednurses-shephard-lizabeth
+              declared_specialty: Registered Nurses nec
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: dawson-kent
+              journey_role: ED Doctor
+              resource: Practitioner/dawson-kent
+              practitioner_role: PractitionerRole/dawson-kent
+              declared_specialty: Emergency Medicine Specialist / Emergency Physician
+              alignment: aligned
+              downstream_use: []
+            - id: ellison-abby
+              journey_role: ED Physiotherapist
+              resource: Practitioner/ellison-abby
+              practitioner_role: PractitionerRole/ellison-abby
+              declared_specialty: Physiotherapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: neville-isaiah
+              journey_role: Physiotherapist
+              resource: Practitioner/neville-isaiah
+              practitioner_role: PractitionerRole/neville-isaiah
+              declared_specialty: Physiotherapist
+              alignment: aligned
+              downstream_use: []
+
+        encounter-journey-2-chemotherapy-hith-allied-health:
+          title: Encounter Journey 2 - Chemotherapy, HITH, Allied Health
           attester: Stephanie Ong
           confirmed_on: 2026-08-31
           source: >
@@ -270,7 +373,7 @@ subsets:
             before transitioning to Hospital in the Home and ongoing
             outpatient care.
           narrative_status: >
-            CARE TEAM ONLY. The 11 named individuals resolve to existing test
+            CARE TEAM ONLY. The named individuals resolve to existing test
             data, but the clinical narrative this journey describes —
             chemotherapy, the acute inpatient admission, the HITH transition
             and outpatient follow-up — does not exist as test data yet. No
@@ -299,18 +402,33 @@ subsets:
               declared_specialty: null
               alignment: not_applicable
               downstream_use: []
-            - id: milgate-leisa
+            - id: cedric-lowe-friend
+              journey_role: Kendall's friend
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                No RelatedPerson in the data set references
+                Patient/sandilands-kendall at all. Three RelatedPerson
+                resources named "Cedric Lowe" exist (lowe-cedric-1,
+                lowe-cedric-2, lowe-cedric-3) plus a standalone
+                Patient-lowe-cedric, but each RelatedPerson is already linked
+                to a different patient (lowe-valerie, lowe-alessandra,
+                lowe-alix respectively) — none represents Kendall's friend.
+              downstream_use: []
+            - id: taylor-kittie
               journey_role: Day Therapy Unit Nurse
-              resource: Practitioner/milgate-leisa
-              practitioner_role: PractitionerRole/registerednurses-milgate-leisa
+              resource: Practitioner/taylor-kittie
+              practitioner_role: PractitionerRole/registerednurses-taylor-kittie
               declared_specialty: Registered Nurses nec
               alignment: journey_role_more_specific
               downstream_use: []
-            - id: parker-elijah
-              journey_role: Physiotherapist
-              resource: Practitioner/parker-elijah
-              practitioner_role: PractitionerRole/physiotherapist-parker-elijah
-              declared_specialty: Physiotherapist
+            - id: gordon-tad
+              journey_role: Exercise Physiologist
+              resource: Practitioner/gordon-tad
+              practitioner_role: PractitionerRole/complementaryhealth-gordon-tad
+              declared_specialty: Exercise Physiologist
               alignment: aligned
               downstream_use: []
             - id: mills-hope
@@ -392,6 +510,321 @@ subsets:
                 Named in the consumer journey as a team, not an individual.
                 No matching resource: no CareTeam resources exist, and nothing
                 in the data set is named for Hospital-in-the-Home.
+              downstream_use: []
+
+        encounter-journey-3-child-with-developmental-delay:
+          title: Encounter Journey 3 - Child with Developmental Delay
+          attester: Stephanie Ong
+          confirmed_on: 2026-09-18
+          source: >
+            AU Encounter Records consumer journey care team diagram
+            (case scenario + care team panel).
+          # journey_role is AUTHORITATIVE — it is what the consumer journey
+          # states. declared_specialty records what the test data's
+          # PractitionerRole actually says. Where they differ, `alignment`
+          # names the gap rather than silently preferring either one.
+          members:
+            - id: smith-noah
+              journey_role: Patient (age 3 years 6 months)
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey; no test data exists for this
+                entity yet (need test data).
+              downstream_use: []
+            - id: smith-heather
+              journey_role: Noah's Mother
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey; no test data exists for this
+                entity yet (need test data).
+              downstream_use: []
+            - id: smith-shaun
+              journey_role: Noah's Father
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey; no test data exists for this
+                entity yet (need test data).
+              downstream_use: []
+            - id: alcock-devon
+              journey_role: Maternal and Child Health Nurse
+              resource: Practitioner/alcock-devon
+              practitioner_role: PractitionerRole/alcock-devon
+              declared_specialty: Registered Nurses nec
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: keith-margot
+              journey_role: General Practitioner
+              resource: Practitioner/keith-margot
+              practitioner_role: PractitionerRole/keith-margot
+              declared_specialty: General Practitioner
+              alignment: aligned
+              downstream_use: []
+            - id: greene-delores
+              journey_role: Paediatrician
+              resource: Practitioner/greene-delores
+              practitioner_role: PractitionerRole/greene-delores
+              declared_specialty: Paediatrician
+              alignment: aligned
+              downstream_use: []
+            - id: mullin-kenny
+              journey_role: Speech Pathologist
+              resource: Practitioner/mullin-kenny
+              practitioner_role: PractitionerRole/mullin-kenny
+              declared_specialty: Speech Pathologist
+              alignment: aligned
+              downstream_use: []
+            - id: murray-ashli
+              journey_role: Occupational Therapist
+              resource: Practitioner/murray-ashli
+              practitioner_role: PractitionerRole/murray-ashli
+              declared_specialty: Occupational Therapist
+              alignment: aligned
+              downstream_use: []
+            - id: bradley-jill
+              journey_role: Audiologist
+              resource: Practitioner/bradley-jill
+              practitioner_role: PractitionerRole/audiologist-bradley-jill
+              declared_specialty: Audiologist
+              alignment: aligned
+              downstream_use: []
+            - id: vaughan-blaine
+              journey_role: Private Psychologist
+              resource: Practitioner/vaughan-blaine
+              practitioner_role: PractitionerRole/vaughan-blaine
+              declared_specialty: Clinical Psychologist
+              alignment: journey_role_more_specific
+              downstream_use: []
+
+        encounter-journey-4-independent-living-admission-and-transition-care:
+          title: Encounter Journey 4 - Independent Living, Admission and Transition Care
+          attester: Stephanie Ong
+          confirmed_on: 2026-09-18
+          source: >
+            AU Encounter Records consumer journey care team diagram
+            (case scenario + care team panel).
+          # journey_role is AUTHORITATIVE — it is what the consumer journey
+          # states. declared_specialty records what the test data's
+          # PractitionerRole actually says. Where they differ, `alignment`
+          # names the gap rather than silently preferring either one.
+          members:
+            - id: boulton-annika
+              journey_role: Patient
+              resource: Patient/boulton-annika
+              practitioner_role: null
+              declared_specialty: null
+              alignment: not_applicable
+              downstream_use: []
+            - id: boulton-sophie
+              journey_role: Annika's Daughter
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey; no RelatedPerson resource
+                exists for Annika Boulton's daughter.
+              downstream_use: []
+            - id: gilmore-dane
+              journey_role: Paramedic
+              resource: Practitioner/gilmore-dane
+              practitioner_role: PractitionerRole/ambulanceofficer-gilmore-dane
+              declared_specialty: Ambulance Officer
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: ed-team
+              journey_role: Emergency Department team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching CareTeam or other resource exists.
+              downstream_use: []
+            - id: radiology-team
+              journey_role: Radiology team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching CareTeam or other resource exists.
+              downstream_use: []
+            - id: orthopaedic-team
+              journey_role: Orthopaedic team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching CareTeam or other resource exists.
+              downstream_use: []
+            - id: berridge-beulah
+              journey_role: Anaesthetist
+              resource: Practitioner/berridge-beulah
+              practitioner_role: PractitionerRole/berridge-beulah
+              declared_specialty: Anaesthetist
+              alignment: aligned
+              downstream_use: []
+            - id: rowland-roger
+              journey_role: Surgical ward nurse
+              resource: Practitioner/rowland-roger
+              practitioner_role: PractitionerRole/registerednurses-rowland-roger
+              declared_specialty: Registered Nurses nec
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: pain-team
+              journey_role: Pain team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching CareTeam or other resource exists.
+              downstream_use: []
+            - id: geriatrics-team
+              journey_role: Geriatrics team
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching CareTeam or other resource exists.
+              downstream_use: []
+            - id: guthridge-jarred
+              journey_role: General Practitioner (GP)
+              resource: Practitioner/guthridge-jarred
+              practitioner_role: PractitionerRole/generalpractitioner-guthridge-jarred
+              declared_specialty: General Practitioner
+              alignment: aligned
+              downstream_use: []
+            - id: kelly-virginia
+              journey_role: Inpatient Dietitian
+              resource: Practitioner/kelly-virginia
+              practitioner_role: PractitionerRole/dietitian-kelly-virginia
+              declared_specialty: Dietitian
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: jeffery-sammy
+              journey_role: Inpatient Physiotherapist
+              resource: Practitioner/jeffery-sammy
+              practitioner_role: PractitionerRole/jeffery-sammy
+              declared_specialty: Physiotherapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: sherry-dean
+              journey_role: Inpatient Occupational Therapist (OT)
+              resource: Practitioner/sherry-dean
+              practitioner_role: PractitionerRole/sherry-dean
+              declared_specialty: Occupational Therapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: bailey-buck
+              journey_role: Inpatient Social worker
+              resource: Practitioner/bailey-buck
+              practitioner_role: PractitionerRole/bailey-buck
+              declared_specialty: Social Worker
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: hobden-mark
+              journey_role: Inpatient Pharmacist
+              resource: Practitioner/hobden-mark
+              practitioner_role: PractitionerRole/hobden-mark
+              declared_specialty: Pharmacist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: acat-team
+              journey_role: Aged Care Assessment Team (ACAT)
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey as a team, not an individual.
+                No matching CareTeam or other resource exists.
+              downstream_use: []
+            - id: robbins-wilhelmina
+              journey_role: Transition Care Program (TCP) Nurse
+              resource: Practitioner/robbins-wilhelmina
+              practitioner_role: PractitionerRole/robbins-wilhelmina
+              declared_specialty: Nurse Practitioner
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: livingstone-yvonne
+              journey_role: TCP Physiotherapist
+              resource: Practitioner/livingstone-yvonne
+              practitioner_role: PractitionerRole/livingstone-yvonne
+              declared_specialty: Physiotherapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: hipwood-fatimah
+              journey_role: TCP OT
+              resource: Practitioner/hipwood-fatimah
+              practitioner_role: PractitionerRole/hipwood-fatimah
+              declared_specialty: Occupational Therapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: donnelly-claire
+              journey_role: TCP Allied Health Assistant
+              resource: null
+              practitioner_role: null
+              declared_specialty: null
+              alignment: unresolved
+              note: >
+                Named in the consumer journey; no matching resource exists in
+                the data set.
+              downstream_use: []
+            - id: barrett-kirstie
+              journey_role: TCP social worker
+              resource: Practitioner/barrett-kirstie
+              practitioner_role: PractitionerRole/barrett-kirstie
+              declared_specialty: Social Worker
+              alignment: journey_role_more_specific
+              note: >
+                Source list spelled this "Kristie Barrett"; the data set
+                resource is spelled "Kirstie" — confirmed as the same person,
+                a typo in the source list.
+              downstream_use: []
+            - id: parker-elijah
+              journey_role: Community physiotherapist
+              resource: Practitioner/parker-elijah
+              practitioner_role: PractitionerRole/physiotherapist-parker-elijah
+              declared_specialty: Physiotherapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: knowles-sunshine
+              journey_role: Community Occupational Therapist
+              resource: Practitioner/knowles-sunshine
+              practitioner_role: PractitionerRole/knowles-sunshine
+              declared_specialty: Occupational Therapist
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: randall-anthony
+              journey_role: Practice nurse
+              resource: Practitioner/randall-anthony
+              practitioner_role: PractitionerRole/randall-anthony
+              declared_specialty: Registered Nurses nec
+              alignment: journey_role_more_specific
+              downstream_use: []
+            - id: patrick-manual
+              journey_role: Community pharmacist
+              resource: Practitioner/patrick-manual
+              practitioner_role: PractitionerRole/retailpharmacist-patrick-manual
+              declared_specialty: Retail Pharmacist
+              alignment: aligned
               downstream_use: []
 
   # --- Derived + Curated ------------------------------------------------------
