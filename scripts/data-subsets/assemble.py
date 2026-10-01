@@ -479,13 +479,49 @@ def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
 
 # --- Rendering ----------------------------------------------------------
 
+def family_graph(graph: dict) -> str:
+    """A family as a Mermaid flowchart: people as nodes, each RelatedPerson
+    record as an arrow from the Patient it belongs to towards the person it
+    describes, labelled with the relationship in the data's own words.
+
+    Node ids are generated because resource ids contain hyphens, which
+    Mermaid would otherwise read as edge syntax.
+    """
+    node_id = {n["key"]: f"n{i}" for i, n in enumerate(graph["nodes"])}
+    out = ["```mermaid", "flowchart LR"]
+    for n in graph["nodes"]:
+        if n["resource_type"] == "Patient":
+            out.append(f'  {node_id[n["key"]]}(["{n["id"]}"])')
+        else:
+            out.append(f'  {node_id[n["key"]]}[/"{n["id"]} (RelatedPerson only)"/]')
+
+    links = {(l["from"], l["to"], l["label"] or "related")
+             for l in graph["links"]
+             if l["from"] in node_id and l["to"] in node_id}
+    drawn = set()
+    for a, b, label in sorted(links):
+        if (a, b, label) in drawn:
+            continue
+        # A pair describing each other the same way (sibling/sibling) is one
+        # fact, so it gets one undirected line instead of two arrows.
+        if (b, a, label) in links:
+            out.append(f'  {node_id[a]} -- "{label}" --- {node_id[b]}')
+            drawn.add((b, a, label))
+        else:
+            out.append(f'  {node_id[a]} -- "{label}" --> {node_id[b]}')
+        drawn.add((a, b, label))
+    out.append("```")
+    return "\n".join(out)
+
+
 def render_entity_list(members: list[dict], group_field: str | None,
                        res_index: dict, current_slug: str, index: dict,
                        candidate: dict | None = None,
                        group_labels: dict | None = None,
                        subgroup_field: str | None = None,
                        group_notes: dict | None = None,
-                       subgroup_noun: str = "grouping") -> str:
+                       subgroup_noun: str = "grouping",
+                       group_appendix: dict | None = None) -> str:
     """Render a subset's entities, optionally grouped and sub-grouped.
 
     Where a subset is grouped, every group is a collapsible section whatever
@@ -524,7 +560,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
         combine = bool(by_type.get("Practitioner") and by_type.get("PractitionerRole"))
         # sparked-cdg-journeys never tracks PractitionerRole as its own
         # member type, so it gets its own always-on combined table instead
-        # of render_group's density-gated bullet/table choice or the plain
+        # of render_group's plain per-type table or the plain
         # combine above — confirmed to apply to every journey in the
         # subset, including the 5 AU Patient Summary journeys, which carry
         # no journey_role/alignment data at all (mostly-blank cells there,
@@ -565,7 +601,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
                 # clutters the list.
                 id_cell = f"[`{m['id']}`]({_href(m['path'])})"
             else:
-                id_cell = f"`{m['id']}`"
+                id_cell = f"`{m['id']}` _(no resource)_"
             # Where the journey states a role the data's PractitionerRole
             # does not capture, say so — the journey is authoritative for
             # the role, the data for the coded specialty, and the gap is
@@ -584,33 +620,12 @@ def render_entity_list(members: list[dict], group_field: str | None,
                 "also_in": also_in[len("also in: "):] if also_in else None,
             })
 
-        # A table earns its place only where most rows actually have
-        # something to align — a header+separator over one or two rows, or
-        # over a group that's almost all plain ids, is overhead without an
-        # alignment payoff. Below that, the existing bullet format stays
-        # exactly as it was.
-        has_extra = sum(1 for f in fields if f["role"] or f["note"] or f["also_in"])
-        if len(fields) < 4 or has_extra / len(fields) <= 0.5:
-            rows = []
-            for f in fields:
-                row = f"- {f['id_cell']}" if f["id_cell"].startswith("[") \
-                    else f"- {f['id_cell']} — _(no resource)_"
-                if f["role"]:
-                    row += f" — **{f['role']}**"
-                if f["note"]:
-                    row += f" — *{f['note']}*"
-                if f["also_in"]:
-                    row += f" — *also in: {f['also_in']}*"
-                rows.append(row)
-            return "\n".join(rows) + "\n"
-
         use_role = any(f["role"] for f in fields)
         use_note = any(f["note"] for f in fields)
-        use_also_in = any(f["also_in"] for f in fields)
-        headers = ["ID"]
+        headers = [f"{rtype} id"]
         headers += ["Role"] if use_role else []
         headers += ["Note"] if use_note else []
-        headers += ["Also in"] if use_also_in else []
+        headers += ["Also in"]
         rows = ["| " + " | ".join(headers) + " |",
                 "| " + " | ".join("---" for _ in headers) + " |"]
         for f in fields:
@@ -619,8 +634,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
                 cells.append(f"**{f['role']}**" if f["role"] else "")
             if use_note:
                 cells.append(f"*{f['note']}*" if f["note"] else "")
-            if use_also_in:
-                cells.append(f"*{f['also_in']}*" if f["also_in"] else "")
+            cells.append(f"*{f['also_in']}*" if f["also_in"] else "")
             rows.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
         return "\n".join(rows) + "\n"
 
@@ -666,9 +680,9 @@ def render_entity_list(members: list[dict], group_field: str | None,
             specialty_text = extra.get("specialty_text")
         if not code_text:
             return None
-        # Confirmed: never empty parens — the code stands alone when there's
-        # no specialty to qualify it.
-        return f"{code_text} ({specialty_text})" if specialty_text else code_text
+        # Confirmed: never a dangling separator — the code stands alone when
+        # there's no specialty to qualify it.
+        return f"{code_text}; {specialty_text}" if specialty_text else code_text
 
     def _combined_also_in(prac_key: str | None, role_key: str | None) -> str | None:
         # A practitioner and their own role are very often members of the
@@ -704,13 +718,14 @@ def render_entity_list(members: list[dict], group_field: str | None,
                     # Not repeating the specialty text itself — that's its
                     # own column now, so the note only needs to flag that a
                     # gap might exist for the reader to compare directly.
-                    note = "journey role may differ from the declared role (specialty)"
+                    note = ("journey role and/or specialty may differ from the "
+                             "declared role and/or specialty in the test data")
                 else:
                     note = None
                 rows.append((m, prac_key, role_key, note))
 
-        headers = ["Practitioner", "PractitionerRole", "Role from journey",
-                   "Role (specialty) from test data", "Notes", "Also in"]
+        headers = ["Practitioner id", "PractitionerRole id", "Role from journey",
+                   "Role; Specialty from test data", "Notes", "Also in"]
         table = ["", "| " + " | ".join(headers) + " |",
                 "| " + " | ".join("---" for _ in headers) + " |"]
         for m, prac_key, role_key, note in rows:
@@ -783,7 +798,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
             row_keys.add((prac_ref, role_key))
 
         rows = sorted(row_keys, key=lambda r: (r[0] or "", r[1] or ""))
-        headers = ["Practitioner", "PractitionerRole", "Role (specialty)", "Also in"]
+        headers = ["Practitioner id", "PractitionerRole id", "Role; Specialty", "Also in"]
         table = ["", "| " + " | ".join(headers) + " |",
                 "| " + " | ".join("---" for _ in headers) + " |"]
         for prac_key, role_key in rows:
@@ -843,9 +858,9 @@ def render_entity_list(members: list[dict], group_field: str | None,
         rows.sort(key=lambda r: (r[0], r[1]))
         use_hs = any(r[4] for r in rows)
         use_ep = any(r[5] for r in rows)
-        headers = ["Practitioner", "PractitionerRole", "Organization", "Location"]
-        headers += ["HealthcareService"] if use_hs else []
-        headers += ["Endpoint"] if use_ep else []
+        headers = ["Practitioner id", "PractitionerRole id", "Organization id", "Location id"]
+        headers += ["HealthcareService id"] if use_hs else []
+        headers += ["Endpoint id"] if use_ep else []
         # Leading "" so the join below inserts a blank line after </summary>
         # — GitHub only parses Markdown inside an HTML block (<details>) when
         # it's preceded by a blank line; without it this renders as literal
@@ -928,6 +943,9 @@ def render_entity_list(members: list[dict], group_field: str | None,
             body, count_phrase = render_body(entries)
             note = (group_notes or {}).get(label)
             note_block = f"\n{note}\n" if note else ""
+            appendix = (group_appendix or {}).get(label)
+            if appendix:
+                body += f"\n{appendix}\n"
             lines.append(
                 # quote=False: this is element text, not an attribute
                 # value, so escaping ' would render Alex&#x27;s Story.
@@ -1107,7 +1125,20 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
         line = "Signals: " + ", ".join(bits)
         if f.get("medicare_cards"):
             line += f" ({', '.join(f['medicare_cards'])})"
-        group_notes[f["label"]] = f"_{line}._"
+        note = f"_{line}._"
+        for c in f.get("role_conflicts", []):
+            records = ", ".join(f"`{r.split('/', 1)[-1]}`" for r in c["records"])
+            note += (
+                f"\n\n_Note: `{c['patient'].split('/', 1)[-1]}` has "
+                f"{len(c['records'])} RelatedPerson records recorded as "
+                f"{c['role']} ({records}), none of which carry an identifier. "
+                f"They may be the same person recorded twice, or different "
+                f"people; this is unconfirmed._"
+            )
+        group_notes[f["label"]] = note
+    group_appendix = {f["label"]: family_graph(f["graph"])
+                      for f in evidence.get("confirmed_families", [])
+                      if (f.get("graph") or {}).get("nodes")}
 
     # Count distinct entities, not list slots: geography's windowed regional
     # rule is deliberately not a partition, so an entity on a boundary appears
@@ -1122,7 +1153,8 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     lines.append(render_entity_list(members, group_field, res_index, slug,
                                     index, candidate, group_labels,
                                     subgroup_field, group_notes,
-                                    SUBGROUP_NOUN.get(slug, "grouping")))
+                                    SUBGROUP_NOUN.get(slug, "grouping"),
+                                    group_appendix))
 
     if candidate:
         # ig_examples.py's note ("N IG example resources matched nothing...
@@ -1239,10 +1271,11 @@ def parse_previous_page(text: str) -> tuple[dict[str, set[tuple[str, str, str]]]
     (`_(no resource)_`) rows are not tracked here — there is nothing to
     diff them against, and their disappearance is not this check's concern.
 
-    PREVIOUS_ROW_RE matches the id/link on either a bullet row (`- [`id`]
-    (href)`) or a table row (`| [`id`](href) | ...`) — render_group() picks
-    one or the other per group, so both must parse or a dense group's
-    membership would silently read as empty here.
+    PREVIOUS_ROW_RE matches the id/link on a table row (`| [`id`](href) |
+    ...`), which render_group() always emits, and also on a bullet row
+    (`- [`id`](href)`) — earlier pages rendered sparse groups as bullets, and
+    a committed page in that form must still parse or its membership would
+    silently read as empty here.
 
     Rows under a "**Practitioner / PractitionerRole**" combined heading
     (render_combined_practitioner_role) are deliberately NOT scraped: unlike

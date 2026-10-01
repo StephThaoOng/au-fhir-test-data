@@ -1509,7 +1509,8 @@ subsets:
     reserved: false
     purpose: >
       Identifies entities that constitute a family, for constructing consumer
-      journeys involving related patients.
+      journeys and test scenarios involving patients and their related
+      persons.
     governance: >
       Grouping identifies plausible family relationships, and does not itself
       reserve a member to its family. That does not make a member free to
@@ -1519,22 +1520,34 @@ subsets:
       check its other listings before adding to it.
     provenance: >
       Proposed by a script from two independent signals and confirmed by a
-      human. Where a candidate can be neither confirmed nor rejected because
-      the evidence that would settle it is unavailable, it is recorded as
-      potentially related rather than forced into a binary.
+      human. Where a candidate is neither confirmed nor rejected, it is
+      recorded as potentially related. The underlying data is drawn from
+      Services Australia records mapped into FHIR, with some enrichment of
+      RelatedPerson relationships — that enrichment is not applied
+      consistently across every Patient and RelatedPerson node, so additional
+      RelatedPerson relationships can be authored as needed for a given
+      consumer journey or test scenario, where appropriate.
     relationships_note: >
-      Most members currently have no clinical data, so they are also {blank-
-      slate-patients}.
+      Most Patient members currently have no clinical data, so they are also
+      {blank-slate-patients}.
     identification: >
-      Derived from two primary signals, then curated by human confirmation.
-      A shared
-      Medicare card is the strongest: the card number is shared by a family
-      and only the final individual reference number differs. The
-      RelatedPerson network is the second, giving an explicit relationship
-      code. Neither subsumes the other — a newborn not yet on the card is
+      Derived from two independent primary signals, then curated by human
+      confirmation. A shared Medicare card: the card number is shared by a
+      family and only the final individual reference number differs. The
+      RelatedPerson network: an explicit relationship code linking two
+      people. Neither subsumes the other — a newborn not yet on the card is
       found only by the RelatedPerson network — so both are applied and
       combined. Matching surname or address is used only to propose further
       candidates for review.
+
+
+      Each family lists its Patients and the RelatedPerson records that state
+      its relationships. In each family's diagram, an arrow from A to B
+      labelled "mother" means a RelatedPerson record belonging to Patient A
+      describes B as A's mother. The specifics can be determined from the test
+      data itself: `RelatedPerson.patient` names the Patient a record belongs
+      to, and a shared IHI or Medicare identifier ties it to the Patient it
+      describes.
     members: []   # populated by write-back once confirmed (task 4.6, 4.7)
 
   # --- Derived ------------------------------------------------------------

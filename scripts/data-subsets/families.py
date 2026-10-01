@@ -77,6 +77,45 @@ import lib
 EXCLUDED_RELATIONSHIP_CODES = frozenset({"FRND"})
 
 MEDICARE_SYSTEM = "http://ns.electronichealth.net.au/id/medicare-number"
+ROLE_CODE_SYSTEM = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+
+# Roles a person normally has only one of. Two different people holding one
+# of these for the same Patient is worth a reader's attention; two daughters
+# is not, which is why DAU/SON/SIB etc. are absent.
+SINGLE_HOLDER_ROLE_CODES = frozenset({"FTH", "NFTH", "MTH", "NMTH", "HUSB", "WIFE", "SPS"})
+
+
+def relationship_label(resource: dict) -> str | None:
+    """The relationship as the data itself words it — the RoleCode display,
+    else the relationship's text (two FTH records carry only "Father"), else
+    the bare code."""
+    fallback_text = fallback_code = None
+    for rel in resource.get("relationship", []) or []:
+        for c in rel.get("coding", []) or []:
+            if c.get("system") == ROLE_CODE_SYSTEM:
+                if c.get("display"):
+                    return c["display"].lower()
+                fallback_code = fallback_code or c.get("code")
+        fallback_text = fallback_text or rel.get("text")
+    label = fallback_text or fallback_code
+    return label.lower() if label else None
+
+
+def role_conflicts(edge_list: list[dict]) -> list[dict]:
+    by_role: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for e in edge_list:
+        for code in e["relationship_codes"]:
+            if code in SINGLE_HOLDER_ROLE_CODES:
+                by_role[(e["in_chart_of"], code)].append(e)
+    conflicts = []
+    for (patient, _code), es in sorted(by_role.items()):
+        if len({e["described_as"] for e in es}) > 1:
+            conflicts.append({
+                "patient": patient,
+                "role": es[0]["relationship"],
+                "records": sorted(e["related_person"] for e in es),
+            })
+    return conflicts
 
 
 def medicare_card(resource: dict) -> str | None:
@@ -234,7 +273,7 @@ def build_primary_components(index: dict) -> list[dict]:
     identity_of, canonical_of = build_relatedperson_identities(index)
 
     graph = UnionFind()
-    edges: dict[str, list[dict]] = defaultdict(list)
+    all_edges: list[dict] = []
     excluded = []
 
     for rp_key, entry in sorted(related_people.items()):
@@ -253,10 +292,10 @@ def build_primary_components(index: dict) -> list[dict]:
         graph.find(patient_ref)
         graph.union(described, patient_ref)
 
-        edge_key = graph.find(described)
-        edges[edge_key].append({
+        all_edges.append({
             "related_person": rp_key, "described_as": described,
             "in_chart_of": patient_ref, "relationship_codes": codes,
+            "relationship": relationship_label(entry["resource"]),
         })
 
     # SECOND PRIMARY SIGNAL — a shared Medicare card.
@@ -298,6 +337,12 @@ def build_primary_components(index: dict) -> list[dict]:
         for k in resolved:
             card_of[k] = card
 
+    # Grouped only now, after every union: a root taken at insertion time goes
+    # stale once later unions (including the Medicare-card ones) merge it.
+    edges: dict[str, list[dict]] = defaultdict(list)
+    for e in all_edges:
+        edges[graph.find(e["in_chart_of"])].append(e)
+
     components = []
     for root, members in graph.components().items():
         if len(members) < 2:
@@ -338,6 +383,14 @@ def build_primary_components(index: dict) -> list[dict]:
             "label": family_label(surnames),
             "members": display_members,
             "edges": edge_list,
+            "graph": {
+                "nodes": [{"key": f"{m['resource_type']}/{m['id']}",
+                           "resource_type": m["resource_type"], "id": m["id"]}
+                          for m in display_members],
+                "links": [{"from": e["in_chart_of"], "to": e["described_as"],
+                           "label": e["relationship"]} for e in edge_list],
+            },
+            "role_conflicts": role_conflicts(edge_list),
         })
     return components, excluded, malformed
 
@@ -398,17 +451,36 @@ def main():
     confirmed, rejected, flagged, undecided = lib.partition_candidates(
         "families", all_candidates)
 
+    resources = index["resources"]
     members = []
+    n_record_members = 0
     for cand in confirmed:
         # Carry the family's identity onto each member. Without it the page
         # can only show 30 people in one undifferentiated list, which says
         # nothing about who belongs with whom — the only thing this subset
         # exists to establish.
+        family_fields = {"attester": cand.get("attester"),
+                         "confirmed_on": cand.get("confirmed_on"),
+                         "family": cand["id"],
+                         "family_label": cand.get("label") or cand["id"]}
+        seen = set()
         for m in cand["members"]:
-            members.append({**m, "attester": cand.get("attester"),
-                            "confirmed_on": cand.get("confirmed_on"),
-                            "family": cand["id"],
-                            "family_label": cand.get("label") or cand["id"]})
+            members.append({**m, **family_fields})
+            seen.add(f"{m['resource_type']}/{m['id']}")
+        # The RelatedPerson records that state the family's relationships are
+        # the resources a journey author would actually touch. Added here, not
+        # to cand["members"]: confirmations are keyed on that list, so growing
+        # it would unconfirm every family.
+        for e in cand.get("edges", []):
+            key = e["related_person"]
+            if key in seen:
+                continue
+            seen.add(key)
+            entry = resources[key]
+            members.append({**lib.member(entry["id"], resource_type="RelatedPerson",
+                                         path=entry["path"], why="RelatedPerson record"),
+                            **family_fields})
+            n_record_members += 1
 
     # Per-family facts, recorded once per family rather than on every member.
     # Which signals support a family is the evidence a reader needs to judge
@@ -419,6 +491,8 @@ def main():
         "signals": c.get("signals") or ([c["signal"]] if c.get("signal") else []),
         "medicare_cards": c.get("medicare_cards") or [],
         "members": len(c["members"]),
+        "graph": c.get("graph") or {"nodes": [], "links": []},
+        "role_conflicts": c.get("role_conflicts") or [],
     } for c in confirmed]
 
     flagged_out = [{
@@ -442,6 +516,8 @@ def main():
         "found only via RelatedPerson.",
         f"{len(excluded_edges)} RelatedPerson record(s) excluded as "
         "'unrelated friend' (FRND) and not used to join any family.",
+        f"{n_record_members} RelatedPerson records in confirmed families are "
+        "listed as members alongside the Patients they belong to.",
         "Family members are not required to share an address. Same-surname "
         "and same-address candidates are proposals only, never asserted — "
         "measured case: 9 Patient files sharing a surname and address are 9 "
