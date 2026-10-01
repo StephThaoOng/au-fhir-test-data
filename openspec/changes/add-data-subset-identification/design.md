@@ -325,6 +325,111 @@ The general rule: each of the five sections answers a different question, so a
 fact stated in the section that does not own it is duplication, and duplication
 crowds out the content that section was supposed to carry.
 
+### D20. Cross-reference reservation status shown as TBD for six subsets pending review
+
+Inferno default patients, AU PS test patients, Smart Health Checks, Sparked
+CDG journeys, Connected Care journeys and Scenario groupings each state a
+reservation verdict in their own governance section. That verdict is not yet
+reconfirmed for the separate purpose of flagging a conflict on another
+entity's cross-reference — so where one of these six is *named* in another
+entity's "also in:" note, the page shows "(maybe reserved — TBD)" rather than
+asserting reserved or free-to-build-on, pending that review.
+
+Display-only, scoped to `overlap_note()` in `scripts/data-subsets/assemble.py`.
+Does not change `reserved` in `subsets.yaml`, does not alter any subset's own
+governance section, and does not reopen D9's argument that CDG journey
+entities are reusable — D9's reasoning stands; the TBD label reflects only
+that its cross-reference use specifically has not yet been reconfirmed.
+
+Two subsets outside this list, geography-groups and blank-slate-patients, are
+instead suppressed entirely as overlap targets: both are `reserved: false`
+with no exceptions, and every appearance to date has been free-to-build-on
+noise rather than a reservation signal, so naming them added nothing a reader
+needed to see.
+
+### D21. An overlap note shows the tightest constraint, not every membership
+
+Where an entity's overlap note would list both a stricter label (reserved, or
+TBD per D20) and `free to build on` for different subsets, the free-to-build-on
+entries are omitted. What governs whether an entity is safe to extend is the
+tightest constraint across all its memberships — a reservation or an
+unconfirmed TBD elsewhere is what matters, and a free-to-build-on membership
+alongside it reads as reassurance the entity does not actually have.
+
+Free-to-build-on is shown only when it is the *only* signal an entity's
+overlaps carry — there, it remains real information, not noise beside a
+stricter fact.
+
+### D22. Overlap notes omit the reserved/TBD/free-to-build-on label, for now
+
+An overlap note now names only the subsets an entity also belongs to — e.g.
+`also in: [au-core-ig-examples](#au-core-ig-examples)` — without the
+`(reserved)` / `(maybe reserved — TBD)` / `(free to build on)` qualifier
+that D20/D21 govern. The qualifier made the page read as cluttered without
+giving a reader an action to take from the note alone.
+
+The D20/D21 selection logic — which subsets are worth naming, and dropping
+free-to-build-on entries once a stricter one is present — is unchanged and
+still decides *which* subsets appear; only the trailing label text is
+suppressed. Reversible: re-adding it is a one-line change to `overlap_note()`
+in `scripts/data-subsets/assemble.py`.
+
+### D23. Classification is stated once, inside the identification prose
+
+The trailing `_Classification: <type>._` line is removed. "How is this
+subset identified?" already opens with the type — "Derived automatically",
+"Declared, then drift-checked", "Curated. Journey membership is stated
+by..." — so the line only repeated what the section had just said, the same
+duplication pattern D19 named for Smart Health Checks.
+
+Three subsets (community-contributions, geography-groups, families) needed
+their identification prose corrected first: each was classified
+Derived + Curated but its opening sentence said only "Derived, then
+confirmed by a human" or similar, never using "curated" in any form — so
+removing the line would have silently dropped the Curated half of their
+classification from the page. Reworded each to name curation explicitly
+("Derived, then curated by human confirmation") before the line was
+removed, so nothing is lost by the removal.
+
+The evidence/derivation notes that follow (counts, exclusions, limitations)
+are now collapsed in a `<details>` block rather than always-visible
+blockquote text, for the same reason `<details>` is used everywhere else on
+the page: useful to a reviewer, not needed to read the section.
+
+### D24. A subset may state what it reserves, never that its entities are free
+
+A subset's governance may say whether *its own* membership reserves an
+entity. It may not conclude that its entities are therefore free to build
+on: reservation is a property of an entity across all of its memberships,
+and no subset controls the others.
+
+Four subsets made exactly that inference. Measured against the data:
+
+| Subset | members | reserved by another subset |
+| --- | ---: | ---: |
+| sparked-cdg-journeys | 19 | 5 |
+| geography-groups | 1034 | 43 |
+| families | 30 | 5 |
+| blank-slate-patients | 79 | 13 |
+
+Sparked's case is representative: five journey members are also published AU
+Patient Summary IG examples, whose governance says they must not be modified
+without the IG authors' approval — so the page asserted both that those
+entities were free to build on and that they were reserved.
+`blank-slate-patients` was the sharpest: carrying no clinical data is not the
+same as being free to write to, and several of its members are Missing and
+suppressed data examples, deliberately shaped to demonstrate absent data.
+
+This is D21's tightest-constraint rule, which the renderer already applied to
+the computed overlap notes, finally applied to the hand-written prose as
+well. The general principle is now stated once in the page intro, under
+"Reading versus writing", so each subset states only what it can support.
+
+`scenario-groups` also made the claim and was left alone: 0 of its 418
+members are reserved elsewhere, so it is true today. That is a fact about the
+current data, not a guarantee — if it acquires a reserved member the claim
+becomes wrong silently, and nothing checks for that.
+
 ## Sources of truth
 
 | Subset | Type | Source of truth |
@@ -335,7 +440,7 @@ crowds out the content that section was supposed to carry.
 | Inferno default patients | Declared | `inferno_suite_generator` default patient id list, read at current revision (D11) |
 | AU PS test patients | Declared | AU PS Test Data Coverage page (Confluence) |
 | Smart Health Checks | Curated | `subsets.yaml` |
-| Sparked CDG journeys | Curated | `subsets.yaml`; reusable, not reserved (D9); AU Encounter Records journeys pending |
+| Sparked CDG journeys | Curated | `subsets.yaml`; reusable, not reserved (D9); grouped by programme — AU Patient Summary (5 journeys) and AU Encounter Records (1, care team only) |
 | Connected Care — Alex's Story | Declared | Alex's Story data set document, `connected-care` branch |
 | Connected Care — Yuri's Story | Declared | **Pending** — provisional remainder until supplied |
 | Community contributions | Derived + Curated | Commit author/committer domain, plus confirmed overrides |

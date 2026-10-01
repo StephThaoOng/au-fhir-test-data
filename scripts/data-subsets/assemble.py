@@ -104,13 +104,6 @@ import lib
 OUTPUT_PATH = lib.REPO_ROOT / "docs" / "DataSubsets.md"
 ENTITY_LIST_THRESHOLD = 20
 
-TYPE_LABELS = {
-    "derived": "Derived",
-    "declared": "Declared",
-    "curated": "Curated",
-    "derived+curated": "Derived + Curated",
-}
-
 # Canonical publication order — matches the delta spec's requirement order
 # (R1-R14), not the order subsets happen to appear in subsets.yaml.
 SUBSET_ORDER = [
@@ -129,7 +122,7 @@ RESOURCE_TYPE_ORDER = [
 
 
 PLURALS = {"entity": "entities", "grouping": "groupings",
-           "candidate": "candidates"}
+           "candidate": "candidates", "journey": "journeys"}
 
 
 def plural(n: int, word: str) -> str:
@@ -150,7 +143,7 @@ def _resource_type_sort_key(rtype: str) -> tuple[int, str]:
 # it the page renders 418 entities as one undifferentiated list and the seven
 # scenarios it exists to record are invisible.
 GROUP_FIELD = {
-    "sparked-cdg-journeys": "journey",
+    "sparked-cdg-journeys": "programme",
     "connected-care-journeys": "story",
     "community-contributions": "organisation",
     "scenario-groups": "scenario",
@@ -158,11 +151,27 @@ GROUP_FIELD = {
     "families": "family_label",
 }
 
-# A second grouping level, inside GROUP_FIELD's. Geography is the only subset
-# that needs one: a grouping is the unit it proposes, but a reader looks for a
-# place first, so state is the outer level and the grouping the inner.
+# A second grouping level, inside GROUP_FIELD's.
+#   geography — a grouping is the unit it proposes, but a reader looks for a
+#     place first, so state is outer and the grouping inner.
+#   sparked — the journeys belong to two distinct programmes (AU PS and AU
+#     Encounter Records). Flattened to journey alone, that distinction is
+#     invisible and the AU Encounter Records journey is indistinguishable
+#     from the five AU PS ones.
 SUBGROUP_FIELD = {
     "geography-groups": "grouping_label",
+    "sparked-cdg-journeys": "journey",
+}
+
+# What the inner level is called in an outer group's count phrase.
+SUBGROUP_NOUN = {
+    "geography-groups": "grouping",
+    "sparked-cdg-journeys": "journey",
+}
+
+PROGRAMME_LABELS = {
+    "au-ps": "AU Patient Summary",
+    "au-encounter-records": "AU Encounter Records",
 }
 
 STORY_LABELS = {"alex": "Alex's Story", "yuri": "Yuri's Story (provisional)"}
@@ -245,6 +254,7 @@ def flatten_sparked(members: dict, index: dict) -> tuple[list[dict], list[str]]:
                             rid, resource_type="Unresolved", path=None,
                             why=entry.get("note", "named in the journey; "
                                           "no matching resource").strip(),
+                            programme=group_key,
                             journey=journey_slug,
                             journey_role=entry.get("journey_role"),
                             alignment="unresolved",
@@ -260,7 +270,8 @@ def flatten_sparked(members: dict, index: dict) -> tuple[list[dict], list[str]]:
                     why = f"{entry['journey_role']} in journey {journey_slug!r}"
                 flat.append(lib.member(
                     rid, resource_type=resolved["resource_type"],
-                    path=resolved["path"], why=why, journey=journey_slug,
+                    path=resolved["path"], why=why,
+                    programme=group_key, journey=journey_slug,
                     journey_role=entry.get("journey_role"),
                     declared_specialty=entry.get("declared_specialty"),
                     alignment=entry.get("alignment"),
@@ -392,13 +403,49 @@ def build_reservation_index(resolved: dict[str, list[dict]],
     return index
 
 
+# Suppressed entirely as overlap TARGETS — both reserved: false, and every
+# appearance to date has been (free to build on) noise rather than a
+# reservation conflict (geography-groups: 1022 members, blank-slate-patients:
+# a similarly broad share). Does not affect these subsets' own sections,
+# where their members still show overlaps into OTHER subsets normally.
+SUPPRESSED_OVERLAP_TARGETS = {"geography-groups", "blank-slate-patients"}
+
+# Reservation status not yet reconfirmed for cross-reference purposes.
+# Display-only (D20): each subset's own governance section is unchanged;
+# only a MENTION of one of these from another entity's overlap note reads
+# "(maybe reserved — TBD)" instead of asserting reserved/free-to-build-on.
+# Does not reopen D9's reusable-journeys argument for sparked-cdg-journeys /
+# scenario-groups — D9 stands; this is a pending reconfirmation, not a
+# reversal.
+RESERVATION_TBD_TARGETS = {
+    "inferno-default-patients", "au-ps-test-patients", "smart-health-checks",
+    "sparked-cdg-journeys", "connected-care-journeys", "scenario-groups",
+}
+
+
 def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
-    others = [(s, r) for s, r in res_index.get(key, []) if s != current_slug]
+    others = [(s, r) for s, r in res_index.get(key, []) if s != current_slug
+              and s not in SUPPRESSED_OVERLAP_TARGETS]
     if not others:
         return None
-    parts = [f"[{s}](#{s}) ({'reserved' if r else 'free to build on'})"
-            for s, r in sorted(set(others))]
-    return "also in: " + ", ".join(parts)
+    labelled = [
+        (s, "maybe reserved — TBD" if s in RESERVATION_TBD_TARGETS
+            else "reserved" if r else "free to build on")
+        for s, r in sorted(set(others))
+    ]
+    # What governs an entity is the tightest constraint across its
+    # memberships (D21) — once any membership is reserved or TBD, a
+    # free-to-build-on membership elsewhere adds noise, not information, so
+    # it's dropped. Only shown when it's the sole signal available. This
+    # still decides WHICH subsets are named, even though the label itself is
+    # no longer printed (D22) — a reservation elsewhere is still what makes
+    # an overlap worth surfacing at all.
+    stricter = [(s, l) for s, l in labelled if l != "free to build on"]
+    shown = stricter or labelled
+    # D22: the (reserved) / (maybe reserved — TBD) / (free to build on) label
+    # is omitted for now — cluttered the page without adding a decision a
+    # reader could act on from the note alone. Just the subset names.
+    return "also in: " + ", ".join(f"[{s}](#{s})" for s, _ in shown)
 
 
 # --- Rendering ----------------------------------------------------------
@@ -407,7 +454,8 @@ def render_entity_list(members: list[dict], group_field: str | None,
                        res_index: dict, current_slug: str,
                        group_labels: dict | None = None,
                        subgroup_field: str | None = None,
-                       group_notes: dict | None = None) -> str:
+                       group_notes: dict | None = None,
+                       subgroup_noun: str = "grouping") -> str:
     """Render a subset's entities, optionally grouped and sub-grouped.
 
     Where a subset is grouped, every group is a collapsible section whatever
@@ -493,7 +541,7 @@ def render_entity_list(members: list[dict], group_field: str | None,
                         for m in entries})
         n = len(by_sub)
         return ("\n".join(out),
-                f"{plural(n, 'grouping')}, {plural(distinct, 'entity')}")
+                f"{plural(n, subgroup_noun)}, {plural(distinct, 'entity')}")
 
     if group_field:
         by_group: dict[str, list[dict]] = defaultdict(list)
@@ -629,23 +677,29 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
         lines.append("")
         lines.append(f"**Read at:** {shown} — the {label} revision this page "
                      "was last generated from.")
-    # The four-way classification closes the section rather than leading it —
-    # the prose above already opens with "Derived automatically" / "Curated" /
-    # "Declared", so a leading label just repeats the next word.
-    type_label = TYPE_LABELS.get(subset["type"], subset["type"])
-    lines.append("")
-    lines.append(f"_Classification: {type_label}._")
+    # No separate classification line (D23): the identification prose above
+    # already states Derived/Declared/Curated as its opening word(s) — a
+    # trailing "_Classification: X._" line only repeated it.
 
     if notes:
+        # Collapsed like every other evidence block on the page (D20-era
+        # precedent): these are derivation detail — counts, exclusions,
+        # limitations — useful to a reviewer but not needed to read the
+        # section, so they default to closed rather than a permanent
+        # grey wall of text under every subset.
+        lines.append(
+            "<details><summary>Derivation notes</summary>\n"
+        )
         for note in notes:
             lines.append(f"> {note}")
-        lines.append("")
+        lines.append("\n</details>\n")
 
     group_field = GROUP_FIELD.get(slug)
     # Display labels for the sub-groups. Story labels are a presentation
     # choice and live here; scenario titles are facts recovered from the seed
     # ref and live in the facts file (D12).
     group_labels = (STORY_LABELS if group_field == "story"
+                    else PROGRAMME_LABELS if group_field == "programme"
                     else subset.get("scenario_titles") or {})
     subgroup_field = SUBGROUP_FIELD.get(slug)
     # The suburb list is what a reader checks a proposed grouping against —
@@ -676,7 +730,8 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     lines.append(f"### Members ({distinct})\n")
     lines.append(render_entity_list(members, group_field, res_index, slug,
                                     group_labels, subgroup_field,
-                                    group_notes))
+                                    group_notes,
+                                    SUBGROUP_NOUN.get(slug, "grouping")))
 
     if candidate:
         flagged = (candidate.get("evidence") or {}).get(
@@ -811,10 +866,20 @@ def main():
         "— because new content joins a graph that may already be shaped to "
         "serve a stated purpose.\n",
 
+        # D24, stated once here so no subset has to draw a conclusion it
+        # cannot support from its own membership alone.
+        "A subset stating that its own membership does not reserve an entity "
+        "does not make that entity free to build on — another subset may "
+        "reserve it. What governs is the tightest constraint across all of an "
+        "entity's memberships, which is what each entity's *also in* note "
+        "surfaces.\n",
+
         "### How each subset is identified\n",
-        "Every section closes with a classification. The four are defined "
-        "below; the practical difference is what each needs in order to be "
-        "trustworthy.\n",
+        # D23 removed the trailing "_Classification: X._" line; the type is
+        # now the opening word of each identification description.
+        "Every subset states its classification where it describes how it is "
+        "identified. The four are defined below; the practical difference is "
+        "what each needs in order to be trustworthy.\n",
         "<details><summary>What the four classifications mean</summary>\n\n"
         "- **Derived** — computed from the repository by a deterministic "
         "script, with no human input. Recomputed on every regeneration, so it "
