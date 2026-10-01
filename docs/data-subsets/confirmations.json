@@ -1,0 +1,2803 @@
+{
+  "decisions": {
+    "019e4f6c86968f40": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/specialistmedical-piesseville-gastroenterology",
+        "Location/piesseville-gastroenterology",
+        "Organization/piesseville-gastroenterology",
+        "Patient/thomson-mika",
+        "Practitioner/coulter-rosalina",
+        "PractitionerRole/optometrist-coulter-rosalina"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "02bcdb9c3335105a": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Medication/reaptan-missing-code"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "032ae6c0bebffda8": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "AllergyIntolerance/egg-missing-code"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "03bbffa1558fc94d": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/oxenford-care-and-support",
+        "Patient/lynch-alyce-shauna"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "0514056d66107674": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/publicacute-rosetta-public-hospital",
+        "Location/rosetta-public-hospital",
+        "Organization/rosetta-public-hospital",
+        "Patient/cummings-angelo",
+        "Patient/potts-felix-ernie",
+        "Practitioner/beale-collette",
+        "Practitioner/burrows-tegan",
+        "Practitioner/harvey-brooke",
+        "Practitioner/mortenson-kerry",
+        "Practitioner/rawlings-hong",
+        "PractitionerRole/diagnostic-beale-collette",
+        "PractitionerRole/nursepractitioner-mortenson-kerry",
+        "PractitionerRole/paediatrician-rawlings-hong",
+        "PractitionerRole/registerednurses-harvey-brooke",
+        "PractitionerRole/surgeongeneral-burrows-tegan"
+      ],
+      "note": "Confirmed by the user: single-state (TAS), 4 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present).",
+      "subset": "geography-groups"
+    },
+    "07ae2f492d2542fe": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Encounter/annualvisit-suppressed-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "0a3a37ec0a85c2db": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Practitioner/missing-name"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "0bea45f749dce16b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "AllergyIntolerance/egg-suppressed-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "0dbf54e716b3fa8f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/menzies-health-network",
+        "Patient/bassett-imogene-betsy",
+        "Practitioner/oritz-abbie",
+        "PractitionerRole/medicaldiagnostic-oritz-abbie"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "0de8db5810c328c9": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/pathresult-missing-value"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "15a649e3c21a2d4f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalmedical-mossy-point-medical-centre",
+        "Location/mossy-point-medical-centre",
+        "Organization/mossy-point-medical-centre",
+        "Practitioner/lowe-abe",
+        "Practitioner/roberts-benjamin",
+        "PractitionerRole/generalpractitioner-lowe-abe",
+        "PractitionerRole/registerednurses-roberts-benjamin"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "16114769ac447fd6": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/dietrich-blake-louis",
+        "Patient/dietrich-diedre-alicia",
+        "Patient/dietrich-kimbra-althea",
+        "Patient/dietrich-phillipa-grace"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 2954541131.",
+      "subset": "families"
+    },
+    "170b1ba25e1231e2": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "DocumentReference/aups-section-emptyreason"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "19007644805cb078": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-fishermans-reach-radiology",
+        "Location/fishermans-reach-radiology",
+        "Organization/fishermans-reach-radiology",
+        "Patient/irvine-ronny-lawrence",
+        "Practitioner/gilchrist-daniel",
+        "Practitioner/osborne-bonny",
+        "PractitionerRole/complementaryhealth-gilchrist-daniel",
+        "PractitionerRole/diagnostic-osborne-bonny"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "191dbcc92941be53": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/resprate-1-exercise-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "1b52485a678c25cf": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/hamel-denice",
+        "Practitioner/kendall-dallas",
+        "PractitionerRole/midwife-kendall-dallas",
+        "PractitionerRole/nuclearmedicine-hamel-denice"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "1b735a65c497644b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/baby-banks-john",
+        "Patient/banks-jamila-angie",
+        "Patient/banks-jeramy-ezra",
+        "Patient/banks-jonas-cary",
+        "Patient/banks-mia-leanne",
+        "RelatedPerson/banks-bob",
+        "RelatedPerson/banks-mia-leanne-father"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 2954541041.",
+      "subset": "families"
+    },
+    "1efef28d54faee38": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Encounter/annualvisit-missing-status"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "1f14da165eda8e1c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalmedical-elimbah-medical-centre",
+        "Location/elimbah-medical-centre",
+        "Organization/elimbah-medical-centre",
+        "Patient/boulton-annika",
+        "Practitioner/egan-shae",
+        "Practitioner/guthridge-jarred",
+        "PractitionerRole/generalpractitioner-guthridge-jarred",
+        "PractitionerRole/registerednurses-egan-shae"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "1f20ab851b032b19": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/elliott-eulah",
+        "PractitionerRole/medicaldiagnostic-elliott-eulah"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "248ee1f72a983f91": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/lowe-alessandra",
+        "Patient/lowe-alix",
+        "Patient/lowe-cedric",
+        "Patient/lowe-valerie"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 2954664391.",
+      "subset": "families"
+    },
+    "259fe56606b04c08": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/physiotherapyservices-canton-beach-physiotherapy",
+        "HealthcareService/specialistmedical-bucketty-oncology-clinic",
+        "Location/bucketty-oncology-clinic",
+        "Location/canton-beach-physiotherapy",
+        "Organization/bucketty-oncology-clinic",
+        "Organization/canton-beach-physiotherapy",
+        "Practitioner/tennant-carlyn",
+        "PractitionerRole/medicaldiagnostic-tennant-carlyn"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "25e531adc3bb33c2": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bodyheight-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "26e57b84ea7cbf1a": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/glasgow-coma-scale-motor-not-performed"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "27879acb9264ae28": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/emergencydepartment-tarampa-emergency",
+        "Location/tarampa-emergency",
+        "Organization/tarampa-emergency",
+        "Practitioner/mitchell-frankie",
+        "PractitionerRole/emergencymedicine-mitchell-frankie"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "299fddda176973a4": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/hoskins-sergio-lionel"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "2ab0968c5d8a750e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationRequest/reaptan-missing-authoredOn"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "2adce5c69ce3f8a0": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Condition/condition-masked"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "2c52b3dc7bf90585": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationRequest/reaptan-suppressed-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "2f88c86ad99a069c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/heartrate-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "341c751ca115e42f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-douglas-radiology",
+        "HealthcareService/diagnosticimaging-mckenzie-creek-radiology",
+        "Location/douglas-radiology",
+        "Location/mckenzie-creek-radiology",
+        "Organization/douglas-radiology",
+        "Organization/mckenzie-creek-radiology",
+        "Practitioner/burdett-palmer",
+        "Practitioner/mccarthy-kate",
+        "Practitioner/short-miranda",
+        "PractitionerRole/diagnostic-burdett-palmer",
+        "PractitionerRole/diagnostic-mccarthy-kate",
+        "PractitionerRole/medicaldiagnostic-short-miranda"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "3422a2d8104eff4f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/morris-charlotte"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "36616014ecceff6f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-berat-radiology",
+        "HealthcareService/generalpractice-loch-lomond-medical-clinic",
+        "HealthcareService/pathologylaboratory-carrington-pathology",
+        "HealthcareService/publicacute-glennie-heights-public-hospital",
+        "Location/berat-radiology",
+        "Location/carrington-pathology",
+        "Location/glennie-heights-public-hospital",
+        "Location/loch-lomond-medical-clinic",
+        "Organization/berat-radiology",
+        "Organization/carrington-pathology",
+        "Organization/glennie-heights-public-hospital",
+        "Organization/loch-lomond-medical-clinic",
+        "Patient/hayes-arianne",
+        "Patient/roberts-fred",
+        "Practitioner/berry-millicent",
+        "Practitioner/macnab-gregory",
+        "Practitioner/marchant-ricki",
+        "Practitioner/morton-eric",
+        "Practitioner/rowland-roger",
+        "Practitioner/samuels-wyatt",
+        "Practitioner/shearer-joesfine",
+        "Practitioner/springett-angelo",
+        "PractitionerRole/diagnostic-berry-millicent",
+        "PractitionerRole/generalpractitioner-samuels-wyatt",
+        "PractitionerRole/nursepractitioner-springett-angelo",
+        "PractitionerRole/pathologist-shearer-joesfine",
+        "PractitionerRole/psychiatrist-macnab-gregory",
+        "PractitionerRole/registerednurses-morton-eric",
+        "PractitionerRole/registerednurses-rowland-roger",
+        "PractitionerRole/surgeongeneral-marchant-ricki"
+      ],
+      "note": "Confirmed by the user despite 4+ suburbs. Suburbs: Berat, Carrington, Glennie Heights, Loch Lomond, Morgan Park, Purrawunda, Westbrook.",
+      "subset": "geography-groups"
+    },
+    "3a52001f8360d45f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/emergencydepartment-dubbo-emergency",
+        "Location/dubbo-emergency",
+        "Organization/dubbo-emergency",
+        "Practitioner/gilmour-damon",
+        "Practitioner/leishman-leesa",
+        "PractitionerRole/emergencymedicine-gilmour-damon",
+        "PractitionerRole/paediatrician-leishman-leesa"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "3bf8d827e840e339": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationRequest/reaptan-missing-medication"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "3d12bed4c742f90f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Condition/nailwound-missing-category"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "3e333bb68f30c962": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bodytemp-1-device-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "3e5592aa20ddf24b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Procedure/obstetric-missing-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "41b1f6af186b965b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/hearing-threshold-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "424e7cc538a437d1": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/sandilands-young"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "4922606eb57fdf2c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalpractice-bungabbee-medical-clinic",
+        "Location/bungabbee-medical-clinic",
+        "Organization/bungabbee-medical-clinic",
+        "Patient/johnson-joyce",
+        "Practitioner/burrows-ginger",
+        "Practitioner/patrick-fletcher",
+        "PractitionerRole/generalpractitioner-burrows-ginger",
+        "PractitionerRole/registerednurses-patrick-fletcher"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "4a9e031a1fab2208": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/italia-sofia",
+        "Patient/italia-sofia-missing-birthDate",
+        "Patient/italia-sofia-missing-gender",
+        "Patient/italia-sofia-missing-identifier",
+        "Patient/italia-sofia-missing-name",
+        "Patient/italia-sofia-suppressed-birthDate",
+        "Patient/italia-sofia-suppressed-gender",
+        "Patient/italia-sofia-suppressed-identifier",
+        "Patient/italia-sofia-suppressed-name"
+      ],
+      "note": "Not a family: 9 missing/suppressed test-data variants of ONE synthetic patient sharing one address, not 9 people.",
+      "subset": "families"
+    },
+    "4baed385e4b0ed62": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Procedure/obstetric-missing-status"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "4c2d4340e4b3637e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Location/bobrester-medical-center",
+        "Organization/bobrester-medical-center",
+        "Patient/martin-shawn"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "4c7f0fd26e00bf93": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Immunization/zoster-suppressed-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "53192d8c2e0f28cf": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/communityhealth-southedge-practice",
+        "HealthcareService/privateprofit-hudson-aged-care",
+        "HealthcareService/specialistmedical-bayview-heights-oncology-clinic",
+        "Location/bayview-heights-oncology-clinic",
+        "Location/hudson-aged-care",
+        "Location/southedge-practice",
+        "Organization/bayview-heights-oncology-clinic",
+        "Organization/hudson-aged-care",
+        "Organization/southedge-practice",
+        "Practitioner/berry-shay",
+        "Practitioner/coulter-oliver",
+        "Practitioner/lamerton-buck",
+        "Practitioner/leeds-luigi",
+        "Practitioner/mclean-lizzette",
+        "Practitioner/mcleod-clinton",
+        "PractitionerRole/aboriginal-coulter-oliver",
+        "PractitionerRole/medicaloncologist-leeds-luigi",
+        "PractitionerRole/nursepractitioner-mcleod-clinton",
+        "PractitionerRole/registerednurses-berry-shay",
+        "PractitionerRole/registerednurses-lamerton-buck",
+        "PractitionerRole/registerednurses-mclean-lizzette"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "5344976f57986889": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/communityhealth-balbarrup-practice",
+        "HealthcareService/generalpractice-quinninup-medical-clinic",
+        "Location/balbarrup-practice",
+        "Location/quinninup-medical-clinic",
+        "Organization/balbarrup-practice",
+        "Organization/quinninup-medical-clinic",
+        "Practitioner/clare-evonne",
+        "Practitioner/darcy-stella",
+        "Practitioner/jones-blanch",
+        "Practitioner/power-linda",
+        "PractitionerRole/aboriginal-darcy-stella",
+        "PractitionerRole/generalpractitioner-jones-blanch",
+        "PractitionerRole/registerednurses-clare-evonne",
+        "PractitionerRole/registerednurses-power-linda"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "5735089ad1fa4876": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/simpson-tristan"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "57e8d1f9f2f55fca": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/hampton-jenice"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "585d4beab114f711": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/observation-masked"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "58e606655c68f4ca": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalmedical-milnes-bridge-medical-centre",
+        "HealthcareService/pharmacyretail-pine-view-pharmacy",
+        "HealthcareService/publicacute-murrabit-public-hospital",
+        "Location/milnes-bridge-medical-centre",
+        "Location/murrabit-public-hospital",
+        "Location/pine-view-pharmacy",
+        "Organization/milnes-bridge-medical-centre",
+        "Organization/murrabit-public-hospital",
+        "Organization/pine-view-pharmacy",
+        "Patient/mackay-elliott",
+        "Patient/mackay-fritz",
+        "Patient/mackay-heather",
+        "Practitioner/hilton-jaclyn",
+        "Practitioner/howell-natalia",
+        "Practitioner/leech-darnell",
+        "Practitioner/moss-jaime",
+        "Practitioner/roche-louis",
+        "Practitioner/shea-ingrid",
+        "Practitioner/sutherland-sallie",
+        "PractitionerRole/cardiologist-sutherland-sallie",
+        "PractitionerRole/gastroenterologist-roche-louis",
+        "PractitionerRole/generalpractitioner-moss-jaime",
+        "PractitionerRole/nursepractitioner-hilton-jaclyn",
+        "PractitionerRole/registerednurses-leech-darnell",
+        "PractitionerRole/registerednurses-shea-ingrid",
+        "PractitionerRole/retailpharmacist-howell-natalia",
+        "RelatedPerson/mackay-heather-2",
+        "RelatedPerson/mackay-heather-3"
+      ],
+      "note": "Confirmed by the user despite 4+ suburbs. Suburbs: Appin South, Milnes Bridge, Murrabit, Piavella, Pine View.",
+      "subset": "geography-groups"
+    },
+    "5ea4882b4ba77fb9": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-cape-jaffa-radiology",
+        "Location/cape-jaffa-radiology",
+        "Organization/cape-jaffa-radiology",
+        "Practitioner/parr-adelaide",
+        "PractitionerRole/diagnostic-parr-adelaide"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "5f024290a59c3cc8": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/nielsen-eleanore"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "60794df974ee1d4a": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalmedical-southport-medical-practice",
+        "HealthcareService/pathologylaboratory-verona-sands-pathology",
+        "Location/southport-medical-practice",
+        "Location/verona-sands-pathology",
+        "Organization/southport-medical-practice",
+        "Organization/verona-sands-pathology",
+        "Practitioner/ellison-malinda",
+        "Practitioner/emmett-wilhelmina",
+        "Practitioner/fletcher-dani",
+        "Practitioner/moran-vincent",
+        "PractitionerRole/ambulanceofficer-fletcher-dani",
+        "PractitionerRole/generalpractitioner-moran-vincent",
+        "PractitionerRole/pathologist-emmett-wilhelmina",
+        "PractitionerRole/registerednurses-ellison-malinda"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "61e8cf114da3d2c6": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Bundle/aups-section-emptyreason"
+      ],
+      "note": "Verified and confirmed by the user: Composition sections in this Bundle use list-empty-reason (system http://terminology.hl7.org/CodeSystem/list-empty-reason) on Allergies, Problem List, Medication Summary and Immunizations sections — the section-level sibling of dataAbsentReason. Confirmed alongside its DocumentReference wrapper (DocumentReference/aups-section-emptyreason), a separate resource that shares its bare id but was previously confirmed under a distinct, type-qualified key.",
+      "subset": "missing-suppressed-data"
+    },
+    "6515880af4d629b2": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-koolanooka-radiology",
+        "Location/koolanooka-radiology",
+        "Organization/koolanooka-radiology",
+        "Practitioner/gidley-aubrey",
+        "Practitioner/hickman-sally",
+        "PractitionerRole/diagnostic-gidley-aubrey",
+        "PractitionerRole/specialistphysicians-hickman-sally"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "6708bd4cb29e588c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/moffitt-heath-igor"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "68c76341d7943065": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationStatement/suppressed-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "6a8efb972969bd96": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/missing-name"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "6d670fea9eb81721": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Bundle/aups-basicsummary-missing-comp-elements"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "6d97c35884616ab7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationRequest/reaptan-missing-requester"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "6f271b937d5a644b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/bryan-linsey",
+        "PractitionerRole/cardiothoracicsurgeon-bryan-linsey"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "6f7643f0b53a22e3": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "HealthcareService/diagnosticimaging-kaltukatjara-radiology",
+        "HealthcareService/generalmedical-alice-springs-medical-practice",
+        "HealthcareService/privateacute-beswick-private-hospital",
+        "Location/alice-springs-medical-practice",
+        "Location/beswick-private-hospital",
+        "Location/kaltukatjara-radiology",
+        "Organization/alice-springs-medical-practice",
+        "Organization/beswick-private-hospital",
+        "Organization/kaltukatjara-radiology",
+        "Patient/humphries-jayson",
+        "Patient/little-rose-gretal",
+        "Patient/nash-abel",
+        "Patient/veitch-beau-bradley",
+        "Patient/veitch-miles-dudley",
+        "Patient/veitch-mitchell-carl",
+        "Patient/veitch-nathan-chris",
+        "Patient/veitch-savannah-sheena",
+        "Practitioner/bradley-lucrecia",
+        "Practitioner/chalmers-shani",
+        "Practitioner/delaney-azzie",
+        "Practitioner/felmingham-marian",
+        "Practitioner/fischer-ahmed",
+        "Practitioner/fleming-helga",
+        "Practitioner/gartshore-evelyn",
+        "Practitioner/guthrie-aaron",
+        "Practitioner/mackay-darleen",
+        "Practitioner/martin-kirstie",
+        "Practitioner/perry-rebekah",
+        "PractitionerRole/ambulanceofficer-chalmers-shani",
+        "PractitionerRole/clinicalpsychologist-fleming-helga",
+        "PractitionerRole/diagnostic-gartshore-evelyn",
+        "PractitionerRole/generalpractitioner-guthrie-aaron",
+        "PractitionerRole/midwife-bradley-lucrecia",
+        "PractitionerRole/nursepractitioner-perry-rebekah",
+        "PractitionerRole/paediatrician-fischer-ahmed",
+        "PractitionerRole/registerednurses-felmingham-marian",
+        "PractitionerRole/registerednurses-martin-kirstie",
+        "PractitionerRole/renalmedicine-mackay-darleen",
+        "PractitionerRole/surgeongeneral-delaney-azzie",
+        "RelatedPerson/veitch-miles-2",
+        "RelatedPerson/veitch-miles-3",
+        "RelatedPerson/veitch-miles-4",
+        "RelatedPerson/veitch-miles-5"
+      ],
+      "note": "Rejected by the user: excessive geographic spread despite provider infrastructure. Suburbs: Alice Springs, Areyonga, Atitjere, Beswick, Docker River, Erldunda, Kaltukatjara, Kulgera, Manbulloo, Newcastle Waters, Papunya, Umpangara.",
+      "subset": "geography-groups"
+    },
+    "6fcad937b518b80a": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-blumont-radiology",
+        "HealthcareService/pharmacyretail-launceston-pharmacy",
+        "HealthcareService/privateacute-robigana-private-hospital",
+        "Location/blumont-radiology",
+        "Location/launceston-pharmacy",
+        "Location/robigana-private-hospital",
+        "Organization/blumont-radiology",
+        "Organization/launceston-pharmacy",
+        "Organization/robigana-private-hospital",
+        "Patient/robson-adam",
+        "Practitioner/goldsmith-melody",
+        "Practitioner/houston-katrina",
+        "Practitioner/jolley-beulah",
+        "Practitioner/marchant-ivy",
+        "Practitioner/mcguire-jesse",
+        "Practitioner/patten-annie",
+        "PractitionerRole/diagnostic-houston-katrina",
+        "PractitionerRole/medicaldiagnostic-goldsmith-melody",
+        "PractitionerRole/nursepractitioner-patten-annie",
+        "PractitionerRole/registerednurses-marchant-ivy",
+        "PractitionerRole/retailpharmacist-jolley-beulah",
+        "PractitionerRole/surgeongeneral-mcguire-jesse"
+      ],
+      "note": "Confirmed by the user despite 4+ suburbs. Suburbs: Blumont, Launceston, Norwood, Robigana, Rushy Lagoon.",
+      "subset": "geography-groups"
+    },
+    "735f9894887499ba": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/cane-cheyenne-elaina",
+        "Practitioner/gordon-tad",
+        "Practitioner/gorton-dante",
+        "Practitioner/losch-sallie",
+        "PractitionerRole/complementaryhealth-gordon-tad",
+        "PractitionerRole/counsellorsnec-gorton-dante",
+        "PractitionerRole/obstetrician-losch-sallie"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "759341bcfbfb5ffe": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/pathresult-missing-code"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "75a2f2d33d81148b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateprofit-wallendbeen-aged-care",
+        "Location/wallendbeen-aged-care",
+        "Organization/wallendbeen-aged-care",
+        "Practitioner/fraser-abbie",
+        "Practitioner/gartshore-indira",
+        "Practitioner/jenkins-miranda",
+        "Practitioner/taylor-kittie",
+        "PractitionerRole/nursepractitioner-gartshore-indira",
+        "PractitionerRole/ophthalmologist-jenkins-miranda",
+        "PractitionerRole/registerednurses-fraser-abbie",
+        "PractitionerRole/registerednurses-taylor-kittie"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "75c1f0a4c698c98e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationRequest/reaptan-missing-status"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "775cc26b66e1d334": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/blood-group-panel-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "77ce57d9181f134a": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/sorell-health-network",
+        "Practitioner/coulter-lani",
+        "Practitioner/felmingham-emma",
+        "PractitionerRole/cardiologist-felmingham-emma",
+        "PractitionerRole/medicalradiation-coulter-lani"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "7cd021cf540fa1cd": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/italia-sofia-missing-name"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "7e6ba79a4bcaa655": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/specialistmedical-gangat-endocrinology-clinic",
+        "Location/gangat-endocrinology-clinic",
+        "Organization/gangat-endocrinology-clinic",
+        "Practitioner/gates-glenda",
+        "PractitionerRole/medicaldiagnostic-gates-glenda"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "8034b864bf356d1e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Procedure/obstetric-missing-code"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "815a39dc91745605": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/sandilands-kendall",
+        "Practitioner/thorn-brittany",
+        "PractitionerRole/midwife-thorn-brittany"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "81bb2dc04060813c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bloodpressure-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "82c33d33f64bf5f3": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateprofit-rowsley-aged-care",
+        "Location/rowsley-aged-care",
+        "Organization/rowsley-aged-care",
+        "Patient/inveraity-polly",
+        "Practitioner/corbett-clementine",
+        "Practitioner/goodwin-aida",
+        "Practitioner/ross-moses",
+        "Practitioner/thorpe-mia",
+        "PractitionerRole/nursepractitioner-thorpe-mia",
+        "PractitionerRole/paediatrician-corbett-clementine",
+        "PractitionerRole/registerednurses-goodwin-aida",
+        "PractitionerRole/registerednurses-ross-moses"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "82f56d08c45ac089": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/italia-sofia",
+        "Patient/italia-sofia-missing-birthDate",
+        "Patient/italia-sofia-missing-gender",
+        "Patient/italia-sofia-missing-identifier",
+        "Patient/italia-sofia-suppressed-birthDate",
+        "Patient/italia-sofia-suppressed-gender",
+        "Patient/italia-sofia-suppressed-identifier"
+      ],
+      "note": "Not a family: the same synthetic patient's test-data variants, matched on surname instead of address.",
+      "subset": "families"
+    },
+    "8495f434ec26f9ac": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pathologylaboratory-bridgewater-pathology",
+        "Location/bridgewater-pathology",
+        "Organization/bridgewater-pathology",
+        "Practitioner/hollands-beryl",
+        "PractitionerRole/pathologist-hollands-beryl"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "8542440a32313580": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/emergencydepartment-mount-glasgow-emergency",
+        "Location/mount-glasgow-emergency",
+        "Organization/mount-glasgow-emergency",
+        "Practitioner/hickson-ngoc",
+        "PractitionerRole/emergencymedicine-hickson-ngoc"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "888f4c7bd4b4c046": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "flagged",
+      "members": [
+        "Patient/sandilands-kendall",
+        "Patient/sandilands-young"
+      ],
+      "note": "Potential family, unproven. Kendall (F, Sheaoak Flat SA, 1981) and Young (Warnertown SA, 1962) share a surname and state, ~19 years apart — plausibly parent/child. No RelatedPerson link. The Medicare card test cannot adjudicate: Kendall holds 5951138661, Young has no Medicare number at all.",
+      "subset": "families"
+    },
+    "899a8847e6ab0e40": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/delaney-ned",
+        "PractitionerRole/dermatologist-delaney-ned"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "8b1abf2c86c4a88e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/hennessy-billy",
+        "Patient/hennessy-jenny",
+        "Patient/hennessy-kacey"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 2954663691.",
+      "subset": "families"
+    },
+    "90c3a14447e53c30": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/goondiwindi-health-network",
+        "Practitioner/gore-jess",
+        "PractitionerRole/chiropractor-gore-jess"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "92c04968a935ba8e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-nicholls-radiology",
+        "HealthcareService/generalmedical-ngunnawal-medical-practice",
+        "HealthcareService/pathologylaboratory-calwell-pathology",
+        "HealthcareService/pharmacyretail-ginninderra-pharmacy",
+        "HealthcareService/privateacute-monash-private-hospital",
+        "HealthcareService/publicacute-oxley-public-hospital",
+        "Location/calwell-pathology",
+        "Location/ginninderra-pharmacy",
+        "Location/monash-private-hospital",
+        "Location/ngunnawal-medical-practice",
+        "Location/nicholls-radiology",
+        "Location/oxley-public-hospital",
+        "Organization/calwell-pathology",
+        "Organization/curtin-care-and-support",
+        "Organization/garran-cardiology-clinic",
+        "Organization/garran-dental",
+        "Organization/garran-medical-clinic",
+        "Organization/garran-nephrology",
+        "Organization/garran-nutrition",
+        "Organization/garran-ophthalmology",
+        "Organization/garran-optical",
+        "Organization/garran-ot-services",
+        "Organization/garran-pathology",
+        "Organization/garran-pharmacy",
+        "Organization/garran-physiotherapy",
+        "Organization/garran-radiology",
+        "Organization/ginninderra-pharmacy",
+        "Organization/manuka-medical-centre",
+        "Organization/monash-private-hospital",
+        "Organization/ngunnawal-medical-practice",
+        "Organization/nicholls-radiology",
+        "Organization/oxley-public-hospital",
+        "Organization/reid-health-network",
+        "Patient/black-kerry-dougal",
+        "Patient/davis-juan",
+        "Patient/dietrich-blake-louis",
+        "Patient/dietrich-diedre-alicia",
+        "Patient/dietrich-kimbra-althea",
+        "Patient/dietrich-phillipa-grace",
+        "Patient/downie-grant",
+        "Patient/hennessy-billy",
+        "Patient/hennessy-jenny",
+        "Patient/hennessy-kacey",
+        "Patient/hulme-brant",
+        "Patient/ridgewell-troy",
+        "Patient/scott-elijah-ken",
+        "Practitioner/alderson-helene",
+        "Practitioner/allen-yelena",
+        "Practitioner/allerton-skye",
+        "Practitioner/becker-valentina",
+        "Practitioner/bennett-tawnya",
+        "Practitioner/bishop-horace",
+        "Practitioner/briggs-cheyenne",
+        "Practitioner/brooksby-susanna",
+        "Practitioner/cohen-jamel",
+        "Practitioner/colliss-jocelyn",
+        "Practitioner/cross-lizzie",
+        "Practitioner/donaldson-stephanie",
+        "Practitioner/gidley-stan",
+        "Practitioner/gilkinson-tyron",
+        "Practitioner/grant-lindsay",
+        "Practitioner/harris-stephan",
+        "Practitioner/harrower-austin",
+        "Practitioner/harwood-kathaleen",
+        "Practitioner/henderson-elaine",
+        "Practitioner/hill-maryln",
+        "Practitioner/humphreys-christeen",
+        "Practitioner/krug-chas",
+        "Practitioner/lees-noreen",
+        "Practitioner/levings-richard",
+        "Practitioner/mackenzie-wilbur",
+        "Practitioner/maxwell-israel",
+        "Practitioner/mccarthy-heide",
+        "Practitioner/mcmahon-yasuko",
+        "Practitioner/murphy-kyla",
+        "Practitioner/murphy-virginia",
+        "Practitioner/nairn-ricky",
+        "Practitioner/newling-mariella",
+        "Practitioner/parkinson-ethel",
+        "Practitioner/patrick-tricia",
+        "Practitioner/pickford-aimee",
+        "Practitioner/pollock-dinah",
+        "Practitioner/rowlands-alvera",
+        "Practitioner/sawtell-tomasa",
+        "Practitioner/seymour-sol",
+        "Practitioner/short-tandra",
+        "Practitioner/stevens-chelsea",
+        "Practitioner/turnbull-daniel",
+        "PractitionerRole/allerton-skye",
+        "PractitionerRole/bennett-tawnya",
+        "PractitionerRole/colliss-jocelyn",
+        "PractitionerRole/diagnostic-hill-maryln",
+        "PractitionerRole/generalpractitioner-bishop-horace",
+        "PractitionerRole/harris-stephan",
+        "PractitionerRole/harrower-austin",
+        "PractitionerRole/harwood-kathaleen",
+        "PractitionerRole/henderson-elaine",
+        "PractitionerRole/humphreys-christeen",
+        "PractitionerRole/krug-chas",
+        "PractitionerRole/levings-richard",
+        "PractitionerRole/mackenzie-wilbur",
+        "PractitionerRole/maxwell-israel",
+        "PractitionerRole/medicaldiagnostic-alderson-helene",
+        "PractitionerRole/midwife-pollock-dinah",
+        "PractitionerRole/murphy-kyla",
+        "PractitionerRole/newling-mariella",
+        "PractitionerRole/nursepractitioner-cohen-jamel",
+        "PractitionerRole/nursepractitioner-grant-lindsay",
+        "PractitionerRole/paediatrician-rowlands-alvera",
+        "PractitionerRole/pathologist-stevens-chelsea",
+        "PractitionerRole/patrick-tricia",
+        "PractitionerRole/registerednurses-donaldson-stephanie",
+        "PractitionerRole/registerednurses-gidley-stan",
+        "PractitionerRole/registerednurses-nairn-ricky",
+        "PractitionerRole/retailpharmacist-lees-noreen",
+        "PractitionerRole/sawtell-tomasa",
+        "PractitionerRole/short-tandra",
+        "PractitionerRole/surgeongeneral-cross-lizzie",
+        "PractitionerRole/surgeongeneral-pickford-aimee",
+        "RelatedPerson/dietrich-phillipa-2",
+        "RelatedPerson/dietrich-phillipa-3",
+        "RelatedPerson/dietrich-phillipa-4",
+        "RelatedPerson/hennessy-billy-1",
+        "RelatedPerson/hennessy-billy-2",
+        "RelatedPerson/hennessy-jenny-1",
+        "RelatedPerson/hennessy-jenny-2",
+        "RelatedPerson/hennessy-kacey-1",
+        "RelatedPerson/hennessy-kacey-2"
+      ],
+      "note": "Confirmed by the user: single-state (ACT), 21 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present). Scenario-corroborated: paeds-scenario-5yo (56)",
+      "subset": "geography-groups"
+    },
+    "9454a63b44ab2c8c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/audiologyservice-mitchells-hill-audiology",
+        "HealthcareService/generalpractice-joyces-creek-medical-clinic",
+        "Location/joyces-creek-medical-clinic",
+        "Location/mitchells-hill-audiology",
+        "Organization/joyces-creek-medical-clinic",
+        "Organization/mitchells-hill-audiology",
+        "Practitioner/baldwin-chi",
+        "Practitioner/gidley-dee",
+        "Practitioner/lumb-mary",
+        "Practitioner/sheehan-ginger",
+        "PractitionerRole/complementaryhealth-sheehan-ginger",
+        "PractitionerRole/diagnostic-baldwin-chi",
+        "PractitionerRole/generalpractitioner-lumb-mary",
+        "PractitionerRole/registerednurses-gidley-dee"
+      ],
+      "note": "Confirmed by the user despite 4+ suburbs. Suburbs: Areegra, Joyces Creek, Mitchells Hill, Swanwater West.",
+      "subset": "geography-groups"
+    },
+    "9ae5c4c02916b6b5": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/smokingstatus-notasked"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "9dddc23d186e495b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "AllergyIntolerance/egg-missing-verificationStatus"
+      ],
+      "note": "Rejected by the user: verificationStatus is entirely omitted rather than marked with an explicit absence mechanism. Simple omission of an optional field is not the same representational pattern as the confirmed data-absent-reason cases.",
+      "subset": "missing-suppressed-data"
+    },
+    "a06e42ec1553e12c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bodytemp-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "a18d7527adcba8ba": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateacute-mount-mitchell-private-hospital",
+        "Location/mount-mitchell-private-hospital",
+        "Organization/mount-mitchell-private-hospital",
+        "Practitioner/guthrie-daine",
+        "Practitioner/milgate-leisa",
+        "Practitioner/munro-rose",
+        "PractitionerRole/nursepractitioner-munro-rose",
+        "PractitionerRole/registerednurses-milgate-leisa",
+        "PractitionerRole/surgeongeneral-guthrie-daine"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "a464d1fcd5fb9c4d": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/south-lake-care-and-support",
+        "Patient/baratz-toni",
+        "Practitioner/mcnaughton-chante",
+        "PractitionerRole/clinicalpsychologist-mcnaughton-chante"
+      ],
+      "note": "Confirmed by the user: single-state (WA), 3 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present).",
+      "subset": "geography-groups"
+    },
+    "a73ed9c125ae79bc": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/italia-sofia-missing-gender"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "a793833289f7c9c3": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pathologylaboratory-pullabooka-pathology",
+        "Location/pullabooka-pathology",
+        "Organization/pullabooka-pathology",
+        "Practitioner/pratley-philomena",
+        "PractitionerRole/pathologist-pratley-philomena"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "a7d3db5bb448ca3d": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pharmacyretail-lilydale-pharmacy",
+        "HealthcareService/specialistmedical-kippenduff-cardiologist",
+        "Location/kippenduff-cardiologist",
+        "Location/lilydale-pharmacy",
+        "Organization/kippenduff-cardiologist",
+        "Organization/lilydale-pharmacy",
+        "Practitioner/cane-elden",
+        "PractitionerRole/retailpharmacist-cane-elden"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "a904b71ed66b29bf": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/thompson-karly",
+        "PractitionerRole/osteopath-thompson-karly"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "a951532d7e5950c7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/italia-sofia-missing-birthDate"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "ab2780bc820e55a7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateacute-barney-view-private-hospital",
+        "Location/au-hospital-pharm-out",
+        "Location/barney-view-private-hospital",
+        "Location/renal-dialysis-unit",
+        "Organization/barney-view-private-hospital",
+        "Practitioner/armstrong-amada",
+        "Practitioner/haywood-byron",
+        "Practitioner/kelly-virginia",
+        "Practitioner/manning-meg",
+        "Practitioner/sinclair-forrest",
+        "PractitionerRole/cardiothoracicsurgeon-manning-meg",
+        "PractitionerRole/dietitian-kelly-virginia",
+        "PractitionerRole/nursepractitioner-haywood-byron",
+        "PractitionerRole/registerednurses-sinclair-forrest",
+        "PractitionerRole/surgeongeneral-armstrong-amada"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "afee7ea38f2a929a": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bodyweight-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "b078dbb414bfad92": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/pennington-donnie-kip"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "b1ba31d6bf1f8b16": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Encounter/annualvisit-missing-class"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "b21fda17bf8f1b85": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/specialistmedical-cooriemungle-cardiology-clinic",
+        "Location/cooriemungle-cardiology-clinic",
+        "Organization/cooriemungle-cardiology-clinic"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "b2e747d1eab9d397": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-back-valley-radiology",
+        "Location/back-valley-radiology",
+        "Organization/back-valley-radiology",
+        "Organization/hayborough-care-and-support",
+        "Practitioner/heaney-brock",
+        "Practitioner/rogers-lorilee",
+        "PractitionerRole/diagnostic-heaney-brock",
+        "PractitionerRole/obstetrician-rogers-lorilee"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "b526567f5f33bbf3": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/audiologyservice-mitchells-hill-audiology",
+        "HealthcareService/generalpractice-joyces-creek-medical-clinic",
+        "HealthcareService/pathologylaboratory-trentham-pathology",
+        "Location/joyces-creek-medical-clinic",
+        "Location/mitchells-hill-audiology",
+        "Location/trentham-pathology",
+        "Organization/joyces-creek-medical-clinic",
+        "Organization/mitchells-hill-audiology",
+        "Organization/trentham-pathology",
+        "Practitioner/gidley-dee",
+        "Practitioner/hart-clifton",
+        "Practitioner/lumb-mary",
+        "PractitionerRole/generalpractitioner-lumb-mary",
+        "PractitionerRole/pathologist-hart-clifton",
+        "PractitionerRole/registerednurses-gidley-dee"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "b545211d05be611e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/communityhealth-annie-river-practice",
+        "HealthcareService/generalpractice-cullen-bay-medical-clinic",
+        "HealthcareService/pathologylaboratory-bayview-pathology",
+        "HealthcareService/pharmacyretail-ludmilla-pharmacy",
+        "HealthcareService/specialistmedical-east-point-renal-clinic",
+        "Location/annie-river-practice",
+        "Location/bayview-pathology",
+        "Location/cullen-bay-medical-clinic",
+        "Location/east-point-renal-clinic",
+        "Location/ludmilla-pharmacy",
+        "Organization/annie-river-practice",
+        "Organization/bayview-pathology",
+        "Organization/cullen-bay-medical-clinic",
+        "Organization/east-point-renal-clinic",
+        "Organization/ludmilla-pharmacy",
+        "Patient/archibald-dante",
+        "Patient/todd-tanya-estelle",
+        "Practitioner/cook-natalie",
+        "Practitioner/coulter-francine",
+        "Practitioner/craig-kenneth",
+        "Practitioner/darcy-alexandra",
+        "Practitioner/faint-darryl",
+        "Practitioner/gifford-cassidy",
+        "Practitioner/gillies-han",
+        "Practitioner/harding-clyde",
+        "Practitioner/mccormack-annamaria",
+        "Practitioner/polglase-belen",
+        "PractitionerRole/aboriginal-gillies-han",
+        "PractitionerRole/counsellorsnec-polglase-belen",
+        "PractitionerRole/generalpractitioner-faint-darryl",
+        "PractitionerRole/medicaldiagnostic-coulter-francine",
+        "PractitionerRole/osteopath-cook-natalie",
+        "PractitionerRole/pathologist-gifford-cassidy",
+        "PractitionerRole/physiotherapist-darcy-alexandra",
+        "PractitionerRole/registerednurses-craig-kenneth",
+        "PractitionerRole/registerednurses-mccormack-annamaria",
+        "PractitionerRole/retailpharmacist-harding-clyde"
+      ],
+      "note": "Confirmed by the user: single-state (NT), 11 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present).",
+      "subset": "geography-groups"
+    },
+    "b6538eb4cedc13a3": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bodyheight-1-device-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "b783038af8553b5f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/frost-rhett-kent"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "b7c4bb04a643ad55": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pathologylaboratory-higher-macdonald-pathology",
+        "Location/higher-macdonald-pathology",
+        "Organization/higher-macdonald-pathology",
+        "Practitioner/clarke-malcolm",
+        "PractitionerRole/pathologist-clarke-malcolm"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "b80c0e81f312b22d": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/veitch-beau-bradley",
+        "Patient/veitch-miles-dudley",
+        "Patient/veitch-mitchell-carl",
+        "Patient/veitch-nathan-chris",
+        "Patient/veitch-savannah-sheena"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 4951652281.",
+      "subset": "families"
+    },
+    "b8f279f1ae703aea": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/broome-community-health",
+        "Organization/broome-medical-clinic",
+        "Organization/broome-nutrition",
+        "Organization/broome-optometry",
+        "Organization/broome-ot-services",
+        "Organization/broome-physiology",
+        "Organization/broome-physiotherapy",
+        "Organization/broome-podiatry",
+        "Organization/broome-psychology",
+        "Organization/broome-specialist-clinic",
+        "Patient/coombe-ross",
+        "Practitioner/allardice-della",
+        "Practitioner/baratz-layla",
+        "Practitioner/bassett-elmer",
+        "Practitioner/butler-cheryl",
+        "Practitioner/clapham-laurie",
+        "Practitioner/davies-keiko",
+        "Practitioner/devine-frank",
+        "Practitioner/gates-anton",
+        "Practitioner/giles-veronique",
+        "Practitioner/goldsmith-monique",
+        "Practitioner/hackett-norman",
+        "Practitioner/hodges-julia",
+        "Practitioner/horn-wes",
+        "Practitioner/ibbotson-destiny",
+        "Practitioner/lowry-bennett",
+        "Practitioner/moran-linoel",
+        "Practitioner/patrick-thalia",
+        "Practitioner/poulson-lisa",
+        "Practitioner/simmons-ashton",
+        "Practitioner/thorburn-juanita",
+        "PractitionerRole/allardice-della",
+        "PractitionerRole/baratz-layla",
+        "PractitionerRole/bassett-elmer",
+        "PractitionerRole/butler-cheryl",
+        "PractitionerRole/clapham-laurie",
+        "PractitionerRole/davies-keiko",
+        "PractitionerRole/devine-frank",
+        "PractitionerRole/gates-anton",
+        "PractitionerRole/giles-veronique",
+        "PractitionerRole/goldsmith-monique",
+        "PractitionerRole/hackett-norman",
+        "PractitionerRole/hodges-julia",
+        "PractitionerRole/horn-wes",
+        "PractitionerRole/ibbotson-destiny",
+        "PractitionerRole/lowry-bennett",
+        "PractitionerRole/moran-linoel",
+        "PractitionerRole/patrick-thalia",
+        "PractitionerRole/poulson-lisa",
+        "PractitionerRole/simmons-ashton",
+        "PractitionerRole/thorburn-juanita"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "b955b699ff4837c8": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/grigg-hung",
+        "Practitioner/handley-megan",
+        "PractitionerRole/dentalhygienist-handley-megan",
+        "PractitionerRole/paediatrician-grigg-hung"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "ba132e4fc44e4577": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/baldry-terence-emile",
+        "Patient/callow-veronica-connie",
+        "Patient/howe-deangelo",
+        "Practitioner/gilmore-dane",
+        "Practitioner/macnab-adam",
+        "Practitioner/swanborough-erick",
+        "PractitionerRole/acupuncturist-macnab-adam",
+        "PractitionerRole/ambulanceofficer-gilmore-dane",
+        "PractitionerRole/specialistphysicians-swanborough-erick"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "bee9790929eb7ac7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationStatement/missing-medication"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "c1af483b35cf2610": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "PractitionerRole/missing-practitioner"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "c2b11866d8f1d55d": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/ellis-kylee",
+        "PractitionerRole/medicaldiagnostic-ellis-kylee"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "c2fac6ee6012c1d8": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/resprate-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "c44d8ce2c076257f": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Condition/nailwound-suppressed-subject"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "c45c7ae3b66546da": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/ballantyne-flavia-indira",
+        "Patient/ballantyne-kelvin-hans",
+        "Patient/ballantyne-sandy-choy",
+        "Patient/ballantyne-terry-bob"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 6951826031.",
+      "subset": "families"
+    },
+    "c4bf6d2e4a3639ac": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pathologylaboratory-kununurra-pathology",
+        "Location/kununurra-pathology",
+        "Organization/kununurra-pathology",
+        "Practitioner/khouri-stewart",
+        "PractitionerRole/pathologist-khouri-stewart"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "c4cfa80094d19362": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/leeton-health-network",
+        "Patient/banks-jamila-angie",
+        "Patient/banks-jeramy-ezra",
+        "Patient/banks-jonas-cary",
+        "Patient/banks-mia-leanne",
+        "Practitioner/browne-wilfred",
+        "Practitioner/thorn-tonya",
+        "PractitionerRole/midwife-browne-wilfred",
+        "PractitionerRole/nuclearmedicine-thorn-tonya",
+        "RelatedPerson/banks-jeramy-2",
+        "RelatedPerson/banks-jeramy-3",
+        "RelatedPerson/banks-jeramy-4",
+        "RelatedPerson/banks-mia-leanne"
+      ],
+      "note": "Confirmed by the user despite 4+ suburbs. Suburbs: Hatfield, Leeton, Minjary, Wermatong.",
+      "subset": "geography-groups"
+    },
+    "c64dee2c1f34bd2d": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/communitypharmacy-cracow-pharmacy",
+        "Location/cracow-pharmacy",
+        "Organization/cracow-pharmacy",
+        "Practitioner/crowley-pablo",
+        "Practitioner/patrick-manual",
+        "PractitionerRole/plastic-crowley-pablo",
+        "PractitionerRole/retailpharmacist-patrick-manual"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "c67819183604d171": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/moylan-brock",
+        "Practitioner/markell-luke",
+        "PractitionerRole/midwife-markell-luke"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "c730b2a4946d16b9": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/parker-elijah",
+        "PractitionerRole/physiotherapist-parker-elijah"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "c786099e489ae03b": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/street-dorian",
+        "PractitionerRole/dentaltherapist-street-dorian"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "c94018d8f56cadd0": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/baldwin-dinah"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "c9bf3adcd8729216": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bloodpressure-systolic-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "c9e9643572de3fe6": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/herston-pathology",
+        "Organization/herston-public-hospital",
+        "Organization/herston-radiology",
+        "Patient/belger-remedios",
+        "Patient/bennelong-anne",
+        "Patient/odonnell-gillian",
+        "Practitioner/bowden-hiroko",
+        "Practitioner/greenhill-edmond",
+        "Practitioner/irwin-corinna",
+        "Practitioner/jeffery-sammy",
+        "Practitioner/lyons-shay",
+        "Practitioner/mclean-brenda",
+        "Practitioner/sherry-dean",
+        "Practitioner/stapleton-carole",
+        "PractitionerRole/bowden-hiroko",
+        "PractitionerRole/greenhill-edmond",
+        "PractitionerRole/irwin-corinna",
+        "PractitionerRole/jeffery-sammy",
+        "PractitionerRole/lyons-shay",
+        "PractitionerRole/mclean-brenda",
+        "PractitionerRole/sherry-dean",
+        "PractitionerRole/speechpathologist-stapleton-carole"
+      ],
+      "note": "Confirmed by the user: single-state (QLD), 5 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present). Scenario-corroborated: rural-and-remote-scenario (17)",
+      "subset": "geography-groups"
+    },
+    "ca0c6f568bf26784": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Organization/benalla-care-and-support"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "cd0417ebff106e39": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/bates-rory",
+        "PractitionerRole/medicaldiagnostic-bates-rory"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "d04d9b36b1889312": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalmedical-beltana-medical-practice",
+        "Location/beltana-medical-practice",
+        "Organization/beltana-medical-practice",
+        "Practitioner/packham-delores",
+        "Practitioner/pickford-lisa",
+        "PractitionerRole/generalpractitioner-packham-delores",
+        "PractitionerRole/registerednurses-pickford-lisa"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "d23eb60344cdf638": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pathologylaboratory-kioma-pathology",
+        "Location/kioma-pathology",
+        "Organization/kioma-pathology",
+        "Practitioner/herbert-aimee",
+        "PractitionerRole/pathologist-herbert-aimee"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "d32121b331c4ef88": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/bowden-paula",
+        "Practitioner/leeds-roger",
+        "PractitionerRole/medicalradiation-leeds-roger",
+        "PractitionerRole/paediatrician-bowden-paula"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "d65021d9b34aef14": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Patient/bassett-imogene-betsy",
+        "Patient/campbell-ambrose",
+        "Practitioner/gilmore-ann",
+        "Practitioner/oritz-abbie",
+        "PractitionerRole/medicaldiagnostic-gilmore-ann",
+        "PractitionerRole/medicaldiagnostic-oritz-abbie"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "d743227a8ff7addd": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateacute-wannon-private-hospital",
+        "Location/wannon-private-hospital",
+        "Organization/wannon-private-hospital",
+        "Practitioner/chambers-greg",
+        "Practitioner/healy-damian",
+        "Practitioner/lamerton-betsy",
+        "Practitioner/spiers-erich",
+        "PractitionerRole/midwife-spiers-erich",
+        "PractitionerRole/nursepractitioner-healy-damian",
+        "PractitionerRole/registerednurses-chambers-greg",
+        "PractitionerRole/surgeongeneral-lamerton-betsy"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "d813f722ad064fb7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bodyweight-3-clothing-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "d94047bcb6bac1aa": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/waistcircum-1-position-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "d9629a1c462c7965": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/heartrate-1-exercise-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "dab50a58934a83cc": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/bloodpressure-diastolic-missing"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "dccd9c5f3ebf1242": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "MedicationStatement/missing-status"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "df11dc95a6f40703": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "HealthcareService/dentalpractice-annandale-dental",
+        "Location/annandale-dental",
+        "Organization/annandale-dental",
+        "Organization/camooweal-community-health",
+        "Organization/camooweal-pharmacy",
+        "Organization/mt-isa-community-health",
+        "Organization/mt-isa-dental",
+        "Organization/mt-isa-medical-clinic",
+        "Organization/mt-isa-ot-services",
+        "Organization/mt-isa-pathology",
+        "Organization/mt-isa-pharmacy",
+        "Organization/mt-isa-physiotherapy",
+        "Organization/mt-isa-psychology",
+        "Organization/mt-isa-specialist-clinic",
+        "Organization/townsville-medical-clinic",
+        "Organization/townsville-public-hospital",
+        "Organization/townsville-specialist-clinic",
+        "Patient/mclennan-karl",
+        "Practitioner/bailey-buck",
+        "Practitioner/barrett-kirstie",
+        "Practitioner/gaynor-jasper",
+        "Practitioner/haywood-dot",
+        "Practitioner/hipwood-fatimah",
+        "Practitioner/hobden-mark",
+        "Practitioner/hodge-irving",
+        "Practitioner/jeffery-herman",
+        "Practitioner/jeffery-nicolas",
+        "Practitioner/livingstone-yvonne",
+        "Practitioner/mccormack-gertie",
+        "Practitioner/mcintyre-hsiu",
+        "Practitioner/mills-kim",
+        "Practitioner/murray-xenia",
+        "Practitioner/oritz-philomena",
+        "Practitioner/osborne-buster",
+        "Practitioner/pearce-teresa",
+        "Practitioner/potts-xuan",
+        "Practitioner/pratt-colleen",
+        "Practitioner/randall-anthony",
+        "Practitioner/robbins-wilhelmina",
+        "PractitionerRole/bailey-buck",
+        "PractitionerRole/barrett-kirstie",
+        "PractitionerRole/gaynor-jasper",
+        "PractitionerRole/haywood-dot",
+        "PractitionerRole/hipwood-fatimah",
+        "PractitionerRole/hobden-mark",
+        "PractitionerRole/hodge-irving",
+        "PractitionerRole/jeffery-herman",
+        "PractitionerRole/jeffery-nicolas",
+        "PractitionerRole/livingstone-yvonne",
+        "PractitionerRole/mccormack-gertie",
+        "PractitionerRole/mcintyre-hsiu",
+        "PractitionerRole/mills-kim",
+        "PractitionerRole/murray-xenia",
+        "PractitionerRole/oritz-philomena",
+        "PractitionerRole/osborne-buster",
+        "PractitionerRole/pearce-teresa",
+        "PractitionerRole/potts-xuan",
+        "PractitionerRole/pratt-colleen",
+        "PractitionerRole/randall-anthony",
+        "PractitionerRole/robbins-wilhelmina"
+      ],
+      "note": "Rejected by the user: excessive geographic spread despite provider infrastructure. Suburbs: Annandale, Camooweal, Mount Isa, Townsville.",
+      "subset": "geography-groups"
+    },
+    "e044f7497911d3f1": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-mount-charlton-radiology",
+        "HealthcareService/pharmacyretail-east-mackay-pharmacy",
+        "Location/east-mackay-pharmacy",
+        "Location/mount-charlton-radiology",
+        "Organization/east-mackay-pharmacy",
+        "Organization/mount-charlton-radiology",
+        "Practitioner/ford-dean",
+        "Practitioner/mclaughlin-kimberlee",
+        "PractitionerRole/diagnostic-mclaughlin-kimberlee",
+        "PractitionerRole/retailpharmacist-ford-dean"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "e1a76883350168da": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateacute-yunta-private-hospital",
+        "HealthcareService/publicacute-leasingham-public-hospital",
+        "Location/leasingham-public-hospital",
+        "Location/yunta-private-hospital",
+        "Organization/leasingham-public-hospital",
+        "Organization/yunta-private-hospital",
+        "Practitioner/doyle-hana",
+        "Practitioner/frankel-mary",
+        "Practitioner/patrick-nancy",
+        "Practitioner/pratley-maynard",
+        "Practitioner/pye-dusty",
+        "Practitioner/rowland-josh",
+        "Practitioner/steele-clyde",
+        "PractitionerRole/nursepractitioner-doyle-hana",
+        "PractitionerRole/nursepractitioner-rowland-josh",
+        "PractitionerRole/plastic-pye-dusty",
+        "PractitionerRole/registerednurses-frankel-mary",
+        "PractitionerRole/registerednurses-steele-clyde",
+        "PractitionerRole/surgeongeneral-patrick-nancy",
+        "PractitionerRole/surgeongeneral-pratley-maynard"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "e2c260287a1044bc": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "HealthcareService/privateacute-beswick-private-hospital",
+        "HealthcareService/publicacute-pine-creek-public-hospital",
+        "Location/beswick-private-hospital",
+        "Location/pine-creek-public-hospital",
+        "Organization/beswick-private-hospital",
+        "Organization/pine-creek-public-hospital",
+        "Patient/veitch-beau-bradley",
+        "Patient/veitch-miles-dudley",
+        "Patient/veitch-mitchell-carl",
+        "Patient/veitch-nathan-chris",
+        "Patient/veitch-savannah-sheena",
+        "Practitioner/bennett-amanda",
+        "Practitioner/delaney-azzie",
+        "Practitioner/felmingham-marian",
+        "Practitioner/fleming-helga",
+        "Practitioner/irvine-josephine",
+        "Practitioner/jenkins-elisabeth",
+        "Practitioner/lazzarini-frank",
+        "Practitioner/perry-rebekah",
+        "PractitionerRole/clinicalpsychologist-fleming-helga",
+        "PractitionerRole/complementaryhealth-lazzarini-frank",
+        "PractitionerRole/nursepractitioner-irvine-josephine",
+        "PractitionerRole/nursepractitioner-perry-rebekah",
+        "PractitionerRole/registerednurses-bennett-amanda",
+        "PractitionerRole/registerednurses-felmingham-marian",
+        "PractitionerRole/surgeongeneral-delaney-azzie",
+        "PractitionerRole/surgeongeneral-jenkins-elisabeth",
+        "RelatedPerson/veitch-miles-2",
+        "RelatedPerson/veitch-miles-3",
+        "RelatedPerson/veitch-miles-4",
+        "RelatedPerson/veitch-miles-5"
+      ],
+      "note": "Rejected by the user: excessive geographic spread despite provider infrastructure. Suburbs: Batchelor, Beswick, Manbulloo, Newcastle Waters, Pine Creek.",
+      "subset": "geography-groups"
+    },
+    "e2c528bd9c034fc7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Immunization/zoster-missing-code"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "e6f736acc71c585c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/turnbull-suk",
+        "PractitionerRole/specialistphysicians-turnbull-suk"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "e75aee0dc0b22bb7": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Immunization/zoster-missing-occurrence"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "e8df4aae8d33aad9": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/chiropractic-karkoo-chiropractic",
+        "Location/karkoo-chiropractic",
+        "Organization/karkoo-chiropractic",
+        "Patient/britton-brian-edwin"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "efe7281682930039": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/lavender-lavelle",
+        "PractitionerRole/podiatrist-lavender-lavelle"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "f05d3cc895386584": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/mackay-elliott",
+        "Patient/mackay-fritz",
+        "Patient/mackay-heather"
+      ],
+      "note": "RelatedPerson network with relationship codes, independently corroborated by shared Medicare card 3951334131.",
+      "subset": "families"
+    },
+    "f086717fc6e0c350": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pathologylaboratory-wingfield-pathology",
+        "HealthcareService/pathologylaboratory-woodcroft-pathology",
+        "HealthcareService/pharmacyretail-edwardstown-pharmacy",
+        "Location/edwardstown-pharmacy",
+        "Location/wingfield-pathology",
+        "Location/woodcroft-pathology",
+        "Organization/adelaide-public-hospital",
+        "Organization/edwardstown-pharmacy",
+        "Organization/royal-park-medical-centre",
+        "Organization/semaphore-aged-care",
+        "Organization/wingfield-pathology",
+        "Organization/woodcroft-pathology",
+        "Organization/woodville-cardiology",
+        "Organization/woodville-dental",
+        "Organization/woodville-dietitian-service",
+        "Organization/woodville-medical-clinic",
+        "Organization/woodville-ot-services",
+        "Organization/woodville-pathology",
+        "Organization/woodville-pharmacy",
+        "Organization/woodville-podiatry",
+        "Organization/woodville-radiology",
+        "Patient/reece-karen",
+        "Practitioner/baker-troy",
+        "Practitioner/baynton-lolita",
+        "Practitioner/bell-rudolf",
+        "Practitioner/berry-lisa",
+        "Practitioner/carey-joyce",
+        "Practitioner/couch-joel",
+        "Practitioner/cruickshank-marlyn",
+        "Practitioner/dixon-astrid",
+        "Practitioner/ellison-shawn",
+        "Practitioner/fleming-skye",
+        "Practitioner/freeman-anya",
+        "Practitioner/harley-reynalda",
+        "Practitioner/henderson-nelson",
+        "Practitioner/hickson-eldora",
+        "Practitioner/hoskins-earl",
+        "Practitioner/huddlestone-velda",
+        "Practitioner/hutton-cortez",
+        "Practitioner/hyde-cortez",
+        "Practitioner/lavender-astrid",
+        "Practitioner/lawrence-drew",
+        "Practitioner/mackee-sara",
+        "Practitioner/manning-opal",
+        "Practitioner/newling-louis",
+        "Practitioner/rowlands-donya",
+        "Practitioner/tierney-gisela",
+        "Practitioner/vaughan-sol",
+        "PractitionerRole/baker-troy",
+        "PractitionerRole/baynton-lolita",
+        "PractitionerRole/bell-rudolf",
+        "PractitionerRole/berry-lisa",
+        "PractitionerRole/cardiothoracicsurgeon-mackee-sara",
+        "PractitionerRole/carey-joyce",
+        "PractitionerRole/couch-joel",
+        "PractitionerRole/cruickshank-marlyn",
+        "PractitionerRole/dietitian-henderson-nelson",
+        "PractitionerRole/fleming-skye",
+        "PractitionerRole/freeman-anya",
+        "PractitionerRole/harley-reynalda",
+        "PractitionerRole/hoskins-earl",
+        "PractitionerRole/huddlestone-velda",
+        "PractitionerRole/hutton-cortez",
+        "PractitionerRole/lawrence-drew",
+        "PractitionerRole/manning-opal",
+        "PractitionerRole/medicaldiagnostic-lavender-astrid",
+        "PractitionerRole/nuclearmedicine-hyde-cortez",
+        "PractitionerRole/paediatrician-ellison-shawn",
+        "PractitionerRole/pathologist-dixon-astrid",
+        "PractitionerRole/pathologist-hickson-eldora",
+        "PractitionerRole/retailpharmacist-newling-louis",
+        "PractitionerRole/rowlands-donya",
+        "PractitionerRole/tierney-gisela",
+        "PractitionerRole/vaughan-sol"
+      ],
+      "note": "Confirmed by the user: single-state (SA), 12 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present). Scenario-corroborated: ccm-aged-care-scenario-future (49)",
+      "subset": "geography-groups"
+    },
+    "f0dcfe6f2b776358": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Observation/waistcircum-cancelled"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "f26f830269b89118": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Condition/nailwound-missing-code"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "f3dba86b628b6dc4": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/pharmacyretail-mcbeath-pharmacy",
+        "Location/mcbeath-pharmacy",
+        "Organization/mcbeath-pharmacy",
+        "Practitioner/mclennan-miguel",
+        "PractitionerRole/retailpharmacist-mclennan-miguel"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 1 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "f51853ceb182ccc6": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "Patient/italia-sofia-missing-identifier"
+      ],
+      "note": "Verified against resource content and confirmed by the user: carries a direct data-absent-reason mechanism (an extension on a primitive or Reference, a data-absent-reason coded value, list-empty-reason on a Composition section, or status=cancelled/unknown), not a coincidental keyword match.",
+      "subset": "missing-suppressed-data"
+    },
+    "f564132c6cf409c9": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/communitypharmacy-appin-pharmacy",
+        "Location/appin-pharmacy",
+        "Organization/appin-pharmacy",
+        "Practitioner/cruickshank-bryce",
+        "Practitioner/peterson-megan",
+        "Practitioner/sheppard-mathew",
+        "PractitionerRole/endocrinologist-cruickshank-bryce",
+        "PractitionerRole/medicaloncologist-sheppard-mathew",
+        "PractitionerRole/retailpharmacist-peterson-megan"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "f89b88e0827a7de2": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "flagged",
+      "members": [
+        "Patient/hoskins-marisa",
+        "Patient/hoskins-sergio-lionel"
+      ],
+      "note": "Potential family, unproven. Marisa (F, Napier NZ, 1991-02-06) and Sergio (M, Tostaree VIC, 1991-05-13) share a surname; born ~3 months apart so not full siblings, but step-siblings, cousins or partners remain possible. No RelatedPerson link. The Medicare card test cannot adjudicate: Sergio holds 3951334041, Marisa has no Medicare number.",
+      "subset": "families"
+    },
+    "f9fd2ef888f38253": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/privateacute-morgantown-private-hospital",
+        "Location/morgantown-private-hospital",
+        "Organization/morgantown-private-hospital",
+        "Practitioner/brooksby-caterina",
+        "Practitioner/cooke-arthur",
+        "Practitioner/gaynor-phil",
+        "Practitioner/miller-kittie",
+        "PractitionerRole/gastroenterologist-miller-kittie",
+        "PractitionerRole/nursepractitioner-gaynor-phil",
+        "PractitionerRole/registerednurses-cooke-arthur",
+        "PractitionerRole/surgeongeneral-brooksby-caterina"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "fae4f74b4f1e2135": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/dunkley-dante",
+        "PractitionerRole/midwife-dunkley-dante"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "fcca0fc1bc6a49a1": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/generalmedical-lake-wells-medical-practice",
+        "Location/lake-wells-medical-practice",
+        "Organization/lake-wells-medical-practice",
+        "Organization/menzies-health-network",
+        "Patient/bassett-imogene-betsy",
+        "Practitioner/harding-diana",
+        "Practitioner/lumb-lovie",
+        "PractitionerRole/generalpractitioner-harding-diana",
+        "PractitionerRole/registerednurses-lumb-lovie"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 3 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "fcd15c8c65971166": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/publicacute-bunbury-public-hospital",
+        "Location/bunbury-public-hospital",
+        "Organization/bunbury-public-hospital",
+        "Patient/ballantyne-flavia-indira",
+        "Patient/ballantyne-kelvin-hans",
+        "Patient/ballantyne-sandy-choy",
+        "Patient/ballantyne-terry-bob",
+        "Practitioner/dent-aldo",
+        "Practitioner/osmond-deadra",
+        "Practitioner/potter-lamar",
+        "PractitionerRole/nursepractitioner-osmond-deadra",
+        "PractitionerRole/registerednurses-dent-aldo",
+        "PractitionerRole/surgeongeneral-potter-lamar",
+        "RelatedPerson/ballantyne-flavia-2",
+        "RelatedPerson/ballantyne-flavia-3",
+        "RelatedPerson/ballantyne-flavia-4",
+        "RelatedPerson/ballantyne-sandy",
+        "RelatedPerson/ballantyne-terry"
+      ],
+      "note": "Confirmed: provider infrastructure present (Organization/Location/HealthcareService), 2 suburb(s), single-state.",
+      "subset": "geography-groups"
+    },
+    "fd44f0a7cec60a1e": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "rejected",
+      "members": [
+        "Practitioner/odonnell-xuan",
+        "PractitionerRole/medicalradiation-odonnell-xuan"
+      ],
+      "note": "Rejected: no shared provider infrastructure — practitioners and/or patients only, too thin to be a meaningful grouping.",
+      "subset": "geography-groups"
+    },
+    "fd4a5a6668b13a7c": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/communitypharmacy-launching-place-pharmacy",
+        "HealthcareService/opticaldispensing-eltham-north-optical",
+        "Location/eltham-north-optical",
+        "Location/launching-place-pharmacy",
+        "Organization/eltham-north-optical",
+        "Organization/launching-place-pharmacy",
+        "Organization/melbourne-specialist-clinic",
+        "Organization/southbank-medical-clinic",
+        "Organization/southbank-specialist-clinic",
+        "Organization/southbank-speech-pathology",
+        "Organization/st-kilda-medical-clinic",
+        "Organization/st-kilda-ot-services",
+        "Organization/st-kilda-physiology",
+        "Organization/st-kilda-physiotherapy",
+        "Organization/st-kilda-psychology",
+        "Organization/sunshine-cardiology",
+        "Organization/sunshine-endocrinology",
+        "Organization/sunshine-medical-centre",
+        "Organization/sunshine-medical-clinic",
+        "Organization/sunshine-nephrology",
+        "Organization/sunshine-ophthalmology",
+        "Organization/sunshine-optical",
+        "Organization/sunshine-pathology",
+        "Organization/sunshine-pharmacy",
+        "Organization/sunshine-physiotherapy",
+        "Organization/sunshine-radiology",
+        "Organization/tarneit-health-network",
+        "Patient/ewing-ferdinand",
+        "Patient/foreman-caterina",
+        "Patient/vaughan-seymour",
+        "Practitioner/alcock-devon",
+        "Practitioner/blackwood-ella",
+        "Practitioner/bond-edmundo",
+        "Practitioner/bowyer-norbert",
+        "Practitioner/coughlin-tonda",
+        "Practitioner/dempsey-carli",
+        "Practitioner/egan-anja",
+        "Practitioner/findley-betty",
+        "Practitioner/frankel-caroline",
+        "Practitioner/fuller-kendrick",
+        "Practitioner/greene-delores",
+        "Practitioner/hallan-maggie",
+        "Practitioner/hamel-opal",
+        "Practitioner/hatcher-merrill",
+        "Practitioner/higgs-allegra",
+        "Practitioner/hilton-della",
+        "Practitioner/joyce-mae",
+        "Practitioner/keith-margot",
+        "Practitioner/kelly-arlene",
+        "Practitioner/keyes-chau",
+        "Practitioner/laing-malinda",
+        "Practitioner/mckane-eugena",
+        "Practitioner/mcnaughton-opal",
+        "Practitioner/mullin-kenny",
+        "Practitioner/mullins-bonita",
+        "Practitioner/murray-ashli",
+        "Practitioner/osland-deanne",
+        "Practitioner/patterson-teri",
+        "Practitioner/phillips-gerard",
+        "Practitioner/quinn-aisha",
+        "Practitioner/quinn-jeramy",
+        "Practitioner/rodd-illa",
+        "Practitioner/schaefer-elden",
+        "Practitioner/sharp-cherish",
+        "Practitioner/shephard-vern",
+        "Practitioner/vaughan-blaine",
+        "PractitionerRole/alcock-devon",
+        "PractitionerRole/blackwood-ella",
+        "PractitionerRole/bond-edmundo",
+        "PractitionerRole/bowyer-norbert",
+        "PractitionerRole/dempsey-carli",
+        "PractitionerRole/dentalpractitioner-quinn-aisha",
+        "PractitionerRole/egan-anja",
+        "PractitionerRole/findley-betty",
+        "PractitionerRole/frankel-caroline",
+        "PractitionerRole/fuller-kendrick",
+        "PractitionerRole/greene-delores",
+        "PractitionerRole/hallan-maggie",
+        "PractitionerRole/hamel-opal",
+        "PractitionerRole/hatcher-merrill",
+        "PractitionerRole/higgs-allegra",
+        "PractitionerRole/hilton-della",
+        "PractitionerRole/joyce-mae",
+        "PractitionerRole/keith-margot",
+        "PractitionerRole/kelly-arlene",
+        "PractitionerRole/keyes-chau",
+        "PractitionerRole/laing-malinda",
+        "PractitionerRole/mckane-eugena",
+        "PractitionerRole/mcnaughton-opal",
+        "PractitionerRole/mullin-kenny",
+        "PractitionerRole/mullins-bonita",
+        "PractitionerRole/murray-ashli",
+        "PractitionerRole/osland-deanne",
+        "PractitionerRole/patterson-teri",
+        "PractitionerRole/phillips-gerard",
+        "PractitionerRole/quinn-jeramy",
+        "PractitionerRole/retailpharmacist-coughlin-tonda",
+        "PractitionerRole/rodd-illa",
+        "PractitionerRole/schaefer-elden",
+        "PractitionerRole/sharp-cherish",
+        "PractitionerRole/shephard-vern",
+        "PractitionerRole/vaughan-blaine"
+      ],
+      "note": "Confirmed by the user: single-state (VIC), 9 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present). Scenario-corroborated: young-adult-adolescent-scenario-19-20-yo (46), ccm-scenario-drafted (44)",
+      "subset": "geography-groups"
+    },
+    "fe26a02896f31354": {
+      "attester": "Stephanie Ong",
+      "confirmed_on": "2026-09-01",
+      "decision": "confirmed",
+      "members": [
+        "HealthcareService/diagnosticimaging-frenchs-forest-east-radiology",
+        "HealthcareService/publicacute-kensington-public-hospital",
+        "Location/frenchs-forest-east-radiology",
+        "Location/kensington-public-hospital",
+        "Organization/cremorne-care-and-support",
+        "Organization/frenchs-forest-east-radiology",
+        "Organization/kensington-public-hospital",
+        "Organization/parramatta-community-health",
+        "Organization/parramatta-dental",
+        "Organization/parramatta-medical-clinic",
+        "Organization/parramatta-midwifery",
+        "Organization/parramatta-nutrition",
+        "Organization/parramatta-public-hospital",
+        "Organization/parramatta-specialist-clinic",
+        "Organization/westmead-medical-clinic",
+        "Organization/westmead-optical",
+        "Organization/westmead-ot-services",
+        "Organization/westmead-pathology",
+        "Organization/westmead-pharmacy",
+        "Organization/westmead-physiotherapy",
+        "Organization/westmead-public-hospital",
+        "Organization/westmead-radiology",
+        "Organization/westmead-specialist-clinic",
+        "Patient/keaton-jayme",
+        "Patient/lowe-alessandra",
+        "Patient/lowe-alix",
+        "Patient/lowe-cedric",
+        "Patient/lowe-valerie",
+        "Patient/wang-li",
+        "Practitioner/barrett-carey",
+        "Practitioner/berridge-beulah",
+        "Practitioner/breadmore-phillip",
+        "Practitioner/cox-sandra",
+        "Practitioner/dawson-kent",
+        "Practitioner/duncan-xenia",
+        "Practitioner/ellison-abby",
+        "Practitioner/ewing-jude",
+        "Practitioner/fleming-kitty",
+        "Practitioner/fowler-christy",
+        "Practitioner/frank-gaylene",
+        "Practitioner/fuller-christeen",
+        "Practitioner/goodwin-rae",
+        "Practitioner/hamilton-errol",
+        "Practitioner/healey-tamiko",
+        "Practitioner/howe-elden",
+        "Practitioner/knowles-sunshine",
+        "Practitioner/lapthorn-leisa",
+        "Practitioner/little-jerrie",
+        "Practitioner/macey-brant",
+        "Practitioner/mackenzie-cinda",
+        "Practitioner/mcbean-nicollette",
+        "Practitioner/mcintosh-angelica",
+        "Practitioner/mcnab-angelina",
+        "Practitioner/mills-hope",
+        "Practitioner/nairn-vince",
+        "Practitioner/neville-isaiah",
+        "Practitioner/nutley-bradley",
+        "Practitioner/ohalloran-sheryl",
+        "Practitioner/osmond-michele",
+        "Practitioner/perkins-amee",
+        "Practitioner/redman-mariah",
+        "Practitioner/roche-garfield",
+        "Practitioner/seaby-penelope",
+        "Practitioner/shephard-lizabeth",
+        "Practitioner/simons-reggie",
+        "Practitioner/stephens-nellie",
+        "Practitioner/tate-melvin",
+        "PractitionerRole/berridge-beulah",
+        "PractitionerRole/breadmore-phillip",
+        "PractitionerRole/cox-sandra",
+        "PractitionerRole/dawson-kent",
+        "PractitionerRole/diagnostic-barrett-carey",
+        "PractitionerRole/duncan-xenia",
+        "PractitionerRole/ellison-abby",
+        "PractitionerRole/ewing-jude",
+        "PractitionerRole/fleming-kitty",
+        "PractitionerRole/frank-gaylene",
+        "PractitionerRole/fuller-christeen",
+        "PractitionerRole/goodwin-rae",
+        "PractitionerRole/hamilton-errol",
+        "PractitionerRole/healey-tamiko",
+        "PractitionerRole/howe-elden",
+        "PractitionerRole/knowles-sunshine",
+        "PractitionerRole/lapthorn-leisa",
+        "PractitionerRole/little-jerrie",
+        "PractitionerRole/macey-brant",
+        "PractitionerRole/mcbean-nicollette",
+        "PractitionerRole/mcintosh-angelica",
+        "PractitionerRole/mcnab-angelina",
+        "PractitionerRole/medicalradiation-fowler-christy",
+        "PractitionerRole/mills-hope",
+        "PractitionerRole/nairn-vince",
+        "PractitionerRole/neville-isaiah",
+        "PractitionerRole/nursepractitioner-simons-reggie",
+        "PractitionerRole/nutley-bradley",
+        "PractitionerRole/ohalloran-sheryl",
+        "PractitionerRole/osmond-michele",
+        "PractitionerRole/perkins-amee",
+        "PractitionerRole/redman-mariah",
+        "PractitionerRole/registerednurses-shephard-lizabeth",
+        "PractitionerRole/roche-garfield",
+        "PractitionerRole/seaby-penelope",
+        "PractitionerRole/stephens-nellie",
+        "PractitionerRole/surgeongeneral-mackenzie-cinda",
+        "PractitionerRole/tate-melvin",
+        "RelatedPerson/lowe-alessandra-1",
+        "RelatedPerson/lowe-alessandra-2",
+        "RelatedPerson/lowe-alessandra-3",
+        "RelatedPerson/lowe-alix-1",
+        "RelatedPerson/lowe-alix-2",
+        "RelatedPerson/lowe-alix-3",
+        "RelatedPerson/lowe-cedric-1",
+        "RelatedPerson/lowe-cedric-2",
+        "RelatedPerson/lowe-cedric-3",
+        "RelatedPerson/lowe-valerie-1",
+        "RelatedPerson/lowe-valerie-2",
+        "RelatedPerson/lowe-valerie-3",
+        "RelatedPerson/rabbit-peter",
+        "RelatedPerson/wang-li-friend"
+      ],
+      "note": "Confirmed by the user: single-state (NSW), 8 suburbs, genuine provider infrastructure (Organization/Location/HealthcareService present). Scenario-corroborated: family-scenario-w-baby-2-month-old (98)",
+      "subset": "geography-groups"
+    }
+  },
+  "schema_version": 1
+}

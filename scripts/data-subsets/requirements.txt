@@ -1,0 +1,14 @@
+# Dependencies for the data-subsets authoring tools.
+#
+# These scripts are run manually by a maintainer regenerating
+# docs/DataSubsets.md — they are NOT part of CI. The scripts under
+# .github/scripts/ that gate pull requests remain deliberately stdlib-only.
+#
+#   pip install -r scripts/data-subsets/requirements.txt
+#
+# PyYAML is used to READ docs/data-subsets/subsets.yaml. Nothing writes that
+# file programmatically: its comments carry the schema documentation, and
+# PyYAML's dumper discards them. Machine-written decisions go to
+# docs/data-subsets/confirmations.json via stdlib json instead (design.md D12).
+
+PyYAML>=6.0
