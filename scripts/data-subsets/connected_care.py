@@ -58,6 +58,7 @@ notes              the provisional-attribution caveat and its blocker
 
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 
@@ -149,6 +150,47 @@ def parse_alex_story(doc_text: str) -> tuple[dict[str, dict], list[dict]]:
     return claims, unresolved
 
 
+def collect_practitioner_role_refs(ref: str, branch_json: dict[str, str]) -> dict[str, dict]:
+    """Every PractitionerRole's practitioner/organization/location/code/
+    specialty, read directly off the connected-care branch.
+
+    assemble.py's shared reference index (lib.build_reference_index) only
+    scans the CURRENT working tree, so it never sees connected-care's
+    entities at all — without this, a connected-care PractitionerRole can't
+    be paired with its Practitioner, or vice versa, and the combined
+    Practitioner/PractitionerRole table renders every one of them as a
+    separate, unpaired row. Persisted here rather than read by assemble.py
+    directly: this script already has the branch checked out for the
+    Alex's Story extraction above, and assemble.py's own contract is pure
+    computation over already-derived facts, not fetching git content itself.
+    """
+    refs = {}
+    for basename, path in branch_json.items():
+        if not basename.startswith("PractitionerRole-"):
+            continue
+        role_id = basename[len("PractitionerRole-"):-len(".json")]
+        try:
+            role = json.loads(git_show(ref, path))
+        except (lib.PreconditionError, json.JSONDecodeError):
+            continue
+        code = role.get("code") or []
+        code_text = (code[0].get("text") or (code[0].get("coding") or [{}])[0].get("display")
+                    if code else None)
+        specialty = role.get("specialty") or []
+        specialty_text = (specialty[0].get("text")
+                          or (specialty[0].get("coding") or [{}])[0].get("display")
+                          if specialty else None)
+        refs[role_id] = {
+            "practitioner": (role.get("practitioner") or {}).get("reference"),
+            "organization": (role.get("organization") or {}).get("reference"),
+            "location": [l.get("reference") for l in role.get("location") or []
+                        if l.get("reference")],
+            "code_text": code_text,
+            "specialty_text": specialty_text,
+        }
+    return refs
+
+
 def main():
     info = lib.check_preconditions(needs_connected_care=True)
     ref = info["connected_care_ref"]
@@ -226,6 +268,8 @@ def main():
     if admin_note:
         notes.append(admin_note)
 
+    practitioner_role_refs = collect_practitioner_role_refs(ref, branch_json)
+
     return lib.emit(
         "connected-care-journeys",
         members=members + yuri_members,
@@ -243,6 +287,7 @@ def main():
             "non_administrative_excluded": dropped_nonadmin,
             "unresolved_narrative_rows": unresolved,
             "broken_links": broken_links,
+            "practitioner_role_refs": practitioner_role_refs,
         },
         notes=notes,
     )

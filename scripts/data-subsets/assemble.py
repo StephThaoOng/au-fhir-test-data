@@ -106,6 +106,32 @@ import lib
 OUTPUT_PATH = lib.REPO_ROOT / "docs" / "DataSubsets.md"
 ENTITY_LIST_THRESHOLD = 20
 
+
+def _href(path: str) -> str:
+    """A repo-root-relative path, as a link relative to OUTPUT_PATH's own
+    directory (docs/) — the path stored on a member is repo-root-relative,
+    but the link is embedded one directory down."""
+    return os.path.relpath(lib.REPO_ROOT / path, OUTPUT_PATH.parent)
+
+
+def _resolve_cell(ref: str | None, index: dict) -> str:
+    """A "Type/id" reference as a table cell: linked to its file if it
+    resolves in the data set (dataset-wide, not gated on subset/group
+    membership), plain backtick text if it doesn't (dangling, or the
+    reference is simply absent), empty if there's no reference at all.
+
+    Displays the bare id, not "Type/id" — every other entity listing in
+    this document shows the bare id (the column/group heading already
+    establishes the type), and the drift check's row parser
+    (parse_previous_page) assumes exactly that convention when
+    reconstructing a subset's previous membership from the rendered page.
+    """
+    if not ref:
+        return ""
+    rid = ref.split("/", 1)[-1]
+    entry = index["resources"].get(ref)
+    return f"[`{rid}`]({_href(entry['path'])})" if entry else f"`{rid}`"
+
 # Canonical publication order — matches the delta spec's requirement order
 # (R1-R14), not the order subsets happen to appear in subsets.yaml.
 SUBSET_ORDER = [
@@ -124,7 +150,8 @@ RESOURCE_TYPE_ORDER = [
 
 
 PLURALS = {"entity": "entities", "grouping": "groupings",
-           "candidate": "candidates", "journey": "journeys"}
+           "candidate": "candidates", "journey": "journeys",
+           "relationship": "relationships"}
 
 
 def plural(n: int, word: str) -> str:
@@ -453,7 +480,8 @@ def overlap_note(key: str, current_slug: str, res_index: dict) -> str | None:
 # --- Rendering ----------------------------------------------------------
 
 def render_entity_list(members: list[dict], group_field: str | None,
-                       res_index: dict, current_slug: str,
+                       res_index: dict, current_slug: str, index: dict,
+                       candidate: dict | None = None,
                        group_labels: dict | None = None,
                        subgroup_field: str | None = None,
                        group_notes: dict | None = None,
@@ -473,48 +501,373 @@ def render_entity_list(members: list[dict], group_field: str | None,
     if not members:
         return "_(no members)_\n"
 
+    # Fallback for subsets whose entities live off the current working
+    # tree (only connected-care-journeys today — its members are read from
+    # a git branch, so they never appear in `index`, which only scans the
+    # working tree). connected_care.py reads the branch anyway and persists
+    # each PractitionerRole's references as this evidence, so pairing and
+    # code/specialty can still resolve here instead of every such entity
+    # rendering as a permanently unpaired row.
+    extra_refs = (candidate or {}).get("evidence", {}).get("practitioner_role_refs") or {}
+
     lines = []
 
     def render_flat(entries: list[dict]) -> str:
         by_type: dict[str, list[dict]] = defaultdict(list)
         for m in entries:
             by_type[m.get("resource_type") or "Unspecified"].append(m)
+        # Wherever both are present, Practitioner and PractitionerRole
+        # combine into one table (render_combined_practitioner_role) instead
+        # of rendering as two separate type-groups — folded into
+        # PractitionerRole's own slot in RESOURCE_TYPE_ORDER so the rest of
+        # the type ordering is undisturbed.
+        combine = bool(by_type.get("Practitioner") and by_type.get("PractitionerRole"))
+        # sparked-cdg-journeys never tracks PractitionerRole as its own
+        # member type, so it gets its own always-on combined table instead
+        # of render_group's density-gated bullet/table choice or the plain
+        # combine above — confirmed to apply to every journey in the
+        # subset, including the 5 AU Patient Summary journeys, which carry
+        # no journey_role/alignment data at all (mostly-blank cells there,
+        # not a fallback to the old rendering) — so this checks current_slug
+        # directly rather than the journey_role field's presence, which
+        # would silently exclude exactly those journeys.
+        is_journey = current_slug == "sparked-cdg-journeys" and bool(by_type.get("Practitioner"))
         out = []
         for rtype in sorted(by_type, key=_resource_type_sort_key):
+            if is_journey and rtype == "Practitioner":
+                group = sorted(by_type[rtype], key=lambda m: m["id"])
+                n, body = render_journey_practitioner_table(group)
+                out.append(f"**Practitioner / PractitionerRole** ({n})\n")
+                out.append(body)
+                continue
+            if combine and rtype == "Practitioner":
+                continue
+            if combine and rtype == "PractitionerRole":
+                n, body = render_combined_practitioner_role(
+                    by_type["Practitioner"], by_type["PractitionerRole"])
+                out.append(f"**Practitioner / PractitionerRole** ({n})\n")
+                out.append(body)
+                continue
             group = sorted(by_type[rtype], key=lambda m: m["id"])
             out.append(f"**{rtype}** ({len(group)})\n")
-            rows = []
-            for m in group:
-                key = f"{rtype}/{m['id']}"
-                note = overlap_note(key, current_slug, res_index)
-                if m.get("path"):
-                    # The id links straight to the file it resolved to,
-                    # rather than also printing the path inline — the path
-                    # is still discoverable (link hover / status bar), it
-                    # just no longer clutters the list. Relative to
-                    # OUTPUT_PATH's directory, not REPO_ROOT, since the path
-                    # in `m` is repo-root-relative but the link is embedded
-                    # one directory down in docs/.
-                    href = os.path.relpath(lib.REPO_ROOT / m["path"], OUTPUT_PATH.parent)
-                    row = f"- [`{m['id']}`]({href})"
-                else:
-                    row = f"- `{m['id']}` — _(no resource)_"
-                if m.get("journey_role"):
-                    row += f" — **{m['journey_role']}**"
-                # Where the journey states a role the data's PractitionerRole
-                # does not capture, say so — the journey is authoritative for
-                # the role, the data for the coded specialty, and the gap is
-                # a finding rather than something to smooth over.
-                if m.get("alignment") == "journey_role_more_specific":
-                    row += (f" — *declared specialty is only "
-                            f"\"{m.get('declared_specialty')}\"*")
-                elif m.get("alignment") == "unresolved":
-                    row += " — *no matching resource in the data set*"
-                if note:
-                    row += f" — *{note}*"
-                rows.append(row)
-            out.append("\n".join(rows) + "\n")
+            out.append(render_group(rtype, group))
         return "\n".join(out)
+
+    def render_group(rtype: str, group: list[dict]) -> str:
+        fields = []
+        for m in group:
+            key = f"{rtype}/{m['id']}"
+            also_in = overlap_note(key, current_slug, res_index)
+            if m.get("path"):
+                # The id links straight to the file it resolved to, rather
+                # than also printing the path inline — the path is still
+                # discoverable (link hover / status bar), it just no longer
+                # clutters the list.
+                id_cell = f"[`{m['id']}`]({_href(m['path'])})"
+            else:
+                id_cell = f"`{m['id']}`"
+            # Where the journey states a role the data's PractitionerRole
+            # does not capture, say so — the journey is authoritative for
+            # the role, the data for the coded specialty, and the gap is
+            # a finding rather than something to smooth over.
+            if m.get("alignment") == "journey_role_more_specific":
+                note = f"declared specialty is only \"{m.get('declared_specialty')}\""
+            elif m.get("alignment") == "unresolved":
+                note = "no matching resource in the data set"
+            else:
+                note = None
+            fields.append({
+                "id_cell": id_cell, "role": m.get("journey_role"),
+                "note": note,
+                # Column header already says "Also in" — the prefix would
+                # just repeat it.
+                "also_in": also_in[len("also in: "):] if also_in else None,
+            })
+
+        # A table earns its place only where most rows actually have
+        # something to align — a header+separator over one or two rows, or
+        # over a group that's almost all plain ids, is overhead without an
+        # alignment payoff. Below that, the existing bullet format stays
+        # exactly as it was.
+        has_extra = sum(1 for f in fields if f["role"] or f["note"] or f["also_in"])
+        if len(fields) < 4 or has_extra / len(fields) <= 0.5:
+            rows = []
+            for f in fields:
+                row = f"- {f['id_cell']}" if f["id_cell"].startswith("[") \
+                    else f"- {f['id_cell']} — _(no resource)_"
+                if f["role"]:
+                    row += f" — **{f['role']}**"
+                if f["note"]:
+                    row += f" — *{f['note']}*"
+                if f["also_in"]:
+                    row += f" — *also in: {f['also_in']}*"
+                rows.append(row)
+            return "\n".join(rows) + "\n"
+
+        use_role = any(f["role"] for f in fields)
+        use_note = any(f["note"] for f in fields)
+        use_also_in = any(f["also_in"] for f in fields)
+        headers = ["ID"]
+        headers += ["Role"] if use_role else []
+        headers += ["Note"] if use_note else []
+        headers += ["Also in"] if use_also_in else []
+        rows = ["| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for f in fields:
+            cells = [f["id_cell"]]
+            if use_role:
+                cells.append(f"**{f['role']}**" if f["role"] else "")
+            if use_note:
+                cells.append(f"*{f['note']}*" if f["note"] else "")
+            if use_also_in:
+                cells.append(f"*{f['also_in']}*" if f["also_in"] else "")
+            rows.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
+        return "\n".join(rows) + "\n"
+
+    def referencing(key: str | None, rtype: str) -> list[str]:
+        """Every "{rtype}/id" that references `key` anywhere in the data
+        set — index["referenced_by"] is built from every outgoing reference
+        found on every resource (lib.py's find_references()), not just
+        PractitionerRole's, so this also surfaces e.g. a HealthcareService
+        that names an Organization via its own providedBy field.
+
+        Falls back to `extra_refs` for PractitionerRole/Practitioner pairing
+        when the working-tree index has nothing — the only current case is
+        connected-care-journeys, whose entities live on a different branch.
+        """
+        if not key:
+            return []
+        found = sorted(
+            k for k in index["referenced_by"].get(key, set())
+            if k.startswith(f"{rtype}/")
+        )
+        if found or rtype != "PractitionerRole" or not key.startswith("Practitioner/"):
+            return found
+        return sorted(
+            f"PractitionerRole/{rid}" for rid, r in extra_refs.items()
+            if r.get("practitioner") == key
+        )
+
+    def _role_code_specialty(role_key: str | None) -> str | None:
+        if not role_key:
+            return None
+        role = index["resources"].get(role_key, {}).get("resource")
+        if role:
+            code = role.get("code") or []
+            code_text = (code[0].get("text") or (code[0].get("coding") or [{}])[0].get("display")
+                        if code else None)
+            specialty = role.get("specialty") or []
+            specialty_text = (specialty[0].get("text")
+                              or (specialty[0].get("coding") or [{}])[0].get("display")
+                              if specialty else None)
+        else:
+            extra = extra_refs.get(role_key.split("/", 1)[-1]) or {}
+            code_text = extra.get("code_text")
+            specialty_text = extra.get("specialty_text")
+        if not code_text:
+            return None
+        # Confirmed: never empty parens — the code stands alone when there's
+        # no specialty to qualify it.
+        return f"{code_text} ({specialty_text})" if specialty_text else code_text
+
+    def _combined_also_in(prac_key: str | None, role_key: str | None) -> str | None:
+        # A practitioner and their own role are very often members of the
+        # same other subsets (e.g. both in scenario-groups) — union and
+        # de-duplicate rather than show the same subset link twice.
+        links, seen = [], set()
+        for key in (prac_key, role_key):
+            note = overlap_note(key, current_slug, res_index) if key else None
+            if not note:
+                continue
+            for link in note[len("also in: "):].split(", "):
+                if link not in seen:
+                    seen.add(link)
+                    links.append(link)
+        return ", ".join(links) if links else None
+
+    def render_journey_practitioner_table(group: list[dict]) -> tuple[int, str]:
+        """Sparked CDG journeys' Practitioner listing. journey_role/
+        alignment are stated by the journey, not derived, so unlike
+        render_combined_practitioner_role this never pairs against a
+        co-located PractitionerRole member (the subset doesn't track one) —
+        every role is resolved by reachability from the Practitioner member
+        alone, the same as render_practitioner_relationships.
+        """
+        rows = []
+        for m in group:
+            prac_key = f"Practitioner/{m['id']}"
+            role_keys = referencing(prac_key, "PractitionerRole") or [None]
+            for role_key in role_keys:
+                if role_key is None:
+                    note = "no matching PractitionerRole in the data set"
+                elif m.get("alignment") == "journey_role_more_specific":
+                    # Not repeating the specialty text itself — that's its
+                    # own column now, so the note only needs to flag that a
+                    # gap might exist for the reader to compare directly.
+                    note = "journey role may differ from the declared role (specialty)"
+                else:
+                    note = None
+                rows.append((m, prac_key, role_key, note))
+
+        headers = ["Practitioner", "PractitionerRole", "Role from journey",
+                   "Role (specialty) from test data", "Notes", "Also in"]
+        table = ["", "| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for m, prac_key, role_key, note in rows:
+            id_cell = f"[`{m['id']}`]({_href(m['path'])})" if m.get("path") \
+                else f"`{m['id']}`"
+            also_in = _combined_also_in(prac_key, role_key)
+            cells = [
+                id_cell,
+                _resolve_cell(role_key, index) if role_key else "",
+                f"**{m['journey_role']}**" if m.get("journey_role") else "",
+                _role_code_specialty(role_key) or "",
+                f"*{note}*" if note else "",
+                f"*{also_in}*" if also_in else "",
+            ]
+            table.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
+        return len(rows), "\n".join(table) + "\n"
+
+    def render_combined_practitioner_role(
+            prac_group: list[dict], role_group: list[dict]) -> tuple[int, str]:
+        """Practitioner and PractitionerRole, today rendered as two separate
+        type-groups, combined into one table with the role's occupation
+        code/specialty alongside — reachability, not membership, decides
+        pairing (as in render_practitioner_relationships), so a practitioner
+        with no PractitionerRole member here still gets a row instead of
+        disappearing, and likewise a PractitionerRole whose practitioner
+        isn't itself a member.
+
+        A member's own `path` (from resolve_membership) is preferred over
+        index["resources"] for linking — index only scans the CURRENT
+        working tree's data-set dirs, but connected-care-journeys resolves
+        its members by reading the connected-care branch directly, so its
+        members exist with a valid path despite never appearing in index.
+        Pairing and code/specialty for such entities come from `extra_refs`
+        instead (via `referencing()` and `_role_code_specialty()`, and the
+        forward-resolution fallback below) — connected_care.py persists
+        exactly this from the branch for this reason.
+        """
+        known_paths = {f"Practitioner/{m['id']}": m["path"] for m in prac_group
+                       if m.get("path")}
+        known_paths.update({f"PractitionerRole/{m['id']}": m["path"]
+                            for m in role_group if m.get("path")})
+
+        def cell(ref: str | None) -> str:
+            if not ref:
+                return ""
+            path = known_paths.get(ref) or (index["resources"].get(ref) or {}).get("path")
+            rid = ref.split("/", 1)[-1]
+            return f"[`{rid}`]({_href(path)})" if path else f"`{rid}`"
+
+        covered_roles: set[str] = set()
+        row_keys: set[tuple[str | None, str | None]] = set()
+        for m in prac_group:
+            prac_key = f"Practitioner/{m['id']}"
+            role_keys = referencing(prac_key, "PractitionerRole")
+            if role_keys:
+                for role_key in role_keys:
+                    row_keys.add((prac_key, role_key))
+                    covered_roles.add(role_key)
+            else:
+                row_keys.add((prac_key, None))
+        for m in role_group:
+            role_key = f"PractitionerRole/{m['id']}"
+            if role_key in covered_roles:
+                continue
+            role = index["resources"].get(role_key, {}).get("resource")
+            if role:
+                prac_ref = (role.get("practitioner") or {}).get("reference")
+            else:
+                prac_ref = (extra_refs.get(m["id"]) or {}).get("practitioner")
+            row_keys.add((prac_ref, role_key))
+
+        rows = sorted(row_keys, key=lambda r: (r[0] or "", r[1] or ""))
+        headers = ["Practitioner", "PractitionerRole", "Role (specialty)", "Also in"]
+        table = ["", "| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for prac_key, role_key in rows:
+            cells = [
+                cell(prac_key), cell(role_key),
+                _role_code_specialty(role_key) or "",
+                _combined_also_in(prac_key, role_key) or "",
+            ]
+            table.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
+        return len(rows), "\n".join(table) + "\n"
+
+    def render_practitioner_relationships(entries: list[dict]) -> str | None:
+        """One row per (Practitioner, PractitionerRole) pair reachable from
+        this unit's own Practitioner members, resolved against the WHOLE
+        data set — not gated on whether the PractitionerRole, Organization,
+        Location, HealthcareService or Endpoint are themselves members of
+        this subset or unit. Most subsets track Practitioner without
+        separately tracking PractitionerRole, so there would be nothing to
+        show if this only looked at existing members.
+
+        HealthcareService and Endpoint aren't referenced FROM PractitionerRole
+        in this data set (no PractitionerRole.healthcareService is ever
+        populated, and nothing references an Endpoint at all) — they're
+        reached in reverse instead: a HealthcareService names an Organization/
+        Location via its own providedBy/location fields, so `referencing`
+        surfaces it from the Organization/Location side.
+        """
+        rows = []
+        for m in entries:
+            if m.get("resource_type") != "Practitioner":
+                continue
+            prac_key = f"Practitioner/{m['id']}"
+            role_keys = referencing(prac_key, "PractitionerRole")
+            for role_key in role_keys:
+                role = index["resources"].get(role_key, {}).get("resource")
+                if role:
+                    org_ref = (role.get("organization") or {}).get("reference")
+                    loc_refs = [l.get("reference") for l in role.get("location") or []
+                               if l.get("reference")]
+                else:
+                    extra = extra_refs.get(role_key.split("/", 1)[-1]) or {}
+                    org_ref = extra.get("organization")
+                    loc_refs = extra.get("location") or []
+                hs_keys = sorted({
+                    *referencing(org_ref, "HealthcareService"),
+                    *(k for loc in loc_refs for k in referencing(loc, "HealthcareService")),
+                })
+                ep_keys = sorted({
+                    *referencing(org_ref, "Endpoint"),
+                    *(k for loc in loc_refs for k in referencing(loc, "Endpoint")),
+                    *(k for hs in hs_keys for k in referencing(hs, "Endpoint")),
+                })
+                rows.append((prac_key, role_key, org_ref, loc_refs, hs_keys, ep_keys))
+        if not rows:
+            return None
+
+        rows.sort(key=lambda r: (r[0], r[1]))
+        use_hs = any(r[4] for r in rows)
+        use_ep = any(r[5] for r in rows)
+        headers = ["Practitioner", "PractitionerRole", "Organization", "Location"]
+        headers += ["HealthcareService"] if use_hs else []
+        headers += ["Endpoint"] if use_ep else []
+        # Leading "" so the join below inserts a blank line after </summary>
+        # — GitHub only parses Markdown inside an HTML block (<details>) when
+        # it's preceded by a blank line; without it this renders as literal
+        # pipe text, not a table.
+        table = ["", "| " + " | ".join(headers) + " |",
+                "| " + " | ".join("---" for _ in headers) + " |"]
+        for prac_key, role_key, org_ref, loc_refs, hs_keys, ep_keys in rows:
+            cells = [
+                _resolve_cell(prac_key, index), _resolve_cell(role_key, index),
+                _resolve_cell(org_ref, index),
+                ", ".join(_resolve_cell(r, index) for r in loc_refs),
+            ]
+            if use_hs:
+                cells.append(", ".join(_resolve_cell(r, index) for r in hs_keys))
+            if use_ep:
+                cells.append(", ".join(_resolve_cell(r, index) for r in ep_keys))
+            table.append("| " + " | ".join(cells) + " |")
+        return (
+            f"\n<details><summary>{plural(len(rows), 'relationship')} — "
+            + " / ".join(headers) + "</summary>\n"
+            + "\n".join(table) + "\n\n</details>\n"
+        )
 
     def render_body(entries: list[dict]) -> tuple[str, str]:
         """Returns (body, count_phrase) for one outer group.
@@ -524,7 +877,11 @@ def render_entity_list(members: list[dict], group_field: str | None,
         the same entity can legitimately sit in two adjacent groupings.
         """
         if not subgroup_field:
-            return render_flat(entries), plural(len(entries), "entity")
+            body = render_flat(entries)
+            rel = render_practitioner_relationships(entries)
+            if rel:
+                body += rel
+            return body, plural(len(entries), "entity")
 
 
         by_sub: dict[str, list[dict]] = defaultdict(list)
@@ -548,7 +905,11 @@ def render_entity_list(members: list[dict], group_field: str | None,
             note = (group_notes or {}).get(sub_value)
             if note:
                 out.append(f"\n{note}\n")
-            out.append(f"\n{render_flat(sub_entries)}\n</details>\n</blockquote>\n")
+            sub_body = render_flat(sub_entries)
+            rel = render_practitioner_relationships(sub_entries)
+            if rel:
+                sub_body += rel
+            out.append(f"\n{sub_body}\n</details>\n</blockquote>\n")
         distinct = len({f"{m.get('resource_type')}/{m.get('id')}"
                         for m in entries})
         n = len(by_sub)
@@ -577,6 +938,9 @@ def render_entity_list(members: list[dict], group_field: str | None,
         return "\n".join(lines)
 
     body = render_flat(members)
+    rel = render_practitioner_relationships(members)
+    if rel:
+        body += rel
     if len(members) > ENTITY_LIST_THRESHOLD:
         return (f"<details><summary>{plural(len(members), 'entity')}"
                 f" — click to expand"
@@ -640,7 +1004,7 @@ def revision_url(slug: str, revision: str) -> str | None:
 
 
 def render_subset(subset: dict, members: list[dict], notes: list[str],
-                  candidate: dict | None, res_index: dict) -> str:
+                  candidate: dict | None, res_index: dict, index: dict) -> str:
     """Render one subset section.
 
     Five headings, in a fixed order, then Members. Purpose and governance lead
@@ -659,21 +1023,27 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     slug = subset["slug"]
     lines = [f"## {subset['title']} <a id=\"{slug}\"></a>\n"]
 
+    # Each heading below carries its own leading blank line rather than
+    # relying on the previous field's own trailing newline for separation —
+    # a `>` folded YAML scalar happens to end with one, but a plain scalar
+    # (e.g. a bare "tbd") or the "_not yet recorded_" fallback doesn't, and
+    # without it the heading glues onto the line above with no blank-line
+    # break (the same class of bug fixed for the Members heading earlier).
     lines.append("### Purpose\n")
     lines.append(link_subsets(subset.get("purpose")) or "_not yet recorded_")
 
-    lines.append("### Ownership & governance\n")
+    lines.append("\n### Ownership & governance\n")
     lines.append(f"**Owner:** {subset.get('owner') or '_not yet recorded_'}  ")
     lines.append(link_subsets(subset.get("governance")) or "_not yet recorded_")
 
-    lines.append("### Provenance & use\n")
+    lines.append("\n### Provenance & use\n")
     lines.append(link_subsets(subset.get("provenance")) or "_not yet recorded_")
 
-    lines.append("### Relationships\n")
+    lines.append("\n### Relationships\n")
     lines.append(link_subsets(subset.get("relationships_note"))
                  or "_not yet recorded_")
 
-    lines.append("### How is this subset identified?\n")
+    lines.append("\n### How is this subset identified?\n")
     lines.append(link_subsets(subset.get("identification")) or "_not yet recorded_")
     source = subset.get("source")
     if source:
@@ -693,7 +1063,12 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     # already states Derived/Declared/Curated as its opening word(s) — a
     # trailing "_Classification: X._" line only repeated it.
 
-    if notes:
+    # Derivation notes exist only for subsets a script actually derives —
+    # counts, exclusions, drift/attribution reasoning a reviewer would want
+    # to check the machinery behind. A Curated or Declared subset's notes
+    # are a human's own account of what they stated, not something to
+    # cross-check against a derivation, so the section doesn't apply there.
+    if notes and subset.get("type") in ("derived", "derived+curated"):
         # Collapsed like every other evidence block on the page (D20-era
         # precedent): these are derivation detail — counts, exclusions,
         # limitations — useful to a reviewer but not needed to read the
@@ -739,13 +1114,39 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
     # under two adjacent groupings and would otherwise be double-counted.
     distinct = len({f"{m.get('resource_type')}/{m.get('id')}"
                     for m in members})
+    # Blank separator, not relied on from whatever precedes it (the Read-at
+    # line, or a Derivation notes block that's no longer guaranteed to be
+    # there) — a heading needs its own paragraph break regardless.
+    lines.append("")
     lines.append(f"### Members ({distinct})\n")
     lines.append(render_entity_list(members, group_field, res_index, slug,
-                                    group_labels, subgroup_field,
-                                    group_notes,
+                                    index, candidate, group_labels,
+                                    subgroup_field, group_notes,
                                     SUBGROUP_NOUN.get(slug, "grouping")))
 
     if candidate:
+        # ig_examples.py's note ("N IG example resources matched nothing...
+        # Listed under evidence") pointed at evidence that was written to
+        # the candidate JSON but never actually rendered anywhere on the
+        # page — a dangling reference nobody reading only the wiki could
+        # follow. Render it for real.
+        unmatched = (candidate.get("evidence") or {}).get(
+            "unmatched_ig_examples") or []
+        if unmatched:
+            rows = ["", "| Example file | Resource | From a Bundle entry? |",
+                    "| --- | --- | --- |"]
+            for u in unmatched:
+                in_bundle = "yes" if u.get("in_bundle") else "no"
+                rows.append(
+                    f"| `{u['example']}` | `{u['resource']}` | {in_bundle} |")
+            n = len(unmatched)
+            lines.append(
+                f"\n<details><summary>IG example resource{'s' if n != 1 else ''} "
+                f"matched nothing in the test data set — {n} "
+                f"possibly IG-only</summary>\n"
+                + "\n".join(rows) + "\n\n</details>\n"
+            )
+
         flagged = (candidate.get("evidence") or {}).get(
             "flagged_potential_families") or []
         if flagged:
@@ -803,10 +1204,11 @@ def render_subset(subset: dict, members: list[dict], notes: list[str],
 # maintainer gets "X was probably renamed to Y" instead of just "it's
 # smaller now".
 
-PREVIOUS_ROW_RE = re.compile(r"^- \[`([^`]+)`\]\(([^)]+)\)")
+PREVIOUS_ROW_RE = re.compile(r"^(?:- |\| )\[`([^`]+)`\]\(([^)]+)\)")
 SECTION_ANCHOR_RE = re.compile(r'^## .*<a id="([^"]+)"></a>')
 STAMP_COMMIT_RE = re.compile(r"commit `([0-9a-f]{7,40})`")
 FILENAME_TYPE_ID_RE = re.compile(r"^([A-Z][A-Za-z]*)-(.+)\.json$")
+GROUP_HEADING_RE = re.compile(r"^\*\*(.+?)\*\* \(\d+")
 
 
 def _git_lines(*args: str) -> list[str] | None:
@@ -832,24 +1234,45 @@ def _type_and_id_from_path(path: str) -> tuple[str, str] | None:
 def parse_previous_page(text: str) -> tuple[dict[str, set[tuple[str, str, str]]], str | None]:
     """Reconstruct each subset's membership from the last committed page.
 
-    Only resolved rows (a hyperlinked id, from render_flat() above) carry a
+    Only resolved rows (a hyperlinked id, from render_group() above) carry a
     path to check a rename or removal against, so unresolved
     (`_(no resource)_`) rows are not tracked here — there is nothing to
     diff them against, and their disappearance is not this check's concern.
+
+    PREVIOUS_ROW_RE matches the id/link on either a bullet row (`- [`id`]
+    (href)`) or a table row (`| [`id`](href) | ...`) — render_group() picks
+    one or the other per group, so both must parse or a dense group's
+    membership would silently read as empty here.
+
+    Rows under a "**Practitioner / PractitionerRole**" combined heading
+    (render_combined_practitioner_role) are deliberately NOT scraped: unlike
+    every other group, a row there isn't always an independent member of
+    this subset — a PractitionerRole member's Practitioner (or vice versa)
+    is resolved by reachability across the whole data set regardless of
+    whether it's itself tracked here, so treating every row's first cell as
+    "a member of this subset" would manufacture a false drop the moment
+    that cross-reference resolution shifts even slightly, for an entity
+    that was never counted as a member on either side of the comparison.
     """
     by_subset: dict[str, set[tuple[str, str, str]]] = defaultdict(set)
     current_slug = None
+    current_heading = None
     commit = None
     for line in text.splitlines():
         anchor = SECTION_ANCHOR_RE.match(line)
         if anchor:
             current_slug = anchor.group(1)
+            current_heading = None
+            continue
+        heading = GROUP_HEADING_RE.match(line)
+        if heading:
+            current_heading = heading.group(1)
             continue
         if commit is None:
             stamp = STAMP_COMMIT_RE.search(line)
             if stamp:
                 commit = stamp.group(1)
-        if current_slug is None:
+        if current_slug is None or current_heading == "Practitioner / PractitionerRole":
             continue
         row = PREVIOUS_ROW_RE.match(line)
         if not row:
@@ -1136,7 +1559,7 @@ def main():
     for slug in SUBSET_ORDER:
         parts.append(render_subset(
             subsets_by_slug[slug], resolved[slug], notes_by_slug[slug],
-            candidates.get(slug), res_index,
+            candidates.get(slug), res_index, index,
         ))
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
